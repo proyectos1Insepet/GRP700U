@@ -58,7 +58,7 @@ CY_ISR(animacion);
 *********************************************************************************************************
 *                                         init( void )
 *
-* Description : Verifica el serial, inicia los perosfericos, la version y los datos de la estación.
+* Description : Verifica el serial, inicia los perisfericos, la version y los datos de la estación.
 *               
 *
 * Argument(s) : none
@@ -86,23 +86,7 @@ void init(void){
     PC_Start();
     VDAC8_3_Start();
     CyDelay(5);	
-	/****Lectura de variables en memoria eeprom****/
-	/*serial[0]=16;
-	y=0;
-	leer_eeprom(615,17);
-	if(buffer_i2c[0]!=16){
-		serial[0]=16;
-		write_eeprom(615,serial);
-	}	
-	else{
-		while(y!=16){
-			for(x=1;x<=16;x++){
-				if(buffer_i2c[x]==serial[x]){
-					y++;
-				}
-			}
-		}
-	}*/
+	
 	leer_eeprom(0,32);
 	for(x=0;x<=buffer_i2c[0];x++){
 		rventa.nombre[x]=buffer_i2c[x];
@@ -547,22 +531,27 @@ void polling_LCD1(void){
         case 7:
 		 CyDelay(50);
 		 switch(get_estado(lado.a.dir)){
-	         case 0x0B:                     //Termino venta
+	        case 0x0B:                     //Termino venta            
 				CyDelay(100);
 				if(venta(lado.a.dir)==1){	
 		            flujo_LCD=8;
 				}
 			 break;	
 				
-	         case 0x0A:                     //Termino venta
+	        case 0x0A:                     //Termino venta
 				if(venta(lado.a.dir)==1){	
 		            flujo_LCD=8;
 				}
-			 break;
+			break;
 
-	         case 0x06:                     //No hizo venta
+	        case 0x06:                     //No hizo venta
 				flujo_LCD=0;
-			 break;				
+			break;		
+             
+            case 0x09:  // Sigue vendiendo
+              //polling_LCD2(); 
+            break;
+                
 			 	
          }		
         break;
@@ -3194,6 +3183,10 @@ void polling_LCD2(void){
 		            flujo_LCD2=8;
 				}
 			 break;
+                
+            case 0x09:  // Sigue vendiendo
+                polling_LCD1();
+            break;
 
 	         case 0x06:                     //No hizo venta
 				flujo_LCD2=0;
