@@ -1,13 +1,9 @@
-Loading plugins phase: Elapsed time ==> 0s.219ms
-Initializing data phase: Elapsed time ==> 0s.000ms
-<CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p D:\Version MUX\GRP700U\Unificada.cydsn\Unificada.cyprj -d CY8C5868AXI-LP035 -s D:\Version MUX\GRP700U\Unificada.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
-<CYPRESSTAG name="Design elaboration results...">
-</CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 2s.034ms
+--------------- Build Started: 03/08/2016 12:09:29 Project: Unificada, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\Oscar\AppData\Local\Cypress Semiconductor\PSoC Creator\3.3" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p "D:\Version MUX\GRP700U\Unificada.cydsn\Unificada.cyprj" -d CY8C5868AXI-LP035 -s "D:\Version MUX\GRP700U\Unificada.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
 ADD: pft.M0086: error: Error in component: Bootloadable_1. The referenced Bootloader is invalid. Verify the Bootloader dependency is correct in the Bootloadable Component, then build project. Invalid bootloader hex file. Unable to read the hex file (D:\Bootloader550M\Bootloader550M\Bootloader550M.cydsn\CortexM3\ARM_GCC_484\Debug\Bootloader550M.hex). The path does not exist.
  * D:\Version MUX\GRP700U\Unificada.cydsn\TopDesign\TopDesign.cysch (Instance:Bootloadable_1)
-
 ADD: pft.M0086: error: Error in component: Bootloadable_1. The referenced Bootloader is invalid. Verify the Bootloader dependency is correct in the Bootloadable Component, then build project. Invalid bootloader elf file. Unable to read the elf file (D:\Bootloader550M\Bootloader550M\Bootloader550M.cydsn\CortexM3\ARM_GCC_484\Debug\Bootloader550M.elf). The path does not exist.
  * D:\Version MUX\GRP700U\Unificada.cydsn\TopDesign\TopDesign.cysch (Instance:Bootloadable_1)
-
+Error: cdf.M0005: CyDsFit aborted due to errors, please address all errors and rerun CyDsFit. (App=cydsfit)
+--------------- Build Failed: 03/08/2016 12:09:32 ---------------
