@@ -1675,7 +1675,6 @@ uint8 programar(uint8 dir, uint8 grado, uint8 *valor, uint8 preset){
 		return 0;	
 	}
 }
-
 /*
 *********************************************************************************************************
 *                                         uint8 programar(uint8 dir)

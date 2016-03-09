@@ -112,7 +112,6 @@ uint8 copia_recibo[2];													//activar copia de recibo
 uint16 id_corte;														//consecutivo del corte
 uint8  id_venta[6];														//Consecutivo de Venta
 volatile int no_venta;													//Consecutivo de Venta entero	 
-
 /*
 1	Petrobras
 2	Biomax
@@ -170,7 +169,7 @@ struct recibo{
     uint8 fecha[3];
     uint8 hora[2];
     uint8 posicion;
-    uint8 producto;
+    uint8 producto; 
     uint8 ppu[7];
     uint8 dinero[9];	
     uint8 volumen[9];
