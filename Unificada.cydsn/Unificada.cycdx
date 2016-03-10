@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="Bootloadable_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="isr_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Timer_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="TimerUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="Timer_1_COUNTER" address="0x40006408" bitWidth="8" desc="UDB.A0 - Current Down Counter Value" />
-    <register name="Timer_1_PERIOD" address="0x40006428" bitWidth="8" desc="UDB.D0 - Assigned Period" />
-    <register name="Timer_1_Control_Reg" address="0x40006478" bitWidth="8" desc="UDB Control Register - Assigned Control Register Value">
+  <block name="Bootloadable_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="isr_4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Timer_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="TimerUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="Timer_1_COUNTER" address="0x40006408" bitWidth="8" desc="UDB.A0 - Current Down Counter Value" hidden="false" />
+    <register name="Timer_1_PERIOD" address="0x40006428" bitWidth="8" desc="UDB.D0 - Assigned Period" hidden="false" />
+    <register name="Timer_1_Control_Reg" address="0x40006478" bitWidth="8" desc="UDB Control Register - Assigned Control Register Value" hidden="false">
       <field name="CTRL_ENABLE" from="7" to="7" access="RW" resetVal="" desc="Enable the Timer" />
       <field name="CTRL_CMODE" from="6" to="5" access="RW" resetVal="" desc="Capture Mode" />
       <field name="CTRL_TEN" from="4" to="4" access="RW" resetVal="" desc="Trigger Enable Bit" />
       <field name="CTRL_TMODE" from="3" to="2" access="RW" resetVal="" desc="Trigger Mode" />
       <field name="CTRL_IC" from="1" to="0" access="RW" resetVal="" desc="Interrupt Count" />
     </register>
-    <register name="Timer_1_STATUS_MASK" address="0x40006488" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register">
+    <register name="Timer_1_STATUS_MASK" address="0x4000648F" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register" hidden="false">
       <field name="TIMER_STS_TC" from="0" to="0" access="R" resetVal="" desc="Enables the Interrupt on TC" />
       <field name="TIMER_STS_CAPT" from="1" to="1" access="R" resetVal="" desc="Enables the Interrupt on Capture" />
       <field name="TIMER_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="FIFO Full Status " />
       <field name="TIMER_STS_FIFO_NEMPTY" from="3" to="3" access="R" resetVal="" desc="FIFO Empty status " />
     </register>
-    <register name="Timer_1_STATUS_AUX_CTRL" address="0x40006498" bitWidth="8" desc="UDB Auxilliary Control Register">
+    <register name="Timer_1_STATUS_AUX_CTRL" address="0x4000649F" bitWidth="8" desc="UDB Auxilliary Control Register" hidden="false">
       <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
         <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
         <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
@@ -51,23 +51,23 @@
       </field>
     </register>
   </block>
-  <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="timer_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="ZeroTerminal_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="isr_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Vmas" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Timer_Animacion2" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="TimerHW" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="Timer_Animacion2_GLOBAL_ENABLE" address="0x400043A3" bitWidth="8" desc="PM.ACT.CFG">
+  <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="timer_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="ZeroTerminal_4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="isr_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Vmas" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Timer_Animacion2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="TimerHW" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="Timer_Animacion2_GLOBAL_ENABLE" address="0x400043A3" bitWidth="8" desc="PM.ACT.CFG" hidden="false">
       <field name="en_timer" from="3" to="0" access="RW" resetVal="" desc="Enable timer/counters." />
     </register>
-    <register name="Timer_Animacion2_CONTROL" address="0x40004F00" bitWidth="8" desc="TMRx.CFG0">
+    <register name="Timer_Animacion2_CONTROL" address="0x40004F00" bitWidth="8" desc="TMRx.CFG0" hidden="false">
       <field name="EN" from="0" to="0" access="RW" resetVal="" desc="Enables timer/comparator." />
       <field name="MODE" from="1" to="1" access="RW" resetVal="" desc="Mode. (0 = Timer; 1 = Comparator)">
         <value name="Timer" value="0" desc="Timer mode. CNT/CMP register holds timer count value." />
@@ -82,7 +82,7 @@
       </field>
       <field name="DEADBAND_PERIOD" from="7" to="6" access="RW" resetVal="" desc="Deadband Period" />
     </register>
-    <register name="Timer_Animacion2_CONTROL2" address="0x40004F01" bitWidth="8" desc="TMRx.CFG1">
+    <register name="Timer_Animacion2_CONTROL2" address="0x40004F01" bitWidth="8" desc="TMRx.CFG1" hidden="false">
       <field name="IRQ_SEL" from="0" to="0" access="RW" resetVal="" desc="Irq selection. (0 = raw interrupts; 1 = status register interrupts)" />
       <field name="FTC" from="1" to="1" access="RW" resetVal="" desc="First Terminal Count (FTC). Setting this bit forces a single pulse on the TC pin when first enabled.">
         <value name="Disable FTC" value="0" desc="Disable the single cycle pulse, which signifies the timer is starting." />
@@ -93,7 +93,7 @@
       <field name="CLK_BUS_EN_SEL" from="6" to="4" access="RW" resetVal="" desc="Digital Global Clock selection." />
       <field name="BUS_CLK_SEL" from="7" to="7" access="RW" resetVal="" desc="Bus Clock selection." />
     </register>
-    <register name="Timer_Animacion2_CONTROL3_" address="0x40004F02" bitWidth="8" desc="TMRx.CFG2">
+    <register name="Timer_Animacion2_CONTROL3_" address="0x40004F02" bitWidth="8" desc="TMRx.CFG2" hidden="false">
       <field name="TMR_CFG" from="1" to="0" access="RW" resetVal="" desc="Timer configuration (MODE = 0): 000 = Continuous; 001 = Pulsewidth; 010 = Period; 011 = Stop on IRQ">
         <value name="Continuous" value="0" desc="Timer runs while EN bit of CFG0 register is set to '1'." />
         <value name="Pulsewidth" value="1" desc="Timer runs from positive to negative edge of TIMEREN." />
@@ -111,27 +111,27 @@
       </field>
       <field name="HW_EN" from="7" to="7" access="RW" resetVal="" desc="When set Timer Enable controls counting." />
     </register>
-    <register name="Timer_Animacion2_PERIOD" address="0x40004F04" bitWidth="16" desc="TMRx.PER0 - Assigned Period" />
-    <register name="Timer_Animacion2_COUNTER" address="0x40004F06" bitWidth="16" desc="TMRx.CNT_CMP0 - Current Down Counter Value" />
+    <register name="Timer_Animacion2_PERIOD" address="0x40004F04" bitWidth="16" desc="TMRx.PER0 - Assigned Period" hidden="false" />
+    <register name="Timer_Animacion2_COUNTER" address="0x40004F06" bitWidth="16" desc="TMRx.CNT_CMP0 - Current Down Counter Value" hidden="false" />
   </block>
-  <block name="Vmenos" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="isr_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="VDAC8_3" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="VDAC8_PM_ACT_CFG" address="0x400043A8" bitWidth="8" desc="Active Power Mode Configuration Register 8">
+  <block name="Vmenos" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="isr_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="VDAC8_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="VDAC8_PM_ACT_CFG" address="0x400043A8" bitWidth="8" desc="Active Power Mode Configuration Register 8" hidden="false">
       <field name="en_dac" from="4" to="0" access="RW" resetVal="" desc="Enable DAC block(s). Populated subsystems are counted from the LSB" />
     </register>
-    <register name="VDAC8_PM_STBY_CFG" address="0x400043B8" bitWidth="8" desc="Standby Power Mode Configuration Register 8">
+    <register name="VDAC8_PM_STBY_CFG" address="0x400043B8" bitWidth="8" desc="Standby Power Mode Configuration Register 8" hidden="false">
       <field name="en_dac" from="4" to="0" access="RW" resetVal="" desc="Enable DAC block(s). Populated subsystems are counted from the LSB" />
     </register>
-    <register name="VDAC8_TR" address="0x4000460B" bitWidth="8" desc="VDAC8_TR">
+    <register name="VDAC8_TR" address="0x4000460B" bitWidth="8" desc="VDAC8_TR" hidden="false">
       <field name="tr" from="7" to="0" access="RW" resetVal="" desc="8 Calibration bits" />
     </register>
-    <register name="VDAC8_CR0" address="0x4000582C" bitWidth="8" desc="DAC Block Control Register 0">
+    <register name="VDAC8_CR0" address="0x4000582C" bitWidth="8" desc="DAC Block Control Register 0" hidden="false">
       <field name="mode" from="4" to="4" access="R" resetVal="" desc="Mode Bit">
         <value name="DAC_MODE_V" value="0" desc="voltage DAC" />
         <value name="DAC_MODE_I" value="1" desc="current DAC" />
@@ -147,7 +147,7 @@
         <value name="DAC_HS_HIGHSPEED" value="1" desc="high speed (higher power)" />
       </field>
     </register>
-    <register name="VDAC8_CR1" address="0x4000582D" bitWidth="8" desc="DAC Block Control Register 1">
+    <register name="VDAC8_CR1" address="0x4000582D" bitWidth="8" desc="DAC Block Control Register 1" hidden="false">
       <field name="mx_data" from="5" to="5" access="RW" resetVal="" desc="Select DATA source">
         <value name="MX_DATA_REG" value="0" desc="Select register source (DACxn_D)" />
         <value name="MX_DATA_UDB" value="1" desc="Select UDB source" />
@@ -165,7 +165,7 @@
         <value name="RESET_UDB_EN_ENABLE" value="1" desc="Enable DAC Reset Source from UDB" />
       </field>
     </register>
-    <register name="VDAC8_SW0" address="0x40005A98" bitWidth="8" desc="DAC Analog Routing Register 0">
+    <register name="VDAC8_SW0" address="0x40005A98" bitWidth="8" desc="DAC Analog Routing Register 0" hidden="false">
       <field name="v_ag1" from="1" to="1" access="RW" resetVal="" desc="Connect voltage output to analog global of same side">
         <value name="AG_NC" value="0" desc="not connected" />
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
@@ -175,7 +175,7 @@
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
       </field>
     </register>
-    <register name="VDAC8_SW2" address="0x40005A9A" bitWidth="8" desc="DAC Analog Routing Register 2">
+    <register name="VDAC8_SW2" address="0x40005A9A" bitWidth="8" desc="DAC Analog Routing Register 2" hidden="false">
       <field name="v_abus3" from="3" to="3" access="RW" resetVal="" desc="Connect voltage output to analog (local) bus of the same side ">
         <value name="ABUS_NC" value="0" desc="not connected" />
         <value name="ABUS_CONNECTED" value="1" desc="Connect to Analog (local) Bus" />
@@ -185,7 +185,7 @@
         <value name="ABUS_CONNECTED" value="1" desc="Connect to Analog (local) Bus" />
       </field>
     </register>
-    <register name="VDAC8_SW3" address="0x40005A9B" bitWidth="8" desc="DAC Analog Routing Register 3">
+    <register name="VDAC8_SW3" address="0x40005A9B" bitWidth="8" desc="DAC Analog Routing Register 3" hidden="false">
       <field name="iout" from="7" to="7" access="RW" resetVal="" desc="Connect current output to pad">
         <value name="IOUT_NC" value="0" desc="not connected" />
         <value name="IOUT_CONNECT" value="1" desc="Connect to pad" />
@@ -199,7 +199,7 @@
         <value name="AMX_CONNECTED" value="1" desc="Connect to AMUXBUS" />
       </field>
     </register>
-    <register name="VDAC8_SW4" address="0x40005A9C" bitWidth="8" desc="DAC Analog Routing Register 4">
+    <register name="VDAC8_SW4" address="0x40005A9C" bitWidth="8" desc="DAC Analog Routing Register 4" hidden="false">
       <field name="i_ag1" from="1" to="1" access="RW" resetVal="" desc="Connect current output to analog global of same side">
         <value name="AG_NC" value="0" desc="not connected" />
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
@@ -209,7 +209,7 @@
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
       </field>
     </register>
-    <register name="VDAC8_STROBE" address="0x40005A9F" bitWidth="8" desc="DAC Strobe Register">
+    <register name="VDAC8_STROBE" address="0x40005A9F" bitWidth="8" desc="DAC Strobe Register" hidden="false">
       <field name="mx_strobe" from="2" to="0" access="RW" resetVal="" desc="Strobe source selection">
         <value name="MX_STROBE_BUSWRITE" value="000" desc="Select bus write strobe source (Enable gater regardless of strobe_en setting)" />
         <value name="MX_STROBE_UDB_SRC" value="001" desc="Select UDB strobe source" />
@@ -225,26 +225,26 @@
         <value name="STROBE_EN_1" value="1" desc="enable strobe" />
       </field>
     </register>
-    <register name="VDAC8_DATA" address="0x40005B83" bitWidth="8" desc="DAC Data Register">
+    <register name="VDAC8_DATA" address="0x40005B83" bitWidth="8" desc="DAC Data Register" hidden="false">
       <field name="data" from="7" to="0" access="RW" resetVal="" desc="8 DAC Data bits" />
     </register>
   </block>
-  <block name="VDAC8_2" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="VDAC8_PM_ACT_CFG" address="0x400043A8" bitWidth="8" desc="Active Power Mode Configuration Register 8">
+  <block name="VDAC8_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="VDAC8_PM_ACT_CFG" address="0x400043A8" bitWidth="8" desc="Active Power Mode Configuration Register 8" hidden="false">
       <field name="en_dac" from="4" to="0" access="RW" resetVal="" desc="Enable DAC block(s). Populated subsystems are counted from the LSB" />
     </register>
-    <register name="VDAC8_PM_STBY_CFG" address="0x400043B8" bitWidth="8" desc="Standby Power Mode Configuration Register 8">
+    <register name="VDAC8_PM_STBY_CFG" address="0x400043B8" bitWidth="8" desc="Standby Power Mode Configuration Register 8" hidden="false">
       <field name="en_dac" from="4" to="0" access="RW" resetVal="" desc="Enable DAC block(s). Populated subsystems are counted from the LSB" />
     </register>
-    <register name="VDAC8_TR" address="0x4000460A" bitWidth="8" desc="VDAC8_TR">
+    <register name="VDAC8_TR" address="0x4000460A" bitWidth="8" desc="VDAC8_TR" hidden="false">
       <field name="tr" from="7" to="0" access="RW" resetVal="" desc="8 Calibration bits" />
     </register>
-    <register name="VDAC8_CR0" address="0x40005828" bitWidth="8" desc="DAC Block Control Register 0">
+    <register name="VDAC8_CR0" address="0x40005828" bitWidth="8" desc="DAC Block Control Register 0" hidden="false">
       <field name="mode" from="4" to="4" access="R" resetVal="" desc="Mode Bit">
         <value name="DAC_MODE_V" value="0" desc="voltage DAC" />
         <value name="DAC_MODE_I" value="1" desc="current DAC" />
@@ -260,7 +260,7 @@
         <value name="DAC_HS_HIGHSPEED" value="1" desc="high speed (higher power)" />
       </field>
     </register>
-    <register name="VDAC8_CR1" address="0x40005829" bitWidth="8" desc="DAC Block Control Register 1">
+    <register name="VDAC8_CR1" address="0x40005829" bitWidth="8" desc="DAC Block Control Register 1" hidden="false">
       <field name="mx_data" from="5" to="5" access="RW" resetVal="" desc="Select DATA source">
         <value name="MX_DATA_REG" value="0" desc="Select register source (DACxn_D)" />
         <value name="MX_DATA_UDB" value="1" desc="Select UDB source" />
@@ -278,7 +278,7 @@
         <value name="RESET_UDB_EN_ENABLE" value="1" desc="Enable DAC Reset Source from UDB" />
       </field>
     </register>
-    <register name="VDAC8_SW0" address="0x40005A90" bitWidth="8" desc="DAC Analog Routing Register 0">
+    <register name="VDAC8_SW0" address="0x40005A90" bitWidth="8" desc="DAC Analog Routing Register 0" hidden="false">
       <field name="v_ag1" from="1" to="1" access="RW" resetVal="" desc="Connect voltage output to analog global of same side">
         <value name="AG_NC" value="0" desc="not connected" />
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
@@ -288,7 +288,7 @@
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
       </field>
     </register>
-    <register name="VDAC8_SW2" address="0x40005A92" bitWidth="8" desc="DAC Analog Routing Register 2">
+    <register name="VDAC8_SW2" address="0x40005A92" bitWidth="8" desc="DAC Analog Routing Register 2" hidden="false">
       <field name="v_abus3" from="3" to="3" access="RW" resetVal="" desc="Connect voltage output to analog (local) bus of the same side ">
         <value name="ABUS_NC" value="0" desc="not connected" />
         <value name="ABUS_CONNECTED" value="1" desc="Connect to Analog (local) Bus" />
@@ -298,7 +298,7 @@
         <value name="ABUS_CONNECTED" value="1" desc="Connect to Analog (local) Bus" />
       </field>
     </register>
-    <register name="VDAC8_SW3" address="0x40005A93" bitWidth="8" desc="DAC Analog Routing Register 3">
+    <register name="VDAC8_SW3" address="0x40005A93" bitWidth="8" desc="DAC Analog Routing Register 3" hidden="false">
       <field name="iout" from="7" to="7" access="RW" resetVal="" desc="Connect current output to pad">
         <value name="IOUT_NC" value="0" desc="not connected" />
         <value name="IOUT_CONNECT" value="1" desc="Connect to pad" />
@@ -312,7 +312,7 @@
         <value name="AMX_CONNECTED" value="1" desc="Connect to AMUXBUS" />
       </field>
     </register>
-    <register name="VDAC8_SW4" address="0x40005A94" bitWidth="8" desc="DAC Analog Routing Register 4">
+    <register name="VDAC8_SW4" address="0x40005A94" bitWidth="8" desc="DAC Analog Routing Register 4" hidden="false">
       <field name="i_ag1" from="1" to="1" access="RW" resetVal="" desc="Connect current output to analog global of same side">
         <value name="AG_NC" value="0" desc="not connected" />
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
@@ -322,7 +322,7 @@
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
       </field>
     </register>
-    <register name="VDAC8_STROBE" address="0x40005A97" bitWidth="8" desc="DAC Strobe Register">
+    <register name="VDAC8_STROBE" address="0x40005A97" bitWidth="8" desc="DAC Strobe Register" hidden="false">
       <field name="mx_strobe" from="2" to="0" access="RW" resetVal="" desc="Strobe source selection">
         <value name="MX_STROBE_BUSWRITE" value="000" desc="Select bus write strobe source (Enable gater regardless of strobe_en setting)" />
         <value name="MX_STROBE_UDB_SRC" value="001" desc="Select UDB strobe source" />
@@ -338,30 +338,30 @@
         <value name="STROBE_EN_1" value="1" desc="enable strobe" />
       </field>
     </register>
-    <register name="VDAC8_DATA" address="0x40005B82" bitWidth="8" desc="DAC Data Register">
+    <register name="VDAC8_DATA" address="0x40005B82" bitWidth="8" desc="DAC Data Register" hidden="false">
       <field name="data" from="7" to="0" access="RW" resetVal="" desc="8 DAC Data bits" />
     </register>
   </block>
-  <block name="Volumen" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="SDown" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="VinB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="VDAC8_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="VDAC8_PM_ACT_CFG" address="0x400043A8" bitWidth="8" desc="Active Power Mode Configuration Register 8">
+  <block name="Volumen" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="SDown" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="VinB" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="VDAC8_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="VDAC8_PM_ACT_CFG" address="0x400043A8" bitWidth="8" desc="Active Power Mode Configuration Register 8" hidden="false">
       <field name="en_dac" from="4" to="0" access="RW" resetVal="" desc="Enable DAC block(s). Populated subsystems are counted from the LSB" />
     </register>
-    <register name="VDAC8_PM_STBY_CFG" address="0x400043B8" bitWidth="8" desc="Standby Power Mode Configuration Register 8">
+    <register name="VDAC8_PM_STBY_CFG" address="0x400043B8" bitWidth="8" desc="Standby Power Mode Configuration Register 8" hidden="false">
       <field name="en_dac" from="4" to="0" access="RW" resetVal="" desc="Enable DAC block(s). Populated subsystems are counted from the LSB" />
     </register>
-    <register name="VDAC8_TR" address="0x40004608" bitWidth="8" desc="VDAC8_TR">
+    <register name="VDAC8_TR" address="0x40004608" bitWidth="8" desc="VDAC8_TR" hidden="false">
       <field name="tr" from="7" to="0" access="RW" resetVal="" desc="8 Calibration bits" />
     </register>
-    <register name="VDAC8_CR0" address="0x40005820" bitWidth="8" desc="DAC Block Control Register 0">
+    <register name="VDAC8_CR0" address="0x40005820" bitWidth="8" desc="DAC Block Control Register 0" hidden="false">
       <field name="mode" from="4" to="4" access="R" resetVal="" desc="Mode Bit">
         <value name="DAC_MODE_V" value="0" desc="voltage DAC" />
         <value name="DAC_MODE_I" value="1" desc="current DAC" />
@@ -377,7 +377,7 @@
         <value name="DAC_HS_HIGHSPEED" value="1" desc="high speed (higher power)" />
       </field>
     </register>
-    <register name="VDAC8_CR1" address="0x40005821" bitWidth="8" desc="DAC Block Control Register 1">
+    <register name="VDAC8_CR1" address="0x40005821" bitWidth="8" desc="DAC Block Control Register 1" hidden="false">
       <field name="mx_data" from="5" to="5" access="RW" resetVal="" desc="Select DATA source">
         <value name="MX_DATA_REG" value="0" desc="Select register source (DACxn_D)" />
         <value name="MX_DATA_UDB" value="1" desc="Select UDB source" />
@@ -395,7 +395,7 @@
         <value name="RESET_UDB_EN_ENABLE" value="1" desc="Enable DAC Reset Source from UDB" />
       </field>
     </register>
-    <register name="VDAC8_SW0" address="0x40005A80" bitWidth="8" desc="DAC Analog Routing Register 0">
+    <register name="VDAC8_SW0" address="0x40005A80" bitWidth="8" desc="DAC Analog Routing Register 0" hidden="false">
       <field name="v_ag1" from="1" to="1" access="RW" resetVal="" desc="Connect voltage output to analog global of same side">
         <value name="AG_NC" value="0" desc="not connected" />
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
@@ -405,7 +405,7 @@
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
       </field>
     </register>
-    <register name="VDAC8_SW2" address="0x40005A82" bitWidth="8" desc="DAC Analog Routing Register 2">
+    <register name="VDAC8_SW2" address="0x40005A82" bitWidth="8" desc="DAC Analog Routing Register 2" hidden="false">
       <field name="v_abus3" from="3" to="3" access="RW" resetVal="" desc="Connect voltage output to analog (local) bus of the same side ">
         <value name="ABUS_NC" value="0" desc="not connected" />
         <value name="ABUS_CONNECTED" value="1" desc="Connect to Analog (local) Bus" />
@@ -415,7 +415,7 @@
         <value name="ABUS_CONNECTED" value="1" desc="Connect to Analog (local) Bus" />
       </field>
     </register>
-    <register name="VDAC8_SW3" address="0x40005A83" bitWidth="8" desc="DAC Analog Routing Register 3">
+    <register name="VDAC8_SW3" address="0x40005A83" bitWidth="8" desc="DAC Analog Routing Register 3" hidden="false">
       <field name="iout" from="7" to="7" access="RW" resetVal="" desc="Connect current output to pad">
         <value name="IOUT_NC" value="0" desc="not connected" />
         <value name="IOUT_CONNECT" value="1" desc="Connect to pad" />
@@ -429,7 +429,7 @@
         <value name="AMX_CONNECTED" value="1" desc="Connect to AMUXBUS" />
       </field>
     </register>
-    <register name="VDAC8_SW4" address="0x40005A84" bitWidth="8" desc="DAC Analog Routing Register 4">
+    <register name="VDAC8_SW4" address="0x40005A84" bitWidth="8" desc="DAC Analog Routing Register 4" hidden="false">
       <field name="i_ag1" from="1" to="1" access="RW" resetVal="" desc="Connect current output to analog global of same side">
         <value name="AG_NC" value="0" desc="not connected" />
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
@@ -439,7 +439,7 @@
         <value name="AG_CONNECTED" value="1" desc="Connect to Analog Global" />
       </field>
     </register>
-    <register name="VDAC8_STROBE" address="0x40005A87" bitWidth="8" desc="DAC Strobe Register">
+    <register name="VDAC8_STROBE" address="0x40005A87" bitWidth="8" desc="DAC Strobe Register" hidden="false">
       <field name="mx_strobe" from="2" to="0" access="RW" resetVal="" desc="Strobe source selection">
         <value name="MX_STROBE_BUSWRITE" value="000" desc="Select bus write strobe source (Enable gater regardless of strobe_en setting)" />
         <value name="MX_STROBE_UDB_SRC" value="001" desc="Select UDB strobe source" />
@@ -455,34 +455,34 @@
         <value name="STROBE_EN_1" value="1" desc="enable strobe" />
       </field>
     </register>
-    <register name="VDAC8_DATA" address="0x40005B80" bitWidth="8" desc="DAC Data Register">
+    <register name="VDAC8_DATA" address="0x40005B80" bitWidth="8" desc="DAC Data Register" hidden="false">
       <field name="data" from="7" to="0" access="RW" resetVal="" desc="8 DAC Data bits" />
     </register>
   </block>
-  <block name="VinA" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Timer_2" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="TimerUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="Timer_2_COUNTER" address="0x40006402" bitWidth="8" desc="UDB.A0 - Current Down Counter Value" />
-    <register name="Timer_2_PERIOD" address="0x40006422" bitWidth="8" desc="UDB.D0 - Assigned Period" />
-    <register name="Timer_2_Control_Reg" address="0x40006472" bitWidth="8" desc="UDB Control Register - Assigned Control Register Value">
+  <block name="VinA" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Timer_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="TimerUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="Timer_2_COUNTER" address="0x4000640B" bitWidth="8" desc="UDB.A0 - Current Down Counter Value" hidden="false" />
+    <register name="Timer_2_PERIOD" address="0x4000642B" bitWidth="8" desc="UDB.D0 - Assigned Period" hidden="false" />
+    <register name="Timer_2_Control_Reg" address="0x4000647B" bitWidth="8" desc="UDB Control Register - Assigned Control Register Value" hidden="false">
       <field name="CTRL_ENABLE" from="7" to="7" access="RW" resetVal="" desc="Enable the Timer" />
       <field name="CTRL_CMODE" from="6" to="5" access="RW" resetVal="" desc="Capture Mode" />
       <field name="CTRL_TEN" from="4" to="4" access="RW" resetVal="" desc="Trigger Enable Bit" />
       <field name="CTRL_TMODE" from="3" to="2" access="RW" resetVal="" desc="Trigger Mode" />
       <field name="CTRL_IC" from="1" to="0" access="RW" resetVal="" desc="Interrupt Count" />
     </register>
-    <register name="Timer_2_STATUS_MASK" address="0x40006482" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register">
+    <register name="Timer_2_STATUS_MASK" address="0x4000648B" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register" hidden="false">
       <field name="TIMER_STS_TC" from="0" to="0" access="R" resetVal="" desc="Enables the Interrupt on TC" />
       <field name="TIMER_STS_CAPT" from="1" to="1" access="R" resetVal="" desc="Enables the Interrupt on Capture" />
       <field name="TIMER_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="FIFO Full Status " />
       <field name="TIMER_STS_FIFO_NEMPTY" from="3" to="3" access="R" resetVal="" desc="FIFO Empty status " />
     </register>
-    <register name="Timer_2_STATUS_AUX_CTRL" address="0x40006492" bitWidth="8" desc="UDB Auxilliary Control Register">
+    <register name="Timer_2_STATUS_AUX_CTRL" address="0x4000649B" bitWidth="8" desc="UDB Auxilliary Control Register" hidden="false">
       <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
         <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
         <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
@@ -509,44 +509,44 @@
       </field>
     </register>
   </block>
-  <block name="isr_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="timer_clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Tx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Rx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="SDA_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="I2C_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="BusClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="or_ff" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="Vmux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="Vmux_scl_out" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="OneTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="or_udb" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="Bufoe_sda" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="Vmux_timeout_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="or_udb_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="Bufoe_scl" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="Vmux_scl_in" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="Vmux_sda_in" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="Vmux_sda_out" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="Vmux_interrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="I2C_FF" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="I2C_IRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="I2C_1_FF_XCFG" address="0x400049C8" bitWidth="8" desc="Extended Configuration Register: I2C_XCFG">
+  <block name="isr_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="timer_clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Tx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Rx_PC" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="SDA_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="I2C_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="BusClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="or_ff" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Vmux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Vmux_scl_out" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="OneTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="or_udb" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Bufoe_sda" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Vmux_timeout_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="or_udb_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Bufoe_scl" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Vmux_scl_in" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Vmux_sda_in" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Vmux_sda_out" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Vmux_interrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="I2C_FF" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="I2C_IRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="I2C_1_FF_XCFG" address="0x400049C8" bitWidth="8" desc="Extended Configuration Register: I2C_XCFG" hidden="false">
       <field name="csr_clk_en" from="7" to="7" access="RW" resetVal="" desc="" />
       <field name="i2c_on" from="6" to="6" access="RW" resetVal="" desc="" />
       <field name="ready_to_sleep" from="5" to="5" access="R" resetVal="" desc="" />
       <field name="force_nack" from="4" to="4" access="RW" resetVal="" desc="" />
       <field name="hw_addr_en" from="0" to="0" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_1_FF_ADDR" address="0x400049CA" bitWidth="8" desc="Slave Adddress Register: I2C_ADR">
+    <register name="I2C_1_FF_ADDR" address="0x400049CA" bitWidth="8" desc="Slave Adddress Register: I2C_ADR" hidden="false">
       <field name="slave_address" from="6" to="0" access="RW" resetVal="" desc="This register holds the slave's 7-bit address." />
     </register>
-    <register name="I2C_1_FF_CFG" address="0x400049D6" bitWidth="8" desc="Configuration Register: I2C_CFG">
+    <register name="I2C_1_FF_CFG" address="0x400049D6" bitWidth="8" desc="Configuration Register: I2C_CFG" hidden="false">
       <field name="sio_select" from="7" to="7" access="RW" resetVal="" desc="" />
       <field name="pselect" from="6" to="6" access="RW" resetVal="" desc="" />
       <field name="bus_error_ie" from="5" to="5" access="RW" resetVal="" desc="" />
@@ -555,7 +555,7 @@
       <field name="en_mstr" from="1" to="1" access="RW" resetVal="" desc="" />
       <field name="en_slave" from="0" to="0" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_1_FF_CSR" address="0x400049D7" bitWidth="8" desc="Control and Status Register: I2C_CSR">
+    <register name="I2C_1_FF_CSR" address="0x400049D7" bitWidth="8" desc="Control and Status Register: I2C_CSR" hidden="false">
       <field name="bus_error" from="7" to="7" access="RW" resetVal="" desc="" />
       <field name="lost_arb" from="6" to="6" access="RW" resetVal="" desc="" />
       <field name="stop_status" from="5" to="5" access="RW" resetVal="" desc="" />
@@ -565,57 +565,50 @@
       <field name="lrb" from="1" to="1" access="RW" resetVal="" desc="" />
       <field name="byte_complete" from="0" to="0" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_1_FF_DATA" address="0x400049D8" bitWidth="8" desc="Data Register: I2C_D">
+    <register name="I2C_1_FF_DATA" address="0x400049D8" bitWidth="8" desc="Data Register: I2C_D" hidden="false">
       <field name="data" from="7" to="0" access="RW" resetVal="" desc="This register provides read/write access to the Shift register." />
     </register>
-    <register name="I2C_1_FF_MCSR" address="0x400049D9" bitWidth="8" desc="Master Control and Status Register: I2C_MCSR">
+    <register name="I2C_1_FF_MCSR" address="0x400049D9" bitWidth="8" desc="Master Control and Status Register: I2C_MCSR" hidden="false">
       <field name="stop_gen" from="4" to="4" access="RW" resetVal="" desc="" />
       <field name="bus_busy" from="3" to="3" access="R" resetVal="" desc="" />
       <field name="master_mode" from="2" to="2" access="R" resetVal="" desc="" />
       <field name="restart_gen" from="1" to="1" access="RW" resetVal="" desc="" />
       <field name="start_gen" from="0" to="0" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_1_FF__CLK_DIV1" address="0x400049DB" bitWidth="8" desc="Divider of BUS_CLK low part: I2C_CLK_DIV1">
+    <register name="I2C_1_FF__CLK_DIV1" address="0x400049DB" bitWidth="8" desc="Divider of BUS_CLK low part: I2C_CLK_DIV1" hidden="false">
       <field name="Div" from="7" to="0" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_1_FF__CLK_DIV2" address="0x400049DC" bitWidth="8" desc="Divider high part: I2C_CLK_DIV1">
+    <register name="I2C_1_FF__CLK_DIV2" address="0x400049DC" bitWidth="8" desc="Divider high part: I2C_CLK_DIV1" hidden="false">
       <field name="Div" from="1" to="0" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_1_FF__TMOUT_CSR" address="0x400049DD" bitWidth="8" desc="Extended Configuration Register: I2C_TMOUT_CSR">
+    <register name="I2C_1_FF__TMOUT_CSR" address="0x400049DD" bitWidth="8" desc="Extended Configuration Register: I2C_TMOUT_CSR" hidden="false">
       <field name="sda_pin_status" from="4" to="4" access="RW" resetVal="" desc="" />
       <field name="scl_pin_status" from="3" to="3" access="RW" resetVal="" desc="" />
       <field name="i2c_timeout_int_enable" from="2" to="2" access="R" resetVal="" desc="" />
       <field name="i2c_sda_timeout_enable" from="1" to="1" access="RW" resetVal="" desc="" />
       <field name="i2c_scl_timeout_enable" from="0" to="0" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_1_FF__TMOUT_SR" address="0x400049DE" bitWidth="8" desc="Extended Configuration Register: I2C_TMOUT_SR">
+    <register name="I2C_1_FF__TMOUT_SR" address="0x400049DE" bitWidth="8" desc="Extended Configuration Register: I2C_TMOUT_SR" hidden="false">
       <field name="sda_tmout_status" from="1" to="1" access="RW" resetVal="" desc="" />
       <field name="scl_tmout_status" from="0" to="0" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_1_FF__TMOUT_CFG0" address="0x400049DF" bitWidth="8" desc="Extended Configuration Register: TMOUT_CFG0">
+    <register name="I2C_1_FF__TMOUT_CFG0" address="0x400049DF" bitWidth="8" desc="Extended Configuration Register: TMOUT_CFG0" hidden="false">
       <field name="timeout_period_lowbyte" from="7" to="0" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_1_FF__TMOUT_CFG1" address="0x400049E0" bitWidth="8" desc="Extended Configuration Register: TMOUT_CFG1">
+    <register name="I2C_1_FF__TMOUT_CFG1" address="0x400049E0" bitWidth="8" desc="Extended Configuration Register: TMOUT_CFG1" hidden="false">
       <field name="timeout_period_highnibble" from="3" to="0" access="RW" resetVal="" desc="" />
     </register>
   </block>
-  <block name="SCL_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="PC" BASE="0x0" SIZE="0x0" desc="UART" visible="true">
-    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="RX_PC_RX_ADDRESS1" address="0x4000642F" bitWidth="8" desc="RX Address1 Register" />
-    <register name="RX_PC_RX_ADDRESS2" address="0x4000643F" bitWidth="8" desc="RX Address2 Register" />
-    <register name="TX_PC_TX_DATA" address="0x40006445" bitWidth="8" desc="TX Data Register" />
-    <register name="RX_PC_RX_DATA" address="0x4000644F" bitWidth="8" desc="RX Data Register" />
-    <register name="TX_PC_TX_STATUS" address="0x40006465" bitWidth="8" desc="TX status register">
-      <field name="PC_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
-      <field name="PC_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
-      <field name="PC_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
-      <field name="PC_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
-    </register>
-    <register name="RX_PC_RX_STATUS" address="0x4000646C" bitWidth="8" desc="RX status register">
+  <block name="SCL_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="PC" BASE="0x0" SIZE="0x0" desc="UART" visible="true" hidden="false">
+    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="RX_PC_RX_ADDRESS1" address="0x4000642F" bitWidth="8" desc="RX Address1 Register" hidden="false" />
+    <register name="RX_PC_RX_ADDRESS2" address="0x4000643F" bitWidth="8" desc="RX Address2 Register" hidden="false" />
+    <register name="RX_PC_RX_DATA" address="0x4000644F" bitWidth="8" desc="RX Data Register" hidden="false" />
+    <register name="RX_PC_RX_STATUS" address="0x40006464" bitWidth="8" desc="RX status register" hidden="false">
       <field name="PC_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="PC_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="PC_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" />
@@ -624,16 +617,30 @@
       <field name="PC_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" />
       <field name="PC_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" />
     </register>
+    <register name="TX_PC_TX_DATA" address="0x40006547" bitWidth="8" desc="TX Data Register" hidden="false" />
+    <register name="TX_PC_TX_STATUS" address="0x40006567" bitWidth="8" desc="TX status register" hidden="false">
+      <field name="PC_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
+      <field name="PC_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
+      <field name="PC_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
+      <field name="PC_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
+    </register>
   </block>
-  <block name="Rx_TW" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Surtidor" BASE="0x0" SIZE="0x0" desc="UART" visible="true">
-    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="RX_Surtidor_RX_ADDRESS1" address="0x4000642C" bitWidth="8" desc="RX Address1 Register" />
-    <register name="RX_Surtidor_RX_ADDRESS2" address="0x4000643C" bitWidth="8" desc="RX Address2 Register" />
-    <register name="RX_Surtidor_RX_DATA" address="0x4000644C" bitWidth="8" desc="RX Data Register" />
-    <register name="RX_Surtidor_RX_STATUS" address="0x4000646B" bitWidth="8" desc="RX status register">
+  <block name="Rx_TW" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Surtidor" BASE="0x0" SIZE="0x0" desc="UART" visible="true" hidden="false">
+    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="RX_Surtidor_RX_ADDRESS1" address="0x4000642E" bitWidth="8" desc="RX Address1 Register" hidden="false" />
+    <register name="RX_Surtidor_RX_ADDRESS2" address="0x4000643E" bitWidth="8" desc="RX Address2 Register" hidden="false" />
+    <register name="TX_Surtidor_TX_DATA" address="0x40006446" bitWidth="8" desc="TX Data Register" hidden="false" />
+    <register name="RX_Surtidor_RX_DATA" address="0x4000644E" bitWidth="8" desc="RX Data Register" hidden="false" />
+    <register name="TX_Surtidor_TX_STATUS" address="0x40006466" bitWidth="8" desc="TX status register" hidden="false">
+      <field name="Surtidor_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
+      <field name="Surtidor_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
+      <field name="Surtidor_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
+      <field name="Surtidor_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
+    </register>
+    <register name="RX_Surtidor_RX_STATUS" address="0x4000646D" bitWidth="8" desc="RX status register" hidden="false">
       <field name="Surtidor_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="Surtidor_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="Surtidor_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" />
@@ -642,25 +649,18 @@
       <field name="Surtidor_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" />
       <field name="Surtidor_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" />
     </register>
-    <register name="TX_Surtidor_TX_DATA" address="0x40006545" bitWidth="8" desc="TX Data Register" />
-    <register name="TX_Surtidor_TX_STATUS" address="0x40006566" bitWidth="8" desc="TX status register">
-      <field name="Surtidor_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
-      <field name="Surtidor_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
-      <field name="Surtidor_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
-      <field name="Surtidor_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
-    </register>
   </block>
-  <block name="Tx_TW" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Tx_Print" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Impresora" BASE="0x0" SIZE="0x0" desc="UART" visible="true">
-    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="RX_Impresora_RX_ADDRESS1" address="0x4000642A" bitWidth="8" desc="RX Address1 Register" />
-    <register name="RX_Impresora_RX_ADDRESS2" address="0x4000643A" bitWidth="8" desc="RX Address2 Register" />
-    <register name="RX_Impresora_RX_DATA" address="0x4000644A" bitWidth="8" desc="RX Data Register" />
-    <register name="RX_Impresora_RX_STATUS" address="0x40006469" bitWidth="8" desc="RX status register">
+  <block name="Tx_TW" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Tx_Print" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Impresora" BASE="0x0" SIZE="0x0" desc="UART" visible="true" hidden="false">
+    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="RX_Impresora_RX_ADDRESS1" address="0x40006429" bitWidth="8" desc="RX Address1 Register" hidden="false" />
+    <register name="RX_Impresora_RX_ADDRESS2" address="0x40006439" bitWidth="8" desc="RX Address2 Register" hidden="false" />
+    <register name="RX_Impresora_RX_DATA" address="0x40006449" bitWidth="8" desc="RX Data Register" hidden="false" />
+    <register name="RX_Impresora_RX_STATUS" address="0x40006469" bitWidth="8" desc="RX status register" hidden="false">
       <field name="Impresora_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="Impresora_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="Impresora_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" />
@@ -669,29 +669,29 @@
       <field name="Impresora_RX_STS_FIFO_NOTEMPTY" from="5" to="5" access="R" resetVal="" desc="" />
       <field name="Impresora_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" />
     </register>
-    <register name="TX_Impresora_TX_DATA" address="0x40006544" bitWidth="8" desc="TX Data Register" />
-    <register name="TX_Impresora_TX_STATUS" address="0x40006564" bitWidth="8" desc="TX status register">
+    <register name="TX_Impresora_TX_DATA" address="0x40006546" bitWidth="8" desc="TX Data Register" hidden="false" />
+    <register name="TX_Impresora_TX_STATUS" address="0x40006566" bitWidth="8" desc="TX status register" hidden="false">
       <field name="Impresora_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="Impresora_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="Impresora_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
       <field name="Impresora_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
     </register>
   </block>
-  <block name="Pin_WP" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Rx_Print" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="IB1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Timer_Animacion" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="TimerHW" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="Timer_Animacion_GLOBAL_ENABLE" address="0x400043A3" bitWidth="8" desc="PM.ACT.CFG">
+  <block name="Pin_WP" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Rx_Print" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="IB1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Timer_Animacion" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="TimerHW" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="Timer_Animacion_GLOBAL_ENABLE" address="0x400043A3" bitWidth="8" desc="PM.ACT.CFG" hidden="false">
       <field name="en_timer" from="3" to="0" access="RW" resetVal="" desc="Enable timer/counters." />
     </register>
-    <register name="Timer_Animacion_CONTROL" address="0x40004F0C" bitWidth="8" desc="TMRx.CFG0">
+    <register name="Timer_Animacion_CONTROL" address="0x40004F0C" bitWidth="8" desc="TMRx.CFG0" hidden="false">
       <field name="EN" from="0" to="0" access="RW" resetVal="" desc="Enables timer/comparator." />
       <field name="MODE" from="1" to="1" access="RW" resetVal="" desc="Mode. (0 = Timer; 1 = Comparator)">
         <value name="Timer" value="0" desc="Timer mode. CNT/CMP register holds timer count value." />
@@ -706,7 +706,7 @@
       </field>
       <field name="DEADBAND_PERIOD" from="7" to="6" access="RW" resetVal="" desc="Deadband Period" />
     </register>
-    <register name="Timer_Animacion_CONTROL2" address="0x40004F0D" bitWidth="8" desc="TMRx.CFG1">
+    <register name="Timer_Animacion_CONTROL2" address="0x40004F0D" bitWidth="8" desc="TMRx.CFG1" hidden="false">
       <field name="IRQ_SEL" from="0" to="0" access="RW" resetVal="" desc="Irq selection. (0 = raw interrupts; 1 = status register interrupts)" />
       <field name="FTC" from="1" to="1" access="RW" resetVal="" desc="First Terminal Count (FTC). Setting this bit forces a single pulse on the TC pin when first enabled.">
         <value name="Disable FTC" value="0" desc="Disable the single cycle pulse, which signifies the timer is starting." />
@@ -717,7 +717,7 @@
       <field name="CLK_BUS_EN_SEL" from="6" to="4" access="RW" resetVal="" desc="Digital Global Clock selection." />
       <field name="BUS_CLK_SEL" from="7" to="7" access="RW" resetVal="" desc="Bus Clock selection." />
     </register>
-    <register name="Timer_Animacion_CONTROL3_" address="0x40004F0E" bitWidth="8" desc="TMRx.CFG2">
+    <register name="Timer_Animacion_CONTROL3_" address="0x40004F0E" bitWidth="8" desc="TMRx.CFG2" hidden="false">
       <field name="TMR_CFG" from="1" to="0" access="RW" resetVal="" desc="Timer configuration (MODE = 0): 000 = Continuous; 001 = Pulsewidth; 010 = Period; 011 = Stop on IRQ">
         <value name="Continuous" value="0" desc="Timer runs while EN bit of CFG0 register is set to '1'." />
         <value name="Pulsewidth" value="1" desc="Timer runs from positive to negative edge of TIMEREN." />
@@ -735,28 +735,28 @@
       </field>
       <field name="HW_EN" from="7" to="7" access="RW" resetVal="" desc="When set Timer Enable controls counting." />
     </register>
-    <register name="Timer_Animacion_PERIOD" address="0x40004F10" bitWidth="16" desc="TMRx.PER0 - Assigned Period" />
-    <register name="Timer_Animacion_COUNTER" address="0x40004F12" bitWidth="16" desc="TMRx.CNT_CMP0 - Current Down Counter Value" />
+    <register name="Timer_Animacion_PERIOD" address="0x40004F10" bitWidth="16" desc="TMRx.PER0 - Assigned Period" hidden="false" />
+    <register name="Timer_Animacion_COUNTER" address="0x40004F12" bitWidth="16" desc="TMRx.CNT_CMP0 - Current Down Counter Value" hidden="false" />
   </block>
-  <block name="IB2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Tx_LCD_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Rx_LCD_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="LCD_1" BASE="0x0" SIZE="0x0" desc="UART" visible="true">
-    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="RX_LCD_1_RX_ADDRESS1" address="0x40006429" bitWidth="8" desc="RX Address1 Register" />
-    <register name="RX_LCD_1_RX_ADDRESS2" address="0x40006439" bitWidth="8" desc="RX Address2 Register" />
-    <register name="TX_LCD_1_TX_DATA" address="0x40006447" bitWidth="8" desc="TX Data Register" />
-    <register name="RX_LCD_1_RX_DATA" address="0x40006449" bitWidth="8" desc="RX Data Register" />
-    <register name="TX_LCD_1_TX_STATUS" address="0x40006467" bitWidth="8" desc="TX status register">
+  <block name="IB2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Tx_LCD_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Rx_LCD_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="LCD_1" BASE="0x0" SIZE="0x0" desc="UART" visible="true" hidden="false">
+    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="RX_LCD_1_RX_ADDRESS1" address="0x40006528" bitWidth="8" desc="RX Address1 Register" hidden="false" />
+    <register name="RX_LCD_1_RX_ADDRESS2" address="0x40006538" bitWidth="8" desc="RX Address2 Register" hidden="false" />
+    <register name="RX_LCD_1_RX_DATA" address="0x40006548" bitWidth="8" desc="RX Data Register" hidden="false" />
+    <register name="TX_LCD_1_TX_DATA" address="0x40006549" bitWidth="8" desc="TX Data Register" hidden="false" />
+    <register name="TX_LCD_1_TX_STATUS" address="0x40006569" bitWidth="8" desc="TX status register" hidden="false">
       <field name="LCD_1_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="LCD_1_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="LCD_1_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
       <field name="LCD_1_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
     </register>
-    <register name="RX_LCD_1_RX_STATUS" address="0x40006567" bitWidth="8" desc="RX status register">
+    <register name="RX_LCD_1_RX_STATUS" address="0x4000656B" bitWidth="8" desc="RX status register" hidden="false">
       <field name="LCD_1_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="LCD_1_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="LCD_1_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" />
@@ -766,24 +766,24 @@
       <field name="LCD_1_RX_STS_ADDR_MATCH" from="6" to="6" access="R" resetVal="" desc="" />
     </register>
   </block>
-  <block name="Tx_LCD_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Rx_LCD_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="LCD_2" BASE="0x0" SIZE="0x0" desc="UART" visible="true">
-    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="TX_LCD_2_TX_DATA" address="0x40006444" bitWidth="8" desc="TX Data Register" />
-    <register name="TX_LCD_2_TX_STATUS" address="0x40006464" bitWidth="8" desc="TX status register">
+  <block name="Tx_LCD_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Rx_LCD_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="LCD_2" BASE="0x0" SIZE="0x0" desc="UART" visible="true" hidden="false">
+    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="TX_LCD_2_TX_DATA" address="0x40006445" bitWidth="8" desc="TX Data Register" hidden="false" />
+    <register name="TX_LCD_2_TX_STATUS" address="0x40006465" bitWidth="8" desc="TX status register" hidden="false">
       <field name="LCD_2_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="LCD_2_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="LCD_2_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
       <field name="LCD_2_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
     </register>
-    <register name="RX_LCD_2_RX_ADDRESS1" address="0x40006528" bitWidth="8" desc="RX Address1 Register" />
-    <register name="RX_LCD_2_RX_ADDRESS2" address="0x40006538" bitWidth="8" desc="RX Address2 Register" />
-    <register name="RX_LCD_2_RX_DATA" address="0x40006548" bitWidth="8" desc="RX Data Register" />
-    <register name="RX_LCD_2_RX_STATUS" address="0x4000656B" bitWidth="8" desc="RX status register">
+    <register name="RX_LCD_2_RX_ADDRESS1" address="0x4000652B" bitWidth="8" desc="RX Address1 Register" hidden="false" />
+    <register name="RX_LCD_2_RX_ADDRESS2" address="0x4000653B" bitWidth="8" desc="RX Address2 Register" hidden="false" />
+    <register name="RX_LCD_2_RX_DATA" address="0x4000654B" bitWidth="8" desc="RX Data Register" hidden="false" />
+    <register name="RX_LCD_2_RX_STATUS" address="0x40006564" bitWidth="8" desc="RX status register" hidden="false">
       <field name="LCD_2_RX_STS_MRKSPC" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="LCD_2_RX_STS_BREAK" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="LCD_2_RX_STS_PAR_ERROR" from="2" to="2" access="R" resetVal="" desc="" />
