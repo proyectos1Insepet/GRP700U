@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Unificada\Unificada\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Unificada">
 <ExpandedNodeIds>
 <v>Unificada</v>
 <v>Unificada\Unificada</v>
@@ -392,42 +392,6 @@
 <VisibleNodeIds>
 <v>Unificada</v>
 <v>Unificada\Unificada</v>
-<v>Unificada\Unificada\CortexM3</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Bootloadable_1.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cybootloader.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_BOOT.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_INT.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_MASTER.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_PM.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_SLAVE.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\IB1.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\IB2.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\ibuton.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Impresora.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Impresora_BOOT.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Impresora_INT.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Impresora_IntClock.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Impresora_PM.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_1.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_2.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_3.lst</v>
-<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_4.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -488,10 +452,22 @@
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
 </dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\Unificada.cydsn\main.c" />
+<name v=".\Unificada.cydsn\VariablesG.h" />
+<name v=".\Unificada.cydsn\Generated_Source\PSoC5\Timer_Animacion.c" />
+<name v=".\Unificada.cydsn\Print.c" />
+<name v=".\Unificada.cydsn\Protocolo.c" />
+<name v=".\Unificada.cydsn\TopDesign\TopDesign.cysch" />
+</OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
