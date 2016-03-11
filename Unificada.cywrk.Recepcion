@@ -281,6 +281,95 @@
 <ExpandedNodeIds>
 <v>Unificada</v>
 <v>Unificada\Unificada</v>
+<v>Unificada\Unificada\CortexM3</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Bootloadable_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cybootloader.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_BOOT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_INT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_MASTER.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_SLAVE.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\IB1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\IB2.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\ibuton.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Impresora.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Impresora_BOOT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Impresora_INT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Impresora_IntClock.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Impresora_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_2.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_3.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_4.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_1_BOOT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_1_INT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_1_IntClock.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_1_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_2.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_2_BOOT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_2_INT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_2_IntClock.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_2_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\PC.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\PC_BOOT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\PC_INT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\PC_IntClock.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\PC_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_WP.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Print.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Protocolo.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\SCL_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\SDA_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\SDown.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Sonido.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Surtidor.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Surtidor_BOOT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Surtidor_INT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Surtidor_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Timer_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Timer_1_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Timer_2.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Timer_2_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Timer_Animacion.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Timer_Animacion_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Timer_Animacion2.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Timer_Animacion2_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\timer_clock.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\timer_clock_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\VDAC8_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\VDAC8_1_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\VDAC8_2.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\VDAC8_2_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\VDAC8_3.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\VDAC8_3_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\VinA.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\VinB.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Vmas.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Vmenos.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Volumen.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Unificada.cyacd</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Unificada.elf</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Unificada.hex</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Unificada.map</v>
 <v>Unificada\Unificada\Unificada.gpdsc</v>
 <v>Unificada\Unificada\Unificada.rpt</v>
 <v>Unificada\Unificada\Unificada_timing.html</v>
@@ -288,9 +377,33 @@
 <VisibleNodeIds>
 <v>Unificada</v>
 <v>Unificada\Unificada</v>
-<v>Unificada\Unificada\Unificada.gpdsc</v>
-<v>Unificada\Unificada\Unificada.rpt</v>
-<v>Unificada\Unificada\Unificada_timing.html</v>
+<v>Unificada\Unificada\CortexM3</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Bootloadable_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cybootloader.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_BOOT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_INT.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_MASTER.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_PM.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\I2C_1_SLAVE.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\IB1.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\IB2.lst</v>
+<v>Unificada\Unificada\CortexM3\ARM_GCC_493\Debug\Listing Files\ibuton.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

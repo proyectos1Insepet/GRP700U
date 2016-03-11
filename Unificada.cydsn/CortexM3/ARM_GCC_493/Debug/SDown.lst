@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
   29:.\Generated_Source\PSoC5/SDown.c **** * Summary:
   30:.\Generated_Source\PSoC5/SDown.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/SDown.c **** *
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 2
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/SDown.c **** * Parameters:  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
   53:.\Generated_Source\PSoC5/SDown.c **** * Parameters:  
   54:.\Generated_Source\PSoC5/SDown.c **** *  mode:  Change the pins to one of the following drive modes.
   55:.\Generated_Source\PSoC5/SDown.c **** *
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 3
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 3
 
 
   56:.\Generated_Source\PSoC5/SDown.c **** *  SDown_DM_STRONG     Strong Drive 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
   80:.\Generated_Source\PSoC5/SDown.c **** *  Read the current value on the pins of the Digital Port in right justified 
   81:.\Generated_Source\PSoC5/SDown.c **** *  form.
   82:.\Generated_Source\PSoC5/SDown.c **** *
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 4
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 4
 
 
   83:.\Generated_Source\PSoC5/SDown.c **** * Parameters:  
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  111:.\Generated_Source\PSoC5/SDown.c **** *  
  112:.\Generated_Source\PSoC5/SDown.c **** *******************************************************************************/
  113:.\Generated_Source\PSoC5/SDown.c **** uint8 SDown_ReadDataReg(void) 
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 5
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 5
 
 
  114:.\Generated_Source\PSoC5/SDown.c **** {
@@ -272,48 +272,48 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  141 0006 00000000 		.4byte	.Ldebug_abbrev0
  142 000a 04       		.byte	0x4
  143 000b 01       		.uleb128 0x1
- 144 000c B0000000 		.4byte	.LASF20
+ 144 000c C5000000 		.4byte	.LASF20
  145 0010 01       		.byte	0x1
- 146 0011 9C010000 		.4byte	.LASF21
- 147 0015 25000000 		.4byte	.LASF22
+ 146 0011 B1010000 		.4byte	.LASF21
+ 147 0015 4A000000 		.4byte	.LASF22
  148 0019 00000000 		.4byte	.Ldebug_ranges0+0
  149 001d 00000000 		.4byte	0
  150 0021 00000000 		.4byte	.Ldebug_line0
  151 0025 02       		.uleb128 0x2
  152 0026 01       		.byte	0x1
  153 0027 06       		.byte	0x6
- 154 0028 BD010000 		.4byte	.LASF0
+ 154 0028 D2010000 		.4byte	.LASF0
  155 002c 02       		.uleb128 0x2
  156 002d 01       		.byte	0x1
  157 002e 08       		.byte	0x8
- 158 002f 71000000 		.4byte	.LASF1
+ 158 002f 86000000 		.4byte	.LASF1
  159 0033 02       		.uleb128 0x2
  160 0034 02       		.byte	0x2
  161 0035 05       		.byte	0x5
- 162 0036 8C010000 		.4byte	.LASF2
+ 162 0036 A1010000 		.4byte	.LASF2
  163 003a 02       		.uleb128 0x2
  164 003b 02       		.byte	0x2
  165 003c 07       		.byte	0x7
- 166 003d 96000000 		.4byte	.LASF3
+ 166 003d AB000000 		.4byte	.LASF3
  167 0041 02       		.uleb128 0x2
  168 0042 04       		.byte	0x4
  169 0043 05       		.byte	0x5
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 6
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 6
 
 
  170 0044 11000000 		.4byte	.LASF4
  171 0048 02       		.uleb128 0x2
  172 0049 04       		.byte	0x4
  173 004a 07       		.byte	0x7
- 174 004b 84000000 		.4byte	.LASF5
+ 174 004b 99000000 		.4byte	.LASF5
  175 004f 02       		.uleb128 0x2
  176 0050 08       		.byte	0x8
  177 0051 05       		.byte	0x5
- 178 0052 79010000 		.4byte	.LASF6
+ 178 0052 8E010000 		.4byte	.LASF6
  179 0056 02       		.uleb128 0x2
  180 0057 08       		.byte	0x8
  181 0058 07       		.byte	0x7
- 182 0059 5D010000 		.4byte	.LASF7
+ 182 0059 72010000 		.4byte	.LASF7
  183 005d 03       		.uleb128 0x3
  184 005e 04       		.byte	0x4
  185 005f 05       		.byte	0x5
@@ -321,33 +321,33 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  187 0064 02       		.uleb128 0x2
  188 0065 04       		.byte	0x4
  189 0066 07       		.byte	0x7
- 190 0067 3E010000 		.4byte	.LASF8
+ 190 0067 53010000 		.4byte	.LASF8
  191 006b 04       		.uleb128 0x4
- 192 006c 96010000 		.4byte	.LASF12
+ 192 006c AB010000 		.4byte	.LASF12
  193 0070 02       		.byte	0x2
  194 0071 B4       		.byte	0xb4
  195 0072 2C000000 		.4byte	0x2c
  196 0076 02       		.uleb128 0x2
  197 0077 04       		.byte	0x4
  198 0078 04       		.byte	0x4
- 199 0079 58000000 		.4byte	.LASF9
+ 199 0079 31000000 		.4byte	.LASF9
  200 007d 02       		.uleb128 0x2
  201 007e 08       		.byte	0x8
  202 007f 04       		.byte	0x4
- 203 0080 A9000000 		.4byte	.LASF10
+ 203 0080 BE000000 		.4byte	.LASF10
  204 0084 02       		.uleb128 0x2
  205 0085 01       		.byte	0x1
  206 0086 08       		.byte	0x8
- 207 0087 87010000 		.4byte	.LASF11
+ 207 0087 9C010000 		.4byte	.LASF11
  208 008b 05       		.uleb128 0x5
- 209 008c 7F000000 		.4byte	.LASF13
+ 209 008c 94000000 		.4byte	.LASF13
  210 0090 02       		.byte	0x2
  211 0091 5E01     		.2byte	0x15e
  212 0093 97000000 		.4byte	0x97
  213 0097 06       		.uleb128 0x6
  214 0098 6B000000 		.4byte	0x6b
  215 009c 07       		.uleb128 0x7
- 216 009d 4C000000 		.4byte	.LASF14
+ 216 009d 25000000 		.4byte	.LASF14
  217 00a1 01       		.byte	0x1
  218 00a2 27       		.byte	0x27
  219 00a3 00000000 		.4byte	.LFB0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  224 00b1 08       		.uleb128 0x8
  225 00b2 00000000 		.4byte	.LASF16
  226 00b6 01       		.byte	0x1
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 7
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 7
 
 
  227 00b7 27       		.byte	0x27
@@ -373,7 +373,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  236 00cc 53       		.byte	0x53
  237 00cd 00       		.byte	0
  238 00ce 07       		.uleb128 0x7
- 239 00cf 5E000000 		.4byte	.LASF15
+ 239 00cf 37000000 		.4byte	.LASF15
  240 00d3 01       		.byte	0x1
  241 00d4 45       		.byte	0x45
  242 00d5 00000000 		.4byte	.LFB1
@@ -382,7 +382,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  245 00de 9C       		.byte	0x9c
  246 00df F3000000 		.4byte	0xf3
  247 00e3 08       		.uleb128 0x8
- 248 00e4 74010000 		.4byte	.LASF17
+ 248 00e4 89010000 		.4byte	.LASF17
  249 00e8 01       		.byte	0x1
  250 00e9 45       		.byte	0x45
  251 00ea 6B000000 		.4byte	0x6b
@@ -398,7 +398,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  261 0106 01       		.uleb128 0x1
  262 0107 9C       		.byte	0x9c
  263 0108 0A       		.uleb128 0xa
- 264 0109 4B010000 		.4byte	.LASF19
+ 264 0109 60010000 		.4byte	.LASF19
  265 010d 01       		.byte	0x1
  266 010e 71       		.byte	0x71
  267 010f 6B000000 		.4byte	0x6b
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  281 0006 0B       		.uleb128 0xb
  282 0007 03       		.uleb128 0x3
  283 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 8
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 8
 
 
  284 0009 1B       		.uleb128 0x1b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  338 003f 49       		.uleb128 0x49
  339 0040 13       		.uleb128 0x13
  340 0041 00       		.byte	0
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 9
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 9
 
 
  341 0042 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  395 0079 0B       		.uleb128 0xb
  396 007a 3B       		.uleb128 0x3b
  397 007b 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 10
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 10
 
 
  398 007c 49       		.uleb128 0x49
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  452 0030 18000000 		.4byte	.LFE1
  453 0034 0400     		.2byte	0x4
  454 0036 F3       		.byte	0xf3
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 11
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 11
 
 
  455 0037 01       		.uleb128 0x1
@@ -658,113 +658,117 @@ ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 1
  500 001a 53446F77 		.ascii	"SDown_Read\000"
  500      6E5F5265 
  500      616400
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 12
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 12
 
 
- 501              	.LASF22:
- 502 0025 443A5C56 		.ascii	"D:\\Version MUX\\GRP700U\\Unificada.cydsn\000"
- 502      65727369 
- 502      6F6E204D 
- 502      55585C47 
- 502      52503730 
- 503              	.LASF14:
- 504 004c 53446F77 		.ascii	"SDown_Write\000"
- 504      6E5F5772 
- 504      69746500 
- 505              	.LASF9:
- 506 0058 666C6F61 		.ascii	"float\000"
- 506      7400
- 507              	.LASF15:
- 508 005e 53446F77 		.ascii	"SDown_SetDriveMode\000"
- 508      6E5F5365 
- 508      74447269 
- 508      76654D6F 
- 508      646500
- 509              	.LASF1:
- 510 0071 756E7369 		.ascii	"unsigned char\000"
- 510      676E6564 
- 510      20636861 
- 510      7200
- 511              	.LASF13:
- 512 007f 72656738 		.ascii	"reg8\000"
- 512      00
- 513              	.LASF5:
- 514 0084 6C6F6E67 		.ascii	"long unsigned int\000"
- 514      20756E73 
- 514      69676E65 
- 514      6420696E 
- 514      7400
- 515              	.LASF3:
- 516 0096 73686F72 		.ascii	"short unsigned int\000"
- 516      7420756E 
- 516      7369676E 
- 516      65642069 
- 516      6E7400
- 517              	.LASF10:
- 518 00a9 646F7562 		.ascii	"double\000"
- 518      6C6500
- 519              	.LASF20:
- 520 00b0 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 520      4320342E 
- 520      392E3320 
- 520      32303135 
- 520      30333033 
- 521 00e3 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 521      20726576 
- 521      6973696F 
- 521      6E203232 
- 521      31323230 
- 522 0116 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 522      66756E63 
- 522      74696F6E 
- 522      2D736563 
-ARM GAS  C:\Users\Oscar\AppData\Local\Temp\cccKQPsd.s 			page 13
+ 501              	.LASF14:
+ 502 0025 53446F77 		.ascii	"SDown_Write\000"
+ 502      6E5F5772 
+ 502      69746500 
+ 503              	.LASF9:
+ 504 0031 666C6F61 		.ascii	"float\000"
+ 504      7400
+ 505              	.LASF15:
+ 506 0037 53446F77 		.ascii	"SDown_SetDriveMode\000"
+ 506      6E5F5365 
+ 506      74447269 
+ 506      76654D6F 
+ 506      646500
+ 507              	.LASF22:
+ 508 004a 433A5C55 		.ascii	"C:\\Users\\Recepcion\\Documents\\NMUX\\Unificada\\U"
+ 508      73657273 
+ 508      5C526563 
+ 508      65706369 
+ 508      6F6E5C44 
+ 509 0077 6E696669 		.ascii	"nificada.cydsn\000"
+ 509      63616461 
+ 509      2E637964 
+ 509      736E00
+ 510              	.LASF1:
+ 511 0086 756E7369 		.ascii	"unsigned char\000"
+ 511      676E6564 
+ 511      20636861 
+ 511      7200
+ 512              	.LASF13:
+ 513 0094 72656738 		.ascii	"reg8\000"
+ 513      00
+ 514              	.LASF5:
+ 515 0099 6C6F6E67 		.ascii	"long unsigned int\000"
+ 515      20756E73 
+ 515      69676E65 
+ 515      6420696E 
+ 515      7400
+ 516              	.LASF3:
+ 517 00ab 73686F72 		.ascii	"short unsigned int\000"
+ 517      7420756E 
+ 517      7369676E 
+ 517      65642069 
+ 517      6E7400
+ 518              	.LASF10:
+ 519 00be 646F7562 		.ascii	"double\000"
+ 519      6C6500
+ 520              	.LASF20:
+ 521 00c5 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 521      4320342E 
+ 521      392E3320 
+ 521      32303135 
+ 521      30333033 
+ 522 00f8 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 522      20726576 
+ 522      6973696F 
+ 522      6E203232 
+ 522      31323230 
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccxY4DuT.s 			page 13
 
 
- 522      74696F6E 
- 523              	.LASF8:
- 524 013e 756E7369 		.ascii	"unsigned int\000"
- 524      676E6564 
- 524      20696E74 
- 524      00
- 525              	.LASF19:
- 526 014b 53446F77 		.ascii	"SDown_ReadDataReg\000"
- 526      6E5F5265 
- 526      61644461 
- 526      74615265 
- 526      6700
- 527              	.LASF7:
- 528 015d 6C6F6E67 		.ascii	"long long unsigned int\000"
- 528      206C6F6E 
- 528      6720756E 
- 528      7369676E 
- 528      65642069 
- 529              	.LASF17:
- 530 0174 6D6F6465 		.ascii	"mode\000"
- 530      00
- 531              	.LASF6:
- 532 0179 6C6F6E67 		.ascii	"long long int\000"
- 532      206C6F6E 
- 532      6720696E 
- 532      7400
- 533              	.LASF11:
- 534 0187 63686172 		.ascii	"char\000"
- 534      00
- 535              	.LASF2:
- 536 018c 73686F72 		.ascii	"short int\000"
- 536      7420696E 
- 536      7400
- 537              	.LASF12:
- 538 0196 75696E74 		.ascii	"uint8\000"
- 538      3800
- 539              	.LASF21:
- 540 019c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\SDown.c\000"
- 540      6E657261 
- 540      7465645F 
- 540      536F7572 
- 540      63655C50 
- 541              	.LASF0:
- 542 01bd 7369676E 		.ascii	"signed char\000"
- 542      65642063 
- 542      68617200 
- 543              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 523 012b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 523      66756E63 
+ 523      74696F6E 
+ 523      2D736563 
+ 523      74696F6E 
+ 524              	.LASF8:
+ 525 0153 756E7369 		.ascii	"unsigned int\000"
+ 525      676E6564 
+ 525      20696E74 
+ 525      00
+ 526              	.LASF19:
+ 527 0160 53446F77 		.ascii	"SDown_ReadDataReg\000"
+ 527      6E5F5265 
+ 527      61644461 
+ 527      74615265 
+ 527      6700
+ 528              	.LASF7:
+ 529 0172 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 529      206C6F6E 
+ 529      6720756E 
+ 529      7369676E 
+ 529      65642069 
+ 530              	.LASF17:
+ 531 0189 6D6F6465 		.ascii	"mode\000"
+ 531      00
+ 532              	.LASF6:
+ 533 018e 6C6F6E67 		.ascii	"long long int\000"
+ 533      206C6F6E 
+ 533      6720696E 
+ 533      7400
+ 534              	.LASF11:
+ 535 019c 63686172 		.ascii	"char\000"
+ 535      00
+ 536              	.LASF2:
+ 537 01a1 73686F72 		.ascii	"short int\000"
+ 537      7420696E 
+ 537      7400
+ 538              	.LASF12:
+ 539 01ab 75696E74 		.ascii	"uint8\000"
+ 539      3800
+ 540              	.LASF21:
+ 541 01b1 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\SDown.c\000"
+ 541      6E657261 
+ 541      7465645F 
+ 541      536F7572 
+ 541      63655C50 
+ 542              	.LASF0:
+ 543 01d2 7369676E 		.ascii	"signed char\000"
+ 543      65642063 
+ 543      68617200 
+ 544              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

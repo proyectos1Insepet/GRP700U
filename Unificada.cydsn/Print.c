@@ -44,32 +44,32 @@
 *                                            MENSAJES
 *********************************************************************************************************
 */
-uint8 msn_eds[20]="  SERVICE STATION";
+uint8 msn_eds[20]="ESTACION DE SERVICIO";
 uint8 msn_nit[4]="NIT ";
-uint8 msn_tel[4]="PH:";
-uint8 msn_numero[8]="Number: ";
-uint8 msn_fecha[7]="Date: ";
-uint8 msn_hora[7]="Hour:  ";
-uint8 msn_pos[10]="Position: ";
+uint8 msn_tel[4]="tEL:";
+uint8 msn_numero[8]="Numero: ";
+uint8 msn_fecha[7]="Fecha:";
+uint8 msn_hora[7]="Hora:  ";
+uint8 msn_pos[10]="Posicion: ";
 uint8 msn_ppu[14]="PPU:      $/G ";
-uint8 msn_vol[13]="Volume:   G ";
-uint8 msn_din[13]="Money:    $ ";
-uint8 msn_placa[10]="Plate:    ";
-uint8 msn_cuenta[11]="Account:   ";
+uint8 msn_vol[13]="Volumen:  G ";
+uint8 msn_din[13]="Dinero:   $ ";
+uint8 msn_placa[10]="Placa:    ";
+uint8 msn_cuenta[11]="Cuenta:    ";
 uint8 msn_km[11]="Km:        ";
 uint8 msn_id[11]="Id:        ";
-uint8 msn_copia[6]="COPY ";
+uint8 msn_copia[6]="COPIA";
 uint8 msn_corriente[9]="DIESEL P";
 uint8 msn_diesel[9]="SANS P 95";
 uint8 msn_extra[9]="DIESEL";
 uint8 msn_kero[5]="KERO";
-uint8 msn_producto[10]="Product:  ";
-uint8 msn_fcorte[16]="Shift date: ";
-uint8 msn_hcorte[16]="Shift time:  ";
-uint8 msn_idcorte[16]="Consecutive:    ";
-uint8 msn_ufcorte[24]="Last shift date: ";
-uint8 msn_uhcorte[24]="Last shift time:  ";
-uint8 msn_consecutivo[24]="Last shift time:  ";
+uint8 msn_producto[10]="Producto: ";
+uint8 msn_fcorte[16]="Fecha corte: ";
+uint8 msn_hcorte[16]="Hora corte:  ";
+uint8 msn_idcorte[16]="Consecutivo:    ";
+uint8 msn_ufcorte[24]="Ultima Fecha corte:";
+uint8 msn_uhcorte[24]="Ultima Hora corte:  ";
+uint8 msn_consecutivo[24]="Ultima Hora corte: ";
 
 
 /*
