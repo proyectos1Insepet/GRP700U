@@ -111,6 +111,11 @@ uint8 print1[2], print2[2];												//Puerto de las impresoras
 uint8 copia_recibo[2];													//activar copia de recibo
 uint16 id_corte;														//consecutivo del corte
 uint8  id_venta[6];														//Consecutivo de Venta
+uint8  nombreproducto;                                                  //Para guardar en la estructura del nombre del producto
+uint8 producto1n[10];
+uint8 producto2n[10];
+uint8 producto3n[10];
+uint8 producto4n[10];
 volatile int no_venta;													//Consecutivo de Venta entero	 
 /*
 1	Petrobras
@@ -137,7 +142,7 @@ struct buffer{
     uint8 posventa;
     uint8 cedula[10];
     uint8 password[9];
-	uint8 turno;	
+	uint8 turno;    
 };
 struct buffer Buffer_LCD1;
 struct buffer Buffer_LCD2;

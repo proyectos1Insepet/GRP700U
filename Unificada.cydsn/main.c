@@ -86,6 +86,7 @@ void init(void){
     PC_Start();
     VDAC8_3_Start();
     CyDelay(5);	
+
 	/****Lectura de variables en memoria eeprom****/
 	/*serial[0]=16;
 	y=0;
@@ -138,6 +139,10 @@ void init(void){
 		for(x=1;x<=8;x++){
 			rventa.password[x]=x;
 		}	
+	}
+    leer_eeprom(1130,10);
+    for(x=0;x<=buffer_i2c[0];x++){
+		producto1n[x]=buffer_i2c[x];
 	}
 	leer_eeprom(671,5);
 	if(buffer_i2c[0]==4){
@@ -592,14 +597,14 @@ void polling_LCD1(void){
 		        count_protector=0; 		        
 		        flujo_LCD=10;                         	
 			 }
-//			 else{
-//                set_imagen(1,10);
-//				Buffer_LCD1.posventa=0;	
-//		        isr_3_StartEx(animacion); 
-//		        Timer_Animacion_Start();
-//		        count_protector=0;
-//                flujo_LCD=9;				
-//			 }
+			 else{
+              set_imagen(1,11);
+			  Buffer_LCD1.posventa=0;	
+		      isr_3_StartEx(animacion); 
+		      Timer_Animacion_Start();
+		      count_protector=0;
+              flujo_LCD=10;				
+			 }
             break;            
          } 
         break;
@@ -670,10 +675,14 @@ void polling_LCD1(void){
          if(LCD_1_GetRxBufferSize()==8){
             if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
                 switch(LCD_1_rxBuffer[3]){
-                    case 0x39:                          //Si Imprime pasar a placa
-                      set_imagen(1,10);
+                    case 0x39:                          //Si Imprime pasar a placa                      
                       teclas1 = 0;
-                      flujo_LCD=9; 
+                      if((Buffer_LCD1.preset&0x04)!=0x04){
+                        set_imagen(1,10);
+                        flujo_LCD=9; 
+                      }else{
+                        flujo_LCD=13;
+                      }
                     break; 
                     
                     case 0x38:                          //No Imprime 
@@ -1046,7 +1055,8 @@ void polling_LCD1(void){
                     case 0x76:								 	 //Cambiar Nombre	             
                       set_imagen(1,48);
 					  teclado=0;
-                      teclas1=0;                            	 //Inicia el contador de teclas                         
+                      teclas1=0;                            	 //Inicia el contador de teclas 
+                      nombreproducto = 0;
                       flujo_LCD=24;
                     break;
 					
@@ -1054,13 +1064,15 @@ void polling_LCD1(void){
                       set_imagen(1,121);                       
 					  teclado=2;
                       teclas1=0;                            	 //Inicia el contador de teclas  
+                      nombreproducto = 0;
                       flujo_LCD=24;  					
                     break;
 					
                     case 0x83:								 	 //Cambiar Lema2	             
                       set_imagen(1,122);
 					  teclado=3;
-                      teclas1=0;                            	 //Inicia el contador de teclas                         					
+                      teclas1=0;                            	 //Inicia el contador de teclas 
+                      nombreproducto = 0;
                       flujo_LCD=24;
                     break;					
                     
@@ -1068,6 +1080,7 @@ void polling_LCD1(void){
 					  set_imagen(1,120);
                       teclado=1;                      
                       teclas1=0;                            	 //Inicia el contador de teclas 
+                      nombreproducto = 0;
                       flujo_LCD=24;
                     break;
                     
@@ -1592,20 +1605,40 @@ void polling_LCD1(void){
                     if(LCD_1_rxBuffer[3]<=9){
                         teclas1++;
 						switch(teclado){
-							case 0:
-                        		rventa.nombre[teclas1]=LCD_1_rxBuffer[3]+0x30;
+							case 0:                        		
+                                if(nombreproducto == 1){
+                                    producto1n[teclas1]=LCD_1_rxBuffer[3]+0x30;                                    
+                                }
+                                if(nombreproducto == 0){
+                                    rventa.nombre[teclas1]=LCD_1_rxBuffer[3]+0x30;
+                                }
 							break;
 							
-							case 1:
-                       			rventa.direccion[teclas1]=LCD_1_rxBuffer[3]+0x30;									
+							case 1:                       			
+                                if(nombreproducto == 1){
+                                    producto2n[teclas1]=LCD_1_rxBuffer[3]+0x30;                                    
+                                }
+                                if(nombreproducto == 0){
+                                    rventa.direccion[teclas1]=LCD_1_rxBuffer[3]+0x30;
+                                }
 							break;
 
-							case 2:
-                       			rventa.lema1[teclas1]=LCD_1_rxBuffer[3]+0x30;									
+							case 2:                       			
+                                if(nombreproducto == 1){
+                                    producto3n[teclas1]=LCD_1_rxBuffer[3]+0x30;                                    
+                                }
+                                if(nombreproducto == 0){
+                                    rventa.lema1[teclas1]=LCD_1_rxBuffer[3]+0x30;
+                                }
 							break;								
 
-							case 3:
-                       			rventa.lema2[teclas1]=LCD_1_rxBuffer[3]+0x30;									
+							case 3:                       			
+                                if(nombreproducto == 1){
+                                    producto4n[teclas1]=LCD_1_rxBuffer[3]+0x30;                                    
+                                }
+                                if(nombreproducto == 0){
+                                    rventa.lema2[teclas1]=LCD_1_rxBuffer[3]+0x30;
+                                }
 							break;
 								
 							case 4:
@@ -1744,19 +1777,42 @@ void polling_LCD1(void){
                         teclas1++;                        
 						switch(teclado){
 							case 0:
-                        		rventa.nombre[teclas1]=' ';
-							break;
+		                        if(nombreproducto == 1){
+                                    producto1n[teclas1]=' ';                                    
+                                }
+                                if(nombreproducto == 0){
+                                    rventa.nombre[teclas1]=' ';
+                                }
+                            break;
 							
 							case 1:
-                       			rventa.direccion[teclas1]=' ';									
+                                if(nombreproducto == 1){
+                                    producto2n[teclas1]=' ';                                    
+                                }
+                                if(nombreproducto == 0){
+                                    rventa.direccion[teclas1]=' ';
+                                }
+                       												
 							break;
 
 							case 2:
-                       			rventa.lema1[teclas1]=' ';									
+                                if(nombreproducto == 1){
+                                    producto3n[teclas1]=' ';                                    
+                                }
+                                if(nombreproducto == 0){
+                                    rventa.lema1[teclas1]=' ';
+                                }
+                       												
 							break;								
 
 							case 3:
-                       			rventa.lema2[teclas1]=' ';									
+                                if(nombreproducto == 1){
+                                    producto4n[teclas1]=' ';                                    
+                                }
+                                if(nombreproducto == 0){
+                                    rventa.lema2[teclas1]=' ';
+                                }
+                       												
 							break;
 								
 							case 4:
@@ -1771,26 +1827,46 @@ void polling_LCD1(void){
                                 teclas1++;                            
 								switch(teclado){
 									case 0:
-		                        		rventa.nombre[teclas1]=x+0x41;
-									break;
+		                        		if(nombreproducto == 1){
+                                            producto1n[teclas1]=x+0x41;                                    
+                                        }
+                                        if(nombreproducto == 0){
+                                            rventa.nombre[teclas1]=x+0x41;
+                                        }
+                                    break;
 									
-									case 1:
-		                       			rventa.direccion[teclas1]=x+0x41;									
-									break;
+									case 1:                       			
+                                        if(nombreproducto == 1){
+                                         producto2n[teclas1]=x+0x41;                                    
+                                        }
+                                        if(nombreproducto == 0){
+                                            rventa.direccion[teclas1]=x+0x41;
+                                        }
+							        break;
 
-									case 2:
-		                       			rventa.lema1[teclas1]=x+0x41;									
-									break;								
+									case 2:                       			
+                                        if(nombreproducto == 1){
+                                            producto3n[teclas1]=x+0x41;                                    
+                                        }
+                                        if(nombreproducto == 0){
+                                            rventa.lema1[teclas1]=x+0x41;
+                                        }
+							        break;								
 
-									case 3:
-		                       			rventa.lema2[teclas1]=x+0x41;									
-									break;		
+									case 3:                       			
+                                        if(nombreproducto == 1){
+                                            producto4n[teclas1]=x+0x41;                                    
+                                        }
+                                        if(nombreproducto == 0){
+                                            rventa.lema2[teclas1]=x+0x41;
+                                        }
+							        break;		
 										
 										
 									case 4:
 		                       			Buffer_LCD1.valor[teclas1]=x+0x41;									
 									break;										
-								}								
+								}                                                                                     		                                						
                                 writemini_LCD(1,(x+0x41),teclas1);                            
                             }
                         }
@@ -1838,35 +1914,62 @@ void polling_LCD1(void){
 						}
 						switch(teclado){
 							case 0:
-								rventa.nombre[0]=teclas1;
-								if(write_eeprom(0,rventa.nombre)==0){							//Guarda el nombre en la eeprom
+                                if(nombreproducto == 1){
+                                    producto1n[0]=teclas1;
+                                    write_eeprom(1130,producto1n);	//Guarda el nombre en la eeprom
+									    
+								    }
+                                
+                                if(nombreproducto == 0){
+                                    rventa.nombre[0]=teclas1;
+                                    if(write_eeprom(0,rventa.nombre)==0){							//Guarda el nombre en la eeprom
 									set_imagen(1,85);
 									flujo_LCD=100;
 								}
+                                }
+								
 							break;
 								
 							case 1:
+                                if(nombreproducto == 1){
+                                    producto2n[0]=teclas1;
+                                    write_eeprom(1141,producto2n);	//Guarda el nombre en la eeprom
+                                }
+								if(nombreproducto == 0){    
 								rventa.direccion[0]=teclas1;
 								if(write_eeprom(64,rventa.direccion)==0){						//Guarda la direccion en la eeprom
 									set_imagen(1,85);
 									flujo_LCD=100;
 								}
+                                }
 							break;	
 								
 							case 2:
+                                if(nombreproducto == 1){
+                                    producto3n[0]=teclas1;
+                                    write_eeprom(1152,producto3n);	//Guarda el nombre en la eeprom
+                                }
+                                if(nombreproducto == 0){ 
 								rventa.lema1[0]=teclas1;
 								if(write_eeprom(128,rventa.lema1)==0){							//Guarda el lema 1 en la eeprom
 									set_imagen(1,85);
 									flujo_LCD=100;
 								}
+                                }
 							break;	
 								
 							case 3:
+                                if(nombreproducto == 1){
+                                    producto4n[0]=teclas1;
+                                    write_eeprom(1163,producto4n);	//Guarda el nombre en la eeprom
+                                }
+                                if(nombreproducto == 0){
 								rventa.lema2[0]=teclas1;
 								if(write_eeprom(160,rventa.lema2)==0){							//Guarda el lema 2 en la eeprom
 									set_imagen(1,85);
 									flujo_LCD=100;
 								}
+                                }
 							break;	
 								
 							case 4:
@@ -1892,9 +1995,9 @@ void polling_LCD1(void){
                       set_imagen(1,5); 				
                     break;
                     
-                    case 0x5E:  								//Con ID
-                      flujo_LCD=11;                   
+                    case 0x5E:  								//Con ID                                         
                       set_imagen(1,29);
+                      flujo_LCD=11;
                     break;	
 
                     case 0x7E:									//ir a menu
@@ -1904,7 +2007,7 @@ void polling_LCD1(void){
 					
                 }					
             }
-            CyDelay(100);            
+            CyDelay(70);            
             LCD_1_ClearRxBuffer();
          }		  
 		break;
@@ -1993,24 +2096,29 @@ void polling_LCD1(void){
          if(LCD_1_GetRxBufferSize()==8){
             if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
                 switch(LCD_1_rxBuffer[3]){
-                    case 0x7F:								 	 //Configurar Productos	                               
-                      flujo_LCD=28;    
+                    case 0x7F:								 	 //Configurar Productos	                                                      
                       set_imagen(1,88); 
 					  Grado_LCD(1,0x00,0x73,449); // primer producto
 					  Grado_LCD(1,0x00,0xCF,451); // segundo producto			  
                       Grado_LCD(1,0x01,0x29,453); // tercer producto
                       Grado_LCD(1,0x01,0x7B,1006); //cuarto producto
+                      flujo_LCD=28;   
                     break;
                     
-                    case 0x80:  								 //Version de Digitos
-                      flujo_LCD=29;
+                    case 0x80:  								 //Version de Digitos                      
                       set_imagen(1,6); 	
 					  teclas1=0;
+                      flujo_LCD=29;
                     break;
                     
-                    case 0x81:  								 //PPU
-                      flujo_LCD=30;	
+                    case 0x81:  								 //PPU                      
                       set_imagen(1,109); 	
+                      flujo_LCD=30;	
+                    break;
+                    
+                    case 0x82:  								 //Nombre de productos                      
+                      set_imagen(1,138); 	
+                      flujo_LCD=42;	
                     break;
                    										
                     case 0x7E:									 //ir a menu
@@ -2028,32 +2136,32 @@ void polling_LCD1(void){
          if(LCD_1_GetRxBufferSize()==8){
             if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
                 switch(LCD_1_rxBuffer[3]){
-                    case 0x7F:								 	 //Extra	                               
-                      flujo_LCD=31;    
+                    case 0x7F:								 	 //Extra	                                                         
                       set_imagen(1,6); 
 					  teclas1=0; 
 					  rventa.producto=1;
+                      flujo_LCD=31;
                     break;
                     
-                    case 0x80:  								 //Corriente
-                      flujo_LCD=31;
+                    case 0x80:  								 //Corriente                      
                       set_imagen(1,6); 	 
 					  teclas1=0;
 					  rventa.producto=2;
+                      flujo_LCD=31;
                     break;
                     
-                    case 0x81:  								 //Diesel
-                      flujo_LCD=31;	
+                    case 0x81:  								 //Diesel                      	
                       set_imagen(1,6); 	
 					  teclas1=0;
 					  rventa.producto=3;
+                      flujo_LCD=31;
                     break;
                     
-                    case 0x82:  								 //Otro producto
-                      flujo_LCD=31;	
+                    case 0x82:  								 //Otro producto                      	
                       set_imagen(1,6); 	
 					  teclas1=0;
 					  rventa.producto=4;
+                      flujo_LCD=31;
                     break;
                    										
                     case 0x7E:									 //ir a menu
@@ -2613,20 +2721,20 @@ void polling_LCD1(void){
          if(LCD_1_GetRxBufferSize()==8){
             if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
                 switch(LCD_1_rxBuffer[3]){                               
-                    case 0x91:								//Placa
-                      flujo_LCD=24;     
+                    case 0x91:								//Placa                          
 					  set_imagen(1,10);	
 					  pos_ibutton=1;
 					  teclado=4;
-					  teclas1=0;					
+					  teclas1=0;	
+                      flujo_LCD=24; 
                     break; 
 
-                    case 0x92:								//Cuenta
-                      flujo_LCD=24;     
+                    case 0x92:								//Cuenta                         
 					  set_imagen(1,111);
 					  pos_ibutton=0x21;
 					  teclado=4;
 					  teclas1=0;					
+                      flujo_LCD=24;  
                     break;					
 					
                     case 0x7E:								//ir a menu
@@ -2960,8 +3068,51 @@ void polling_LCD1(void){
             LCD_1_ClearRxBuffer();
          }    
         break;
+        
+        case 42:
+         if(LCD_1_GetRxBufferSize()==8){
+            if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
+                switch(LCD_1_rxBuffer[3]){
+                    case 0x76:								 	 //Cambiar Nombre producto 1	             
+                      set_imagen(1,48);
+					  teclado=0;
+                      teclas1=0;                            	 //Inicia el contador de teclas                         
+                      nombreproducto = 1;
+                      flujo_LCD=24;
+                    break;
+					
+                    case 0x82:								 	 //Cambiar Nombre producto 2	
+                      set_imagen(1,48);                       
+					  teclado=1;
+                      teclas1=0;                            	 //Inicia el contador de teclas 
+                      nombreproducto = 1;
+                      flujo_LCD=24;  					
+                    break;
+					
+                    case 0x83:								 	 //Cambiar Nombre producto 3	             
+                      set_imagen(1,48);
+					  teclado=2;
+                      teclas1=0;                            	 //Inicia el contador de teclas 
+                      nombreproducto = 1;
+                      flujo_LCD=24;
+                    break;					
+                    
+                    case 0x77:  								//Cambiar Nombre producto 4                     
+					  set_imagen(1,48);
+					  teclado=3;
+                      teclas1=0;                            	 //Inicia el contador de teclas
+                      nombreproducto = 1;
+                      flujo_LCD=24;
+                    break;
+                }
+            }
+                
+    }
+        break;
     }
 }
+ 
+        
 
 /*
 *********************************************************************************************************
@@ -2999,8 +3150,7 @@ void polling_LCD2(void){
         break;
         
         case 1:
-         if(LCD_2_GetRxBufferSize()==8){ 
-             flujo_LCD2=2;
+         if(LCD_2_GetRxBufferSize()==8){             
              LCD_2_ClearRxBuffer(); 
              isr_4_Stop(); 
              Timer_Animacion2_Stop();
@@ -3684,14 +3834,14 @@ void polling_LCD2(void){
                     case 0x76:								 	 //Cambiar Nombre	                               
                       set_imagen(2,48); 	
 					  teclado2=0;
-                      teclas2=0;                            	 //Inicia el contador de teclas                        				
+                      teclas2=0;                            	 //Inicia el contador de teclas                       
                       flujo_LCD2=24;    
                     break;
 					
                     case 0x82:								 	 //Cambiar Lema1	                               
                       set_imagen(2,121); 					    
 					  teclado2=2;
-                      teclas2=0;                            	 //Inicia el contador de teclas                        
+                      teclas2=0;                            	 //Inicia el contador de teclas                       
                       flujo_LCD2=24;
                     break;
 					
@@ -4631,25 +4781,26 @@ void polling_LCD2(void){
          if(LCD_2_GetRxBufferSize()==8){
             if((LCD_2_rxBuffer[0]==0xAA) && (LCD_2_rxBuffer[6]==0xC3) && (LCD_2_rxBuffer[7]==0x3C)){
                 switch(LCD_2_rxBuffer[3]){
-                    case 0x7F:								 	 //Configurar Productos	                               
-                      flujo_LCD2=28;    
+                    case 0x7F:								 	 //Configurar Productos	                                                         
                       set_imagen(2,88); 
 					  Grado_LCD(2,0x01,0x29,638);
 					  Grado_LCD(2,0x00,0xCF,636);	
 					  Grado_LCD(2,0x00,0x73,634);
                       Grado_LCD(2,0x01,0x7B,1008);//cuarto producto
+                      flujo_LCD2=28;
                     break;
                     
-                    case 0x80:  								 //Version de Digitos
-                      flujo_LCD2=29;
+                    case 0x80:  								 //Version de Digitos                      
                       set_imagen(2,6); 	
 					  teclas2=0;
+                      flujo_LCD2=29;
                     break;
                     
-                    case 0x81:  								 //PPU
-                      flujo_LCD2=30;	
+                    case 0x81:  								 //PPU                      	
                       set_imagen(2,109); 	
+                      flujo_LCD2=30;
                     break;
+                    
                    										
                     case 0x7E:									 //ir a menu
 					  set_imagen(2,0);
@@ -4666,31 +4817,31 @@ void polling_LCD2(void){
          if(LCD_2_GetRxBufferSize()==8){
             if((LCD_2_rxBuffer[0]==0xAA) && (LCD_2_rxBuffer[6]==0xC3) && (LCD_2_rxBuffer[7]==0x3C)){
                 switch(LCD_2_rxBuffer[3]){
-                    case 0x7F:								 	 //Extra	                               
-                      flujo_LCD2=31;    
+                    case 0x7F:								 	 //Extra	                                                         
                       set_imagen(2,6); 
 					  teclas2=0; 
 					  rventa.producto=1;
+                      flujo_LCD2=31;
                     break;
                     
-                    case 0x80:  								 //Corriente
-                      flujo_LCD2=31;
+                    case 0x80:  								 //Corriente                      
                       set_imagen(2,6); 	 
 					  teclas2=0;
 					  rventa.producto=2;
+                      flujo_LCD2=31;
                     break;
                     
-                    case 0x81:  								 //Diesel
-                      flujo_LCD2=31;	
+                    case 0x81:  								 //Diesel                      	
                       set_imagen(2,6); 	
 					  teclas2=0;
 					  rventa.producto=3;
+                      flujo_LCD2=31;
                     break;
-                    case 0x82:  								 //Otro producto
-                      flujo_LCD2=31;	
+                    case 0x82:  								 //Otro producto                      	
                       set_imagen(2,6); 	
 					  teclas2=0;
 					  rventa.producto=4;
+                      flujo_LCD2=31;
                     break;
                    										
                     case 0x7E:									 //ir a menu
