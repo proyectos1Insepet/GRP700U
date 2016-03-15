@@ -52,6 +52,7 @@ uint8 test[18]="Test de Impresora";
 uint8 puk[8]="18928005";
 uint8 serial[17]="0FFFFF8FEEBEB2DC0";
 uint8 pasword_corte[5]={4,'1','2','3','4'};
+uint8 borrado[10] ="          ";
 CY_ISR(animacion2);
 CY_ISR(animacion);
 /*
@@ -1928,6 +1929,7 @@ void polling_LCD1(void){
 							case 0:
                                 if(nombreproducto == 1){
                                     producto1n[0]=teclas1;
+                                    write_eeprom(1130,borrado);
                                     write_eeprom(1130,producto1n);	//Guarda el nombre en la eeprom
 									    
 								    }
@@ -1945,6 +1947,7 @@ void polling_LCD1(void){
 							case 1:
                                 if(nombreproducto == 1){
                                     producto2n[0]=teclas1;
+                                    write_eeprom(1141,borrado);
                                     write_eeprom(1141,producto2n);	//Guarda el nombre en la eeprom
                                 }
 								if(nombreproducto == 0){    
@@ -1959,6 +1962,7 @@ void polling_LCD1(void){
 							case 2:
                                 if(nombreproducto == 1){
                                     producto3n[0]=teclas1;
+                                    write_eeprom(1152,borrado);
                                     write_eeprom(1152,producto3n);	//Guarda el nombre en la eeprom
                                 }
                                 if(nombreproducto == 0){ 
@@ -1973,6 +1977,7 @@ void polling_LCD1(void){
 							case 3:
                                 if(nombreproducto == 1){
                                     producto4n[0]=teclas1;
+                                    write_eeprom(1163,borrado);
                                     write_eeprom(1163,producto4n);	//Guarda el nombre en la eeprom
                                 }
                                 if(nombreproducto == 0){

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
   29:.\ibuton.c    **** 
   30:.\ibuton.c    **** /*
   31:.\ibuton.c    **** ***************************************************************************************************
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 2
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 2
 
 
   32:.\ibuton.c    **** *                                             INCLUDE FILES
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
   51              	.LVL4:
   62:.\ibuton.c    **** 	    CyDelayUs(5);
   52              		.loc 1 62 0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 3
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 3
 
 
   53 001a 0520     		movs	r0, #5
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
   89              	.LVL14:
   81:.\ibuton.c    **** 	    IB2_Write(1);
   90              		.loc 1 81 0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 4
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 4
 
 
   91 004e 0120     		movs	r0, #1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
   96:.\ibuton.c    **** 	    }	
   97:.\ibuton.c    **** 	}
   98:.\ibuton.c    **** }
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 5
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 5
 
 
  130              		.loc 1 98 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  161              	.LVL24:
  162              	.L13:
  122:.\ibuton.c    **** 	    for(i=0;i<=7;i++){
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 6
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 6
 
 
  123:.\ibuton.c    **** 	        IB1_Write(0); 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  136:.\ibuton.c    **** 	                return 0;                
  137:.\ibuton.c    **** 	           }            
  138:.\ibuton.c    **** 	        }
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 7
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 7
 
 
  139:.\ibuton.c    **** 	        CyDelayUs(50);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  245 0082 0AD0     		beq	.L14
  150:.\ibuton.c    **** 	           IB2_Write(1);
  246              		.loc 1 150 0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 8
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 8
 
 
  247 0084 0120     		movs	r0, #1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  146:.\ibuton.c    **** 	        IB2_Write(0); 
  286              		.loc 1 146 0 discriminator 2
  287 00be 0134     		adds	r4, r4, #1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 9
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 9
 
 
  288              	.LVL51:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  185:.\ibuton.c    **** * Note(s)     : none.
  186:.\ibuton.c    **** ***************************************************************************************************
  187:.\ibuton.c    **** */
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 10
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 10
 
 
  188:.\ibuton.c    **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  198:.\ibuton.c    **** 	        CyDelayUs(100);
  364              		.loc 1 198 0 discriminator 3
  365 002e 6420     		movs	r0, #100
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 11
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 11
 
 
  366 0030 FFF7FEFF 		bl	CyDelayUs
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  408              	.LVL74:
  209:.\ibuton.c    **** 	        CyDelayUs(100);
  409              		.loc 1 209 0 discriminator 3
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 12
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 12
 
 
  410 0066 6420     		movs	r0, #100
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  439              		@ args = 0, pretend = 0, frame = 0
  440              		@ frame_needed = 0, uses_anonymous_args = 0
  441              	.LVL78:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 13
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 13
 
 
  442 0000 38B5     		push	{r3, r4, r5, lr}
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  242:.\ibuton.c    **** 				touch_write(1,0x00);
  487              		.loc 1 242 0
  488 0042 0120     		movs	r0, #1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 14
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 14
 
 
  489 0044 0021     		movs	r1, #0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  530              	.LVL94:
  531              	.L48:
  532 007e 0124     		movs	r4, #1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 15
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 15
 
 
  533 0080 2546     		mov	r5, r4
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  570              		.loc 1 270 0
  571 00b6 601C     		adds	r0, r4, #1
  572 00b8 C4B2     		uxtb	r4, r0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 16
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 16
 
 
  573              	.LVL100:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  608              		.loc 1 287 0
  609 00e2 0220     		movs	r0, #2
  610 00e4 FFF7FEFF 		bl	touch_present
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 17
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 17
 
 
  611              	.LVL109:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  653              	.LVL116:
  654              	.L42:
  300:.\ibuton.c    **** 					}
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 18
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 18
 
 
  301:.\ibuton.c    **** 					for(i=1;i<=Buffer_LCD2.placa[0];i++){
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  697 0160 83F84700 		strb	r0, [r3, #71]
  311:.\ibuton.c    **** 					if((Buffer_LCD2.cuenta[0]!=0xFF)&&(Buffer_LCD2.cuenta[0]<=30)){
  698              		.loc 1 311 0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 19
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 19
 
 
  699 0164 1E28     		cmp	r0, #30
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  739 0196 2046     		mov	r0, r4
  740 0198 38BD     		pop	{r3, r4, r5, pc}
  741              	.LVL132:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 20
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 20
 
 
  742              	.L46:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  342:.\ibuton.c    **** *
  343:.\ibuton.c    **** * Argument(s) : none
  344:.\ibuton.c    **** *
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 21
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 21
 
 
  345:.\ibuton.c    **** * Return(s)   : none
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  360:.\ibuton.c    **** 			touch_write(1,pos);
  814              		.loc 1 360 0
  815 0030 0120     		movs	r0, #1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 22
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 22
 
 
  816 0032 3946     		mov	r1, r7
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  860 0072 FFF7FEFF 		bl	touch_write
  861              	.LVL148:
  369:.\ibuton.c    **** 				touch_write(1,0xAA);	
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 23
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 23
 
 
  862              		.loc 1 369 0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  376:.\ibuton.c    **** 					touch_write(1,0xCC);
  908              		.loc 1 376 0
  909 00c2 0120     		movs	r0, #1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 24
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 24
 
 
  910 00c4 CC21     		movs	r1, #204
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  955 0112 0120     		movs	r0, #1
  956 0114 F021     		movs	r1, #240
  957 0116 FFF7FEFF 		bl	touch_write
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 25
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 25
 
 
  958              	.LVL164:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1004              	.LVL171:
  1005              	.L64:
  388:.\ibuton.c    **** 			                Buffer_LCD1.id[z]=touch_read_byte(1);
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 26
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 26
 
 
  1006              		.loc 1 388 0 is_stmt 0 discriminator 1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1041 0196 3946     		mov	r1, r7
  1042 0198 FFF7FEFF 		bl	touch_write
  1043              	.LVL178:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 27
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 27
 
 
  411:.\ibuton.c    **** 			touch_write(2,0x00);
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1087              		.loc 1 419 0
  1088 01da 0220     		movs	r0, #2
  1089 01dc AA21     		movs	r1, #170
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 28
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 28
 
 
  1090 01de FFF7FEFF 		bl	touch_write
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1135 0226 CC21     		movs	r1, #204
  1136 0228 FFF7FEFF 		bl	touch_write
  1137              	.LVL194:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 29
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 29
 
 
  427:.\ibuton.c    **** 					touch_write(2,0x55);	
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1183              	.LVL203:
  436:.\ibuton.c    **** 						touch_write(2,pos);
  1184              		.loc 1 436 0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 30
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 30
 
 
  1185 027a 0220     		movs	r0, #2
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1231              		.loc 1 438 0 is_stmt 0 discriminator 1
  1232 02c0 104B     		ldr	r3, .L85+8
  1233 02c2 1F68     		ldr	r7, [r3]
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 31
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 31
 
 
  1234 02c4 BD42     		cmp	r5, r7
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1272              	.LVL218:
  1273 02ea 04E0     		b	.L59
  1274              	.LVL219:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 32
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 32
 
 
  1275              	.L81:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1309              		@ args = 0, pretend = 0, frame = 0
  1310              		@ frame_needed = 0, uses_anonymous_args = 0
  1311              		@ link register save eliminated.
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 33
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 33
 
 
  1312              	.LVL222:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1351              		.comm	lado,8,4
  1352              		.comm	producto,1,1
  1353              		.comm	producto2,1,1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 34
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 34
 
 
  1354              		.comm	producto1,1,1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1408              	.Letext0:
  1409              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
  1410              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 35
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 35
 
 
  1411              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1465 0062 08       		.byte	0x8
  1466 0063 07       		.byte	0x7
  1467 0064 67010000 		.4byte	.LASF7
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 36
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 36
 
 
  1468 0068 04       		.uleb128 0x4
@@ -2149,76 +2149,76 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1513 00bf 4A000000 		.4byte	.LASF28
  1514 00c3 98       		.byte	0x98
  1515 00c4 05       		.byte	0x5
- 1516 00c5 84       		.byte	0x84
+ 1516 00c5 85       		.byte	0x85
  1517 00c6 65010000 		.4byte	0x165
  1518 00ca 06       		.uleb128 0x6
  1519 00cb E3020000 		.4byte	.LASF18
  1520 00cf 05       		.byte	0x5
- 1521 00d0 85       		.byte	0x85
+ 1521 00d0 86       		.byte	0x86
  1522 00d1 81000000 		.4byte	0x81
  1523 00d5 00       		.byte	0
  1524 00d6 07       		.uleb128 0x7
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 37
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 37
 
 
  1525 00d7 706F7300 		.ascii	"pos\000"
  1526 00db 05       		.byte	0x5
- 1527 00dc 86       		.byte	0x86
+ 1527 00dc 87       		.byte	0x87
  1528 00dd 81000000 		.4byte	0x81
  1529 00e1 01       		.byte	0x1
  1530 00e2 06       		.uleb128 0x6
  1531 00e3 AE000000 		.4byte	.LASF19
  1532 00e7 05       		.byte	0x5
- 1533 00e8 87       		.byte	0x87
+ 1533 00e8 88       		.byte	0x88
  1534 00e9 81000000 		.4byte	0x81
  1535 00ed 02       		.byte	0x2
  1536 00ee 06       		.uleb128 0x6
  1537 00ef 23010000 		.4byte	.LASF20
  1538 00f3 05       		.byte	0x5
- 1539 00f4 88       		.byte	0x88
+ 1539 00f4 89       		.byte	0x89
  1540 00f5 81000000 		.4byte	0x81
  1541 00f9 03       		.byte	0x3
  1542 00fa 07       		.uleb128 0x7
  1543 00fb 6B6D00   		.ascii	"km\000"
  1544 00fe 05       		.byte	0x5
- 1545 00ff 89       		.byte	0x89
+ 1545 00ff 8A       		.byte	0x8a
  1546 0100 65010000 		.4byte	0x165
  1547 0104 04       		.byte	0x4
  1548 0105 06       		.uleb128 0x6
  1549 0106 B4040000 		.4byte	.LASF21
  1550 010a 05       		.byte	0x5
- 1551 010b 8A       		.byte	0x8a
+ 1551 010b 8B       		.byte	0x8b
  1552 010c 75010000 		.4byte	0x175
  1553 0110 0B       		.byte	0xb
  1554 0111 07       		.uleb128 0x7
  1555 0112 696400   		.ascii	"id\000"
  1556 0115 05       		.byte	0x5
- 1557 0116 8B       		.byte	0x8b
+ 1557 0116 8C       		.byte	0x8c
  1558 0117 75010000 		.4byte	0x175
  1559 011b 29       		.byte	0x29
  1560 011c 06       		.uleb128 0x6
  1561 011d 86010000 		.4byte	.LASF22
  1562 0121 05       		.byte	0x5
- 1563 0122 8C       		.byte	0x8c
+ 1563 0122 8D       		.byte	0x8d
  1564 0123 75010000 		.4byte	0x175
  1565 0127 47       		.byte	0x47
  1566 0128 06       		.uleb128 0x6
  1567 0129 98010000 		.4byte	.LASF23
  1568 012d 05       		.byte	0x5
- 1569 012e 8D       		.byte	0x8d
+ 1569 012e 8E       		.byte	0x8e
  1570 012f 75010000 		.4byte	0x175
  1571 0133 65       		.byte	0x65
  1572 0134 06       		.uleb128 0x6
  1573 0135 7B000000 		.4byte	.LASF24
  1574 0139 05       		.byte	0x5
- 1575 013a 8E       		.byte	0x8e
+ 1575 013a 8F       		.byte	0x8f
  1576 013b 81000000 		.4byte	0x81
  1577 013f 83       		.byte	0x83
  1578 0140 06       		.uleb128 0x6
  1579 0141 CD020000 		.4byte	.LASF25
  1580 0145 05       		.byte	0x5
- 1581 0146 8F       		.byte	0x8f
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 38
+ 1581 0146 90       		.byte	0x90
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 38
 
 
  1582 0147 85010000 		.4byte	0x185
@@ -2226,13 +2226,13 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1584 014c 06       		.uleb128 0x6
  1585 014d 00000000 		.4byte	.LASF26
  1586 0151 05       		.byte	0x5
- 1587 0152 90       		.byte	0x90
+ 1587 0152 91       		.byte	0x91
  1588 0153 95010000 		.4byte	0x195
  1589 0157 8E       		.byte	0x8e
  1590 0158 06       		.uleb128 0x6
  1591 0159 36020000 		.4byte	.LASF27
  1592 015d 05       		.byte	0x5
- 1593 015e 91       		.byte	0x91
+ 1593 015e 92       		.byte	0x92
  1594 015f 81000000 		.4byte	0x81
  1595 0163 97       		.byte	0x97
  1596 0164 00       		.byte	0
@@ -2268,33 +2268,33 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1626 01a6 706F7300 		.ascii	"pos\000"
  1627 01aa 04       		.byte	0x4
  1628 01ab 05       		.byte	0x5
- 1629 01ac 99       		.byte	0x99
+ 1629 01ac 9A       		.byte	0x9a
  1630 01ad E2010000 		.4byte	0x1e2
  1631 01b1 07       		.uleb128 0x7
  1632 01b2 64697200 		.ascii	"dir\000"
  1633 01b6 05       		.byte	0x5
- 1634 01b7 9A       		.byte	0x9a
+ 1634 01b7 9B       		.byte	0x9b
  1635 01b8 81000000 		.4byte	0x81
  1636 01bc 00       		.byte	0
  1637 01bd 06       		.uleb128 0x6
  1638 01be 12030000 		.4byte	.LASF29
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 39
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 39
 
 
  1639 01c2 05       		.byte	0x5
- 1640 01c3 9B       		.byte	0x9b
+ 1640 01c3 9C       		.byte	0x9c
  1641 01c4 81000000 		.4byte	0x81
  1642 01c8 01       		.byte	0x1
  1643 01c9 06       		.uleb128 0x6
  1644 01ca 00050000 		.4byte	.LASF30
  1645 01ce 05       		.byte	0x5
- 1646 01cf 9C       		.byte	0x9c
+ 1646 01cf 9D       		.byte	0x9d
  1647 01d0 81000000 		.4byte	0x81
  1648 01d4 02       		.byte	0x2
  1649 01d5 06       		.uleb128 0x6
  1650 01d6 14000000 		.4byte	.LASF31
  1651 01da 05       		.byte	0x5
- 1652 01db 9D       		.byte	0x9d
+ 1652 01db 9E       		.byte	0x9e
  1653 01dc 81000000 		.4byte	0x81
  1654 01e0 03       		.byte	0x3
  1655 01e1 00       		.byte	0
@@ -2302,18 +2302,18 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1657 01e3 74030000 		.4byte	.LASF32
  1658 01e7 08       		.byte	0x8
  1659 01e8 05       		.byte	0x5
- 1660 01e9 A1       		.byte	0xa1
+ 1660 01e9 A2       		.byte	0xa2
  1661 01ea 03020000 		.4byte	0x203
  1662 01ee 07       		.uleb128 0x7
  1663 01ef 6100     		.ascii	"a\000"
  1664 01f1 05       		.byte	0x5
- 1665 01f2 A2       		.byte	0xa2
+ 1665 01f2 A3       		.byte	0xa3
  1666 01f3 A5010000 		.4byte	0x1a5
  1667 01f7 00       		.byte	0
  1668 01f8 07       		.uleb128 0x7
  1669 01f9 6200     		.ascii	"b\000"
  1670 01fb 05       		.byte	0x5
- 1671 01fc A3       		.byte	0xa3
+ 1671 01fc A4       		.byte	0xa4
  1672 01fd A5010000 		.4byte	0x1a5
  1673 0201 04       		.byte	0x4
  1674 0202 00       		.byte	0
@@ -2321,120 +2321,120 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1676 0204 F8020000 		.4byte	.LASF33
  1677 0208 E1       		.byte	0xe1
  1678 0209 05       		.byte	0x5
- 1679 020a A6       		.byte	0xa6
+ 1679 020a A7       		.byte	0xa7
  1680 020b E8020000 		.4byte	0x2e8
  1681 020f 06       		.uleb128 0x6
  1682 0210 20030000 		.4byte	.LASF34
  1683 0214 05       		.byte	0x5
- 1684 0215 A7       		.byte	0xa7
+ 1684 0215 A8       		.byte	0xa8
  1685 0216 75010000 		.4byte	0x175
  1686 021a 00       		.byte	0
  1687 021b 07       		.uleb128 0x7
  1688 021c 6E697400 		.ascii	"nit\000"
  1689 0220 05       		.byte	0x5
- 1690 0221 A8       		.byte	0xa8
+ 1690 0221 A9       		.byte	0xa9
  1691 0222 E8020000 		.4byte	0x2e8
  1692 0226 1E       		.byte	0x1e
  1693 0227 06       		.uleb128 0x6
  1694 0228 73020000 		.4byte	.LASF35
  1695 022c 05       		.byte	0x5
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 40
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 40
 
 
- 1696 022d A9       		.byte	0xa9
+ 1696 022d AA       		.byte	0xaa
  1697 022e F8020000 		.4byte	0x2f8
  1698 0232 2D       		.byte	0x2d
  1699 0233 06       		.uleb128 0x6
  1700 0234 B9010000 		.4byte	.LASF36
  1701 0238 05       		.byte	0x5
- 1702 0239 AA       		.byte	0xaa
+ 1702 0239 AB       		.byte	0xab
  1703 023a 08030000 		.4byte	0x308
  1704 023e 2F       		.byte	0x2f
  1705 023f 06       		.uleb128 0x6
  1706 0240 01010000 		.4byte	.LASF37
  1707 0244 05       		.byte	0x5
- 1708 0245 AB       		.byte	0xab
+ 1708 0245 AC       		.byte	0xac
  1709 0246 75010000 		.4byte	0x175
  1710 024a 43       		.byte	0x43
  1711 024b 06       		.uleb128 0x6
  1712 024c 51010000 		.4byte	.LASF38
  1713 0250 05       		.byte	0x5
- 1714 0251 AC       		.byte	0xac
+ 1714 0251 AD       		.byte	0xad
  1715 0252 75010000 		.4byte	0x175
  1716 0256 61       		.byte	0x61
  1717 0257 06       		.uleb128 0x6
  1718 0258 57010000 		.4byte	.LASF39
  1719 025c 05       		.byte	0x5
- 1720 025d AD       		.byte	0xad
+ 1720 025d AE       		.byte	0xae
  1721 025e 75010000 		.4byte	0x175
  1722 0262 7F       		.byte	0x7f
  1723 0263 06       		.uleb128 0x6
  1724 0264 A2040000 		.4byte	.LASF40
  1725 0268 05       		.byte	0x5
- 1726 0269 AE       		.byte	0xae
+ 1726 0269 AF       		.byte	0xaf
  1727 026a 18030000 		.4byte	0x318
  1728 026e 9D       		.byte	0x9d
  1729 026f 06       		.uleb128 0x6
  1730 0270 BE000000 		.4byte	.LASF41
  1731 0274 05       		.byte	0x5
- 1732 0275 AF       		.byte	0xaf
+ 1732 0275 B0       		.byte	0xb0
  1733 0276 F8020000 		.4byte	0x2f8
  1734 027a A0       		.byte	0xa0
  1735 027b 06       		.uleb128 0x6
  1736 027c DB000000 		.4byte	.LASF42
  1737 0280 05       		.byte	0x5
- 1738 0281 B0       		.byte	0xb0
+ 1738 0281 B1       		.byte	0xb1
  1739 0282 81000000 		.4byte	0x81
  1740 0286 A2       		.byte	0xa2
  1741 0287 06       		.uleb128 0x6
  1742 0288 6A020000 		.4byte	.LASF43
  1743 028c 05       		.byte	0x5
- 1744 028d B1       		.byte	0xb1
+ 1744 028d B2       		.byte	0xb2
  1745 028e 81000000 		.4byte	0x81
  1746 0292 A3       		.byte	0xa3
  1747 0293 07       		.uleb128 0x7
  1748 0294 70707500 		.ascii	"ppu\000"
  1749 0298 05       		.byte	0x5
- 1750 0299 B2       		.byte	0xb2
+ 1750 0299 B3       		.byte	0xb3
  1751 029a 65010000 		.4byte	0x165
  1752 029e A4       		.byte	0xa4
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 41
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 41
 
 
  1753 029f 06       		.uleb128 0x6
  1754 02a0 FF020000 		.4byte	.LASF44
  1755 02a4 05       		.byte	0x5
- 1756 02a5 B3       		.byte	0xb3
+ 1756 02a5 B4       		.byte	0xb4
  1757 02a6 95010000 		.4byte	0x195
  1758 02aa AB       		.byte	0xab
  1759 02ab 06       		.uleb128 0x6
  1760 02ac B1010000 		.4byte	.LASF45
  1761 02b0 05       		.byte	0x5
- 1762 02b1 B4       		.byte	0xb4
+ 1762 02b1 B5       		.byte	0xb5
  1763 02b2 95010000 		.4byte	0x195
  1764 02b6 B4       		.byte	0xb4
  1765 02b7 06       		.uleb128 0x6
  1766 02b8 D2010000 		.4byte	.LASF46
  1767 02bc 05       		.byte	0x5
- 1768 02bd B5       		.byte	0xb5
+ 1768 02bd B6       		.byte	0xb6
  1769 02be 28030000 		.4byte	0x328
  1770 02c2 BD       		.byte	0xbd
  1771 02c3 06       		.uleb128 0x6
  1772 02c4 D3000000 		.4byte	.LASF47
  1773 02c8 05       		.byte	0x5
- 1774 02c9 B6       		.byte	0xb6
+ 1774 02c9 B7       		.byte	0xb7
  1775 02ca 28030000 		.4byte	0x328
  1776 02ce CA       		.byte	0xca
  1777 02cf 06       		.uleb128 0x6
  1778 02d0 00000000 		.4byte	.LASF26
  1779 02d4 05       		.byte	0x5
- 1780 02d5 B7       		.byte	0xb7
+ 1780 02d5 B8       		.byte	0xb8
  1781 02d6 95010000 		.4byte	0x195
  1782 02da D7       		.byte	0xd7
  1783 02db 06       		.uleb128 0x6
  1784 02dc 00050000 		.4byte	.LASF30
  1785 02e0 05       		.byte	0x5
- 1786 02e1 B8       		.byte	0xb8
+ 1786 02e1 B9       		.byte	0xb9
  1787 02e2 81000000 		.4byte	0x81
  1788 02e6 E0       		.byte	0xe0
  1789 02e7 00       		.byte	0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1807 0311 09       		.uleb128 0x9
  1808 0312 B7000000 		.4byte	0xb7
  1809 0316 13       		.byte	0x13
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 42
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 42
 
 
  1810 0317 00       		.byte	0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1864 0392 03       		.uleb128 0x3
  1865 0393 0A       		.byte	0xa
  1866 0394 F401     		.2byte	0x1f4
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 43
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 43
 
 
  1867 0396 00       		.byte	0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1921 0405 01       		.uleb128 0x1
  1922 0406 50       		.byte	0x50
  1923 0407 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 44
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 44
 
 
  1924 0408 30       		.byte	0x30
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  1978 0475 01       		.uleb128 0x1
  1979 0476 50       		.byte	0x50
  1980 0477 02       		.uleb128 0x2
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 45
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 45
 
 
  1981 0478 08       		.byte	0x8
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2035 04eb 76130000 		.4byte	0x1376
  2036 04ef F9040000 		.4byte	0x4f9
  2037 04f3 0F       		.uleb128 0xf
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 46
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 46
 
 
  2038 04f4 01       		.uleb128 0x1
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2092 055d 76130000 		.4byte	0x1376
  2093 0561 6B050000 		.4byte	0x56b
  2094 0565 0F       		.uleb128 0xf
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 47
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 47
 
 
  2095 0566 01       		.uleb128 0x1
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2149 05c9 3A       		.byte	0x3a
  2150 05ca 00       		.byte	0
  2151 05cb 10       		.uleb128 0x10
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 48
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 48
 
 
  2152 05cc 94000000 		.4byte	.LVL44
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2206 0638 32       		.byte	0x32
  2207 0639 00       		.byte	0
  2208 063a 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 49
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 49
 
 
  2209 063b 0B       		.uleb128 0xb
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2263 06b4 50       		.byte	0x50
  2264 06b5 01       		.uleb128 0x1
  2265 06b6 31       		.byte	0x31
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 50
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 50
 
 
  2266 06b7 00       		.byte	0
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2320 0720 00       		.byte	0
  2321 0721 0E       		.uleb128 0xe
  2322 0722 5C000000 		.4byte	.LVL71
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 51
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 51
 
 
  2323 0726 87130000 		.4byte	0x1387
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2377 0799 81000000 		.4byte	0x81
  2378 079d C6020000 		.4byte	.LLST11
  2379 07a1 10       		.uleb128 0x10
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 52
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 52
 
 
  2380 07a2 0C000000 		.4byte	.LVL80
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2434 080b 0F       		.uleb128 0xf
  2435 080c 01       		.uleb128 0x1
  2436 080d 51       		.byte	0x51
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 53
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 53
 
 
  2437 080e 02       		.uleb128 0x2
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2491 0868 0F       		.uleb128 0xf
  2492 0869 01       		.uleb128 0x1
  2493 086a 50       		.byte	0x50
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 54
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 54
 
 
  2494 086b 01       		.uleb128 0x1
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2548 08ce 0E       		.uleb128 0xe
  2549 08cf F2000000 		.4byte	.LVL110
  2550 08d3 BF130000 		.4byte	0x13bf
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 55
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 55
 
 
  2551 08d7 E2080000 		.4byte	0x8e2
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2605 092b 32       		.byte	0x32
  2606 092c 00       		.byte	0
  2607 092d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 56
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 56
 
 
  2608 092e 12010000 		.4byte	.LVL114
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2662 098e 14       		.uleb128 0x14
  2663 098f 3C020000 		.4byte	.LASF56
  2664 0993 01       		.byte	0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 57
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 57
 
 
  2665 0994 6101     		.2byte	0x161
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2719 0a20 08       		.byte	0x8
  2720 0a21 C8       		.byte	0xc8
  2721 0a22 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 58
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 58
 
 
  2722 0a23 0E       		.uleb128 0xe
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2776 0a7d 01       		.uleb128 0x1
  2777 0a7e 30       		.byte	0x30
  2778 0a7f 0F       		.uleb128 0xf
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 59
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 59
 
 
  2779 0a80 01       		.uleb128 0x1
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2833 0ae4 02       		.uleb128 0x2
  2834 0ae5 09       		.byte	0x9
  2835 0ae6 CC       		.byte	0xcc
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 60
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 60
 
 
  2836 0ae7 0F       		.uleb128 0xf
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2890 0b42 C2000000 		.4byte	.LVL154
  2891 0b46 BF130000 		.4byte	0x13bf
  2892 0b4a 550B0000 		.4byte	0xb55
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 61
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 61
 
 
  2893 0b4e 0F       		.uleb128 0xf
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  2947 0b9f 00       		.byte	0
  2948 0ba0 0E       		.uleb128 0xe
  2949 0ba1 E2000000 		.4byte	.LVL158
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 62
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 62
 
 
  2950 0ba5 7C040000 		.4byte	0x47c
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3004 0c06 00       		.byte	0
  3005 0c07 0E       		.uleb128 0xe
  3006 0c08 12010000 		.4byte	.LVL163
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 63
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 63
 
 
  3007 0c0c 7C040000 		.4byte	0x47c
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3061 0c63 30       		.byte	0x30
  3062 0c64 0F       		.uleb128 0xf
  3063 0c65 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 64
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 64
 
 
  3064 0c66 50       		.byte	0x50
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3118 0cc6 D50C0000 		.4byte	0xcd5
  3119 0cca 0F       		.uleb128 0xf
  3120 0ccb 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 65
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 65
 
 
  3121 0ccc 51       		.byte	0x51
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3175 0d26 0F       		.uleb128 0xf
  3176 0d27 01       		.uleb128 0x1
  3177 0d28 50       		.byte	0x50
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 66
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 66
 
 
  3178 0d29 03       		.uleb128 0x3
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3232 0d84 01       		.uleb128 0x1
  3233 0d85 32       		.byte	0x32
  3234 0d86 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 67
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 67
 
 
  3235 0d87 0E       		.uleb128 0xe
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3289 0deb 50       		.byte	0x50
  3290 0dec 01       		.uleb128 0x1
  3291 0ded 32       		.byte	0x32
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 68
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 68
 
 
  3292 0dee 00       		.byte	0
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3346 0e48 50       		.byte	0x50
  3347 0e49 01       		.uleb128 0x1
  3348 0e4a 32       		.byte	0x32
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 69
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 69
 
 
  3349 0e4b 00       		.byte	0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3403 0eaf 01       		.uleb128 0x1
  3404 0eb0 51       		.byte	0x51
  3405 0eb1 02       		.uleb128 0x2
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 70
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 70
 
 
  3406 0eb2 09       		.byte	0x9
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3460 0f06 01       		.byte	0x1
  3461 0f07 DB01     		.2byte	0x1db
  3462 0f09 81000000 		.4byte	0x81
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 71
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 71
 
 
  3463 0f0d 00000000 		.4byte	.LFB68
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3517 0f87 03       		.byte	0x3
  3518 0f88 00000000 		.4byte	count_protector
  3519 0f8c 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 72
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 72
 
 
  3520 0f8d 1C000000 		.4byte	.LASF63
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3574 0fff 00000000 		.4byte	comas1
  3575 1003 1D       		.uleb128 0x1d
  3576 1004 84030000 		.4byte	.LASF70
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 73
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 73
 
 
  3577 1008 05       		.byte	0x5
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3631 107a 1D       		.uleb128 0x1d
  3632 107b C2010000 		.4byte	.LASF77
  3633 107f 05       		.byte	0x5
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 74
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 74
 
 
  3634 1080 62       		.byte	0x62
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3688 10f5 64       		.byte	0x64
  3689 10f6 DF100000 		.4byte	0x10df
  3690 10fa 05       		.uleb128 0x5
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 75
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 75
 
 
  3691 10fb 03       		.byte	0x3
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3745 116d 81000000 		.4byte	0x81
  3746 1171 05       		.uleb128 0x5
  3747 1172 03       		.byte	0x3
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 76
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 76
 
 
  3748 1173 00000000 		.4byte	decimalD
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3802 11e8 03       		.byte	0x3
  3803 11e9 00000000 		.4byte	copia_recibo
  3804 11ed 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 77
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 77
 
 
  3805 11ee EF020000 		.4byte	.LASF96
@@ -4618,11 +4618,11 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3859 1260 00000000 		.4byte	producto4n
  3860 1264 1D       		.uleb128 0x1d
  3861 1265 A8010000 		.4byte	.LASF103
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 78
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 78
 
 
  3862 1269 05       		.byte	0x5
- 3863 126a 77       		.byte	0x77
+ 3863 126a 78       		.byte	0x78
  3864 126b 75120000 		.4byte	0x1275
  3865 126f 05       		.uleb128 0x5
  3866 1270 03       		.byte	0x3
@@ -4632,7 +4632,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3870 127a 1D       		.uleb128 0x1d
  3871 127b 06030000 		.4byte	.LASF104
  3872 127f 05       		.byte	0x5
- 3873 1280 93       		.byte	0x93
+ 3873 1280 94       		.byte	0x94
  3874 1281 BE000000 		.4byte	0xbe
  3875 1285 05       		.uleb128 0x5
  3876 1286 03       		.byte	0x3
@@ -4640,7 +4640,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3878 128b 1D       		.uleb128 0x1d
  3879 128c 50020000 		.4byte	.LASF105
  3880 1290 05       		.byte	0x5
- 3881 1291 94       		.byte	0x94
+ 3881 1291 95       		.byte	0x95
  3882 1292 BE000000 		.4byte	0xbe
  3883 1296 05       		.uleb128 0x5
  3884 1297 03       		.byte	0x3
@@ -4648,7 +4648,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3886 129c 1D       		.uleb128 0x1d
  3887 129d A9030000 		.4byte	.LASF106
  3888 12a1 05       		.byte	0x5
- 3889 12a2 97       		.byte	0x97
+ 3889 12a2 98       		.byte	0x98
  3890 12a3 81000000 		.4byte	0x81
  3891 12a7 05       		.uleb128 0x5
  3892 12a8 03       		.byte	0x3
@@ -4656,7 +4656,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3894 12ad 1E       		.uleb128 0x1e
  3895 12ae 7800     		.ascii	"x\000"
  3896 12b0 05       		.byte	0x5
- 3897 12b1 BA       		.byte	0xba
+ 3897 12b1 BB       		.byte	0xbb
  3898 12b2 97000000 		.4byte	0x97
  3899 12b6 05       		.uleb128 0x5
  3900 12b7 03       		.byte	0x3
@@ -4664,7 +4664,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3902 12bc 1E       		.uleb128 0x1e
  3903 12bd 7900     		.ascii	"y\000"
  3904 12bf 05       		.byte	0x5
- 3905 12c0 BA       		.byte	0xba
+ 3905 12c0 BB       		.byte	0xbb
  3906 12c1 97000000 		.4byte	0x97
  3907 12c5 05       		.uleb128 0x5
  3908 12c6 03       		.byte	0x3
@@ -4672,18 +4672,18 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3910 12cb 1E       		.uleb128 0x1e
  3911 12cc 7A00     		.ascii	"z\000"
  3912 12ce 05       		.byte	0x5
- 3913 12cf BA       		.byte	0xba
+ 3913 12cf BB       		.byte	0xbb
  3914 12d0 97000000 		.4byte	0x97
  3915 12d4 05       		.uleb128 0x5
  3916 12d5 03       		.byte	0x3
  3917 12d6 00000000 		.4byte	z
  3918 12da 1E       		.uleb128 0x1e
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 79
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 79
 
 
  3919 12db 7700     		.ascii	"w\000"
  3920 12dd 05       		.byte	0x5
- 3921 12de BA       		.byte	0xba
+ 3921 12de BB       		.byte	0xbb
  3922 12df 97000000 		.4byte	0x97
  3923 12e3 05       		.uleb128 0x5
  3924 12e4 03       		.byte	0x3
@@ -4701,7 +4701,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3936 12ff 1D       		.uleb128 0x1d
  3937 1300 14020000 		.4byte	.LASF107
  3938 1304 05       		.byte	0x5
- 3939 1305 BB       		.byte	0xbb
+ 3939 1305 BC       		.byte	0xbc
  3940 1306 E9120000 		.4byte	0x12e9
  3941 130a 05       		.uleb128 0x5
  3942 130b 03       		.byte	0x3
@@ -4709,7 +4709,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3944 1310 1D       		.uleb128 0x1d
  3945 1311 95030000 		.4byte	.LASF108
  3946 1315 05       		.byte	0x5
- 3947 1316 BC       		.byte	0xbc
+ 3947 1316 BD       		.byte	0xbd
  3948 1317 81000000 		.4byte	0x81
  3949 131b 05       		.uleb128 0x5
  3950 131c 03       		.byte	0x3
@@ -4717,7 +4717,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3952 1321 1D       		.uleb128 0x1d
  3953 1322 9F030000 		.4byte	.LASF109
  3954 1326 05       		.byte	0x5
- 3955 1327 BC       		.byte	0xbc
+ 3955 1327 BD       		.byte	0xbd
  3956 1328 81000000 		.4byte	0x81
  3957 132c 05       		.uleb128 0x5
  3958 132d 03       		.byte	0x3
@@ -4725,7 +4725,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3960 1332 1D       		.uleb128 0x1d
  3961 1333 6A020000 		.4byte	.LASF43
  3962 1337 05       		.byte	0x5
- 3963 1338 BC       		.byte	0xbc
+ 3963 1338 BD       		.byte	0xbd
  3964 1339 81000000 		.4byte	0x81
  3965 133d 05       		.uleb128 0x5
  3966 133e 03       		.byte	0x3
@@ -4733,18 +4733,18 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3968 1343 1D       		.uleb128 0x1d
  3969 1344 2D000000 		.4byte	.LASF110
  3970 1348 05       		.byte	0x5
- 3971 1349 BD       		.byte	0xbd
+ 3971 1349 BE       		.byte	0xbe
  3972 134a E2010000 		.4byte	0x1e2
  3973 134e 05       		.uleb128 0x5
  3974 134f 03       		.byte	0x3
  3975 1350 00000000 		.4byte	lado
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 80
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 80
 
 
  3976 1354 1D       		.uleb128 0x1d
  3977 1355 1C050000 		.4byte	.LASF111
  3978 1359 05       		.byte	0x5
- 3979 135a BE       		.byte	0xbe
+ 3979 135a BF       		.byte	0xbf
  3980 135b 03020000 		.4byte	0x203
  3981 135f 05       		.uleb128 0x5
  3982 1360 03       		.byte	0x3
@@ -4752,7 +4752,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  3984 1365 1D       		.uleb128 0x1d
  3985 1366 E4000000 		.4byte	.LASF112
  3986 136a 05       		.byte	0x5
- 3987 136b BF       		.byte	0xbf
+ 3987 136b C0       		.byte	0xc0
  3988 136c 03020000 		.4byte	0x203
  3989 1370 05       		.uleb128 0x5
  3990 1371 03       		.byte	0x3
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4030 13c6 20       		.uleb128 0x20
  4031 13c7 97000000 		.4byte	0x97
  4032 13cb 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 81
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 81
 
 
  4033 13cc 00       		.byte	0
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4087 0033 08       		.uleb128 0x8
  4088 0034 00       		.byte	0
  4089 0035 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 82
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 82
 
 
  4090 0036 05       		.uleb128 0x5
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4144 006c 09       		.uleb128 0x9
  4145 006d 21       		.uleb128 0x21
  4146 006e 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 83
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 83
 
 
  4147 006f 49       		.uleb128 0x49
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4201 00a6 0B       		.uleb128 0xb
  4202 00a7 3B       		.uleb128 0x3b
  4203 00a8 0B       		.uleb128 0xb
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 84
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 84
 
 
  4204 00a9 49       		.uleb128 0x49
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4258 00e8 01       		.uleb128 0x1
  4259 00e9 31       		.uleb128 0x31
  4260 00ea 13       		.uleb128 0x13
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 85
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 85
 
 
  4261 00eb 00       		.byte	0
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4315 0122 19       		.uleb128 0x19
  4316 0123 01       		.uleb128 0x1
  4317 0124 13       		.uleb128 0x13
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 86
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 86
 
 
  4318 0125 00       		.byte	0
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4372 015b 3B       		.uleb128 0x3b
  4373 015c 05       		.uleb128 0x5
  4374 015d 49       		.uleb128 0x49
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 87
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 87
 
 
  4375 015e 13       		.uleb128 0x13
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4429 0194 34       		.uleb128 0x34
  4430 0195 00       		.byte	0
  4431 0196 03       		.uleb128 0x3
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 88
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 88
 
 
  4432 0197 0E       		.uleb128 0xe
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4486 01cd 00       		.byte	0
  4487 01ce 00       		.byte	0
  4488 01cf 21       		.uleb128 0x21
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 89
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 89
 
 
  4489 01d0 2E       		.uleb128 0x2e
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4543 0024 42000000 		.4byte	.LVL12
  4544 0028 84000000 		.4byte	.LFE63
  4545 002c 0400     		.2byte	0x4
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 90
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 90
 
 
  4546 002e F3       		.byte	0xf3
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4600              	.LLST3:
  4601 009e 00000000 		.4byte	.LVL23
  4602 00a2 0C000000 		.4byte	.LVL24
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 91
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 91
 
 
  4603 00a6 0100     		.2byte	0x1
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4657 0129 3E000000 		.4byte	.LVL67
  4658 012d 0100     		.2byte	0x1
  4659 012f 50       		.byte	0x50
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 92
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 92
 
 
  4660 0130 3E000000 		.4byte	.LVL67
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4714 01bd 55       		.byte	0x55
  4715 01be 00000000 		.4byte	0
  4716 01c2 00000000 		.4byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 93
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 93
 
 
  4717              	.LLST8:
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4771 0244 55       		.byte	0x55
  4772 0245 7C000000 		.4byte	.LVL93
  4773 0249 7E000000 		.4byte	.LVL94
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 94
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 94
 
 
  4774 024d 0100     		.2byte	0x1
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4828 02dd 7E000000 		.4byte	.LVL94
  4829 02e1 82000000 		.4byte	.LVL95
  4830 02e5 0200     		.2byte	0x2
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 95
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 95
 
 
  4831 02e7 30       		.byte	0x30
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4885 0371 30       		.byte	0x30
  4886 0372 9F       		.byte	0x9f
  4887 0373 8C010000 		.4byte	.LVL131
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 96
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 96
 
 
  4888 0377 9A010000 		.4byte	.LVL132
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4942 03fa F3       		.byte	0xf3
  4943 03fb 01       		.uleb128 0x1
  4944 03fc 51       		.byte	0x51
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 97
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 97
 
 
  4945 03fd 9F       		.byte	0x9f
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  4999 0482 0400     		.2byte	0x4
  5000 0484 F3       		.byte	0xf3
  5001 0485 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 98
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 98
 
 
  5002 0486 53       		.byte	0x53
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5056 050a D6020000 		.4byte	.LVL213
  5057 050e 0100     		.2byte	0x1
  5058 0510 54       		.byte	0x54
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 99
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 99
 
 
  5059 0511 E8020000 		.4byte	.LVL217
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5113 059e 00000000 		.4byte	.LVL222
  5114 05a2 02000000 		.4byte	.LVL223
  5115 05a6 0100     		.2byte	0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 100
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 100
 
 
  5116 05a8 50       		.byte	0x50
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5170 000c D4000000 		.4byte	.LFE64
  5171 0010 00000000 		.4byte	.LFB65
  5172 0014 78000000 		.4byte	.LFE65
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 101
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 101
 
 
  5173 0018 00000000 		.4byte	.LFB66
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5205      696F6E00 
  5206              	.LASF78:
  5207 0066 636F7272 		.ascii	"corriente2\000"
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 102
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 102
 
 
  5207      69656E74 
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5239 00ec 64656369 		.ascii	"decimalD\000"
  5239      6D616C44 
  5239      00
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 103
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 103
 
 
  5240              	.LASF49:
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5268              	.LASF22:
  5269 0186 6375656E 		.ascii	"cuenta\000"
  5269      746100
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 104
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 104
 
 
  5270              	.LASF101:
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5299      313600
  5300              	.LASF107:
  5301 0214 6D6F6475 		.ascii	"modulo\000"
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 105
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 105
 
 
  5301      6C6F00
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5328 02c2 2E5C6962 		.ascii	".\\ibuton.c\000"
  5328      75746F6E 
  5328      2E6300
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 106
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 106
 
 
  5329              	.LASF25:
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5360 0351 6C6F6E67 		.ascii	"long int\000"
  5360      20696E74 
  5360      00
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 107
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 107
 
 
  5361              	.LASF95:
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5388      6420696E 
  5388      7400
  5389              	.LASF86:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 108
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 108
 
 
  5390 03e2 62616E64 		.ascii	"bandera\000"
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 1
  5412      6E7400
  5413              	.LASF50:
  5414 04dd 69627574 		.ascii	"ibutton\000"
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccIezKBi.s 			page 109
+ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cco12B66.s 			page 109
 
 
  5414      746F6E00 
