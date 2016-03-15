@@ -141,8 +141,20 @@ void init(void){
 		}	
 	}
     leer_eeprom(1130,10);
-    for(x=0;x<=buffer_i2c[0];x++){
+    for(x=0;x<=buffer_i2c[0];x++){    //Carga nombre producto 1
 		producto1n[x]=buffer_i2c[x];
+	}
+    leer_eeprom(1141,10);
+    for(x=0;x<=buffer_i2c[0];x++){  //Carga nombre producto 2
+		producto2n[x]=buffer_i2c[x];
+	}
+    leer_eeprom(1152,10);
+    for(x=0;x<=buffer_i2c[0];x++){   //Carga nombre producto 3
+		producto3n[x]=buffer_i2c[x];
+	}
+    leer_eeprom(1163,10);
+    for(x=0;x<=buffer_i2c[0];x++){  //Carga nombre producto 4
+		producto4n[x]=buffer_i2c[x];
 	}
 	leer_eeprom(671,5);
 	if(buffer_i2c[0]==4){
