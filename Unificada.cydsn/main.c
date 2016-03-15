@@ -816,9 +816,9 @@ void polling_LCD1(void){
                     case 0x5D:  								//Cambiar Precio
                                         
                       set_imagen(1,92);
-                      Precio_LCD(1,0x00,0xD6,423); // primer producto  
-					  Precio_LCD(1,0x00,0x89,429); // segundo producto 			  
-                      Precio_LCD(1,0x01,0x24,435); // tercer producto 
+                      Precio_LCD(1,0x00,0xD6,429); // primer producto  
+					  Precio_LCD(1,0x00,0x89,435); // segundo producto 			  
+                      Precio_LCD(1,0x01,0x24,423); // tercer producto 
                       Precio_LCD(1,0x01,0x78,1000); //cuarto producto 
                       flujo_LCD=19; 
                       
@@ -1123,24 +1123,24 @@ void polling_LCD1(void){
                     case 0x7F:		
                       set_imagen(1,6);   
                       teclas1=0;                            	 //Inicia el contador de teclas 
-					  rventa.producto=extra;	
-					  write_LCD(1,'$',teclas1);							 	 //Extra	                               
+					  rventa.producto=corriente;	
+					  write_LCD(1,'$',teclas1);							 	 //Producto 1	                               
                       flujo_LCD=26; 
                     break;
                     
                     case 0x80:  	
                       set_imagen(1,6);		
                       teclas1=0;                            	 //Inicia el contador de teclas 
-					  rventa.producto=corriente;
-					  write_LCD(1,'$',teclas1);						 //Corriente
+					  rventa.producto=diesel;
+					  write_LCD(1,'$',teclas1);						 //Producto 2
                       flujo_LCD=26;              
                     break;
                     
                     case 0x81:  
                       set_imagen(1,6);			
                       teclas1=0;                            	//Inicia el contador de teclas 
-					  rventa.producto=diesel;
-					  write_LCD(1,'$',teclas1);						//Diesel
+					  rventa.producto=extra;
+					  write_LCD(1,'$',teclas1);						//Preducto 3
                       flujo_LCD=26;	
                     break;
                     case 0x82:  	
@@ -2060,13 +2060,13 @@ void polling_LCD1(void){
 						Buffer_LCD1.valor[0]=teclas1;					
 						if(cambiar_precio(lado.a.dir)!=0){ 	
 							if(rventa.producto==corriente){
-								write_eeprom(423,Buffer_LCD1.valor);							
+								write_eeprom(435,Buffer_LCD1.valor); //423							
 							}
 							if(rventa.producto==extra){
-								write_eeprom(429,Buffer_LCD1.valor);							
+								write_eeprom(423,Buffer_LCD1.valor);	//429						
 							}
 							if(rventa.producto==diesel){
-								write_eeprom(435,Buffer_LCD1.valor);							
+								write_eeprom(429,Buffer_LCD1.valor);	//435						
 							}
                             if(rventa.producto==kero){
 								write_eeprom(1000,Buffer_LCD1.valor);							
@@ -2098,9 +2098,9 @@ void polling_LCD1(void){
                 switch(LCD_1_rxBuffer[3]){
                     case 0x7F:								 	 //Configurar Productos	                                                      
                       set_imagen(1,88); 
-					  Grado_LCD(1,0x00,0x73,449); // primer producto
-					  Grado_LCD(1,0x00,0xCF,451); // segundo producto			  
-                      Grado_LCD(1,0x01,0x29,453); // tercer producto
+					  Grado_LCD(1,0x00,0x73,451); // primer producto 449
+					  Grado_LCD(1,0x00,0xCF,453); // segundo producto			  
+                      Grado_LCD(1,0x01,0x29,449); // tercer producto
                       Grado_LCD(1,0x01,0x7B,1006); //cuarto producto
                       flujo_LCD=28;   
                     break;
@@ -3599,9 +3599,9 @@ void polling_LCD2(void){
                     
                     case 0x5D:  								//Cambiar Precio                                         
                       set_imagen(2,92);
-					  Precio_LCD(2,0x00,0x89,429);	
-					  Precio_LCD(2,0x00,0xD6,423);	
-					  Precio_LCD(2,0x01,0x24,435);	
+					  Precio_LCD(2,0x00,0x89,435);	
+					  Precio_LCD(2,0x00,0xD6,429);	
+					  Precio_LCD(2,0x01,0x24,423);	
                       Precio_LCD(2,0x01,0x78,1000); //cuarto producto 78
                       flujo_LCD2=19;
                       
@@ -3895,36 +3895,36 @@ void polling_LCD2(void){
          if(LCD_2_GetRxBufferSize()==8){
             if((LCD_2_rxBuffer[0]==0xAA) && (LCD_2_rxBuffer[6]==0xC3) && (LCD_2_rxBuffer[7]==0x3C)){
                 switch(LCD_2_rxBuffer[3]){
-                    case 0x7F:								 	 //Extra	                               
-                      flujo_LCD2=26;    
-                      teclas1=0;                            	 //Inicia el contador de teclas 
-					  rventa.producto=extra2;
-                      set_imagen(2,6); 	
-					  write_LCD(2,'$',teclas1);	
-                    break;
-                    
-                    case 0x80:  								 //Corriente
-                      flujo_LCD2=26;
+                    case 0x7F:								 	 //Extra	                                                        
                       teclas1=0;                            	 //Inicia el contador de teclas 
 					  rventa.producto=corriente2;
                       set_imagen(2,6); 	
-					  write_LCD(2,'$',teclas1);	              
+					  write_LCD(2,'$',teclas1);	
+                      flujo_LCD2=26; 
                     break;
                     
-                    case 0x81:  								//Diesel
-                      flujo_LCD2=26;	
-                      teclas1=0;                            	//Inicia el contador de teclas 
+                    case 0x80:  								 //Corriente                      
+                      teclas1=0;                            	 //Inicia el contador de teclas 
 					  rventa.producto=diesel2;
                       set_imagen(2,6); 	
-					  write_LCD(2,'$',teclas1);	
+					  write_LCD(2,'$',teclas1);	      
+                      flujo_LCD2=26; 
                     break;
                     
-                    case 0x82:  								//Otro producto
-                      flujo_LCD2=26;	
+                    case 0x81:  								//Diesel                      
+                      teclas1=0;                            	//Inicia el contador de teclas 
+					  rventa.producto=extra2;
+                      set_imagen(2,6); 	
+					  write_LCD(2,'$',teclas1);
+                      flujo_LCD2=26; 
+                    break;
+                    
+                    case 0x82:  								//Otro producto                      
                       teclas1=0;                            	//Inicia el contador de teclas 
 					  rventa.producto=kero2;
                       set_imagen(2,6); 	
 					  write_LCD(2,'$',teclas1);	
+                      flujo_LCD2=26;	
                     break;
                    										
                     case 0x7E:									//ir a menu
@@ -4745,13 +4745,13 @@ void polling_LCD2(void){
 						Buffer_LCD1.valor[0]=teclas1;					
 						if(cambiar_precio(lado.b.dir)!=0){ 	
 							if(rventa.producto==corriente2){
-								write_eeprom(423,Buffer_LCD1.valor);							
+								write_eeprom(435,Buffer_LCD1.valor);//423							
 							}
 							if(rventa.producto==extra2){
-								write_eeprom(429,Buffer_LCD1.valor);							
+								write_eeprom(423,Buffer_LCD1.valor); //429							
 							}
 							if(rventa.producto==diesel2){
-								write_eeprom(435,Buffer_LCD1.valor);							
+								write_eeprom(429,Buffer_LCD1.valor); //435							
 							}
                             if(rventa.producto==kero2){
 								write_eeprom(1000,Buffer_LCD1.valor);							
@@ -4783,9 +4783,9 @@ void polling_LCD2(void){
                 switch(LCD_2_rxBuffer[3]){
                     case 0x7F:								 	 //Configurar Productos	                                                         
                       set_imagen(2,88); 
-					  Grado_LCD(2,0x01,0x29,638);
-					  Grado_LCD(2,0x00,0xCF,636);	
-					  Grado_LCD(2,0x00,0x73,634);
+                      Grado_LCD(2,0x00,0x73,636);//636 primer producto
+                      Grado_LCD(2,0x00,0xCF,638);//638 segundo producto
+					  Grado_LCD(2,0x01,0x29,634);//634 tercer producto					  					  
                       Grado_LCD(2,0x01,0x7B,1008);//cuarto producto
                       flujo_LCD2=28;
                     break;
