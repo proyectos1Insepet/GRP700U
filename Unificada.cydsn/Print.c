@@ -46,7 +46,7 @@
 */
 uint8 msn_eds[20]="ESTACION DE SERVICIO";
 uint8 msn_nit[4]="NIT ";
-uint8 msn_tel[4]="tEL:";
+uint8 msn_tel[4]="TEL:";
 uint8 msn_numero[8]="Numero: ";
 uint8 msn_fecha[7]="Fecha:";
 uint8 msn_hora[7]="Hora:  ";
@@ -697,22 +697,22 @@ void imprimir(uint8 val, uint8 producto, uint8 copia, uint8 pos){
 		write_psoc1(val,msn_producto[x]);
 	}
     if(((producto==(extra&0x0f))&&(pos==lado.a.dir))||((producto==(extra2&0x0f))&&(pos==lado.b.dir))){
-		for(x=0;x<=9;x++){																			
+		for(x=0;x<=10;x++){																			
 			write_psoc1(val,producto3n[x]);
 		}
     }
     if(((producto==(corriente&0x0f))&&(pos==lado.a.dir))||((producto==(corriente2&0x0f))&&(pos==lado.b.dir))){
-		for(x=0;x<=9;x++){																		
+		for(x=0;x<=10;x++){																		
 			write_psoc1(val,producto1n[x]);
 		} 
     }
     if(((producto==(diesel&0x0f))&&(pos==lado.a.dir))||((producto==(diesel2&0x0f))&&(pos==lado.b.dir))){
-		for(x=0;x<=9;x++){																			
+		for(x=0;x<=10;x++){																			
 			write_psoc1(val,producto2n[x]);
 		} 
     }
     if(((producto==(kero&0x0f))&&(pos==lado.a.dir))||((producto==(kero2&0x0f))&&(pos==lado.b.dir))){
-		for(x=0;x<=9;x++){																			
+		for(x=0;x<=10;x++){																			
 			write_psoc1(val,producto4n[x]);
 		} 
     }

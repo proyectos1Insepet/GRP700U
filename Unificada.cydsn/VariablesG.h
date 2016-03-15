@@ -112,10 +112,10 @@ uint8 copia_recibo[2];													//activar copia de recibo
 uint16 id_corte;														//consecutivo del corte
 uint8  id_venta[6];														//Consecutivo de Venta
 uint8  nombreproducto;                                                  //Para guardar en la estructura del nombre del producto
-uint8 producto1n[10];
-uint8 producto2n[10];
-uint8 producto3n[10];
-uint8 producto4n[10];
+uint8 producto1n[11];
+uint8 producto2n[11];
+uint8 producto3n[11];
+uint8 producto4n[11];
  
 volatile int no_venta;													//Consecutivo de Venta entero	 
 /*

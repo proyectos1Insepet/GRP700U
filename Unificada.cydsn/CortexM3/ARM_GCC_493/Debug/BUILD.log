@@ -1,4 +1,4 @@
---------------- Build Started: 03/15/2016 08:03:26 Project: Unificada, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+--------------- Build Started: 03/15/2016 09:37:52 Project: Unificada, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\main.c -o .\CortexM3\ARM_GCC_493\Debug\main.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/I2C.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\I2C.c -o .\CortexM3\ARM_GCC_493\Debug\I2C.o
@@ -7,7 +7,7 @@ arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\P
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/Print.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Print.c -o .\CortexM3\ARM_GCC_493\Debug\Print.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/Protocolo.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Protocolo.c -o .\CortexM3\ARM_GCC_493\Debug\Protocolo.o
 .\Protocolo.c: In function 'programar':
-.\Protocolo.c:1659:13: warning: 'size' may be used uninitialized in this function [-Wmaybe-uninitialized]
+.\Protocolo.c:1756:13: warning: 'size' may be used uninitialized in this function [-Wmaybe-uninitialized]
              for(i=0;i<=size;i++){
              ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/Sonido.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\Sonido.c -o .\CortexM3\ARM_GCC_493\Debug\Sonido.o
@@ -16,6 +16,6 @@ arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_493\Debug\Unificada.a
 arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM3\ARM_GCC_493\Debug\Unificada.elf .\CortexM3\ARM_GCC_493\Debug\main.o .\CortexM3\ARM_GCC_493\Debug\I2C.o .\CortexM3\ARM_GCC_493\Debug\ibuton.o .\CortexM3\ARM_GCC_493\Debug\LCD.o .\CortexM3\ARM_GCC_493\Debug\Print.o .\CortexM3\ARM_GCC_493\Debug\Protocolo.o .\CortexM3\ARM_GCC_493\Debug\Sonido.o .\CortexM3\ARM_GCC_493\Debug\cybootloader.o .\CortexM3\ARM_GCC_493\Debug\cymetadata.o .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o .\CortexM3\ARM_GCC_493\Debug\Unificada.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -g -ffunction-sections -Og -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_493\Debug/Unificada.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
 cyelftool.exe -B C:\Users\Recepcion\Documents\NMUX\Unificada\Unificada.cydsn\CortexM3\ARM_GCC_493\Debug\Unificada.elf --flash_row_size 256 --flash_size 262144 --flash_array_size 65536 --ee_array 64 --ee_row_size 16
 cyelftool.exe -S C:\Users\Recepcion\Documents\NMUX\Unificada\Unificada.cydsn\CortexM3\ARM_GCC_493\Debug\Unificada.elf
-Flash used: 138496 of 262144 bytes (52,8 %). Bootloader: 8704 bytes. Application: 129536 bytes. Metadata: 256 bytes.
+Flash used: 139520 of 262144 bytes (53,2 %). Bootloader: 8704 bytes. Application: 130560 bytes. Metadata: 256 bytes.
 SRAM used: 4981 of 65536 bytes (7,6 %). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 03/15/2016 08:03:53 ---------------
+--------------- Build Succeeded: 03/15/2016 09:38:11 ---------------

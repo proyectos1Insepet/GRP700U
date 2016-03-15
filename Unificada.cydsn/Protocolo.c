@@ -37,6 +37,7 @@
 #include "VariablesG.h"
 #include "i2c.h"
 #include "Print.h"
+#include <string.h>
 
 /*
 *********************************************************************************************************
@@ -44,13 +45,13 @@
 *********************************************************************************************************
 */
 
-uint8 msn_tc[17]="DIESEL P TOTAL";
+uint8 msn_tc[6]="TOTAL";
 uint8 msn_te[13]="DIESEL TOTAL";
 uint8 msn_td[14]="SANS P TOTAL";
 uint8 msn_tk[10]="KERO TOTAL";
-uint8 msn_lecact[15]="Current Value: ";
-uint8 msn_lecaan[17]="Previous Value:  ";
-uint8 msn_tventas[18]="Total Amount: H   ";
+uint8 msn_lecact[15]="Valor actual: ";
+uint8 msn_lecaan[17]="Valor anterior:  ";
+uint8 msn_tventas[18]="Dinero total: $   ";
 uint8 msn_totalcero[15]="NO TOMO TOTALES";
 
 
@@ -363,6 +364,7 @@ uint8 venta(uint8 val){
 uint8 get_totales(uint8 dir,uint8 val){ 
 	uint8 corte[25], minuendo[14],sustraendo[14]; 
     Surtidor_PutChar(0x50|dir);
+
     CyDelay(1000);
 	switch(Surtidor_GetRxBufferSize()){
 		case 34:
@@ -382,10 +384,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 				}
 				corte[0]=16;				
 				if(((rventa.manguera==(corriente&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(corriente2&0x0F))&&(dir==lado.b.dir))){				//TOTAL CORRIENTE
-					for(x=0;x<=16;x++){									
+					for(x=0;x<=5;x++){									
 						write_psoc1(val,msn_tc[x]);
 					}
 					write_psoc1(val,10);
+                    for(x=0;x<=10;x++){									
+						write_psoc1(val,producto1n[x]);
+					}
+                    write_psoc1(val,10);
 					for(x=0;x<=14;x++){									
 						write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 					}
@@ -422,9 +428,13 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 				}
 				if(((rventa.manguera==(diesel&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(diesel2&0x0F))&&(dir==lado.b.dir))){		//TOTALES DIESEL
-					for(x=0;x<=13;x++){									
-						write_psoc1(val,msn_td[x]);
+					for(x=0;x<=5;x++){									
+						write_psoc1(val,msn_tc[x]);
 					}
+					write_psoc1(val,10);
+                    for(x=0;x<=10;x++){									
+						write_psoc1(val,producto2n[x]);
+					}                    
 					write_psoc1(val,10);
 					for(x=0;x<=14;x++){									
 						write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
@@ -462,10 +472,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}				
 				}
 				if(((rventa.manguera==(extra&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(extra2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-					for(x=0;x<=12;x++){									
-						write_psoc1(val,msn_te[x]);
-					}
-					write_psoc1(val,10);
+					for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                    for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto3n[x]);
+					    }
+                    write_psoc1(val,10);
 					for(x=0;x<=14;x++){									
 						write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 					}
@@ -503,10 +517,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 				}
                 
                 if(((rventa.manguera==(kero&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(kero2&0x0F))&&(dir==lado.b.dir))){					//TOTALES KERO
-					for(x=0;x<=9;x++){									
-						write_psoc1(val,msn_tk[x]);                 // CUARTO PRODUCTO
-					}
-					write_psoc1(val,10);
+					for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                    for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto4n[x]);
+					    }
+                    write_psoc1(val,10);
 					for(x=0;x<=14;x++){									
 						write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 					}
@@ -570,10 +588,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					corte[0]=16;							
 					if(((rventa.manguera==(corriente&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(corriente2&0x0F))&&(dir==lado.b.dir))){				//TOTAL CORRIENTE
-						for(x=0;x<=16;x++){									
+						for(x=0;x<=5;x++){									
 							write_psoc1(val,msn_tc[x]);
 						}
 						write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						write_psoc1(val,producto1n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -610,10 +632,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 					}
 					if(((rventa.manguera==(diesel&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(diesel2&0x0F))&&(dir==lado.b.dir))){					//TOTALES DIESEL
-						for(x=0;x<=13;x++){									
-							write_psoc1(val,msn_td[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto2n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -650,10 +676,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}				
 					}
 					if(((rventa.manguera==(extra&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(extra2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-						for(x=0;x<=12;x++){									
-							write_psoc1(val,msn_te[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto3n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -691,10 +721,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}	
                     
                     if(((rventa.manguera==(kero&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(kero2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-						for(x=0;x<=9;x++){									
-							write_psoc1(val,msn_tk[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto4n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -757,10 +791,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					corte[0]=16;		
 					if(((rventa.manguera==(corriente&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(corriente2&0x0F))&&(dir==lado.b.dir))){				//TOTAL CORRIENTE
-						for(x=0;x<=16;x++){									
+						for(x=0;x<=5;x++){									
 							write_psoc1(val,msn_tc[x]);
 						}
 						write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						write_psoc1(val,producto1n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -797,10 +835,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 					}
 					if(((rventa.manguera==(diesel&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(diesel2&0x0F))&&(dir==lado.b.dir))){					//TOTALES DIESEL
-						for(x=0;x<=13;x++){									
-							write_psoc1(val,msn_td[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto2n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -837,10 +879,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}				
 					}
 					if(((rventa.manguera==(extra&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(extra2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-						for(x=0;x<=12;x++){									
-							write_psoc1(val,msn_te[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto3n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -878,10 +924,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
                     
                     if(((rventa.manguera==(kero&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(kero2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-						for(x=0;x<=9;x++){									
-							write_psoc1(val,msn_tk[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto4n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -944,10 +994,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 				}
 				corte[0]=24;				
 				if(((rventa.manguera==(corriente&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(corriente2&0x0F))&&(dir==lado.b.dir))){				//TOTAL CORRIENTE
-					for(x=0;x<=16;x++){									
+					for(x=0;x<=5;x++){									
 						write_psoc1(val,msn_tc[x]);
 					}
 					write_psoc1(val,10);
+                    for(x=0;x<=10;x++){									
+						write_psoc1(val,producto1n[x]);
+					}
+                    write_psoc1(val,10);
 					for(x=0;x<=14;x++){									
 						write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 					}
@@ -984,10 +1038,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 				}
 				if(((rventa.manguera==(diesel&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(diesel2&0x0F))&&(dir==lado.b.dir))){					//TOTALES DIESEL
-					for(x=0;x<=13;x++){									
-						write_psoc1(val,msn_td[x]);
-					}
-					write_psoc1(val,10);
+					for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                    for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto2n[x]);
+					    }
+                    write_psoc1(val,10);
 					for(x=0;x<=14;x++){									
 						write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 					}
@@ -1024,10 +1082,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}				
 				}
 				if(((rventa.manguera==(extra&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(extra2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-					for(x=0;x<=12;x++){									
-						write_psoc1(val,msn_te[x]);
-					}
-					write_psoc1(val,10);
+					for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                    for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto3n[x]);
+					    }
+                    write_psoc1(val,10);
 					for(x=0;x<=14;x++){									
 						write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 					}
@@ -1065,10 +1127,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 				}
                 
                 if(((rventa.manguera==(kero&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(kero2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-					for(x=0;x<=9;x++){									
-						write_psoc1(val,msn_tk[x]);
-					}
-					write_psoc1(val,10);
+					for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                    for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto4n[x]);
+					    }
+                    write_psoc1(val,10);
 					for(x=0;x<=14;x++){									
 						write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 					}
@@ -1130,10 +1196,13 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					corte[0]=24;				
 					if(((rventa.manguera==(corriente&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(corriente2&0x0F))&&(dir==lado.b.dir))){				//TOTAL CORRIENTE
-						for(x=0;x<=16;x++){									
+						for(x=0;x<=5;x++){									
 							write_psoc1(val,msn_tc[x]);
 						}
-						write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						write_psoc1(val,producto1n[x]);
+					    }
+                        write_psoc1(val,10);						
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -1170,10 +1239,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 					}
 					if(((rventa.manguera==(diesel&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(diesel2&0x0F))&&(dir==lado.b.dir))){					//TOTALES DIESEL
-						for(x=0;x<=13;x++){									
-							write_psoc1(val,msn_td[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto2n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -1210,10 +1283,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}				
 					}
 					if(((rventa.manguera==(extra&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(extra2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-						for(x=0;x<=12;x++){									
-							write_psoc1(val,msn_te[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto3n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -1252,10 +1329,14 @@ uint8 get_totales(uint8 dir,uint8 val){
                     
                     
                     if(((rventa.manguera==(kero&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(kero2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-						for(x=0;x<=9;x++){									
-							write_psoc1(val,msn_tk[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto4n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -1318,10 +1399,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					corte[0]=24;				
 					if(((rventa.manguera==(corriente&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(corriente2&0x0F))&&(dir==lado.b.dir))){				//TOTAL CORRIENTE
-						for(x=0;x<=16;x++){									
+						for(x=0;x<=5;x++){									
 							write_psoc1(val,msn_tc[x]);
 						}
 						write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						write_psoc1(val,producto1n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -1358,10 +1443,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 					}
 					if(((rventa.manguera==(diesel&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(diesel2&0x0F))&&(dir==lado.b.dir))){					//TOTALES DIESEL
-						for(x=0;x<=13;x++){									
-							write_psoc1(val,msn_td[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto2n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -1398,10 +1487,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}				
 					}
 					if(((rventa.manguera==(extra&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(extra2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-						for(x=0;x<=12;x++){									
-							write_psoc1(val,msn_te[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto3n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}
@@ -1439,10 +1532,14 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
                     
                     if(((rventa.manguera==(kero&0x0F))&&(dir==lado.a.dir))||((rventa.manguera==(kero2&0x0F))&&(dir==lado.b.dir))){					//TOTALES EXTRA
-						for(x=0;x<=9;x++){									
-							write_psoc1(val,msn_tk[x]);
-						}
-						write_psoc1(val,10);
+						for(x=0;x<=5;x++){									
+						    write_psoc1(val,msn_tc[x]);
+					    }
+					    write_psoc1(val,10);
+                        for(x=0;x<=10;x++){									
+						    write_psoc1(val,producto4n[x]);
+					    }
+                        write_psoc1(val,10);
 						for(x=0;x<=14;x++){									
 							write_psoc1(val,msn_lecact[x]);				//LECTURA ACTUAL
 						}

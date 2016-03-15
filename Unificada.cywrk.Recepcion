@@ -468,13 +468,11 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Unificada.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Unificada.cydsn\Unificada.cydwr" />
 <name v=".\Unificada.cydsn\main.c" />
-<name v=".\Unificada.cydsn\Protocolo.c" />
-<name v=".\Unificada.cydsn\Print.c" />
 <name v=".\Unificada.cydsn\VariablesG.h" />
-<name v=".\Unificada.cydsn\I2C.h" />
+<name v=".\Unificada.cydsn\Print.c" />
+<name v=".\Unificada.cydsn\Protocolo.h" />
+<name v=".\Unificada.cydsn\Protocolo.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
