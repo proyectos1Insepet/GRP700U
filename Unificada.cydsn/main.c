@@ -3403,14 +3403,14 @@ void polling_LCD2(void){
 		        count_protector2=0; 	          		        
                 flujo_LCD2=10;
 			 }
-//			 else{
-//                set_imagen(2,11);
-//                flujo_LCD2=10;
-//				Buffer_LCD2.posventa=0;	
-//		        isr_4_StartEx(animacion2); 
-//		        Timer_Animacion2_Start();
-//		        count_protector2=0;				
-//			 }
+			 else{
+                set_imagen(2,11);                
+				Buffer_LCD2.posventa=0;	
+		        isr_4_StartEx(animacion2); 
+		        Timer_Animacion2_Start();
+		        count_protector2=0;
+                flujo_LCD2=10;
+			 }
             break;            
          } 
         break;
@@ -3482,9 +3482,13 @@ void polling_LCD2(void){
             if((LCD_2_rxBuffer[0]==0xAA) && (LCD_2_rxBuffer[6]==0xC3) && (LCD_2_rxBuffer[7]==0x3C)){
                 switch(LCD_2_rxBuffer[3]){
                     case 0x39:                          //Si Imprime pasar a placa
-                      set_imagen(2,10);
                       teclas2 = 0;
-                      flujo_LCD2=9; 
+                      if((Buffer_LCD2.preset&0x04)!=0x04){
+                        set_imagen(2,10);
+                        flujo_LCD2=9; 
+                      }else{
+                        flujo_LCD2=13;
+                      }                                          
                     break; 
                     
                     case 0x38:                          //No Imprime 

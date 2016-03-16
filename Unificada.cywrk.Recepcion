@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Unificada\Unificada\Source Files\Print.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Unificada\Unificada\Header Files\VariablesG.h">
 <ExpandedNodeIds>
 <v>Unificada</v>
 <v>Unificada\Unificada</v>
@@ -468,9 +468,6 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Unificada.cydsn\main.c" />
-<name v=".\Unificada.cydsn\VariablesG.h" />
-<name v=".\Unificada.cydsn\Print.c" />
 <name v=".\Unificada.cydsn\Protocolo.h" />
 <name v=".\Unificada.cydsn\Protocolo.c" />
 </OpenDocs>

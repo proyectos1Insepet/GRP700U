@@ -48,13 +48,13 @@ uint8 msn_eds[20]="ESTACION DE SERVICIO";
 uint8 msn_nit[4]="NIT ";
 uint8 msn_tel[4]="TEL:";
 uint8 msn_numero[8]="Numero: ";
-uint8 msn_fecha[7]="Fecha:";
+uint8 msn_fecha[8]="Fecha:  ";
 uint8 msn_hora[7]="Hora:  ";
 uint8 msn_pos[10]="Posicion: ";
 uint8 msn_ppu[14]="PPU:      $/G ";
 uint8 msn_vol[13]="Volumen:  G ";
 uint8 msn_din[13]="Dinero:   $ ";
-uint8 msn_placa[10]="Placa:    ";
+uint8 msn_placa[11]="Placa:     ";
 uint8 msn_cuenta[11]="Cuenta:    ";
 uint8 msn_km[11]="Km:        ";
 uint8 msn_id[11]="Id:        ";
@@ -643,7 +643,7 @@ void imprimir(uint8 val, uint8 producto, uint8 copia, uint8 pos){
 	write_eeprom(978,id_venta);
     
 	write_psoc1(val,10);
-	for(x=0;x<=6;x++){										//FECHA								
+	for(x=0;x<=7;x++){										//FECHA								
 		write_psoc1(val,msn_fecha[x]);
 	}	
 	if(leer_fecha()==1){
@@ -683,7 +683,7 @@ void imprimir(uint8 val, uint8 producto, uint8 copia, uint8 pos){
 		for(x=0;x<=5;x++){									
 			write_psoc1(val,msn_copia[x]);
 		}
-		write_psoc1(val,(z+48));
+		//write_psoc1(val,(z+48));
 	}
     write_psoc1(val,10);
     write_psoc1(val,10);
@@ -821,7 +821,7 @@ void imprimir(uint8 val, uint8 producto, uint8 copia, uint8 pos){
 	if(pos==lado.a.dir){											//PLACA
 		if(Buffer_LCD1.posventa==1){
 			write_psoc1(val,10);	
-			for(x=0;x<10;x++){																		
+			for(x=0;x<=10;x++){																		
 				write_psoc1(val,msn_placa[x]);
 			} 
 			for(x=1;x<=Buffer_LCD1.placa[0];x++){

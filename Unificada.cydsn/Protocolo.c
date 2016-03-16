@@ -46,9 +46,6 @@
 */
 
 uint8 msn_tc[6]="TOTAL";
-uint8 msn_te[13]="DIESEL TOTAL";
-uint8 msn_td[14]="SANS P TOTAL";
-uint8 msn_tk[10]="KERO TOTAL";
 uint8 msn_lecact[15]="Valor actual: ";
 uint8 msn_lecaan[17]="Valor anterior:  ";
 uint8 msn_tventas[18]="Dinero total: $   ";
