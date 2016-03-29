@@ -158,6 +158,10 @@ void init(void){
     for(x=0;x<=buffer_i2c[0];x++){  //Carga nombre producto 4
 		producto4n[x]=buffer_i2c[x];
 	}
+    leer_eeprom(1165,2);
+    for(x=0;x<=buffer_i2c[0];x++){  //Carga cantidad de copias
+		n_copias[x]=buffer_i2c[x];
+	}
 	leer_eeprom(671,5);
 	if(buffer_i2c[0]==4){
 		for(x=1;x<=4;x++){
@@ -520,8 +524,7 @@ void polling_LCD1(void){
                     }
                     if(teclas1>=1 && a_copias == 1){ 
                         set_imagen(1,112);
-                        Buffer_LCD1.valor[0]=n_copias[0];
-                        n_copias[0] = z;
+                        n_copias[0]=Buffer_LCD1.valor[1];                       
                         write_eeprom(1165,n_copias);
                         a_copias = 0;
                         flujo_LCD = 14;
@@ -2670,15 +2673,14 @@ void polling_LCD1(void){
             if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
                 if(LCD_1_rxBuffer[3] == 0x0A)
                 {
-                    for(z=1;z<=n_copias[0];z++){
+                    for(z=1;z<=(n_copias[0]&0x0F);z++){
                         imprimir(print1[1],producto1,1,lado.a.dir);   //Impresión de número de copias por configuración
                         CyDelay(500);
                     }
-                    set_imagen(1,12);
-					flujo_LCD=100;
+                    set_imagen(1,12);					
 				    isr_3_StartEx(animacion);   //Si confirman copia imprime
 				    Timer_Animacion_Start();    
-                    
+                    flujo_LCD=100;
                 }
                 else{
                     set_imagen(1,12);
@@ -3329,10 +3331,17 @@ void polling_LCD2(void){
                     }
                 }
                 if(LCD_2_rxBuffer[3]==0x0C){					//Enter
-                    if(teclas2>=1){
-						set_imagen(2,7);
-                        Buffer_LCD2.valor[0]=teclas2;
-                        flujo_LCD2=6;                                                 					
+                    if(teclas1>=1 && a_copias ==0){
+                        set_imagen(2,7);
+						Buffer_LCD2.valor[0]=teclas2;
+                        flujo_LCD=6;                                                 				
+                    }
+                    if(teclas2>=1 && a_copias == 1){ 
+                        set_imagen(2,112);
+                        n_copias[0]=Buffer_LCD2.valor[1];                       
+                        write_eeprom(1165,n_copias);
+                        a_copias = 0;
+                        flujo_LCD2 = 14;
                     }
                 }
             }
@@ -5369,21 +5378,20 @@ void polling_LCD2(void){
             if((LCD_2_rxBuffer[0]==0xAA) && (LCD_2_rxBuffer[6]==0xC3) && (LCD_2_rxBuffer[7]==0x3C)){
                 if(LCD_2_rxBuffer[3] == 0x0A)
                 {
-                    imprimir(print2[1],producto2,1,lado.b.dir);
-                    CyDelay(500);
-                    set_imagen(2,12);
-					flujo_LCD2=100;
-					count_protector2=1;
+                    for(z=1;z<=(n_copias[0]&0x0F);z++){
+                        imprimir(print2[1],producto2,1,lado.b.dir);
+                        CyDelay(500);
+                    }                    
+                    set_imagen(2,12);									
 				    isr_4_StartEx(animacion2);       // Confirma e imprime copia de recibo
 				    Timer_Animacion2_Start();
-                    
+                    flujo_LCD2=100;
                 }
                 else{
-					set_imagen(2,12);
-					flujo_LCD2=100;
-					count_protector2=1;             // Si presionan NO o cualquier otro touch
+					set_imagen(2,12);					      // Si presionan NO o cualquier otro touch
 				    isr_4_StartEx(animacion2);  
 				    Timer_Animacion2_Start();
+                    flujo_LCD2=100;
                 }                             
             }
             CyDelay(100);            
