@@ -3087,10 +3087,13 @@ void polling_LCD1(void){
                         a_copias = 1;
                         teclas1=0;       
                         comas1=0;
-                        flujo_LCD = 5;
-                        
-                        
+                        flujo_LCD = 5;                                                
                     break;
+                        
+                    case 0x7E:									//ir a menu
+					  set_imagen(1,112);	
+                      flujo_LCD=14;     
+                    break;    
                         
                      
                     }
@@ -5775,6 +5778,19 @@ void polling_LCD2(void){
                         write_eeprom(1012,tipo_imp);
                         flujo_LCD2 = 14;
                     break;
+                        
+                    case 0xBE:
+                        set_imagen(2,6);  // Configuración número de copias
+                        a_copias = 1;
+                        teclas1=0;       
+                        comas1=0;
+                        flujo_LCD2 = 5;                                                
+                    break;
+                    
+                    case 0x7E:									//ir a menu
+					  set_imagen(1,112);	
+                      flujo_LCD2=14;     
+                    break; 
                      
                     }
                 }
