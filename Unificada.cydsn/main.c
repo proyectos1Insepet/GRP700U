@@ -3331,10 +3331,10 @@ void polling_LCD2(void){
                     }
                 }
                 if(LCD_2_rxBuffer[3]==0x0C){					//Enter
-                    if(teclas1>=1 && a_copias ==0){
+                    if(teclas2>=1 && a_copias ==0){
                         set_imagen(2,7);
 						Buffer_LCD2.valor[0]=teclas2;
-                        flujo_LCD=6;                                                 				
+                        flujo_LCD2=6;                                                 				
                     }
                     if(teclas2>=1 && a_copias == 1){ 
                         set_imagen(2,112);
@@ -5790,13 +5790,13 @@ void polling_LCD2(void){
                     case 0xBE:
                         set_imagen(2,6);  // Configuración número de copias
                         a_copias = 1;
-                        teclas1=0;       
-                        comas1=0;
+                        teclas2=0;       
+                        comas2=0;
                         flujo_LCD2 = 5;                                                
                     break;
                     
                     case 0x7E:									//ir a menu
-					  set_imagen(1,112);	
+					  set_imagen(2,112);	
                       flujo_LCD2=14;     
                     break; 
                      
