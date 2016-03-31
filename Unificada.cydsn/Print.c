@@ -683,7 +683,7 @@ void imprimir(uint8 val, uint8 producto, uint8 copia, uint8 pos){
 		for(x=0;x<=5;x++){									
 			write_psoc1(val,msn_copia[x]);
 		}
-		//write_psoc1(val,(z+48));
+		write_psoc1(val,(z+48));
 	}
     write_psoc1(val,10);
     write_psoc1(val,10);

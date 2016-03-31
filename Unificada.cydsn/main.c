@@ -87,6 +87,7 @@ void init(void){
     PC_Start();
     VDAC8_3_Start();
     CyDelay(5);	
+    a_copias = 0;
 
 	/****Lectura de variables en memoria eeprom****/
 	/*serial[0]=16;
@@ -156,6 +157,10 @@ void init(void){
     leer_eeprom(1163,10);
     for(x=0;x<=buffer_i2c[0];x++){  //Carga nombre producto 4
 		producto4n[x]=buffer_i2c[x];
+	}
+    leer_eeprom(1165,2);
+    for(x=0;x<=buffer_i2c[0];x++){  //Carga cantidad de copias
+		n_copias[x]=buffer_i2c[x];
 	}
 	leer_eeprom(671,5);
 	if(buffer_i2c[0]==4){
@@ -386,13 +391,7 @@ void polling_LCD1(void){
              LCD_1_ClearRxBuffer();
          }
         break;
-//        
-//        case 2: 
-//         flujo_LCD=3;
-//
-//        
-//        break;
-//        
+ 
         case 3:  
          if(LCD_1_GetRxBufferSize()==8){
             if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
@@ -518,10 +517,17 @@ void polling_LCD1(void){
                     }
                 }
                 if(LCD_1_rxBuffer[3]==0x0C){					//Enter
-                    if(teclas1>=1){
+                    if(teclas1>=1 && a_copias ==0){
                         set_imagen(1,7);
 						Buffer_LCD1.valor[0]=teclas1;
                         flujo_LCD=6;                                                 				
+                    }
+                    if(teclas1>=1 && a_copias == 1){ 
+                        set_imagen(1,112);
+                        n_copias[0]=Buffer_LCD1.valor[1];                       
+                        write_eeprom(1165,n_copias);
+                        a_copias = 0;
+                        flujo_LCD = 14;
                     }
                 }
             }
@@ -1153,7 +1159,7 @@ void polling_LCD1(void){
                       set_imagen(1,6);			
                       teclas1=0;                            	//Inicia el contador de teclas 
 					  rventa.producto=extra;
-					  write_LCD(1,'$',teclas1);						//Preducto 3
+					  write_LCD(1,'$',teclas1);						//Producto 3
                       flujo_LCD=26;	
                     break;
                     case 0x82:  	
@@ -2667,13 +2673,14 @@ void polling_LCD1(void){
             if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
                 if(LCD_1_rxBuffer[3] == 0x0A)
                 {
-                    imprimir(print1[1],producto1,1,lado.a.dir);
-                    CyDelay(500);
-                    set_imagen(1,12);
-					flujo_LCD=100;
+                    for(z=1;z<=(n_copias[0]&0x0F);z++){
+                        imprimir(print1[1],producto1,1,lado.a.dir);   //Impresión de número de copias por configuración
+                        CyDelay(500);
+                    }
+                    set_imagen(1,12);					
 				    isr_3_StartEx(animacion);   //Si confirman copia imprime
 				    Timer_Animacion_Start();    
-                    
+                    flujo_LCD=100;
                 }
                 else{
                     set_imagen(1,12);
@@ -3076,6 +3083,20 @@ void polling_LCD1(void){
                         write_eeprom(1012,tipo_imp);                        	
                         flujo_LCD=14;
                     break;
+                        
+                    case 0xBE:
+                        set_imagen(1,6);  // Configuración número de copias
+                        a_copias = 1;
+                        teclas1=0;       
+                        comas1=0;
+                        flujo_LCD = 5;                                                
+                    break;
+                        
+                    case 0x7E:									//ir a menu
+					  set_imagen(1,112);	
+                      flujo_LCD=14;     
+                    break;    
+                        
                      
                     }
                 }
@@ -3310,10 +3331,17 @@ void polling_LCD2(void){
                     }
                 }
                 if(LCD_2_rxBuffer[3]==0x0C){					//Enter
-                    if(teclas2>=1){
-						set_imagen(2,7);
-                        Buffer_LCD2.valor[0]=teclas2;
-                        flujo_LCD2=6;                                                 					
+                    if(teclas2>=1 && a_copias ==0){
+                        set_imagen(2,7);
+						Buffer_LCD2.valor[0]=teclas2;
+                        flujo_LCD2=6;                                                 				
+                    }
+                    if(teclas2>=1 && a_copias == 1){ 
+                        set_imagen(2,112);
+                        n_copias[0]=Buffer_LCD2.valor[1];                       
+                        write_eeprom(1165,n_copias);
+                        a_copias = 0;
+                        flujo_LCD2 = 14;
                     }
                 }
             }
@@ -5350,21 +5378,20 @@ void polling_LCD2(void){
             if((LCD_2_rxBuffer[0]==0xAA) && (LCD_2_rxBuffer[6]==0xC3) && (LCD_2_rxBuffer[7]==0x3C)){
                 if(LCD_2_rxBuffer[3] == 0x0A)
                 {
-                    imprimir(print2[1],producto2,1,lado.b.dir);
-                    CyDelay(500);
-                    set_imagen(2,12);
-					flujo_LCD2=100;
-					count_protector2=1;
+                    for(z=1;z<=(n_copias[0]&0x0F);z++){
+                        imprimir(print2[1],producto2,1,lado.b.dir);
+                        CyDelay(500);
+                    }                    
+                    set_imagen(2,12);									
 				    isr_4_StartEx(animacion2);       // Confirma e imprime copia de recibo
 				    Timer_Animacion2_Start();
-                    
+                    flujo_LCD2=100;
                 }
                 else{
-					set_imagen(2,12);
-					flujo_LCD2=100;
-					count_protector2=1;             // Si presionan NO o cualquier otro touch
+					set_imagen(2,12);					      // Si presionan NO o cualquier otro touch
 				    isr_4_StartEx(animacion2);  
 				    Timer_Animacion2_Start();
+                    flujo_LCD2=100;
                 }                             
             }
             CyDelay(100);            
@@ -5759,6 +5786,19 @@ void polling_LCD2(void){
                         write_eeprom(1012,tipo_imp);
                         flujo_LCD2 = 14;
                     break;
+                        
+                    case 0xBE:
+                        set_imagen(2,6);  // Configuración número de copias
+                        a_copias = 1;
+                        teclas2=0;       
+                        comas2=0;
+                        flujo_LCD2 = 5;                                                
+                    break;
+                    
+                    case 0x7E:									//ir a menu
+					  set_imagen(2,112);	
+                      flujo_LCD2=14;     
+                    break; 
                      
                     }
                 }
