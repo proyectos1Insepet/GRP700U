@@ -119,7 +119,9 @@ uint8 producto3n[11];
 uint8 producto4n[11];
 uint8 a_copias;
 uint8 n_copias [1];
- 
+uint8 no_imprime;
+uint8 no_imprime2;
+
 volatile int no_venta;													//Consecutivo de Venta entero	 
 /*
 1	Petrobras

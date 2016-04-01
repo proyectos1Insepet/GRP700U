@@ -587,15 +587,27 @@ void polling_LCD1(void){
 		 switch(get_estado(lado.a.dir)){
 	        case 0x0B:                     //Termino venta            
 				CyDelay(100);
-				if(venta(lado.a.dir)==1){	
-		            flujo_LCD=13;
+				if(venta(lado.a.dir)==1 && no_imprime == 0){	
+		            set_imagen(1,47);
+                    CyDelay(20);
+                    flujo_LCD=13;
+				}
+                if(venta(lado.a.dir)==1 && no_imprime == 1){	
+		            set_imagen(1,12);
+                    flujo_LCD=0;
 				}
 			 break;	
 				
 	        case 0x0A:                         
 				CyDelay(100);                  //Termino venta
-				if(venta(lado.a.dir)==1){	
-		            flujo_LCD=13;
+				if(venta(lado.a.dir)==1 && no_imprime == 0){	
+		            set_imagen(1,57);
+                    CyDelay(20);
+                    flujo_LCD=13;
+				}
+                if(venta(lado.a.dir)==1 && no_imprime == 1){	
+		            set_imagen(1,12);
+                    flujo_LCD=0;
 				}
 			break;
 
@@ -678,6 +690,7 @@ void polling_LCD1(void){
                       teclas1 = 0;
                       if((Buffer_LCD1.preset&0x04)!=0x04){
                         set_imagen(1,10);
+                        no_imprime = 0;
                         flujo_LCD=9; 
                       }else{
                         flujo_LCD=13;
@@ -685,7 +698,8 @@ void polling_LCD1(void){
                     break; 
                     
                     case 0x38:                          //No Imprime 
-                      set_imagen(1,5);				      
+                      set_imagen(1,5);	
+                      no_imprime = 1;
                       flujo_LCD=4; 
                    
                     break;                     
@@ -3367,14 +3381,26 @@ void polling_LCD2(void){
 		 switch(get_estado(lado.b.dir)){
 	         case 0x0B:                     //Termino venta
 				CyDelay(100);
-				if(venta(lado.b.dir)==1){	
+				if(venta(lado.b.dir)==1 && no_imprime2 ==0){
+                    set_imagen(2,57);
+                    CyDelay(20);
 		            flujo_LCD2=13;
+				}
+                if(venta(lado.b.dir)==1 && no_imprime2 ==1){
+                    set_imagen(2,12);                   
+		            flujo_LCD2=0;
 				}
 			 break;	
 				
 	         case 0x0A:                     //Termino venta
-				if(venta(lado.b.dir)==1){	
+				if(venta(lado.b.dir)==1 && no_imprime2 ==0){
+                    set_imagen(2,57);
+                    CyDelay(20);
 		            flujo_LCD2=13;
+				}
+                if(venta(lado.b.dir)==1 && no_imprime2 ==1){
+                    set_imagen(2,12);                   
+		            flujo_LCD2=0;
 				}
 			 break;
                 
@@ -3458,6 +3484,7 @@ void polling_LCD2(void){
                       teclas2 = 0;
                       if((Buffer_LCD2.preset&0x04)!=0x04){
                         set_imagen(2,10);
+                        no_imprime2 = 0;
                         flujo_LCD2=9; 
                       }else{
                         flujo_LCD2=13;
@@ -3465,7 +3492,8 @@ void polling_LCD2(void){
                     break; 
                     
                     case 0x38:                          //No Imprime 
-                      set_imagen(2,5);				      
+                      set_imagen(2,5);			
+                      no_imprime2 = 1;
                       flujo_LCD2=4; 
                     break;                     
                 }
