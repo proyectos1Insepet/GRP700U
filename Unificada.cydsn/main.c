@@ -242,7 +242,16 @@ void init(void){
 		 copia_recibo[0]=1;
 		 copia_recibo[1]=1;
 		 write_eeprom(984,copia_recibo);
-	}	
+	}
+    leer_eeprom(1167,2);	
+    if(buffer_i2c[0]==1){
+		 copia_recibo2[1]=buffer_i2c[1];        //Copia recibo lcd2
+	}
+	else{
+		 copia_recibo2[0]=1;
+		 copia_recibo2[1]=1;
+		 write_eeprom(1167,copia_recibo2);
+	}
     leer_eeprom(978,6);										//Id venta
 	if(buffer_i2c[0]==5){
 		for(x=0;x<=buffer_i2c[0];x++){
@@ -676,11 +685,8 @@ void polling_LCD1(void){
                     break; 
                     
                     case 0x38:                          //No Imprime 
-                      set_imagen(1,12);
-				      count_protector=1;
-				      isr_3_StartEx(animacion);  
-				      Timer_Animacion_Start();
-                      flujo_LCD=100; 
+                      set_imagen(1,5);				      
+                      flujo_LCD=4; 
                    
                     break;                     
                 }
@@ -3173,11 +3179,7 @@ void polling_LCD2(void){
              LCD_2_ClearRxBuffer();
 			 flujo_LCD2=3;
          }
-        break;
-        
-//        case 2: 
-//        	
-//        break;
+        break;        
         
         case 3:  
          if(LCD_2_GetRxBufferSize()==8){
@@ -3463,11 +3465,8 @@ void polling_LCD2(void){
                     break; 
                     
                     case 0x38:                          //No Imprime 
-                      set_imagen(2,12);                      
-				      count_protector2=1;
-				      isr_4_StartEx(animacion2);  
-				      Timer_Animacion2_Start();		
-                      flujo_LCD2=100; 
+                      set_imagen(2,5);				      
+                      flujo_LCD2=4; 
                     break;                     
                 }
             }
@@ -3556,7 +3555,7 @@ void polling_LCD2(void){
         
         case 13:
 			imprimir(print2[1], producto2,0,lado.b.dir);
-			if(version==1||(copia_recibo[1]==0)){
+			if(version==1||(copia_recibo2[1]==0)){
 				set_imagen(2,12);				
 				count_protector2=1;
 			    isr_4_StartEx(animacion2);  
@@ -5480,13 +5479,13 @@ void polling_LCD2(void){
                     break;					
 					
                     case 0x7E:								//ir a menu
-					  if(copia_recibo[1]==1){
-						copia_recibo[1]=0;
+					  if(copia_recibo2[1]==1){
+						copia_recibo2[1]=0;
 					  }	
 					  else{
-						copia_recibo[1]=1;
+						copia_recibo2[1]=1;
 					  }
-					  write_eeprom(986,copia_recibo);
+					  write_eeprom(1167,copia_recibo2);
 					  set_imagen(2,60);
 					  CyDelay(500);
 					  set_imagen(2,0);

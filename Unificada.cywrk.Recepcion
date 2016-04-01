@@ -470,6 +470,7 @@
 <OpenDocs>
 <name v=".\Unificada.cydsn\main.c" />
 <name v=".\Unificada.cydsn\Print.c" />
+<name v=".\Unificada.cydsn\VariablesG.h" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
