@@ -588,7 +588,7 @@ void polling_LCD1(void){
 	        case 0x0B:                     //Termino venta            
 				CyDelay(100);
 				if(venta(lado.a.dir)==1 && no_imprime == 0){	
-		            set_imagen(1,47);
+		            set_imagen(1,57);
                     CyDelay(20);
                     flujo_LCD=13;
 				}

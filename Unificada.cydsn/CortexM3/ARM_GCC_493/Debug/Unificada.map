@@ -1798,7 +1798,7 @@ END GROUP
                 0x00014178                cencosud
                 0x00014760                ecospetrol
                 0x00014d48                esso
-                0x00015330                gulf
+                0x00015330                National
                 0x00015918                mineroil
                 0x00015ccc                mobil
                 0x00016080                petrobras
@@ -1812,7 +1812,7 @@ END GROUP
                 0x00018568                cencosud1
                 0x00018918                ecospetrol1
                 0x00018cc8                esso1
-                0x00019078                gulf1
+                0x00019078                National1
                 0x00019428                mineroil1
                 0x000197d8                mobil1
                 0x00019b88                petrobras1
@@ -2494,7 +2494,7 @@ END GROUP
  .debug_frame   0x000034e0       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
  .debug_frame   0x00003508       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x4272
+.debug_str      0x00000000     0x427a
  *(.debug_str)
  .debug_str     0x00000000      0x880 .\CortexM3\ARM_GCC_493\Debug\main.o
                                 0x915 (size before relaxing)
@@ -2504,93 +2504,93 @@ END GROUP
                                 0x560 (size before relaxing)
  .debug_str     0x00000958        0x8 .\CortexM3\ARM_GCC_493\Debug\LCD.o
                                 0x57c (size before relaxing)
- .debug_str     0x00000960      0x25a .\CortexM3\ARM_GCC_493\Debug\Print.o
-                                0x750 (size before relaxing)
- .debug_str     0x00000bba      0x104 .\CortexM3\ARM_GCC_493\Debug\Protocolo.o
+ .debug_str     0x00000960      0x262 .\CortexM3\ARM_GCC_493\Debug\Print.o
+                                0x758 (size before relaxing)
+ .debug_str     0x00000bc2      0x104 .\CortexM3\ARM_GCC_493\Debug\Protocolo.o
                                 0x667 (size before relaxing)
- .debug_str     0x00000cbe      0x13a .\CortexM3\ARM_GCC_493\Debug\Sonido.o
+ .debug_str     0x00000cc6      0x13a .\CortexM3\ARM_GCC_493\Debug\Sonido.o
                                 0x600 (size before relaxing)
- .debug_str     0x00000df8       0x84 .\CortexM3\ARM_GCC_493\Debug\cybootloader.o
+ .debug_str     0x00000e00       0x84 .\CortexM3\ARM_GCC_493\Debug\cybootloader.o
                                 0x1f3 (size before relaxing)
- .debug_str     0x00000e7c       0x49 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_str     0x00000e84       0x49 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                                 0x1b8 (size before relaxing)
- .debug_str     0x00000ec5      0x153 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_str     0x00000ecd      0x153 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
                                 0x2fa (size before relaxing)
- .debug_str     0x00001018      0x199 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(cyfitter_cfg.o)
+ .debug_str     0x00001020      0x199 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(cyfitter_cfg.o)
                                 0x342 (size before relaxing)
- .debug_str     0x000011b1      0x37d .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Surtidor.o)
+ .debug_str     0x000011b9      0x37d .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Surtidor.o)
                                 0x5b1 (size before relaxing)
- .debug_str     0x0000152e       0x52 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Surtidor_INT.o)
+ .debug_str     0x00001536       0x52 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Surtidor_INT.o)
                                 0x242 (size before relaxing)
- .debug_str     0x00001580      0x345 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Impresora.o)
+ .debug_str     0x00001588      0x345 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Impresora.o)
                                 0x606 (size before relaxing)
- .debug_str     0x000018c5       0x39 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Impresora_INT.o)
+ .debug_str     0x000018cd       0x39 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Impresora_INT.o)
                                 0x242 (size before relaxing)
- .debug_str     0x000018fe      0x249 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(PC.o)
+ .debug_str     0x00001906      0x249 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(PC.o)
                                 0x4fc (size before relaxing)
- .debug_str     0x00001b47       0x2b .\CortexM3\ARM_GCC_493\Debug\Unificada.a(PC_INT.o)
+ .debug_str     0x00001b4f       0x2b .\CortexM3\ARM_GCC_493\Debug\Unificada.a(PC_INT.o)
                                 0x211 (size before relaxing)
- .debug_str     0x00001b72       0xd3 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(I2C_1.o)
+ .debug_str     0x00001b7a       0xd3 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(I2C_1.o)
                                 0x2f4 (size before relaxing)
- .debug_str     0x00001c45       0xe2 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(I2C_1_INT.o)
+ .debug_str     0x00001c4d       0xe2 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(I2C_1_INT.o)
                                 0x276 (size before relaxing)
- .debug_str     0x00001d27       0x62 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(I2C_1_PM.o)
+ .debug_str     0x00001d2f       0x62 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(I2C_1_PM.o)
                                 0x282 (size before relaxing)
- .debug_str     0x00001d89       0xf2 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(I2C_1_MASTER.o)
+ .debug_str     0x00001d91       0xf2 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(I2C_1_MASTER.o)
                                 0x3d3 (size before relaxing)
- .debug_str     0x00001e7b       0x60 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Pin_WP.o)
+ .debug_str     0x00001e83       0x60 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Pin_WP.o)
                                 0x1e3 (size before relaxing)
- .debug_str     0x00001edb      0x26e .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_1.o)
+ .debug_str     0x00001ee3      0x26e .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_1.o)
                                 0x56e (size before relaxing)
- .debug_str     0x00002149       0x31 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_1_INT.o)
+ .debug_str     0x00002151       0x31 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_1_INT.o)
                                 0x226 (size before relaxing)
- .debug_str     0x0000217a      0x26e .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_2.o)
+ .debug_str     0x00002182      0x26e .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_2.o)
                                 0x56e (size before relaxing)
- .debug_str     0x000023e8       0x31 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_2_INT.o)
+ .debug_str     0x000023f0       0x31 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_2_INT.o)
                                 0x226 (size before relaxing)
- .debug_str     0x00002419       0x40 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(IB1.o)
+ .debug_str     0x00002421       0x40 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(IB1.o)
                                 0x1d4 (size before relaxing)
- .debug_str     0x00002459       0x40 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(IB2.o)
+ .debug_str     0x00002461       0x40 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(IB2.o)
                                 0x1d4 (size before relaxing)
- .debug_str     0x00002499      0x1a7 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Timer_Animacion.o)
+ .debug_str     0x000024a1      0x1a7 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Timer_Animacion.o)
                                 0x385 (size before relaxing)
- .debug_str     0x00002640       0xe7 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(isr_3.o)
+ .debug_str     0x00002648       0xe7 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(isr_3.o)
                                 0x296 (size before relaxing)
- .debug_str     0x00002727      0x192 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Timer_Animacion2.o)
+ .debug_str     0x0000272f      0x192 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Timer_Animacion2.o)
                                 0x395 (size before relaxing)
- .debug_str     0x000028b9       0xcf .\CortexM3\ARM_GCC_493\Debug\Unificada.a(isr_4.o)
+ .debug_str     0x000028c1       0xcf .\CortexM3\ARM_GCC_493\Debug\Unificada.a(isr_4.o)
                                 0x296 (size before relaxing)
- .debug_str     0x00002988      0x146 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Timer_1.o)
+ .debug_str     0x00002990      0x146 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Timer_1.o)
                                 0x342 (size before relaxing)
- .debug_str     0x00002ace       0xda .\CortexM3\ARM_GCC_493\Debug\Unificada.a(isr_1.o)
+ .debug_str     0x00002ad6       0xda .\CortexM3\ARM_GCC_493\Debug\Unificada.a(isr_1.o)
                                 0x296 (size before relaxing)
- .debug_str     0x00002ba8       0x8d .\CortexM3\ARM_GCC_493\Debug\Unificada.a(VDAC8_1.o)
+ .debug_str     0x00002bb0       0x8d .\CortexM3\ARM_GCC_493\Debug\Unificada.a(VDAC8_1.o)
                                 0x22f (size before relaxing)
- .debug_str     0x00002c35      0x146 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Timer_2.o)
+ .debug_str     0x00002c3d      0x146 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Timer_2.o)
                                 0x342 (size before relaxing)
- .debug_str     0x00002d7b       0xda .\CortexM3\ARM_GCC_493\Debug\Unificada.a(isr_2.o)
+ .debug_str     0x00002d83       0xda .\CortexM3\ARM_GCC_493\Debug\Unificada.a(isr_2.o)
                                 0x296 (size before relaxing)
- .debug_str     0x00002e55       0x81 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(VDAC8_2.o)
+ .debug_str     0x00002e5d       0x81 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(VDAC8_2.o)
                                 0x22f (size before relaxing)
- .debug_str     0x00002ed6       0x9f .\CortexM3\ARM_GCC_493\Debug\Unificada.a(VDAC8_3.o)
+ .debug_str     0x00002ede       0x9f .\CortexM3\ARM_GCC_493\Debug\Unificada.a(VDAC8_3.o)
                                 0x22f (size before relaxing)
- .debug_str     0x00002f75       0x51 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(SDown.o)
+ .debug_str     0x00002f7d       0x51 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(SDown.o)
                                 0x1de (size before relaxing)
- .debug_str     0x00002fc6      0x1b7 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Impresora_IntClock.o)
+ .debug_str     0x00002fce      0x1b7 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(Impresora_IntClock.o)
                                 0x36e (size before relaxing)
- .debug_str     0x0000317d      0x126 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(PC_IntClock.o)
+ .debug_str     0x00003185      0x126 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(PC_IntClock.o)
                                 0x31a (size before relaxing)
- .debug_str     0x000032a3      0x144 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_1_IntClock.o)
+ .debug_str     0x000032ab      0x144 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_1_IntClock.o)
                                 0x33e (size before relaxing)
- .debug_str     0x000033e7      0x144 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_2_IntClock.o)
+ .debug_str     0x000033ef      0x144 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(LCD_2_IntClock.o)
                                 0x33e (size before relaxing)
- .debug_str     0x0000352b      0x7a7 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(CyLib.o)
+ .debug_str     0x00003533      0x7a7 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(CyLib.o)
                                 0xa1f (size before relaxing)
- .debug_str     0x00003cd2      0x35b .\CortexM3\ARM_GCC_493\Debug\Unificada.a(cyPm.o)
+ .debug_str     0x00003cda      0x35b .\CortexM3\ARM_GCC_493\Debug\Unificada.a(cyPm.o)
                                 0x717 (size before relaxing)
- .debug_str     0x0000402d      0x197 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(CyFlash.o)
+ .debug_str     0x00004035      0x197 .\CortexM3\ARM_GCC_493\Debug\Unificada.a(CyFlash.o)
                                 0x391 (size before relaxing)
- .debug_str     0x000041c4       0xae .\CortexM3\ARM_GCC_493\Debug\Unificada.a(CySpc.o)
+ .debug_str     0x000041cc       0xae .\CortexM3\ARM_GCC_493\Debug\Unificada.a(CySpc.o)
                                 0x31a (size before relaxing)
 
 .debug_loc      0x00000000     0x5c3d
