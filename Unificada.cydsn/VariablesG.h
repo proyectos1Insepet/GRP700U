@@ -109,6 +109,7 @@ uint8 pos_ibutton;														//Posicion de memoria ibutton
 uint8 crc_total;														//crc del ibutton
 uint8 print1[2], print2[2];												//Puerto de las impresoras
 uint8 copia_recibo[2];													//activar copia de recibo
+uint8 copia_recibo2[2];													//activar copia de recibo lcd2
 uint16 id_corte;														//consecutivo del corte
 uint8  id_venta[6];														//Consecutivo de Venta
 uint8  nombreproducto;                                                  //Para guardar en la estructura del nombre del producto
@@ -118,7 +119,9 @@ uint8 producto3n[11];
 uint8 producto4n[11];
 uint8 a_copias;
 uint8 n_copias [1];
- 
+uint8 no_imprime;
+uint8 no_imprime2;
+
 volatile int no_venta;													//Consecutivo de Venta entero	 
 /*
 1	Petrobras

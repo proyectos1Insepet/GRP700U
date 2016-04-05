@@ -214,7 +214,7 @@ void print_logo_k(uint8 val, uint8 logo){
 			
 		case 6:
 			for(i=0;i<=1511;i++){
-        		write_psoc1(val,gulf[i]);			
+        		write_psoc1(val,National[i]);			
 			}
 		break;	
 			
@@ -333,7 +333,7 @@ void print_logo_p(uint8 val, uint8 logo){
 			
 		case 6:
 			for(i=0;i<=943;i++){
-        		write_psoc1(val,gulf1[i]);			
+        		write_psoc1(val,National1[i]);			
 			}
 		break;	
 			
