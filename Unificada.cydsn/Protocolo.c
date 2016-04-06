@@ -49,9 +49,9 @@ uint8 msn_tc[6]="TOTAL";
 uint8 msn_te[13]="DIESEL TOTAL";
 uint8 msn_td[14]="SANS P TOTAL";
 uint8 msn_tk[10]="KERO TOTAL";
-uint8 msn_lecact[15]="Valor actual: ";
-uint8 msn_lecaan[17]="Valor anterior:  ";
-uint8 msn_tventas[18]="Dinero total: $   ";
+uint8 msn_lecact[15]="Current value: ";
+uint8 msn_lecaan[13]="Last value:  ";
+uint8 msn_tventas[17]="Total money: H   ";
 uint8 msn_totalcero[15]="NO TOMO TOTALES";
 
 
@@ -397,7 +397,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					write_psoc1(val,10);
 					print_totalesac(8,val);	
-					for(x=0;x<=16;x++){												
+					for(x=0;x<=12;x++){												
 						write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 					}
 					write_psoc1(val,10);
@@ -414,7 +414,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					minuendo[0]=8;
 					operacion(2,minuendo,sustraendo);
-					for(x=0;x<=17;x++){									
+					for(x=0;x<17;x++){									
 						write_psoc1(val,msn_tventas[x]);				//Total de ventas
 					}
 					print_valor(resultado,val);
@@ -441,7 +441,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					write_psoc1(val,10);
 					print_totalesac(8,val);	
-					for(x=0;x<=16;x++){												
+					for(x=0;x<=12;x++){												
 						write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 					}
 					write_psoc1(val,10);
@@ -458,7 +458,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					minuendo[0]=8;
 					operacion(2,minuendo,sustraendo);
-					for(x=0;x<=17;x++){									
+					for(x=0;x<17;x++){									
 						write_psoc1(val,msn_tventas[x]);				//Total de ventas
 					}
 					print_valor(resultado,val);				
@@ -485,7 +485,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					write_psoc1(val,10);
 					print_totalesac(8,val);	
-					for(x=0;x<=16;x++){												
+					for(x=0;x<=12;x++){												
 						write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 					}
 					write_psoc1(val,10);
@@ -502,7 +502,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					minuendo[0]=8;
 					operacion(2,minuendo,sustraendo);
-					for(x=0;x<=17;x++){									
+					for(x=0;x<17;x++){									
 						write_psoc1(val,msn_tventas[x]);				//Total de ventas
 					}
 					print_valor(resultado,val);							
@@ -530,7 +530,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					write_psoc1(val,10);
 					print_totalesac(8,val);	
-					for(x=0;x<=16;x++){												
+					for(x=0;x<=12;x++){												
 						write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 					}
 					write_psoc1(val,10);
@@ -547,7 +547,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					minuendo[0]=8;
 					operacion(2,minuendo,sustraendo);
-					for(x=0;x<=17;x++){									
+					for(x=0;x<17;x++){									
 						write_psoc1(val,msn_tventas[x]);				//Total de ventas
 					}
 					print_valor(resultado,val);							
@@ -601,7 +601,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(8,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -618,7 +618,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=8;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);
@@ -645,7 +645,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(8,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -662,7 +662,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=8;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);				
@@ -689,7 +689,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(8,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -706,7 +706,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=8;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);							
@@ -734,7 +734,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(8,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -751,7 +751,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=8;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);							
@@ -804,7 +804,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(8,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -821,7 +821,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=8;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);
@@ -848,7 +848,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(8,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -865,7 +865,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=8;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);				
@@ -892,7 +892,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(8,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -909,7 +909,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=8;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);							
@@ -937,7 +937,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(8,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -954,7 +954,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=8;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);							
@@ -1007,7 +1007,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					write_psoc1(val,10);
 					print_totalesac(12,val);	
-					for(x=0;x<=16;x++){												
+					for(x=0;x<=12;x++){												
 						write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 					}
 					write_psoc1(val,10);
@@ -1024,7 +1024,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					minuendo[0]=12;
 					operacion(2,minuendo,sustraendo);
-					for(x=0;x<=17;x++){									
+					for(x=0;x<17;x++){									
 						write_psoc1(val,msn_tventas[x]);				//Total de ventas
 					}
 					print_valor(resultado,val);
@@ -1051,7 +1051,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					write_psoc1(val,10);
 					print_totalesac(12,val);	
-					for(x=0;x<=16;x++){												
+					for(x=0;x<=12;x++){												
 						write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 					}
 					write_psoc1(val,10);
@@ -1068,7 +1068,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					minuendo[0]=12;
 					operacion(2,minuendo,sustraendo);
-					for(x=0;x<=17;x++){									
+					for(x=0;x<17;x++){									
 						write_psoc1(val,msn_tventas[x]);				//Total de ventas
 					}
 					print_valor(resultado,val);				
@@ -1095,7 +1095,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					write_psoc1(val,10);
 					print_totalesac(12,val);	
-					for(x=0;x<=16;x++){												
+					for(x=0;x<=12;x++){												
 						write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 					}
 					write_psoc1(val,10);
@@ -1112,7 +1112,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					minuendo[0]=12;
 					operacion(2,minuendo,sustraendo);
-					for(x=0;x<=17;x++){									
+					for(x=0;x<17;x++){									
 						write_psoc1(val,msn_tventas[x]);				//Total de ventas
 					}
 					print_valor(resultado,val);							
@@ -1140,7 +1140,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					write_psoc1(val,10);
 					print_totalesac(12,val);	
-					for(x=0;x<=16;x++){												
+					for(x=0;x<=12;x++){												
 						write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 					}
 					write_psoc1(val,10);
@@ -1157,7 +1157,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 					}
 					minuendo[0]=12;
 					operacion(2,minuendo,sustraendo);
-					for(x=0;x<=17;x++){									
+					for(x=0;x<17;x++){									
 						write_psoc1(val,msn_tventas[x]);				//Total de ventas
 					}
 					print_valor(resultado,val);							
@@ -1208,7 +1208,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(12,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -1225,7 +1225,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=12;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);
@@ -1252,7 +1252,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(12,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -1269,7 +1269,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=12;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);				
@@ -1296,7 +1296,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(12,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -1313,7 +1313,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=12;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);							
@@ -1342,7 +1342,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(12,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -1359,7 +1359,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=12;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);							
@@ -1412,7 +1412,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(12,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -1429,7 +1429,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=12;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);
@@ -1456,7 +1456,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(12,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -1473,7 +1473,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=12;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);				
@@ -1500,7 +1500,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(12,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -1517,7 +1517,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=12;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);							
@@ -1545,7 +1545,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						write_psoc1(val,10);
 						print_totalesac(12,val);	
-						for(x=0;x<=16;x++){												
+						for(x=0;x<=12;x++){												
 							write_psoc1(val,msn_lecaan[x]);				//LECTURA ANTERIOR
 						}
 						write_psoc1(val,10);
@@ -1562,7 +1562,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 						}
 						minuendo[0]=12;
 						operacion(2,minuendo,sustraendo);
-						for(x=0;x<=17;x++){									
+						for(x=0;x<17;x++){									
 							write_psoc1(val,msn_tventas[x]);				//Total de ventas
 						}
 						print_valor(resultado,val);							

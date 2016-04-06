@@ -48,7 +48,7 @@
 *********************************************************************************************************
 */
 uint8 letras[26]={0x25,0x42,0x31,0x27,0x1D,0x28,0x29,0x2A,0x22,0x2B,0x2C,0x2D,0x35,0x34,0x23,0x24,0x1B,0x1E,0x26,0x1F,0x21,0x32,0x1C,0x30,0x20,0x2F};
-uint8 test[18]="Test de Impresora";
+uint8 test[18]="Printer Test";
 uint8 puk[8]="18928005";
 uint8 serial[17]="0FFFFF8FEEBEB2DC0";
 uint8 pasword_corte[5]={4,'1','2','3','4'};
@@ -294,6 +294,10 @@ void init_surt(void){
 	while(seguir==0){
 		switch(ver_pos()){
 			case 0:
+                set_imagen(1,79);
+                CyDelay(500);
+                set_imagen(2,79);
+                seguir = 0;
 														//mostrar error de comunicacion	
 			break;
 			
@@ -448,7 +452,7 @@ void polling_LCD1(void){
                     case 0x0F:		   					 	 //Preset por dinero	                               
                       set_imagen(1,6);                   
                       teclas1=0;                            	 //Inicia el contador de teclas                                         
-                      write_LCD(1,'$',0);
+                      write_LCD(1,'H',0);
 					  Buffer_LCD1.preset|=2;
                       flujo_LCD=5;   
                     break;
@@ -1017,7 +1021,11 @@ void polling_LCD1(void){
         case 17:
          if(LCD_1_GetRxBufferSize()==8){
             if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
-                if(teclas1<=7){
+                if(LCD_1_rxBuffer[3] == 0x94){
+                        set_imagen(1,112);
+                        flujo_LCD = 14; 
+                }
+                if(teclas1<=7){                    
                     if(LCD_1_rxBuffer[3]<=9){
                         Buffer_LCD1.password[teclas1]=LCD_1_rxBuffer[3]+0x30;
                         write_LCD(1,(LCD_1_rxBuffer[3]+0x30),teclas1);
@@ -1134,7 +1142,7 @@ void polling_LCD1(void){
                       set_imagen(1,6);   
                       teclas1=0;                            	 //Inicia el contador de teclas 
 					  rventa.producto=corriente;	
-					  write_LCD(1,'$',teclas1);							 	 //Producto 1	                               
+					  write_LCD(1,'H',teclas1);							 	 //Producto 1	                               
                       flujo_LCD=26; 
                     break;
                     
@@ -1142,7 +1150,7 @@ void polling_LCD1(void){
                       set_imagen(1,6);		
                       teclas1=0;                            	 //Inicia el contador de teclas 
 					  rventa.producto=diesel;
-					  write_LCD(1,'$',teclas1);						 //Producto 2
+					  write_LCD(1,'H',teclas1);						 //Producto 2
                       flujo_LCD=26;              
                     break;
                     
@@ -1150,14 +1158,14 @@ void polling_LCD1(void){
                       set_imagen(1,6);			
                       teclas1=0;                            	//Inicia el contador de teclas 
 					  rventa.producto=extra;
-					  write_LCD(1,'$',teclas1);						//Producto 3
+					  write_LCD(1,'H',teclas1);						//Producto 3
                       flujo_LCD=26;	
                     break;
                     case 0x82:  	
                       set_imagen(1,6); 			
                       teclas1=0;                            	//Inicia el contador de teclas 
 					  rventa.producto=kero;
-					  write_LCD(1,'$',teclas1);					//Otro producto
+					  write_LCD(1,'H',teclas1);					//Otro producto
                       flujo_LCD=26;		
                     break;
                    										
@@ -1262,6 +1270,11 @@ void polling_LCD1(void){
 					  set_imagen(1,0);
 	                  flujo_LCD=0;     
 	                break;	
+                    
+                    case 0x94:									//ir a menu
+					  set_imagen(1,112);
+	                  flujo_LCD=14;     
+	                break;
 				}
             }
             CyDelay(100);            
@@ -2040,15 +2053,7 @@ void polling_LCD1(void){
                         teclas1++;
                         Buffer_LCD1.valor[teclas1]=0x30;
                         write_LCD(1,0x30,teclas1);
-                    }  
-                 /*   if(LCD_1_rxBuffer[3]==0x51){            	//Comando de Coma
-                        if(teclas1>=1 && comas1==0){
-                            teclas1++;
-                            //Buffer_LCD1.valor[teclas1]=0x2C;
-                            write_LCD(1,0x2C,teclas1);
-                            comas1=1;
-                        }
-                    }  */                  
+                    }                   
                 }
                 if(LCD_1_rxBuffer[3]==0x0B){					//Cancel
                     if(teclas1==0){								//Si no ha presionado nada regresa al menu anterior
@@ -2756,7 +2761,12 @@ void polling_LCD1(void){
                     case 0x7E:								//ir a menu
 					  set_imagen(1,0);	
                       flujo_LCD=0;     
-                    break;					
+                    break;
+                    
+                    case 0x94:									//ir a menu
+					  set_imagen(1,112);
+	                  flujo_LCD=14;     
+	                break;
                 }
             }
             CyDelay(100);
@@ -3133,9 +3143,15 @@ void polling_LCD1(void){
                       nombreproducto = 1;
                       flujo_LCD=24;
                     break;
+                    
+                    case 0x7E:
+                        set_imagen(1,95); 					    
+                        flujo_LCD=27;                        
+                    break;
                 }
             }
-                
+            CyDelay(100);
+            LCD_1_ClearRxBuffer();    
     }
         break;
     }
@@ -3242,7 +3258,7 @@ void polling_LCD2(void){
                     case 0x0F:								 	 //Preset por dinero	                               
                       set_imagen(2,6);
                       teclas2=0;        //Inicia el contador de teclas  
-                      write_LCD(2,'$',0);
+                      write_LCD(2,'H',0);
                       Buffer_LCD2.preset|=2;
                       flujo_LCD2=5;                                                                           	                                               					  
                     break;
@@ -3918,7 +3934,7 @@ void polling_LCD2(void){
                       teclas1=0;                            	 //Inicia el contador de teclas 
 					  rventa.producto=corriente2;
                       set_imagen(2,6); 	
-					  write_LCD(2,'$',teclas1);	
+					  write_LCD(2,'H',teclas1);	
                       flujo_LCD2=26; 
                     break;
                     
@@ -3926,7 +3942,7 @@ void polling_LCD2(void){
                       teclas1=0;                            	 //Inicia el contador de teclas 
 					  rventa.producto=diesel2;
                       set_imagen(2,6); 	
-					  write_LCD(2,'$',teclas1);	      
+					  write_LCD(2,'H',teclas1);	      
                       flujo_LCD2=26; 
                     break;
                     
@@ -3934,7 +3950,7 @@ void polling_LCD2(void){
                       teclas1=0;                            	//Inicia el contador de teclas 
 					  rventa.producto=extra2;
                       set_imagen(2,6); 	
-					  write_LCD(2,'$',teclas1);
+					  write_LCD(2,'H',teclas1);
                       flujo_LCD2=26; 
                     break;
                     
@@ -3942,7 +3958,7 @@ void polling_LCD2(void){
                       teclas1=0;                            	//Inicia el contador de teclas 
 					  rventa.producto=kero2;
                       set_imagen(2,6); 	
-					  write_LCD(2,'$',teclas1);	
+					  write_LCD(2,'H',teclas1);	
                       flujo_LCD2=26;	
                     break;
                    										
