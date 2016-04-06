@@ -3821,6 +3821,10 @@ void polling_LCD2(void){
         case 17:
          if(LCD_2_GetRxBufferSize()==8){
             if((LCD_2_rxBuffer[0]==0xAA) && (LCD_2_rxBuffer[6]==0xC3) && (LCD_2_rxBuffer[7]==0x3C)){
+                if(LCD_2_rxBuffer[3] == 0x94){
+                        set_imagen(2,112);
+                        flujo_LCD2 = 14; 
+                }
                 if(teclas2<=7){
                     if(LCD_2_rxBuffer[3]<=9){
                         Buffer_LCD2.password[teclas2]=LCD_2_rxBuffer[3]+0x30;
@@ -4063,6 +4067,10 @@ void polling_LCD2(void){
 					  set_imagen(2,0);
 	                  flujo_LCD2=0;     
 	                break;	
+                    case 0x94:									//ir a menu
+					  set_imagen(2,112);
+	                  flujo_LCD2=14;     
+	                break;
 				}
             }
             CyDelay(100);            
@@ -5457,7 +5465,12 @@ void polling_LCD2(void){
                     case 0x7E:								//ir a menu
 					  set_imagen(2,0);	
                       flujo_LCD2=0;     
-                    break;					
+                    break;	
+                    case 0x94:									//ir a menu
+					  set_imagen(2,112);
+	                  flujo_LCD2=14;     
+	                break;
+                    
                 }
             }
             CyDelay(100);
