@@ -294,7 +294,10 @@ void init_surt(void){
 	while(seguir==0){
 		switch(ver_pos()){
 			case 0:
-														//mostrar error de comunicacion	
+                set_imagen(1,79);
+                CyDelay(500);           	//mostrar error de comunicacion
+                set_imagen(2,79);
+                seguir = 0;													
 			break;
 			
 			case 1:
@@ -1017,6 +1020,10 @@ void polling_LCD1(void){
         case 17:
          if(LCD_1_GetRxBufferSize()==8){
             if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
+                if(LCD_1_rxBuffer[3] == 0x94){
+                        set_imagen(1,112);
+                        flujo_LCD = 14; 
+                }
                 if(teclas1<=7){
                     if(LCD_1_rxBuffer[3]<=9){
                         Buffer_LCD1.password[teclas1]=LCD_1_rxBuffer[3]+0x30;
@@ -1262,6 +1269,10 @@ void polling_LCD1(void){
 					  set_imagen(1,0);
 	                  flujo_LCD=0;     
 	                break;	
+                    case 0x94:									//ir a menu
+					  set_imagen(1,112);
+	                  flujo_LCD=14;     
+	                break;
 				}
             }
             CyDelay(100);            
@@ -2040,15 +2051,7 @@ void polling_LCD1(void){
                         teclas1++;
                         Buffer_LCD1.valor[teclas1]=0x30;
                         write_LCD(1,0x30,teclas1);
-                    }  
-                 /*   if(LCD_1_rxBuffer[3]==0x51){            	//Comando de Coma
-                        if(teclas1>=1 && comas1==0){
-                            teclas1++;
-                            //Buffer_LCD1.valor[teclas1]=0x2C;
-                            write_LCD(1,0x2C,teclas1);
-                            comas1=1;
-                        }
-                    }  */                  
+                    }                               
                 }
                 if(LCD_1_rxBuffer[3]==0x0B){					//Cancel
                     if(teclas1==0){								//Si no ha presionado nada regresa al menu anterior
@@ -2756,7 +2759,11 @@ void polling_LCD1(void){
                     case 0x7E:								//ir a menu
 					  set_imagen(1,0);	
                       flujo_LCD=0;     
-                    break;					
+                    break;	
+                    case 0x94:									//ir a menu
+					  set_imagen(1,112);
+	                  flujo_LCD=14;     
+	                break;
                 }
             }
             CyDelay(100);
@@ -3133,9 +3140,14 @@ void polling_LCD1(void){
                       nombreproducto = 1;
                       flujo_LCD=24;
                     break;
+                    case 0x7E:
+                        set_imagen(1,95); 					    
+                        flujo_LCD=27;                        
+                    break;
                 }
             }
-                
+            CyDelay(100);
+            LCD_1_ClearRxBuffer();   
     }
         break;
     }
@@ -3805,6 +3817,10 @@ void polling_LCD2(void){
         case 17:
          if(LCD_2_GetRxBufferSize()==8){
             if((LCD_2_rxBuffer[0]==0xAA) && (LCD_2_rxBuffer[6]==0xC3) && (LCD_2_rxBuffer[7]==0x3C)){
+                if(LCD_2_rxBuffer[3] == 0x94){
+                        set_imagen(2,112);
+                        flujo_LCD2 = 14; 
+                }
                 if(teclas2<=7){
                     if(LCD_2_rxBuffer[3]<=9){
                         Buffer_LCD2.password[teclas2]=LCD_2_rxBuffer[3]+0x30;
@@ -4047,6 +4063,10 @@ void polling_LCD2(void){
 					  set_imagen(2,0);
 	                  flujo_LCD2=0;     
 	                break;	
+                    case 0x94:									//ir a menu
+					  set_imagen(2,112);
+	                  flujo_LCD2=14;     
+	                break;
 				}
             }
             CyDelay(100);            
@@ -5441,7 +5461,11 @@ void polling_LCD2(void){
                     case 0x7E:								//ir a menu
 					  set_imagen(2,0);	
                       flujo_LCD2=0;     
-                    break;					
+                    break;		
+                    case 0x94:									//ir a menu
+					  set_imagen(2,112);
+	                  flujo_LCD2=14;     
+	                break;
                 }
             }
             CyDelay(100);
