@@ -251,6 +251,13 @@ void init(void){
 		 copia_recibo2[1]=1;
 		 write_eeprom(1167,copia_recibo2);
 	}
+    
+    leer_eeprom(1012,2);										//Tipo impresora
+	if(buffer_i2c[0]==1){
+		for(x=0;x<=buffer_i2c[0];x++){
+			tipo_imp[x]=buffer_i2c[x]; 
+		}
+	}
     leer_eeprom(978,6);										//Id venta
 	if(buffer_i2c[0]==5){
 		for(x=0;x<=buffer_i2c[0];x++){
@@ -300,6 +307,16 @@ void init_surt(void){
 			break;
 			
 			case 1:
+                
+			CyDelay(100);
+			if(get_estado(lado.a.dir)==6 && get_estado(lado.b.dir)==6 ){	
+				seguir = 1;
+                set_imagen(1,60); 
+                set_imagen(2,60); 
+			}else{
+                set_imagen(1,85);
+            }
+			break;
 														//Una de las pos no responde
 			break;
 			
@@ -307,8 +324,12 @@ void init_surt(void){
 			CyDelay(100);
 			if(get_estado(lado.a.dir)==6){	
 				if(get_estado(lado.b.dir)==6){
-					seguir=2;							//Las dos pos contestaron
-				}
+					seguir=2;
+                    set_imagen(1,74);  //Las dos pos contestaron
+                    set_imagen(2,74);
+				}else{
+                set_imagen(1,85);
+            }
 			}	
 			break;
 		}
@@ -700,10 +721,13 @@ void polling_LCD1(void){
                     break; 
                     
                     case 0x38:                          //No Imprime 
-                      set_imagen(1,5);	
-                      no_imprime = 1;
-                      flujo_LCD=4; 
-                   
+                        set_imagen(1,5);	
+                        if((Buffer_LCD1.preset&0x04)!=0x04){
+                            no_imprime = 1;
+                        }else{
+                            no_imprime = 0;
+                        }
+                        flujo_LCD=4;                    
                     break;                     
                 }
             }
@@ -1935,8 +1959,7 @@ void polling_LCD1(void){
 						switch(teclado){
 							case 0:
                                 if(nombreproducto == 1){
-                                    producto1n[0]=teclas1;
-                                    write_eeprom(1130,borrado);
+                                    producto1n[0]=teclas1;                                   
                                     write_eeprom(1130,producto1n);	//Guarda el nombre en la eeprom
 									    
 								    }
@@ -1953,8 +1976,7 @@ void polling_LCD1(void){
 								
 							case 1:
                                 if(nombreproducto == 1){
-                                    producto2n[0]=teclas1;
-                                    write_eeprom(1141,borrado);
+                                    producto2n[0]=teclas1;                                   
                                     write_eeprom(1141,producto2n);	//Guarda el nombre en la eeprom
                                 }
 								if(nombreproducto == 0){    
@@ -1968,8 +1990,7 @@ void polling_LCD1(void){
 								
 							case 2:
                                 if(nombreproducto == 1){
-                                    producto3n[0]=teclas1;
-                                    write_eeprom(1152,borrado);
+                                    producto3n[0]=teclas1;                                   
                                     write_eeprom(1152,producto3n);	//Guarda el nombre en la eeprom
                                 }
                                 if(nombreproducto == 0){ 
@@ -1983,8 +2004,7 @@ void polling_LCD1(void){
 								
 							case 3:
                                 if(nombreproducto == 1){
-                                    producto4n[0]=teclas1;
-                                    write_eeprom(1163,borrado);
+                                    producto4n[0]=teclas1;                                   
                                     write_eeprom(1163,producto4n);	//Guarda el nombre en la eeprom
                                 }
                                 if(nombreproducto == 0){
@@ -2022,6 +2042,7 @@ void polling_LCD1(void){
                     
                     case 0x5E:  								//Con ID                                         
                       set_imagen(1,29);
+                      no_imprime = 0;
                       flujo_LCD=11;
                     break;	
 
@@ -3502,10 +3523,14 @@ void polling_LCD2(void){
                       }
                     break; 
                     
-                    case 0x38:                          //No Imprime 
-                      set_imagen(2,5);			
-                      no_imprime2 = 1;
-                      flujo_LCD2=4; 
+                    case 0x38:                          //No Imprime
+                      set_imagen(2,5);
+                      if((Buffer_LCD2.preset&0x04)!=0x04){
+                            no_imprime2 = 1;
+                        }else{
+                            no_imprime2 = 0;
+                        }
+                        flujo_LCD2=4;    
                     break;                     
                 }
             }
@@ -4719,9 +4744,10 @@ void polling_LCD2(void){
                       flujo_LCD2=10; 
                     break;
                     
-                    case 0x5E:  								//Con ID
-                      flujo_LCD2=11;                   
-                      set_imagen(2,29);
+                    case 0x5E:  								//Con ID                                        
+                        set_imagen(2,29);
+                        no_imprime2 = 0;
+                        flujo_LCD2=11; 
                     break;	
 
                     case 0x7E:									//ir a menu
