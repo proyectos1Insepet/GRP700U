@@ -52,7 +52,6 @@ uint8 test[18]="Test de Impresora";
 uint8 puk[8]="18928005";
 uint8 serial[17]="0FFFFF8FEEBEB2DC0";
 uint8 pasword_corte[5]={4,'1','2','3','4'};
-uint8 borrado[10] ="          ";
 CY_ISR(animacion2);
 CY_ISR(animacion);
 /*
