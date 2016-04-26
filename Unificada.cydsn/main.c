@@ -73,38 +73,18 @@ CY_ISR(animacion);
 void init(void){
 	/****Inicio de perifericos****/
     CyGlobalIntEnable;
-    Surtidor_EnableRxInt();
-    PC_EnableRxInt();
+    Surtidor_EnableRxInt();   
     I2C_1_Start();
     Surtidor_Start();
     Impresora_Start();
     LCD_1_Start();
-    LCD_2_Start();
-    Impresora_EnableRxInt();
-    LCD_1_EnableRxInt();
-    LCD_2_EnableRxInt();
-    PC_Start();
-    VDAC8_3_Start();
+    LCD_2_Start();   
+    PC_Start();    
     CyDelay(5);	
     a_copias = 0;
 
 	/****Lectura de variables en memoria eeprom****/
-	/*serial[0]=16;
-	y=0;
-	leer_eeprom(615,17);
-	if(buffer_i2c[0]!=16){
-		serial[0]=16;
-		write_eeprom(615,serial);
-	}	
-	else{
-		while(y!=16){
-			for(x=1;x<=16;x++){
-				if(buffer_i2c[x]==serial[x]){
-					y++;
-				}
-			}
-		}
-	}*/
+	
 	leer_eeprom(0,32);
 	for(x=0;x<=buffer_i2c[0];x++){
 		rventa.nombre[x]=buffer_i2c[x];
@@ -592,7 +572,6 @@ void polling_LCD1(void){
 					break;
 				}					
 			}
-			SDown_Write(1);
 			producto1=estado_ex(lado.a.dir);
 			if(producto1!=0){															//Si el grado es correcto reproduce audio
 				if(producto1==(extra&0x0f)||producto1==(corriente&0x0f)||producto1==(diesel&0x0f)||producto1==(kero&0x0f)){
