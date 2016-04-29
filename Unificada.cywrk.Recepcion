@@ -418,6 +418,23 @@
 <v>Unificada\Unificada\PSoC 5 Architecture TRM</v>
 <v>Unificada\Unificada\CY8C58LP Family Datasheet</v>
 <v>Unificada\Unificada\System Reference Guides</v>
+<v>Unificada\Unificada\System Reference Guides\cy_boot_v5_10</v>
+<v>Unificada\Unificada\Bootloadable_v1_30.pdf</v>
+<v>Unificada\Unificada\cy_clock_v2_20</v>
+<v>Unificada\Unificada\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Unificada\Unificada\cy_isr_v1_70</v>
+<v>Unificada\Unificada\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>Unificada\Unificada\cy_pins_v2_10</v>
+<v>Unificada\Unificada\cy_pins_v2_10\cy_pins_v2_10.pdf</v>
+<v>Unificada\Unificada\I2C_v3_30.pdf</v>
+<v>Unificada\Unificada\Timer_v2_70</v>
+<v>Unificada\Unificada\Timer_v2_70\Timer_v2_70.pdf</v>
+<v>Unificada\Unificada\UART_v2_30</v>
+<v>Unificada\Unificada\UART_v2_30\UART_v2_30.pdf</v>
+<v>Unificada\Unificada\VDAC8_v1_90</v>
+<v>Unificada\Unificada\VDAC8_v1_90\VDAC8_v1_90.pdf</v>
+<v>Unificada\Unificada\ZeroTerminal</v>
+<v>Unificada\Unificada\ZeroTerminal\ZeroTerminal.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Unificada</v>
@@ -425,6 +442,23 @@
 <v>Unificada\Unificada\PSoC 5 Architecture TRM</v>
 <v>Unificada\Unificada\CY8C58LP Family Datasheet</v>
 <v>Unificada\Unificada\System Reference Guides</v>
+<v>Unificada\Unificada\System Reference Guides\cy_boot_v5_10</v>
+<v>Unificada\Unificada\Bootloadable_v1_30.pdf</v>
+<v>Unificada\Unificada\cy_clock_v2_20</v>
+<v>Unificada\Unificada\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>Unificada\Unificada\cy_isr_v1_70</v>
+<v>Unificada\Unificada\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>Unificada\Unificada\cy_pins_v2_10</v>
+<v>Unificada\Unificada\cy_pins_v2_10\cy_pins_v2_10.pdf</v>
+<v>Unificada\Unificada\I2C_v3_30.pdf</v>
+<v>Unificada\Unificada\Timer_v2_70</v>
+<v>Unificada\Unificada\Timer_v2_70\Timer_v2_70.pdf</v>
+<v>Unificada\Unificada\UART_v2_30</v>
+<v>Unificada\Unificada\UART_v2_30\UART_v2_30.pdf</v>
+<v>Unificada\Unificada\VDAC8_v1_90</v>
+<v>Unificada\Unificada\VDAC8_v1_90\VDAC8_v1_90.pdf</v>
+<v>Unificada\Unificada\ZeroTerminal</v>
+<v>Unificada\Unificada\ZeroTerminal\ZeroTerminal.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
