@@ -137,7 +137,7 @@ void init(void){
     for(x=0;x<=buffer_i2c[0];x++){  //Carga nombre producto 4
 		producto4n[x]=buffer_i2c[x];
 	}
-    leer_eeprom(1165,2);
+    leer_eeprom(1174,2);
     for(x=0;x<=buffer_i2c[0];x++){  //Carga cantidad de copias
 		n_copias[x]=buffer_i2c[x];
 	}
@@ -222,14 +222,14 @@ void init(void){
 		 copia_recibo[1]=1;
 		 write_eeprom(984,copia_recibo);
 	}
-    leer_eeprom(1167,2);	
+    leer_eeprom(1496,2);	
     if(buffer_i2c[0]==1){
 		 copia_recibo2[1]=buffer_i2c[1];        //Copia recibo lcd2
 	}
 	else{
 		 copia_recibo2[0]=1;
 		 copia_recibo2[1]=1;
-		 write_eeprom(1167,copia_recibo2);
+		 write_eeprom(1496,copia_recibo2);
 	}
     
     leer_eeprom(1012,2);										//Tipo impresora
@@ -254,9 +254,7 @@ void init(void){
 		write_eeprom(978,id_venta);
 	}
 	no_venta=((id_venta[5]&0x0F)*10000)+((id_venta[4]&0x0F)*1000)+((id_venta[3]&0x0F)*100)+((id_venta[2]&0x0F)*10)+((id_venta[1]&0x0F));
-	
-    /*********Activa GRP700 o GRP500******************/
-	version=2; 	
+	    	
 }
 
 /*
@@ -537,7 +535,7 @@ void polling_LCD1(void){
                     if(teclas1>=1 && a_copias == 1){ 
                         set_imagen(1,112);
                         n_copias[0]=Buffer_LCD1.valor[1];                       
-                        write_eeprom(1165,n_copias);
+                        write_eeprom(1174,n_copias);
                         a_copias = 0;
                         flujo_LCD = 14;
                     }
@@ -3338,7 +3336,7 @@ void polling_LCD2(void){
                     if(teclas2>=1 && a_copias == 1){ 
                         set_imagen(2,112);
                         n_copias[0]=Buffer_LCD2.valor[1];                       
-                        write_eeprom(1165,n_copias);
+                        write_eeprom(1174,n_copias);
                         a_copias = 0;
                         flujo_LCD2 = 14;
                     }
@@ -5541,7 +5539,7 @@ void polling_LCD2(void){
 					  else{
 						copia_recibo2[1]=1;
 					  }
-					  write_eeprom(1167,copia_recibo2);
+					  write_eeprom(1496,copia_recibo2);
 					  set_imagen(2,60);
 					  CyDelay(500);
 					  set_imagen(2,0);
