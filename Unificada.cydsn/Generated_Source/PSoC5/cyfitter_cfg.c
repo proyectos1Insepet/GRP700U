@@ -373,7 +373,7 @@ void cyfitter_cfg(void)
 #endif
 
 	/* Enable/Disable Debug functionality based on settings from System DWR */
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_MLOGIC_DEBUG, (CY_GET_XTND_REG8((void CYFAR *)CYREG_MLOGIC_DEBUG) | 0x24u));
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_MLOGIC_DEBUG, (CY_GET_XTND_REG8((void CYFAR *)CYREG_MLOGIC_DEBUG) | 0x04u));
 
 	{
 

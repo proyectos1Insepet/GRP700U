@@ -13131,7 +13131,7 @@ ARM GAS  .\Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  1745              	.set CYDEV_DEBUGGING_DPS_SWD, 2
  1746              	.set CYDEV_DEBUGGING_DPS_SWD_SWV, 6
  1747              	.set CYDEV_DEBUGGING_DPS, CYDEV_DEBUGGING_DPS_SWD_SWV
- 1748              	.set CYDEV_DEBUGGING_ENABLE, 0
+ 1748              	.set CYDEV_DEBUGGING_ENABLE, 1
  1749              	.set CYDEV_DEBUGGING_XRES, 0
  1750              	.set CYDEV_DMA_CHANNELS_AVAILABLE, 24
  1751              	.set CYDEV_ECC_ENABLE, 0
@@ -13150,7 +13150,7 @@ ARM GAS  .\Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  1761              	.set CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER, 4
  1762              	.set CYDEV_PROJ_TYPE_MULTIAPPBOOTLOADER, 3
  1763              	.set CYDEV_PROJ_TYPE_STANDARD, 0
- 1764              	.set CYDEV_PROTECTION_ENABLE, 1
+ 1764              	.set CYDEV_PROTECTION_ENABLE, 0
  1765              	.set CYDEV_STACK_SIZE, 0x0800
  1766              	.set CYDEV_USE_BUNDLED_CMSIS, 1
  1767              	.set CYDEV_VARIABLE_VDDA, 0
