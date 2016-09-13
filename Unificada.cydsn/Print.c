@@ -628,20 +628,37 @@ void imprimir(uint8 val, uint8 producto, uint8 copia, uint8 pos){
     	for(x=0;x<=7;x++){										//NUMERO DE VENTA							
 		write_psoc1(val,msn_numero[x]);
 	}
-        
 	if(copia==0){
 		no_venta++;
-	}	
-	id_venta[5]=(no_venta/10000)+48;
-	id_venta[4]=((no_venta%10000)/1000)+48;
-	id_venta[3]=(((no_venta%10000)%1000)/100)+48;
-	id_venta[2]=((((no_venta%10000)%1000)%100)/10)+48;	
-	id_venta[1]=((((no_venta%10000)%1000)%100)%10)+48;
-	for(x=5;x>=1;x--){										//NUMERO DE VENTA							
-		write_psoc1(val,id_venta[x]);
-	}	
-	write_eeprom(978,id_venta);
-    
+        id_venta[0][5]=(no_venta/10000)+48;
+    	id_venta[0][4]=((no_venta%10000)/1000)+48;
+    	id_venta[0][3]=(((no_venta%10000)%1000)/100)+48;
+    	id_venta[0][2]=((((no_venta%10000)%1000)%100)/10)+48;	
+    	id_venta[0][1]=((((no_venta%10000)%1000)%100)%10)+48;
+        write_eeprom(978,id_venta[0]);
+        if(pos==lado.a.dir){
+            for(x=1;x<=5;x++){
+                id_venta[1][x]=id_venta[0][x];
+            }
+        }else{
+            for(x=1;x<=5;x++){
+                id_venta[2][x]=id_venta[0][x];
+            }
+        }
+	}else{
+        if(pos==lado.a.dir){
+            for(x=1;x<=5;x++){
+                id_venta[0][x]=id_venta[1][x];
+            }
+        }else{
+            for(x=1;x<=5;x++){
+                id_venta[0][x]=id_venta[2][x];
+            }
+        }
+    }	
+    for(x=5;x>=1;x--){										//NUMERO DE VENTA							
+		write_psoc1(val,id_venta[0][x]);
+	}
 	write_psoc1(val,10);
 	for(x=0;x<=6;x++){										//FECHA								
 		write_psoc1(val,msn_fecha[x]);
@@ -827,6 +844,15 @@ void imprimir(uint8 val, uint8 producto, uint8 copia, uint8 pos){
 			for(x=1;x<=Buffer_LCD1.placa[0];x++){
 				write_psoc1(val,Buffer_LCD1.placa[x]);	
 			}
+            if(Buffer_LCD1.km[0]>0){
+				write_psoc1(val,10);	
+				for(x=0;x<10;x++){																		
+					write_psoc1(val,msn_km[x]);
+				}
+				for(x=1;x<=Buffer_LCD1.km[0];x++){
+					write_psoc1(val,Buffer_LCD1.km[x]);	
+				}				
+			}
 		}
 		if((Buffer_LCD1.preset&0x04)==0x04){						//DATOS IBUTTON
 			write_psoc1(val,10);	
@@ -846,7 +872,7 @@ void imprimir(uint8 val, uint8 producto, uint8 copia, uint8 pos){
 			}
 			if(Buffer_LCD1.km[0]>0){
 				write_psoc1(val,10);	
-				for(x=0;x<=10;x++){																		
+				for(x=0;x<10;x++){																		
 					write_psoc1(val,msn_km[x]);
 				}
 				for(x=1;x<=Buffer_LCD1.km[0];x++){
@@ -883,6 +909,15 @@ void imprimir(uint8 val, uint8 producto, uint8 copia, uint8 pos){
 			for(x=1;x<=Buffer_LCD2.placa[0];x++){
 				write_psoc1(val,Buffer_LCD2.placa[x]);	
 			}
+            if(Buffer_LCD2.km[0]>0){
+				write_psoc1(val,10);
+				for(x=0;x<10;x++){																		
+					write_psoc1(val,msn_km[x]);
+				}
+				for(x=1;x<=Buffer_LCD2.km[0];x++){
+					write_psoc1(val,Buffer_LCD2.km[x]);	
+				}				
+			}
 		}
 		if((Buffer_LCD2.preset&0x04)==0x04){
 			write_psoc1(val,10);
@@ -902,7 +937,7 @@ void imprimir(uint8 val, uint8 producto, uint8 copia, uint8 pos){
 			}
 			if(Buffer_LCD2.km[0]>0){
 				write_psoc1(val,10);
-				for(x=0;x<=10;x++){																		
+				for(x=0;x<10;x++){																		
 					write_psoc1(val,msn_km[x]);
 				}
 				for(x=1;x<=Buffer_LCD2.km[0];x++){

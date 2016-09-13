@@ -82,7 +82,7 @@ void init(void){
     PC_Start();    
     CyDelay(5);	
     a_copias = 0;
-
+    version=2;
 	/****Lectura de variables en memoria eeprom****/
 	
 	leer_eeprom(0,32);
@@ -241,19 +241,19 @@ void init(void){
     leer_eeprom(978,6);										//Id venta
 	if(buffer_i2c[0]==5){
 		for(x=0;x<=buffer_i2c[0];x++){
-			id_venta[x]=buffer_i2c[x]; 
+			id_venta[0][x]=buffer_i2c[x]; 
 		}
 	}
 	else{
-		id_venta[0]=5;	
-		id_venta[1]='0';
-		id_venta[2]='0';
-		id_venta[3]='0';
-		id_venta[4]='0';
-		id_venta[5]='0';
-		write_eeprom(978,id_venta);
+		id_venta[0][0]=5;	
+		id_venta[0][1]='0';
+		id_venta[0][2]='0';
+		id_venta[0][3]='0';
+		id_venta[0][4]='0';
+		id_venta[0][5]='0';
+		write_eeprom(978,id_venta[0]);
 	}
-	no_venta=((id_venta[5]&0x0F)*10000)+((id_venta[4]&0x0F)*1000)+((id_venta[3]&0x0F)*100)+((id_venta[2]&0x0F)*10)+((id_venta[1]&0x0F));
+	no_venta=((id_venta[0][5]&0x0F)*10000)+((id_venta[0][4]&0x0F)*1000)+((id_venta[0][3]&0x0F)*100)+((id_venta[0][2]&0x0F)*10)+((id_venta[0][1]&0x0F));
 	    	
 }
 
@@ -663,10 +663,14 @@ void polling_LCD1(void){
                 }
                 if(LCD_1_rxBuffer[3]==0x0C){                                        //Enter pasa a imprimir
                     if(teclas1>=1){ 
-                        set_imagen(1,5);
                         Buffer_LCD1.placa[0]=teclas1;                        
                         Buffer_LCD1.posventa=1;
-                        flujo_LCD=4;
+                        set_imagen(1,14); 
+						teclas1=0;
+						Buffer_LCD1.km[0]=0; //Pedir Kilometraje
+						flujo_LCD=12;
+//                        flujo_LCD=4;
+//                        set_imagen(1,5);
                     }
                 }
             }
@@ -2011,13 +2015,13 @@ void polling_LCD1(void){
          if(LCD_1_GetRxBufferSize()==8){
             if((LCD_1_rxBuffer[0]==0xAA) && (LCD_1_rxBuffer[6]==0xC3) && (LCD_1_rxBuffer[7]==0x3C)){
                 switch(LCD_1_rxBuffer[3]){
-                    case 0x5F:								 	 //Sin ID	                                                                              
+                    case 0x5F:								 	 //Sin ID
                       set_imagen(1,11); 
                       copia_recibo[1]=1;
                       flujo_LCD=10; 
                     break;
                     
-                    case 0x5E:  								//Con ID                                         
+                    case 0x5E:  								//Con ID 
                       set_imagen(1,29);
                       no_imprime = 0;
                       flujo_LCD=11;
@@ -3466,10 +3470,14 @@ void polling_LCD2(void){
                 }
                 if(LCD_2_rxBuffer[3]==0x0C){                                        //Enter pasa a imprimir
                     if(teclas2>=1){  
-                        set_imagen(2,5);
                         Buffer_LCD2.placa[0]=teclas2;                                                
                         Buffer_LCD2.posventa=1;
-                        flujo_LCD2=4;
+                        set_imagen(2,14); 
+						teclas2=0;
+						Buffer_LCD2.km[0]=0; //Pedir Kilometraje
+						flujo_LCD2=12;
+//                        flujo_LCD2=4;
+//                        set_imagen(2,5);
                     }
                 }
             }
@@ -4715,13 +4723,13 @@ void polling_LCD2(void){
          if(LCD_2_GetRxBufferSize()==8){
             if((LCD_2_rxBuffer[0]==0xAA) && (LCD_2_rxBuffer[6]==0xC3) && (LCD_2_rxBuffer[7]==0x3C)){
                 switch(LCD_2_rxBuffer[3]){
-                    case 0x5F:								 	 //Sin ID	                                                                              
+                    case 0x5F:								 	 //Sin ID	 
                       set_imagen(2,11);
                       copia_recibo[1]=1;
                       flujo_LCD2=10; 
                     break;
                     
-                    case 0x5E:  								//Con ID                                        
+                    case 0x5E:  								//Con ID   
                         set_imagen(2,29);
                         no_imprime2 = 0;
                         flujo_LCD2=11; 

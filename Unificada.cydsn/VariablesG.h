@@ -111,7 +111,7 @@ uint8 print1[2], print2[2];												//Puerto de las impresoras
 uint8 copia_recibo[2];													//activar copia de recibo
 uint8 copia_recibo2[2];													//activar copia de recibo lcd2
 uint16 id_corte;														//consecutivo del corte
-uint8  id_venta[6];														//Consecutivo de Venta
+uint8  id_venta[3][6];													//Consecutivo de Venta [0]Valor eeprom [1]Temporal lado 1[2]Temporal lado 2
 uint8  nombreproducto;                                                  //Para guardar en la estructura del nombre del producto
 uint8 producto1n[11];                                                   //nombres de productos en memoria
 uint8 producto2n[11];
@@ -148,7 +148,7 @@ struct buffer{
     uint8 posventa;
     uint8 cedula[10];
     uint8 password[9];
-	uint8 turno;    
+	uint8 turno; 
 };
 struct buffer Buffer_LCD1;
 struct buffer Buffer_LCD2;

@@ -1,3 +1,3 @@
-# Component constraints for C:\Users\Recepcion\Documents\NMUX\Unificada\Unificada.cydsn\TopDesign\TopDesign.cysch
-# Project: C:\Users\Recepcion\Documents\NMUX\Unificada\Unificada.cydsn\Unificada.cyprj
-# Date: Fri, 01 Jul 2016 16:51:31 GMT
+# Component constraints for C:\Users\Proyectos_Hardware\Dropbox\Proyecto GRP700\Unificada.cydsn\TopDesign\TopDesign.cysch
+# Project: C:\Users\Proyectos_Hardware\Dropbox\Proyecto GRP700\Unificada.cydsn\Unificada.cyprj
+# Date: Mon, 12 Sep 2016 16:07:25 GMT
