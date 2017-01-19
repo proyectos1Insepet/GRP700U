@@ -979,7 +979,7 @@ uint8 get_totales(uint8 dir,uint8 val){
 
 		case 46:
 			if((Surtidor_rxBuffer[0]==0xFF)&&(Surtidor_rxBuffer[1]==0xF6)&&(Surtidor_rxBuffer[45]==0xF0)&&(Surtidor_rxBuffer[3]==0xF9)){
-				rventa.manguera=(Surtidor_rxBuffer[2]&0xF0)+1;
+				rventa.manguera=(Surtidor_rxBuffer[2]&0x0F)+1;
 				for(x=0;x<=11;x++){
 					rventa.tvolumen[x]=(Surtidor_rxBuffer[x+4]&0x0F);
 				}
