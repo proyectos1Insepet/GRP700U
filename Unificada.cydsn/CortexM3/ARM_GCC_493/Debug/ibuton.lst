@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
 
 
    1              		.syntax unified
@@ -27,221 +27,187 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
   24              	touch_present:
   25              	.LFB63:
   26              		.file 1 ".\\ibuton.c"
-   1:.\ibuton.c    **** /*
-   2:.\ibuton.c    **** ***************************************************************************************************
-   3:.\ibuton.c    **** *                                           GRP550M CODE
-   4:.\ibuton.c    **** *
-   5:.\ibuton.c    **** *                             (c) Copyright 2013; Sistemas Insepet LTDA
-   6:.\ibuton.c    **** *
-   7:.\ibuton.c    **** *               All rights reserved.  Protected by international copyright laws.
-   8:.\ibuton.c    **** *               Knowledge of the source code may NOT be used to develop a similar product.
-   9:.\ibuton.c    **** *               Please help us continue to provide the Embedded community with the finest
-  10:.\ibuton.c    **** *               software available.  Your honesty is greatly appreciated.
+   1:.\ibuton.c    **** /**
+   2:.\ibuton.c    **** * @file ibuton.c
+   3:.\ibuton.c    **** * @Author Insepet LTDA
+   4:.\ibuton.c    **** * @date 28/2/2016
+   5:.\ibuton.c    **** * @brief Archivo para la lectura del ibutton
+   6:.\ibuton.c    **** */
+   7:.\ibuton.c    **** 
+   8:.\ibuton.c    **** /*
+   9:.\ibuton.c    **** ***************************************************************************************************
+  10:.\ibuton.c    **** *                                             INCLUDE FILES
   11:.\ibuton.c    **** ***************************************************************************************************
   12:.\ibuton.c    **** */
-  13:.\ibuton.c    **** 
-  14:.\ibuton.c    **** /*
-  15:.\ibuton.c    **** ***************************************************************************************************
-  16:.\ibuton.c    **** *
-  17:.\ibuton.c    **** *                                               GRP550M CODE
-  18:.\ibuton.c    **** *
-  19:.\ibuton.c    **** *                                             CYPRESS PSoC5LP
-  20:.\ibuton.c    **** *                                                with the
-  21:.\ibuton.c    **** *                                            CY8C5969AXI-LP035
+  13:.\ibuton.c    **** #include <device.h>
+  14:.\ibuton.c    **** #include "VariablesG.h"
+  15:.\ibuton.c    **** #include "LCD.h"
+  16:.\ibuton.c    **** 
+  17:.\ibuton.c    **** 
+  18:.\ibuton.c    **** /**
+  19:.\ibuton.c    **** * touch_present
+  20:.\ibuton.c    **** * @brief indica el lado donde se encuentra el ibutton
+  21:.\ibuton.c    **** * @return 0 no hay ibutton , 1 si hay ibutton
   22:.\ibuton.c    **** *
-  23:.\ibuton.c    **** * Filename      : ibutton.c
-  24:.\ibuton.c    **** * Version       : V1.00
-  25:.\ibuton.c    **** * Programmer(s) : 
-  26:.\ibuton.c    ****                   
-  27:.\ibuton.c    **** ***************************************************************************************************
-  28:.\ibuton.c    **** */
-  29:.\ibuton.c    **** 
-  30:.\ibuton.c    **** /*
-  31:.\ibuton.c    **** ***************************************************************************************************
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 2
-
-
-  32:.\ibuton.c    **** *                                             INCLUDE FILES
-  33:.\ibuton.c    **** ***************************************************************************************************
-  34:.\ibuton.c    **** */
-  35:.\ibuton.c    **** #include <device.h>
-  36:.\ibuton.c    **** #include "VariablesG.h"
-  37:.\ibuton.c    **** #include "LCD.h"
-  38:.\ibuton.c    **** 
-  39:.\ibuton.c    **** /*
-  40:.\ibuton.c    **** ***************************************************************************************************
-  41:.\ibuton.c    **** *                                       uint8 touch_present(uint8 ibutton)
-  42:.\ibuton.c    **** *
-  43:.\ibuton.c    **** * Description : Revisa que hay ibutton en el lector
-  44:.\ibuton.c    **** *               
-  45:.\ibuton.c    **** *
-  46:.\ibuton.c    **** * Argument(s) : uint8 ibutton, indica el lado donde se encuentra el ibutton
-  47:.\ibuton.c    **** *
-  48:.\ibuton.c    **** * Return(s)   : 0 no hay ibutton , 1 si hay ibutton
-  49:.\ibuton.c    **** *
-  50:.\ibuton.c    **** * Caller(s)   : 
-  51:.\ibuton.c    **** *
-  52:.\ibuton.c    **** * Note(s)     : none.
-  53:.\ibuton.c    **** ***************************************************************************************************
-  54:.\ibuton.c    **** */
-  55:.\ibuton.c    **** 
-  56:.\ibuton.c    **** uint8 touch_present(uint8 ibutton){  
-  27              		.loc 1 56 0
+  23:.\ibuton.c    **** */
+  24:.\ibuton.c    **** 
+  25:.\ibuton.c    **** uint8 touch_present(uint8 ibutton){  
+  27              		.loc 1 25 0
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 0
   30              		@ frame_needed = 0, uses_anonymous_args = 0
   31              	.LVL0:
   32 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 2
+
+
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 4, -8
   35              		.cfi_offset 14, -4
-  57:.\ibuton.c    ****     uint8 present;
-  58:.\ibuton.c    **** 	if(ibutton==1){
-  36              		.loc 1 58 0
+  26:.\ibuton.c    ****     uint8 present;
+  27:.\ibuton.c    **** 	if(ibutton==1){
+  36              		.loc 1 27 0
   37 0002 0128     		cmp	r0, #1
   38 0004 1CD1     		bne	.L2
-  59:.\ibuton.c    **** 	    IB1_Write(0);
-  39              		.loc 1 59 0
+  28:.\ibuton.c    **** 	    IB1_Write(0);
+  39              		.loc 1 28 0
   40 0006 0020     		movs	r0, #0
   41              	.LVL1:
   42 0008 FFF7FEFF 		bl	IB1_Write
   43              	.LVL2:
-  60:.\ibuton.c    **** 	    CyDelayUs(500);
-  44              		.loc 1 60 0
+  29:.\ibuton.c    **** 	    CyDelayUs(500);
+  44              		.loc 1 29 0
   45 000c 4FF4FA70 		mov	r0, #500
   46 0010 FFF7FEFF 		bl	CyDelayUs
   47              	.LVL3:
-  61:.\ibuton.c    **** 	    IB1_Write(1);
-  48              		.loc 1 61 0
+  30:.\ibuton.c    **** 	    IB1_Write(1);
+  48              		.loc 1 30 0
   49 0014 0120     		movs	r0, #1
   50 0016 FFF7FEFF 		bl	IB1_Write
   51              	.LVL4:
-  62:.\ibuton.c    **** 	    CyDelayUs(5);
-  52              		.loc 1 62 0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 3
-
-
+  31:.\ibuton.c    **** 	    CyDelayUs(5);
+  52              		.loc 1 31 0
   53 001a 0520     		movs	r0, #5
   54 001c FFF7FEFF 		bl	CyDelayUs
   55              	.LVL5:
-  63:.\ibuton.c    **** 
-  64:.\ibuton.c    **** 	    if(!IB1_Read()){
-  56              		.loc 1 64 0
+  32:.\ibuton.c    **** 
+  33:.\ibuton.c    **** 	    if(!IB1_Read()){
+  56              		.loc 1 33 0
   57 0020 FFF7FEFF 		bl	IB1_Read
   58              	.LVL6:
   59 0024 0346     		mov	r3, r0
   60 0026 58B3     		cbz	r0, .L3
-  65:.\ibuton.c    **** 	        return 0;
-  66:.\ibuton.c    **** 	    }
-  67:.\ibuton.c    **** 
-  68:.\ibuton.c    **** 	    CyDelayUs(65);
-  61              		.loc 1 68 0
+  34:.\ibuton.c    **** 	        return 0;
+  35:.\ibuton.c    **** 	    }
+  36:.\ibuton.c    **** 
+  37:.\ibuton.c    **** 	    CyDelayUs(65);
+  61              		.loc 1 37 0
   62 0028 4120     		movs	r0, #65
   63 002a FFF7FEFF 		bl	CyDelayUs
   64              	.LVL7:
-  69:.\ibuton.c    **** 	    present=!IB1_Read();
-  65              		.loc 1 69 0
+  38:.\ibuton.c    **** 	    present=!IB1_Read();
+  65              		.loc 1 38 0
   66 002e FFF7FEFF 		bl	IB1_Read
   67              	.LVL8:
   68 0032 0446     		mov	r4, r0
   69              	.LVL9:
-  70:.\ibuton.c    **** 	    CyDelayUs(240);
-  70              		.loc 1 70 0
+  39:.\ibuton.c    **** 	    CyDelayUs(240);
+  70              		.loc 1 39 0
   71 0034 F020     		movs	r0, #240
   72 0036 FFF7FEFF 		bl	CyDelayUs
   73              	.LVL10:
-  71:.\ibuton.c    **** 	    if(present){
-  74              		.loc 1 71 0
+  40:.\ibuton.c    **** 	    if(present){
+  74              		.loc 1 40 0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 3
+
+
   75 003a F4B9     		cbnz	r4, .L4
-  72:.\ibuton.c    **** 	        return 1;
-  76              		.loc 1 72 0
+  41:.\ibuton.c    **** 	        return 1;
+  76              		.loc 1 41 0
   77 003c 0123     		movs	r3, #1
   78 003e 1FE0     		b	.L3
   79              	.LVL11:
   80              	.L2:
-  73:.\ibuton.c    **** 	    }
-  74:.\ibuton.c    **** 	    else{
-  75:.\ibuton.c    **** 	        return 0;
-  76:.\ibuton.c    **** 	    } 
-  77:.\ibuton.c    **** 	}
-  78:.\ibuton.c    **** 	else{
-  79:.\ibuton.c    **** 	    IB2_Write(0);
-  81              		.loc 1 79 0
+  42:.\ibuton.c    **** 	    }
+  43:.\ibuton.c    **** 	    else{
+  44:.\ibuton.c    **** 	        return 0;
+  45:.\ibuton.c    **** 	    } 
+  46:.\ibuton.c    **** 	}
+  47:.\ibuton.c    **** 	else{
+  48:.\ibuton.c    **** 	    IB2_Write(0);
+  81              		.loc 1 48 0
   82 0040 0020     		movs	r0, #0
   83              	.LVL12:
   84 0042 FFF7FEFF 		bl	IB2_Write
   85              	.LVL13:
-  80:.\ibuton.c    **** 	    CyDelayUs(500);
-  86              		.loc 1 80 0
+  49:.\ibuton.c    **** 	    CyDelayUs(500);
+  86              		.loc 1 49 0
   87 0046 4FF4FA70 		mov	r0, #500
   88 004a FFF7FEFF 		bl	CyDelayUs
   89              	.LVL14:
-  81:.\ibuton.c    **** 	    IB2_Write(1);
-  90              		.loc 1 81 0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 4
-
-
+  50:.\ibuton.c    **** 	    IB2_Write(1);
+  90              		.loc 1 50 0
   91 004e 0120     		movs	r0, #1
   92 0050 FFF7FEFF 		bl	IB2_Write
   93              	.LVL15:
-  82:.\ibuton.c    **** 	    CyDelayUs(5);
-  94              		.loc 1 82 0
+  51:.\ibuton.c    **** 	    CyDelayUs(5);
+  94              		.loc 1 51 0
   95 0054 0520     		movs	r0, #5
   96 0056 FFF7FEFF 		bl	CyDelayUs
   97              	.LVL16:
-  83:.\ibuton.c    **** 
-  84:.\ibuton.c    **** 	    if(!IB2_Read()){
-  98              		.loc 1 84 0
+  52:.\ibuton.c    **** 
+  53:.\ibuton.c    **** 	    if(!IB2_Read()){
+  98              		.loc 1 53 0
   99 005a FFF7FEFF 		bl	IB2_Read
  100              	.LVL17:
  101 005e 0346     		mov	r3, r0
  102 0060 70B1     		cbz	r0, .L3
-  85:.\ibuton.c    **** 	        return 0;
-  86:.\ibuton.c    **** 	    }
-  87:.\ibuton.c    **** 
-  88:.\ibuton.c    **** 	    CyDelayUs(65);
- 103              		.loc 1 88 0
+  54:.\ibuton.c    **** 	        return 0;
+  55:.\ibuton.c    **** 	    }
+  56:.\ibuton.c    **** 
+  57:.\ibuton.c    **** 	    CyDelayUs(65);
+ 103              		.loc 1 57 0
  104 0062 4120     		movs	r0, #65
  105 0064 FFF7FEFF 		bl	CyDelayUs
  106              	.LVL18:
-  89:.\ibuton.c    **** 	    present=!IB2_Read();
- 107              		.loc 1 89 0
+  58:.\ibuton.c    **** 	    present=!IB2_Read();
+ 107              		.loc 1 58 0
  108 0068 FFF7FEFF 		bl	IB2_Read
  109              	.LVL19:
  110 006c 0446     		mov	r4, r0
  111              	.LVL20:
-  90:.\ibuton.c    **** 	    CyDelayUs(240);
- 112              		.loc 1 90 0
+  59:.\ibuton.c    **** 	    CyDelayUs(240);
+ 112              		.loc 1 59 0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 4
+
+
  113 006e F020     		movs	r0, #240
  114 0070 FFF7FEFF 		bl	CyDelayUs
  115              	.LVL21:
-  91:.\ibuton.c    **** 	    if(present){
- 116              		.loc 1 91 0
+  60:.\ibuton.c    **** 	    if(present){
+ 116              		.loc 1 60 0
  117 0074 1CB9     		cbnz	r4, .L5
-  92:.\ibuton.c    **** 	        return 1;
- 118              		.loc 1 92 0
+  61:.\ibuton.c    **** 	        return 1;
+ 118              		.loc 1 61 0
  119 0076 0123     		movs	r3, #1
  120 0078 02E0     		b	.L3
  121              	.L4:
-  75:.\ibuton.c    **** 	    } 
- 122              		.loc 1 75 0
+  44:.\ibuton.c    **** 	    } 
+ 122              		.loc 1 44 0
  123 007a 0023     		movs	r3, #0
  124 007c 00E0     		b	.L3
  125              	.L5:
-  93:.\ibuton.c    **** 	    }
-  94:.\ibuton.c    **** 	    else{
-  95:.\ibuton.c    **** 	        return 0;
- 126              		.loc 1 95 0
+  62:.\ibuton.c    **** 	    }
+  63:.\ibuton.c    **** 	    else{
+  64:.\ibuton.c    **** 	        return 0;
+ 126              		.loc 1 64 0
  127 007e 0023     		movs	r3, #0
  128              	.LVL22:
  129              	.L3:
-  96:.\ibuton.c    **** 	    }	
-  97:.\ibuton.c    **** 	}
-  98:.\ibuton.c    **** }
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 5
-
-
- 130              		.loc 1 98 0
+  65:.\ibuton.c    **** 	    }	
+  66:.\ibuton.c    **** 	}
+  67:.\ibuton.c    **** }
+ 130              		.loc 1 67 0
  131 0080 1846     		mov	r0, r3
  132 0082 10BD     		pop	{r4, pc}
  133              		.cfi_endproc
@@ -255,129 +221,118 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  141              		.type	touch_write, %function
  142              	touch_write:
  143              	.LFB64:
-  99:.\ibuton.c    **** 
- 100:.\ibuton.c    **** /*
- 101:.\ibuton.c    **** ***************************************************************************************************
- 102:.\ibuton.c    **** *                                  uint8 touch_write(uint8 ibutton, uint8 dato)
- 103:.\ibuton.c    **** *
- 104:.\ibuton.c    **** * Description : Escribe un byte en el Ibutton
- 105:.\ibuton.c    **** *               
- 106:.\ibuton.c    **** *
- 107:.\ibuton.c    **** * Argument(s) : uint8 ibutton = lado
- 108:.\ibuton.c    **** 				uint8 dato = byte que se va a escribir
- 109:.\ibuton.c    **** *
- 110:.\ibuton.c    **** * Return(s)   : 0 operacion correcta
- 111:.\ibuton.c    **** 				1 operacion incorrecta
- 112:.\ibuton.c    **** *
- 113:.\ibuton.c    **** * Caller(s)   : 
- 114:.\ibuton.c    **** *
- 115:.\ibuton.c    **** * Note(s)     : none.
- 116:.\ibuton.c    **** ***************************************************************************************************
- 117:.\ibuton.c    **** */
- 118:.\ibuton.c    **** 
- 119:.\ibuton.c    **** uint8 touch_write(uint8 ibutton, uint8 dato){
- 144              		.loc 1 119 0
+  68:.\ibuton.c    **** /**
+  69:.\ibuton.c    **** * touch_write
+  70:.\ibuton.c    **** * @brief Escribe un byte en el Ibutton
+  71:.\ibuton.c    **** * @param ibutton lado
+  72:.\ibuton.c    **** * @param dato byte que se va a escribir
+  73:.\ibuton.c    **** * @return 0 operacion correcta , 1 operacion incorrecta
+  74:.\ibuton.c    **** *
+  75:.\ibuton.c    **** */
+  76:.\ibuton.c    **** 
+  77:.\ibuton.c    **** uint8 touch_write(uint8 ibutton, uint8 dato){
+ 144              		.loc 1 77 0
  145              		.cfi_startproc
  146              		@ args = 0, pretend = 0, frame = 0
  147              		@ frame_needed = 0, uses_anonymous_args = 0
  148              	.LVL23:
  149 0000 38B5     		push	{r3, r4, r5, lr}
  150              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 5
+
+
  151              		.cfi_offset 3, -16
  152              		.cfi_offset 4, -12
  153              		.cfi_offset 5, -8
  154              		.cfi_offset 14, -4
  155 0002 0D46     		mov	r5, r1
- 120:.\ibuton.c    ****     uint8 i;
- 121:.\ibuton.c    **** 	if(ibutton==1){
- 156              		.loc 1 121 0
+  78:.\ibuton.c    ****     uint8 i;
+  79:.\ibuton.c    **** 	if(ibutton==1){
+ 156              		.loc 1 79 0
  157 0004 0128     		cmp	r0, #1
  158 0006 2DD0     		beq	.L17
  159 0008 0024     		movs	r4, #0
  160 000a 5AE0     		b	.L9
  161              	.LVL24:
  162              	.L13:
- 122:.\ibuton.c    **** 	    for(i=0;i<=7;i++){
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 6
-
-
- 123:.\ibuton.c    **** 	        IB1_Write(0); 
- 163              		.loc 1 123 0
+  80:.\ibuton.c    **** 	    for(i=0;i<=7;i++){
+  81:.\ibuton.c    **** 	        IB1_Write(0); 
+ 163              		.loc 1 81 0
  164 000c 0020     		movs	r0, #0
  165 000e FFF7FEFF 		bl	IB1_Write
  166              	.LVL25:
- 124:.\ibuton.c    **** 	        CyDelayUs(10);
- 167              		.loc 1 124 0
+  82:.\ibuton.c    **** 	        CyDelayUs(10);
+ 167              		.loc 1 82 0
  168 0012 0A20     		movs	r0, #10
  169 0014 FFF7FEFF 		bl	CyDelayUs
  170              	.LVL26:
- 125:.\ibuton.c    **** 	        if(((dato>>i)&1)){
- 171              		.loc 1 125 0
+  83:.\ibuton.c    **** 	        if(((dato>>i)&1)){
+ 171              		.loc 1 83 0
  172 0018 45FA04F3 		asr	r3, r5, r4
  173 001c 13F0010F 		tst	r3, #1
  174 0020 0AD0     		beq	.L10
- 126:.\ibuton.c    **** 	           IB1_Write(1);
- 175              		.loc 1 126 0
+  84:.\ibuton.c    **** 	           IB1_Write(1);
+ 175              		.loc 1 84 0
  176 0022 0120     		movs	r0, #1
  177 0024 FFF7FEFF 		bl	IB1_Write
  178              	.LVL27:
- 127:.\ibuton.c    **** 	           CyDelayUs(10);
- 179              		.loc 1 127 0
+  85:.\ibuton.c    **** 	           CyDelayUs(10);
+ 179              		.loc 1 85 0
  180 0028 0A20     		movs	r0, #10
  181 002a FFF7FEFF 		bl	CyDelayUs
  182              	.LVL28:
- 128:.\ibuton.c    **** 	           if(!IB1_Read()){
- 183              		.loc 1 128 0
+  86:.\ibuton.c    **** 	           if(!IB1_Read()){
+ 183              		.loc 1 86 0
  184 002e FFF7FEFF 		bl	IB1_Read
  185              	.LVL29:
  186 0032 0346     		mov	r3, r0
  187 0034 50B9     		cbnz	r0, .L12
  188 0036 4BE0     		b	.L11
  189              	.L10:
- 129:.\ibuton.c    **** 	                return 0;                
- 130:.\ibuton.c    **** 	           }
- 131:.\ibuton.c    **** 	        }
- 132:.\ibuton.c    **** 	        else{
- 133:.\ibuton.c    **** 	            IB1_Write(0); 
- 190              		.loc 1 133 0
+  87:.\ibuton.c    **** 	                return 0;                
+  88:.\ibuton.c    **** 	           }
+  89:.\ibuton.c    **** 	        }
+  90:.\ibuton.c    **** 	        else{
+  91:.\ibuton.c    **** 	            IB1_Write(0); 
+ 190              		.loc 1 91 0
  191 0038 0020     		movs	r0, #0
  192 003a FFF7FEFF 		bl	IB1_Write
  193              	.LVL30:
- 134:.\ibuton.c    **** 	            CyDelayUs(10);
- 194              		.loc 1 134 0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 6
+
+
+  92:.\ibuton.c    **** 	            CyDelayUs(10);
+ 194              		.loc 1 92 0
  195 003e 0A20     		movs	r0, #10
  196 0040 FFF7FEFF 		bl	CyDelayUs
  197              	.LVL31:
- 135:.\ibuton.c    **** 	           if(IB1_Read()){
- 198              		.loc 1 135 0
+  93:.\ibuton.c    **** 	           if(IB1_Read()){
+ 198              		.loc 1 93 0
  199 0044 FFF7FEFF 		bl	IB1_Read
  200              	.LVL32:
  201 0048 0028     		cmp	r0, #0
  202 004a 3ED1     		bne	.L18
  203              	.L12:
- 136:.\ibuton.c    **** 	                return 0;                
- 137:.\ibuton.c    **** 	           }            
- 138:.\ibuton.c    **** 	        }
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 7
-
-
- 139:.\ibuton.c    **** 	        CyDelayUs(50);
- 204              		.loc 1 139 0 discriminator 2
+  94:.\ibuton.c    **** 	                return 0;                
+  95:.\ibuton.c    **** 	           }            
+  96:.\ibuton.c    **** 	        }
+  97:.\ibuton.c    **** 	        CyDelayUs(50);
+ 204              		.loc 1 97 0 discriminator 2
  205 004c 3220     		movs	r0, #50
  206 004e FFF7FEFF 		bl	CyDelayUs
  207              	.LVL33:
- 140:.\ibuton.c    **** 	        IB1_Write(1);
- 208              		.loc 1 140 0 discriminator 2
+  98:.\ibuton.c    **** 	        IB1_Write(1);
+ 208              		.loc 1 98 0 discriminator 2
  209 0052 0120     		movs	r0, #1
  210 0054 FFF7FEFF 		bl	IB1_Write
  211              	.LVL34:
- 141:.\ibuton.c    **** 	        CyDelayUs(50);
- 212              		.loc 1 141 0 discriminator 2
+  99:.\ibuton.c    **** 	        CyDelayUs(50);
+ 212              		.loc 1 99 0 discriminator 2
  213 0058 3220     		movs	r0, #50
  214 005a FFF7FEFF 		bl	CyDelayUs
  215              	.LVL35:
- 122:.\ibuton.c    **** 	        IB1_Write(0); 
- 216              		.loc 1 122 0 discriminator 2
+  80:.\ibuton.c    **** 	        IB1_Write(0); 
+ 216              		.loc 1 80 0 discriminator 2
  217 005e 0134     		adds	r4, r4, #1
  218              	.LVL36:
  219 0060 E4B2     		uxtb	r4, r4
@@ -388,125 +343,125 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  224 0064 0024     		movs	r4, #0
  225              	.LVL39:
  226              	.L8:
- 122:.\ibuton.c    **** 	        IB1_Write(0); 
- 227              		.loc 1 122 0 is_stmt 0 discriminator 1
+  80:.\ibuton.c    **** 	        IB1_Write(0); 
+ 227              		.loc 1 80 0 is_stmt 0 discriminator 1
  228 0066 072C     		cmp	r4, #7
  229 0068 D0D9     		bls	.L13
- 142:.\ibuton.c    **** 	    }
- 143:.\ibuton.c    **** 	    return 1;
- 230              		.loc 1 143 0 is_stmt 1
+ 100:.\ibuton.c    **** 	    }
+ 101:.\ibuton.c    **** 	    return 1;
+ 230              		.loc 1 101 0 is_stmt 1
  231 006a 0123     		movs	r3, #1
  232 006c 30E0     		b	.L11
  233              	.L16:
- 144:.\ibuton.c    **** 	}
- 145:.\ibuton.c    **** 	else{
- 146:.\ibuton.c    **** 	    for(i=0;i<=7;i++){
- 147:.\ibuton.c    **** 	        IB2_Write(0); 
- 234              		.loc 1 147 0
+ 102:.\ibuton.c    **** 	}
+ 103:.\ibuton.c    **** 	else{
+ 104:.\ibuton.c    **** 	    for(i=0;i<=7;i++){
+ 105:.\ibuton.c    **** 	        IB2_Write(0); 
+ 234              		.loc 1 105 0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 7
+
+
  235 006e 0020     		movs	r0, #0
  236 0070 FFF7FEFF 		bl	IB2_Write
  237              	.LVL40:
- 148:.\ibuton.c    **** 	        CyDelayUs(10);
- 238              		.loc 1 148 0
+ 106:.\ibuton.c    **** 	        CyDelayUs(10);
+ 238              		.loc 1 106 0
  239 0074 0A20     		movs	r0, #10
  240 0076 FFF7FEFF 		bl	CyDelayUs
  241              	.LVL41:
- 149:.\ibuton.c    **** 	        if(((dato>>i)&1)){
- 242              		.loc 1 149 0
+ 107:.\ibuton.c    **** 	        if(((dato>>i)&1)){
+ 242              		.loc 1 107 0
  243 007a 45FA04F3 		asr	r3, r5, r4
  244 007e 13F0010F 		tst	r3, #1
  245 0082 0AD0     		beq	.L14
- 150:.\ibuton.c    **** 	           IB2_Write(1);
- 246              		.loc 1 150 0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 8
-
-
+ 108:.\ibuton.c    **** 	           IB2_Write(1);
+ 246              		.loc 1 108 0
  247 0084 0120     		movs	r0, #1
  248 0086 FFF7FEFF 		bl	IB2_Write
  249              	.LVL42:
- 151:.\ibuton.c    **** 	           CyDelayUs(10);
- 250              		.loc 1 151 0
+ 109:.\ibuton.c    **** 	           CyDelayUs(10);
+ 250              		.loc 1 109 0
  251 008a 0A20     		movs	r0, #10
  252 008c FFF7FEFF 		bl	CyDelayUs
  253              	.LVL43:
- 152:.\ibuton.c    **** 	           if(!IB2_Read()){
- 254              		.loc 1 152 0
+ 110:.\ibuton.c    **** 	           if(!IB2_Read()){
+ 254              		.loc 1 110 0
  255 0090 FFF7FEFF 		bl	IB2_Read
  256              	.LVL44:
  257 0094 0346     		mov	r3, r0
  258 0096 48B9     		cbnz	r0, .L15
  259 0098 1AE0     		b	.L11
  260              	.L14:
- 153:.\ibuton.c    **** 	                return 0;                
- 154:.\ibuton.c    **** 	           }
- 155:.\ibuton.c    **** 	        }
- 156:.\ibuton.c    **** 	        else{
- 157:.\ibuton.c    **** 	            IB2_Write(0); 
- 261              		.loc 1 157 0
+ 111:.\ibuton.c    **** 	                return 0;                
+ 112:.\ibuton.c    **** 	           }
+ 113:.\ibuton.c    **** 	        }
+ 114:.\ibuton.c    **** 	        else{
+ 115:.\ibuton.c    **** 	            IB2_Write(0); 
+ 261              		.loc 1 115 0
  262 009a 0020     		movs	r0, #0
  263 009c FFF7FEFF 		bl	IB2_Write
  264              	.LVL45:
- 158:.\ibuton.c    **** 	            CyDelayUs(10);
- 265              		.loc 1 158 0
+ 116:.\ibuton.c    **** 	            CyDelayUs(10);
+ 265              		.loc 1 116 0
  266 00a0 0A20     		movs	r0, #10
  267 00a2 FFF7FEFF 		bl	CyDelayUs
  268              	.LVL46:
- 159:.\ibuton.c    **** 	           if(IB2_Read()){
- 269              		.loc 1 159 0
+ 117:.\ibuton.c    **** 	           if(IB2_Read()){
+ 269              		.loc 1 117 0
  270 00a6 FFF7FEFF 		bl	IB2_Read
  271              	.LVL47:
  272 00aa 80B9     		cbnz	r0, .L19
  273              	.L15:
- 160:.\ibuton.c    **** 	                return 0;                
- 161:.\ibuton.c    **** 	           }            
- 162:.\ibuton.c    **** 	        }
- 163:.\ibuton.c    **** 	        CyDelayUs(50);
- 274              		.loc 1 163 0 discriminator 2
+ 118:.\ibuton.c    **** 	                return 0;                
+ 119:.\ibuton.c    **** 	           }            
+ 120:.\ibuton.c    **** 	        }
+ 121:.\ibuton.c    **** 	        CyDelayUs(50);
+ 274              		.loc 1 121 0 discriminator 2
  275 00ac 3220     		movs	r0, #50
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 8
+
+
  276 00ae FFF7FEFF 		bl	CyDelayUs
  277              	.LVL48:
- 164:.\ibuton.c    **** 	        IB2_Write(1);
- 278              		.loc 1 164 0 discriminator 2
+ 122:.\ibuton.c    **** 	        IB2_Write(1);
+ 278              		.loc 1 122 0 discriminator 2
  279 00b2 0120     		movs	r0, #1
  280 00b4 FFF7FEFF 		bl	IB2_Write
  281              	.LVL49:
- 165:.\ibuton.c    **** 	        CyDelayUs(50);
- 282              		.loc 1 165 0 discriminator 2
+ 123:.\ibuton.c    **** 	        CyDelayUs(50);
+ 282              		.loc 1 123 0 discriminator 2
  283 00b8 3220     		movs	r0, #50
  284 00ba FFF7FEFF 		bl	CyDelayUs
  285              	.LVL50:
- 146:.\ibuton.c    **** 	        IB2_Write(0); 
- 286              		.loc 1 146 0 discriminator 2
+ 104:.\ibuton.c    **** 	        IB2_Write(0); 
+ 286              		.loc 1 104 0 discriminator 2
  287 00be 0134     		adds	r4, r4, #1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 9
-
-
  288              	.LVL51:
  289 00c0 E4B2     		uxtb	r4, r4
  290              	.LVL52:
  291              	.L9:
- 146:.\ibuton.c    **** 	        IB2_Write(0); 
- 292              		.loc 1 146 0 is_stmt 0 discriminator 1
+ 104:.\ibuton.c    **** 	        IB2_Write(0); 
+ 292              		.loc 1 104 0 is_stmt 0 discriminator 1
  293 00c2 072C     		cmp	r4, #7
  294 00c4 D3D9     		bls	.L16
- 166:.\ibuton.c    **** 	    }
- 167:.\ibuton.c    **** 	    return 1;	
- 295              		.loc 1 167 0 is_stmt 1
+ 124:.\ibuton.c    **** 	    }
+ 125:.\ibuton.c    **** 	    return 1;	
+ 295              		.loc 1 125 0 is_stmt 1
  296 00c6 0123     		movs	r3, #1
  297 00c8 02E0     		b	.L11
  298              	.L18:
- 136:.\ibuton.c    **** 	           }            
- 299              		.loc 1 136 0
+  94:.\ibuton.c    **** 	           }            
+ 299              		.loc 1 94 0
  300 00ca 0023     		movs	r3, #0
  301 00cc 00E0     		b	.L11
  302              	.L19:
- 160:.\ibuton.c    **** 	           }            
- 303              		.loc 1 160 0
+ 118:.\ibuton.c    **** 	           }            
+ 303              		.loc 1 118 0
  304 00ce 0023     		movs	r3, #0
  305              	.L11:
- 168:.\ibuton.c    **** 	}
- 169:.\ibuton.c    **** }
- 306              		.loc 1 169 0
+ 126:.\ibuton.c    **** 	}
+ 127:.\ibuton.c    **** }
+ 306              		.loc 1 127 0
  307 00d0 1846     		mov	r0, r3
  308 00d2 38BD     		pop	{r3, r4, r5, pc}
  309              		.cfi_endproc
@@ -520,30 +475,22 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  317              		.type	touch_read_byte, %function
  318              	touch_read_byte:
  319              	.LFB65:
- 170:.\ibuton.c    **** 
- 171:.\ibuton.c    **** /*
- 172:.\ibuton.c    **** ***************************************************************************************************
- 173:.\ibuton.c    **** *                                   uint8 touch_read_byte(uint8 ibutton)
- 174:.\ibuton.c    **** *
- 175:.\ibuton.c    **** * Description : Lee un byte del ibutton, se usa para leer los bytes del serial
- 176:.\ibuton.c    **** *               
- 177:.\ibuton.c    **** *
- 178:.\ibuton.c    **** * Argument(s) : uint8 ibutton = lado
- 179:.\ibuton.c    **** *
- 180:.\ibuton.c    **** * Return(s)   : 0 = no hubo lectura
- 181:.\ibuton.c    **** 				!=0 dato leido
- 182:.\ibuton.c    **** *
- 183:.\ibuton.c    **** * Caller(s)   : 
- 184:.\ibuton.c    **** *
- 185:.\ibuton.c    **** * Note(s)     : none.
- 186:.\ibuton.c    **** ***************************************************************************************************
- 187:.\ibuton.c    **** */
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 10
+ 128:.\ibuton.c    **** 
+ 129:.\ibuton.c    **** /**
+ 130:.\ibuton.c    **** * touch_read_byte
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 9
 
 
- 188:.\ibuton.c    **** 
- 189:.\ibuton.c    **** uint8 touch_read_byte(uint8 ibutton){
- 320              		.loc 1 189 0
+ 131:.\ibuton.c    **** * @brief Lee un byte del ibutton, se usa para leer los bytes del serial
+ 132:.\ibuton.c    **** * @param ibutton lado
+ 133:.\ibuton.c    **** * @return 0 no hubo lectura , =!0 dato leido
+ 134:.\ibuton.c    **** *
+ 135:.\ibuton.c    **** */
+ 136:.\ibuton.c    **** 
+ 137:.\ibuton.c    **** 
+ 138:.\ibuton.c    **** 
+ 139:.\ibuton.c    **** uint8 touch_read_byte(uint8 ibutton){
+ 320              		.loc 1 139 0
  321              		.cfi_startproc
  322              		@ args = 0, pretend = 0, frame = 0
  323              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -555,9 +502,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  329              		.cfi_offset 5, -8
  330              		.cfi_offset 14, -4
  331              	.LVL54:
- 190:.\ibuton.c    ****     uint8 i, dato=0;
- 191:.\ibuton.c    **** 	if(ibutton==1){
- 332              		.loc 1 191 0
+ 140:.\ibuton.c    ****     uint8 i, dato=0;
+ 141:.\ibuton.c    **** 	if(ibutton==1){
+ 332              		.loc 1 141 0
  333 0002 0128     		cmp	r0, #1
  334 0004 19D0     		beq	.L27
  335 0006 0025     		movs	r5, #0
@@ -565,46 +512,46 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  337 000a 31E0     		b	.L23
  338              	.LVL55:
  339              	.L24:
- 192:.\ibuton.c    **** 	    for(i=0;i<=7;i++){
- 193:.\ibuton.c    **** 	        IB1_Write(0);    
- 340              		.loc 1 193 0 discriminator 3
+ 142:.\ibuton.c    **** 	    for(i=0;i<=7;i++){
+ 143:.\ibuton.c    **** 	        IB1_Write(0);    
+ 340              		.loc 1 143 0 discriminator 3
  341 000c 0020     		movs	r0, #0
  342 000e FFF7FEFF 		bl	IB1_Write
  343              	.LVL56:
- 194:.\ibuton.c    **** 	        CyDelayUs(14);
- 344              		.loc 1 194 0 discriminator 3
+ 144:.\ibuton.c    **** 	        CyDelayUs(14);
+ 344              		.loc 1 144 0 discriminator 3
  345 0012 0E20     		movs	r0, #14
  346 0014 FFF7FEFF 		bl	CyDelayUs
  347              	.LVL57:
- 195:.\ibuton.c    **** 	        IB1_Write(1);
- 348              		.loc 1 195 0 discriminator 3
+ 145:.\ibuton.c    **** 	        IB1_Write(1);
+ 348              		.loc 1 145 0 discriminator 3
  349 0018 0120     		movs	r0, #1
  350 001a FFF7FEFF 		bl	IB1_Write
  351              	.LVL58:
- 196:.\ibuton.c    **** 	        CyDelayUs(7);
- 352              		.loc 1 196 0 discriminator 3
+ 146:.\ibuton.c    **** 	        CyDelayUs(7);
+ 352              		.loc 1 146 0 discriminator 3
  353 001e 0720     		movs	r0, #7
  354 0020 FFF7FEFF 		bl	CyDelayUs
  355              	.LVL59:
- 197:.\ibuton.c    **** 	        dato|=(IB1_Read()<<i);
- 356              		.loc 1 197 0 discriminator 3
+ 147:.\ibuton.c    **** 	        dato|=(IB1_Read()<<i);
+ 356              		.loc 1 147 0 discriminator 3
  357 0024 FFF7FEFF 		bl	IB1_Read
  358              	.LVL60:
  359 0028 A040     		lsls	r0, r0, r4
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 10
+
+
  360 002a 0543     		orrs	r5, r5, r0
  361              	.LVL61:
  362 002c EDB2     		uxtb	r5, r5
  363              	.LVL62:
- 198:.\ibuton.c    **** 	        CyDelayUs(100);
- 364              		.loc 1 198 0 discriminator 3
+ 148:.\ibuton.c    **** 	        CyDelayUs(100);
+ 364              		.loc 1 148 0 discriminator 3
  365 002e 6420     		movs	r0, #100
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 11
-
-
  366 0030 FFF7FEFF 		bl	CyDelayUs
  367              	.LVL63:
- 192:.\ibuton.c    **** 	        IB1_Write(0);    
- 368              		.loc 1 192 0 discriminator 3
+ 142:.\ibuton.c    **** 	        IB1_Write(0);    
+ 368              		.loc 1 142 0 discriminator 3
  369 0034 0134     		adds	r4, r4, #1
  370              	.LVL64:
  371 0036 E4B2     		uxtb	r4, r4
@@ -616,71 +563,71 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  377 003c 2C46     		mov	r4, r5
  378              	.LVL67:
  379              	.L22:
- 192:.\ibuton.c    **** 	        IB1_Write(0);    
- 380              		.loc 1 192 0 is_stmt 0 discriminator 1
+ 142:.\ibuton.c    **** 	        IB1_Write(0);    
+ 380              		.loc 1 142 0 is_stmt 0 discriminator 1
  381 003e 072C     		cmp	r4, #7
  382 0040 E4D9     		bls	.L24
  383 0042 17E0     		b	.L25
  384              	.L26:
- 199:.\ibuton.c    **** 	    }
- 200:.\ibuton.c    **** 	    return dato;
- 201:.\ibuton.c    **** 	}
- 202:.\ibuton.c    **** 	else{
- 203:.\ibuton.c    **** 	    for(i=0;i<=7;i++){
- 204:.\ibuton.c    **** 	        IB2_Write(0);    
- 385              		.loc 1 204 0 is_stmt 1 discriminator 3
+ 149:.\ibuton.c    **** 	    }
+ 150:.\ibuton.c    **** 	    return dato;
+ 151:.\ibuton.c    **** 	}
+ 152:.\ibuton.c    **** 	else{
+ 153:.\ibuton.c    **** 	    for(i=0;i<=7;i++){
+ 154:.\ibuton.c    **** 	        IB2_Write(0);    
+ 385              		.loc 1 154 0 is_stmt 1 discriminator 3
  386 0044 0020     		movs	r0, #0
  387 0046 FFF7FEFF 		bl	IB2_Write
  388              	.LVL68:
- 205:.\ibuton.c    **** 	        CyDelayUs(14);
- 389              		.loc 1 205 0 discriminator 3
+ 155:.\ibuton.c    **** 	        CyDelayUs(14);
+ 389              		.loc 1 155 0 discriminator 3
  390 004a 0E20     		movs	r0, #14
  391 004c FFF7FEFF 		bl	CyDelayUs
  392              	.LVL69:
- 206:.\ibuton.c    **** 	        IB2_Write(1);
- 393              		.loc 1 206 0 discriminator 3
+ 156:.\ibuton.c    **** 	        IB2_Write(1);
+ 393              		.loc 1 156 0 discriminator 3
  394 0050 0120     		movs	r0, #1
  395 0052 FFF7FEFF 		bl	IB2_Write
  396              	.LVL70:
- 207:.\ibuton.c    **** 	        CyDelayUs(7);
- 397              		.loc 1 207 0 discriminator 3
+ 157:.\ibuton.c    **** 	        CyDelayUs(7);
+ 397              		.loc 1 157 0 discriminator 3
  398 0056 0720     		movs	r0, #7
  399 0058 FFF7FEFF 		bl	CyDelayUs
  400              	.LVL71:
- 208:.\ibuton.c    **** 	        dato|=(IB2_Read()<<i);
- 401              		.loc 1 208 0 discriminator 3
+ 158:.\ibuton.c    **** 	        dato|=(IB2_Read()<<i);
+ 401              		.loc 1 158 0 discriminator 3
  402 005c FFF7FEFF 		bl	IB2_Read
  403              	.LVL72:
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 11
+
+
  404 0060 A040     		lsls	r0, r0, r4
  405 0062 0543     		orrs	r5, r5, r0
  406              	.LVL73:
  407 0064 EDB2     		uxtb	r5, r5
  408              	.LVL74:
- 209:.\ibuton.c    **** 	        CyDelayUs(100);
- 409              		.loc 1 209 0 discriminator 3
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 12
-
-
+ 159:.\ibuton.c    **** 	        CyDelayUs(100);
+ 409              		.loc 1 159 0 discriminator 3
  410 0066 6420     		movs	r0, #100
  411 0068 FFF7FEFF 		bl	CyDelayUs
  412              	.LVL75:
- 203:.\ibuton.c    **** 	        IB2_Write(0);    
- 413              		.loc 1 203 0 discriminator 3
+ 153:.\ibuton.c    **** 	        IB2_Write(0);    
+ 413              		.loc 1 153 0 discriminator 3
  414 006c 0134     		adds	r4, r4, #1
  415              	.LVL76:
  416 006e E4B2     		uxtb	r4, r4
  417              	.LVL77:
  418              	.L23:
- 203:.\ibuton.c    **** 	        IB2_Write(0);    
- 419              		.loc 1 203 0 is_stmt 0 discriminator 1
+ 153:.\ibuton.c    **** 	        IB2_Write(0);    
+ 419              		.loc 1 153 0 is_stmt 0 discriminator 1
  420 0070 072C     		cmp	r4, #7
  421 0072 E7D9     		bls	.L26
  422              	.L25:
- 210:.\ibuton.c    **** 	    }
- 211:.\ibuton.c    **** 	    return dato;	
- 212:.\ibuton.c    **** 	}
- 213:.\ibuton.c    **** } 
- 423              		.loc 1 213 0 is_stmt 1
+ 160:.\ibuton.c    **** 	    }
+ 161:.\ibuton.c    **** 	    return dato;	
+ 162:.\ibuton.c    **** 	}
+ 163:.\ibuton.c    **** } 
+ 423              		.loc 1 163 0 is_stmt 1
  424 0074 2846     		mov	r0, r5
  425 0076 38BD     		pop	{r3, r4, r5, pc}
  426              		.cfi_endproc
@@ -694,34 +641,26 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  434              		.type	touch_read_memoria, %function
  435              	touch_read_memoria:
  436              	.LFB66:
- 214:.\ibuton.c    **** 
- 215:.\ibuton.c    **** /*
- 216:.\ibuton.c    **** ***************************************************************************************************
- 217:.\ibuton.c    **** *                                uint8 touch_read_memoria(uint8 ibutton)
- 218:.\ibuton.c    **** *
- 219:.\ibuton.c    **** * Description : 
- 220:.\ibuton.c    **** *               
- 221:.\ibuton.c    **** *
- 222:.\ibuton.c    **** * Argument(s) : none
- 223:.\ibuton.c    **** *
- 224:.\ibuton.c    **** * Return(s)   : none
- 225:.\ibuton.c    **** *
- 226:.\ibuton.c    **** * Caller(s)   : 
- 227:.\ibuton.c    **** *
- 228:.\ibuton.c    **** * Note(s)     : none.
- 229:.\ibuton.c    **** ***************************************************************************************************
- 230:.\ibuton.c    **** */
- 231:.\ibuton.c    **** 
- 232:.\ibuton.c    **** uint8 touch_read_memoria(uint8 ibutton, uint8 pos){
- 437              		.loc 1 232 0
+ 164:.\ibuton.c    **** 
+ 165:.\ibuton.c    **** /**
+ 166:.\ibuton.c    **** * touch_read_memoria
+ 167:.\ibuton.c    **** * @brief Lee posiciones de memoria del ibutton con más datos
+ 168:.\ibuton.c    **** * @param ibutton lado del lector
+ 169:.\ibuton.c    **** * @param pos lado del equipo, posición 1 ó 2
+ 170:.\ibuton.c    **** * @return 0 no hubo lectura , =!0 dato leido
+ 171:.\ibuton.c    **** *
+ 172:.\ibuton.c    **** */
+ 173:.\ibuton.c    **** 
+ 174:.\ibuton.c    **** uint8 touch_read_memoria(uint8 ibutton, uint8 pos){
+ 437              		.loc 1 174 0
  438              		.cfi_startproc
  439              		@ args = 0, pretend = 0, frame = 0
  440              		@ frame_needed = 0, uses_anonymous_args = 0
  441              	.LVL78:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 13
-
-
  442 0000 38B5     		push	{r3, r4, r5, lr}
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 12
+
+
  443              		.cfi_def_cfa_offset 16
  444              		.cfi_offset 3, -16
  445              		.cfi_offset 4, -12
@@ -729,107 +668,107 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  447              		.cfi_offset 14, -4
  448 0002 0C46     		mov	r4, r1
  449              	.LVL79:
- 233:.\ibuton.c    ****     uint8 i, check=0;
- 234:.\ibuton.c    **** 	if(ibutton==1){
- 450              		.loc 1 234 0
+ 175:.\ibuton.c    ****     uint8 i, check=0;
+ 176:.\ibuton.c    **** 	if(ibutton==1){
+ 450              		.loc 1 176 0
  451 0004 0128     		cmp	r0, #1
  452 0006 64D1     		bne	.L30
- 235:.\ibuton.c    **** 		if(touch_present(1)==1){				
- 453              		.loc 1 235 0
+ 177:.\ibuton.c    **** 		if(touch_present(1)==1){				
+ 453              		.loc 1 177 0
  454 0008 FFF7FEFF 		bl	touch_present
  455              	.LVL80:
  456 000c 0128     		cmp	r0, #1
  457 000e 40F0C480 		bne	.L46
- 236:.\ibuton.c    **** 			CyDelay(200);
- 458              		.loc 1 236 0
+ 178:.\ibuton.c    **** 			CyDelay(200);
+ 458              		.loc 1 178 0
  459 0012 C820     		movs	r0, #200
  460 0014 FFF7FEFF 		bl	CyDelay
  461              	.LVL81:
- 237:.\ibuton.c    **** 			if(touch_present(1)==1){
- 462              		.loc 1 237 0
+ 179:.\ibuton.c    **** 			if(touch_present(1)==1){
+ 462              		.loc 1 179 0
  463 0018 0120     		movs	r0, #1
  464 001a FFF7FEFF 		bl	touch_present
  465              	.LVL82:
  466 001e 0128     		cmp	r0, #1
  467 0020 40F0BD80 		bne	.L47
- 238:.\ibuton.c    **** 				CyDelay(200);
- 468              		.loc 1 238 0
+ 180:.\ibuton.c    **** 				CyDelay(200);
+ 468              		.loc 1 180 0
  469 0024 C820     		movs	r0, #200
  470 0026 FFF7FEFF 		bl	CyDelay
  471              	.LVL83:
- 239:.\ibuton.c    **** 				touch_write(1,0xCC);
- 472              		.loc 1 239 0
+ 181:.\ibuton.c    **** 				touch_write(1,0xCC);
+ 472              		.loc 1 181 0
  473 002a 0120     		movs	r0, #1
  474 002c CC21     		movs	r1, #204
  475 002e FFF7FEFF 		bl	touch_write
  476              	.LVL84:
- 240:.\ibuton.c    **** 				touch_write(1,0xF0);	
- 477              		.loc 1 240 0
+ 182:.\ibuton.c    **** 				touch_write(1,0xF0);	
+ 477              		.loc 1 182 0
  478 0032 0120     		movs	r0, #1
  479 0034 F021     		movs	r1, #240
  480 0036 FFF7FEFF 		bl	touch_write
  481              	.LVL85:
- 241:.\ibuton.c    **** 				touch_write(1,pos);
- 482              		.loc 1 241 0
+ 183:.\ibuton.c    **** 				touch_write(1,pos);
+ 482              		.loc 1 183 0
  483 003a 0120     		movs	r0, #1
  484 003c 2146     		mov	r1, r4
  485 003e FFF7FEFF 		bl	touch_write
  486              	.LVL86:
- 242:.\ibuton.c    **** 				touch_write(1,0x00);
- 487              		.loc 1 242 0
+ 184:.\ibuton.c    **** 				touch_write(1,0x00);
+ 487              		.loc 1 184 0
  488 0042 0120     		movs	r0, #1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 14
-
-
  489 0044 0021     		movs	r1, #0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 13
+
+
  490 0046 FFF7FEFF 		bl	touch_write
  491              	.LVL87:
- 243:.\ibuton.c    **** 				if(pos==1){
- 492              		.loc 1 243 0
+ 185:.\ibuton.c    **** 				if(pos==1){
+ 492              		.loc 1 185 0
  493 004a 012C     		cmp	r4, #1
  494 004c 20D1     		bne	.L32
- 244:.\ibuton.c    **** 	                Buffer_LCD1.placa[0]=touch_read_byte(1);
- 495              		.loc 1 244 0
+ 186:.\ibuton.c    **** 	                Buffer_LCD1.placa[0]=touch_read_byte(1);
+ 495              		.loc 1 186 0
  496 004e 0120     		movs	r0, #1
  497 0050 FFF7FEFF 		bl	touch_read_byte
  498              	.LVL88:
  499 0054 554B     		ldr	r3, .L55
  500 0056 83F86500 		strb	r0, [r3, #101]
- 245:.\ibuton.c    **** 					if((Buffer_LCD1.placa[0]!=0xFF)&&(Buffer_LCD1.placa[0]<=30)){
- 501              		.loc 1 245 0
+ 187:.\ibuton.c    **** 					if((Buffer_LCD1.placa[0]!=0xFF)&&(Buffer_LCD1.placa[0]<=30)){
+ 501              		.loc 1 187 0
  502 005a 1E28     		cmp	r0, #30
  503 005c 0FD9     		bls	.L48
- 246:.\ibuton.c    **** 						check++;
- 247:.\ibuton.c    **** 					}	
- 248:.\ibuton.c    **** 					else{
- 249:.\ibuton.c    **** 						return 0;
- 504              		.loc 1 249 0
+ 188:.\ibuton.c    **** 						check++;
+ 189:.\ibuton.c    **** 					}	
+ 190:.\ibuton.c    **** 					else{
+ 191:.\ibuton.c    **** 						return 0;
+ 504              		.loc 1 191 0
  505 005e 0020     		movs	r0, #0
  506 0060 38BD     		pop	{r3, r4, r5, pc}
  507              	.LVL89:
  508              	.L35:
- 250:.\ibuton.c    **** 					}
- 251:.\ibuton.c    **** 					for(i=1;i<=Buffer_LCD1.placa[0];i++){
- 252:.\ibuton.c    **** 		                Buffer_LCD1.placa[i]=touch_read_byte(1);
- 509              		.loc 1 252 0
+ 192:.\ibuton.c    **** 					}
+ 193:.\ibuton.c    **** 					for(i=1;i<=Buffer_LCD1.placa[0];i++){
+ 194:.\ibuton.c    **** 		                Buffer_LCD1.placa[i]=touch_read_byte(1);
+ 509              		.loc 1 194 0
  510 0062 0120     		movs	r0, #1
  511 0064 FFF7FEFF 		bl	touch_read_byte
  512              	.LVL90:
  513 0068 504B     		ldr	r3, .L55
  514 006a 2B44     		add	r3, r3, r5
  515 006c 83F86500 		strb	r0, [r3, #101]
- 253:.\ibuton.c    **** 						if(Buffer_LCD1.placa[i]!=0xFF){
- 516              		.loc 1 253 0
+ 195:.\ibuton.c    **** 						if(Buffer_LCD1.placa[i]!=0xFF){
+ 516              		.loc 1 195 0
  517 0070 FF28     		cmp	r0, #255
  518 0072 01D0     		beq	.L34
- 254:.\ibuton.c    **** 							check++;
- 519              		.loc 1 254 0
+ 196:.\ibuton.c    **** 							check++;
+ 519              		.loc 1 196 0
  520 0074 601C     		adds	r0, r4, #1
  521 0076 C4B2     		uxtb	r4, r0
  522              	.LVL91:
  523              	.L34:
- 251:.\ibuton.c    **** 		                Buffer_LCD1.placa[i]=touch_read_byte(1);
- 524              		.loc 1 251 0 discriminator 2
+ 193:.\ibuton.c    **** 		                Buffer_LCD1.placa[i]=touch_read_byte(1);
+ 524              		.loc 1 193 0 discriminator 2
  525 0078 0135     		adds	r5, r5, #1
  526              	.LVL92:
  527 007a EDB2     		uxtb	r5, r5
@@ -838,73 +777,73 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  530              	.LVL94:
  531              	.L48:
  532 007e 0124     		movs	r4, #1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 15
-
-
  533 0080 2546     		mov	r5, r4
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 14
+
+
  534              	.LVL95:
  535              	.L33:
- 251:.\ibuton.c    **** 		                Buffer_LCD1.placa[i]=touch_read_byte(1);
- 536              		.loc 1 251 0 is_stmt 0 discriminator 1
+ 193:.\ibuton.c    **** 		                Buffer_LCD1.placa[i]=touch_read_byte(1);
+ 536              		.loc 1 193 0 is_stmt 0 discriminator 1
  537 0082 4A4B     		ldr	r3, .L55
  538 0084 93F86530 		ldrb	r3, [r3, #101]	@ zero_extendqisi2
  539 0088 AB42     		cmp	r3, r5
  540 008a EAD2     		bcs	.L35
- 255:.\ibuton.c    **** 						}
- 256:.\ibuton.c    **** 					}
- 257:.\ibuton.c    **** 					return check;
- 541              		.loc 1 257 0 is_stmt 1
+ 197:.\ibuton.c    **** 						}
+ 198:.\ibuton.c    **** 					}
+ 199:.\ibuton.c    **** 					return check;
+ 541              		.loc 1 199 0 is_stmt 1
  542 008c 2046     		mov	r0, r4
  543 008e 38BD     		pop	{r3, r4, r5, pc}
  544              	.LVL96:
  545              	.L32:
- 258:.\ibuton.c    **** 				}
- 259:.\ibuton.c    **** 				else{
- 260:.\ibuton.c    **** 	                Buffer_LCD1.cuenta[0]=touch_read_byte(1);
- 546              		.loc 1 260 0
+ 200:.\ibuton.c    **** 				}
+ 201:.\ibuton.c    **** 				else{
+ 202:.\ibuton.c    **** 	                Buffer_LCD1.cuenta[0]=touch_read_byte(1);
+ 546              		.loc 1 202 0
  547 0090 0120     		movs	r0, #1
  548 0092 FFF7FEFF 		bl	touch_read_byte
  549              	.LVL97:
  550 0096 454B     		ldr	r3, .L55
  551 0098 83F84700 		strb	r0, [r3, #71]
- 261:.\ibuton.c    **** 					if((Buffer_LCD1.cuenta[0]!=0xFF)&&(Buffer_LCD1.cuenta[0]<=30)){
- 552              		.loc 1 261 0
+ 203:.\ibuton.c    **** 					if((Buffer_LCD1.cuenta[0]!=0xFF)&&(Buffer_LCD1.cuenta[0]<=30)){
+ 552              		.loc 1 203 0
  553 009c 1E28     		cmp	r0, #30
  554 009e 0FD9     		bls	.L49
- 262:.\ibuton.c    **** 						check++;
- 263:.\ibuton.c    **** 					}
- 264:.\ibuton.c    **** 					else{
- 265:.\ibuton.c    **** 						return 0;
- 555              		.loc 1 265 0
+ 204:.\ibuton.c    **** 						check++;
+ 205:.\ibuton.c    **** 					}
+ 206:.\ibuton.c    **** 					else{
+ 207:.\ibuton.c    **** 						return 0;
+ 555              		.loc 1 207 0
  556 00a0 0020     		movs	r0, #0
  557 00a2 38BD     		pop	{r3, r4, r5, pc}
  558              	.LVL98:
  559              	.L38:
- 266:.\ibuton.c    **** 					}
- 267:.\ibuton.c    **** 					for(i=1;i<=Buffer_LCD1.cuenta[0];i++){
- 268:.\ibuton.c    **** 		                Buffer_LCD1.cuenta[i]=touch_read_byte(1);
- 560              		.loc 1 268 0
+ 208:.\ibuton.c    **** 					}
+ 209:.\ibuton.c    **** 					for(i=1;i<=Buffer_LCD1.cuenta[0];i++){
+ 210:.\ibuton.c    **** 		                Buffer_LCD1.cuenta[i]=touch_read_byte(1);
+ 560              		.loc 1 210 0
  561 00a4 0120     		movs	r0, #1
  562 00a6 FFF7FEFF 		bl	touch_read_byte
  563              	.LVL99:
  564 00aa 404B     		ldr	r3, .L55
  565 00ac 2B44     		add	r3, r3, r5
  566 00ae 83F84700 		strb	r0, [r3, #71]
- 269:.\ibuton.c    **** 						if(Buffer_LCD1.cuenta[i]!=0xFF){
- 567              		.loc 1 269 0
+ 211:.\ibuton.c    **** 						if(Buffer_LCD1.cuenta[i]!=0xFF){
+ 567              		.loc 1 211 0
  568 00b2 FF28     		cmp	r0, #255
  569 00b4 01D0     		beq	.L37
- 270:.\ibuton.c    **** 							check++;
- 570              		.loc 1 270 0
+ 212:.\ibuton.c    **** 							check++;
+ 570              		.loc 1 212 0
  571 00b6 601C     		adds	r0, r4, #1
  572 00b8 C4B2     		uxtb	r4, r0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 16
-
-
  573              	.LVL100:
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 15
+
+
  574              	.L37:
- 267:.\ibuton.c    **** 		                Buffer_LCD1.cuenta[i]=touch_read_byte(1);
- 575              		.loc 1 267 0 discriminator 2
+ 209:.\ibuton.c    **** 		                Buffer_LCD1.cuenta[i]=touch_read_byte(1);
+ 575              		.loc 1 209 0 discriminator 2
  576 00ba 0135     		adds	r5, r5, #1
  577              	.LVL101:
  578 00bc EDB2     		uxtb	r5, r5
@@ -916,132 +855,132 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  584 00c2 2546     		mov	r5, r4
  585              	.LVL104:
  586              	.L36:
- 267:.\ibuton.c    **** 		                Buffer_LCD1.cuenta[i]=touch_read_byte(1);
- 587              		.loc 1 267 0 is_stmt 0 discriminator 1
+ 209:.\ibuton.c    **** 		                Buffer_LCD1.cuenta[i]=touch_read_byte(1);
+ 587              		.loc 1 209 0 is_stmt 0 discriminator 1
  588 00c4 394B     		ldr	r3, .L55
  589 00c6 93F84730 		ldrb	r3, [r3, #71]	@ zero_extendqisi2
  590 00ca AB42     		cmp	r3, r5
  591 00cc EAD2     		bcs	.L38
- 271:.\ibuton.c    **** 						}
- 272:.\ibuton.c    **** 					}
- 273:.\ibuton.c    **** 					return check;				
- 592              		.loc 1 273 0 is_stmt 1
+ 213:.\ibuton.c    **** 						}
+ 214:.\ibuton.c    **** 					}
+ 215:.\ibuton.c    **** 					return check;				
+ 592              		.loc 1 215 0 is_stmt 1
  593 00ce 2046     		mov	r0, r4
  594 00d0 38BD     		pop	{r3, r4, r5, pc}
  595              	.LVL105:
  596              	.L30:
- 274:.\ibuton.c    **** 				}
- 275:.\ibuton.c    **** 			}
- 276:.\ibuton.c    **** 			else{
- 277:.\ibuton.c    **** 				return check;
- 278:.\ibuton.c    **** 			}
- 279:.\ibuton.c    **** 		}
- 280:.\ibuton.c    **** 		else{
- 281:.\ibuton.c    **** 			return check;	
- 282:.\ibuton.c    **** 		}
- 283:.\ibuton.c    **** 	}
- 284:.\ibuton.c    **** 	else{
- 285:.\ibuton.c    **** 		if(touch_present(2)==1){				
- 597              		.loc 1 285 0
+ 216:.\ibuton.c    **** 				}
+ 217:.\ibuton.c    **** 			}
+ 218:.\ibuton.c    **** 			else{
+ 219:.\ibuton.c    **** 				return check;
+ 220:.\ibuton.c    **** 			}
+ 221:.\ibuton.c    **** 		}
+ 222:.\ibuton.c    **** 		else{
+ 223:.\ibuton.c    **** 			return check;	
+ 224:.\ibuton.c    **** 		}
+ 225:.\ibuton.c    **** 	}
+ 226:.\ibuton.c    **** 	else{
+ 227:.\ibuton.c    **** 		if(touch_present(2)==1){				
+ 597              		.loc 1 227 0
  598 00d2 0220     		movs	r0, #2
  599              	.LVL106:
  600 00d4 FFF7FEFF 		bl	touch_present
  601              	.LVL107:
  602 00d8 0128     		cmp	r0, #1
  603 00da 62D1     		bne	.L50
- 286:.\ibuton.c    **** 			CyDelay(200);
- 604              		.loc 1 286 0
+ 228:.\ibuton.c    **** 			CyDelay(200);
+ 604              		.loc 1 228 0
  605 00dc C820     		movs	r0, #200
  606 00de FFF7FEFF 		bl	CyDelay
  607              	.LVL108:
- 287:.\ibuton.c    **** 			if(touch_present(2)==1){
- 608              		.loc 1 287 0
+ 229:.\ibuton.c    **** 			if(touch_present(2)==1){
+ 608              		.loc 1 229 0
  609 00e2 0220     		movs	r0, #2
  610 00e4 FFF7FEFF 		bl	touch_present
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 17
-
-
  611              	.LVL109:
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 16
+
+
  612 00e8 0128     		cmp	r0, #1
  613 00ea 5CD1     		bne	.L51
- 288:.\ibuton.c    **** 				CyDelay(200);
- 614              		.loc 1 288 0
+ 230:.\ibuton.c    **** 				CyDelay(200);
+ 614              		.loc 1 230 0
  615 00ec C820     		movs	r0, #200
  616 00ee FFF7FEFF 		bl	CyDelay
  617              	.LVL110:
- 289:.\ibuton.c    **** 				touch_write(2,0xCC);
- 618              		.loc 1 289 0
+ 231:.\ibuton.c    **** 				touch_write(2,0xCC);
+ 618              		.loc 1 231 0
  619 00f2 0220     		movs	r0, #2
  620 00f4 CC21     		movs	r1, #204
  621 00f6 FFF7FEFF 		bl	touch_write
  622              	.LVL111:
- 290:.\ibuton.c    **** 				touch_write(2,0xF0);	
- 623              		.loc 1 290 0
+ 232:.\ibuton.c    **** 				touch_write(2,0xF0);	
+ 623              		.loc 1 232 0
  624 00fa 0220     		movs	r0, #2
  625 00fc F021     		movs	r1, #240
  626 00fe FFF7FEFF 		bl	touch_write
  627              	.LVL112:
- 291:.\ibuton.c    **** 				touch_write(2,pos);
- 628              		.loc 1 291 0
+ 233:.\ibuton.c    **** 				touch_write(2,pos);
+ 628              		.loc 1 233 0
  629 0102 0220     		movs	r0, #2
  630 0104 2146     		mov	r1, r4
  631 0106 FFF7FEFF 		bl	touch_write
  632              	.LVL113:
- 292:.\ibuton.c    **** 				touch_write(2,0x00);
- 633              		.loc 1 292 0
+ 234:.\ibuton.c    **** 				touch_write(2,0x00);
+ 633              		.loc 1 234 0
  634 010a 0220     		movs	r0, #2
  635 010c 0021     		movs	r1, #0
  636 010e FFF7FEFF 		bl	touch_write
  637              	.LVL114:
- 293:.\ibuton.c    **** 				if(pos==1){
- 638              		.loc 1 293 0
+ 235:.\ibuton.c    **** 				if(pos==1){
+ 638              		.loc 1 235 0
  639 0112 012C     		cmp	r4, #1
  640 0114 20D1     		bne	.L39
- 294:.\ibuton.c    **** 	                Buffer_LCD2.placa[0]=touch_read_byte(2);
- 641              		.loc 1 294 0
+ 236:.\ibuton.c    **** 	                Buffer_LCD2.placa[0]=touch_read_byte(2);
+ 641              		.loc 1 236 0
  642 0116 0220     		movs	r0, #2
  643 0118 FFF7FEFF 		bl	touch_read_byte
  644              	.LVL115:
  645 011c 244B     		ldr	r3, .L55+4
  646 011e 83F86500 		strb	r0, [r3, #101]
- 295:.\ibuton.c    **** 					if((Buffer_LCD2.placa[0]!=0xFF)&&(Buffer_LCD2.placa[0]<=30)){
- 647              		.loc 1 295 0
+ 237:.\ibuton.c    **** 					if((Buffer_LCD2.placa[0]!=0xFF)&&(Buffer_LCD2.placa[0]<=30)){
+ 647              		.loc 1 237 0
  648 0122 1E28     		cmp	r0, #30
  649 0124 0FD9     		bls	.L52
- 296:.\ibuton.c    **** 						check++;
- 297:.\ibuton.c    **** 					}
- 298:.\ibuton.c    **** 					else{
- 299:.\ibuton.c    **** 						return 0;
- 650              		.loc 1 299 0
+ 238:.\ibuton.c    **** 						check++;
+ 239:.\ibuton.c    **** 					}
+ 240:.\ibuton.c    **** 					else{
+ 241:.\ibuton.c    **** 						return 0;
+ 650              		.loc 1 241 0
  651 0126 0020     		movs	r0, #0
  652 0128 38BD     		pop	{r3, r4, r5, pc}
  653              	.LVL116:
  654              	.L42:
- 300:.\ibuton.c    **** 					}
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 18
+ 242:.\ibuton.c    **** 					}
+ 243:.\ibuton.c    **** 					for(i=1;i<=Buffer_LCD2.placa[0];i++){
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 17
 
 
- 301:.\ibuton.c    **** 					for(i=1;i<=Buffer_LCD2.placa[0];i++){
- 302:.\ibuton.c    **** 		                Buffer_LCD2.placa[i]=touch_read_byte(2);
- 655              		.loc 1 302 0
+ 244:.\ibuton.c    **** 		                Buffer_LCD2.placa[i]=touch_read_byte(2);
+ 655              		.loc 1 244 0
  656 012a 0220     		movs	r0, #2
  657 012c FFF7FEFF 		bl	touch_read_byte
  658              	.LVL117:
  659 0130 1F4B     		ldr	r3, .L55+4
  660 0132 2B44     		add	r3, r3, r5
  661 0134 83F86500 		strb	r0, [r3, #101]
- 303:.\ibuton.c    **** 						if(Buffer_LCD2.placa[i]!=0xFF){
- 662              		.loc 1 303 0
+ 245:.\ibuton.c    **** 						if(Buffer_LCD2.placa[i]!=0xFF){
+ 662              		.loc 1 245 0
  663 0138 FF28     		cmp	r0, #255
  664 013a 01D0     		beq	.L41
- 304:.\ibuton.c    **** 							check++;
- 665              		.loc 1 304 0
+ 246:.\ibuton.c    **** 							check++;
+ 665              		.loc 1 246 0
  666 013c 601C     		adds	r0, r4, #1
  667 013e C4B2     		uxtb	r4, r0
  668              	.LVL118:
  669              	.L41:
- 301:.\ibuton.c    **** 		                Buffer_LCD2.placa[i]=touch_read_byte(2);
- 670              		.loc 1 301 0 discriminator 2
+ 243:.\ibuton.c    **** 		                Buffer_LCD2.placa[i]=touch_read_byte(2);
+ 670              		.loc 1 243 0 discriminator 2
  671 0140 0135     		adds	r5, r5, #1
  672              	.LVL119:
  673 0142 EDB2     		uxtb	r5, r5
@@ -1053,67 +992,67 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  679 0148 2546     		mov	r5, r4
  680              	.LVL122:
  681              	.L40:
- 301:.\ibuton.c    **** 		                Buffer_LCD2.placa[i]=touch_read_byte(2);
- 682              		.loc 1 301 0 is_stmt 0 discriminator 1
+ 243:.\ibuton.c    **** 		                Buffer_LCD2.placa[i]=touch_read_byte(2);
+ 682              		.loc 1 243 0 is_stmt 0 discriminator 1
  683 014a 194B     		ldr	r3, .L55+4
  684 014c 93F86530 		ldrb	r3, [r3, #101]	@ zero_extendqisi2
  685 0150 AB42     		cmp	r3, r5
  686 0152 EAD2     		bcs	.L42
- 305:.\ibuton.c    **** 						}
- 306:.\ibuton.c    **** 					}
- 307:.\ibuton.c    **** 					return check;
- 687              		.loc 1 307 0 is_stmt 1
+ 247:.\ibuton.c    **** 						}
+ 248:.\ibuton.c    **** 					}
+ 249:.\ibuton.c    **** 					return check;
+ 687              		.loc 1 249 0 is_stmt 1
  688 0154 2046     		mov	r0, r4
  689 0156 38BD     		pop	{r3, r4, r5, pc}
  690              	.LVL123:
  691              	.L39:
- 308:.\ibuton.c    **** 				}
- 309:.\ibuton.c    **** 				else{
- 310:.\ibuton.c    **** 	                Buffer_LCD2.cuenta[0]=touch_read_byte(2);
- 692              		.loc 1 310 0
+ 250:.\ibuton.c    **** 				}
+ 251:.\ibuton.c    **** 				else{
+ 252:.\ibuton.c    **** 	                Buffer_LCD2.cuenta[0]=touch_read_byte(2);
+ 692              		.loc 1 252 0
  693 0158 0220     		movs	r0, #2
  694 015a FFF7FEFF 		bl	touch_read_byte
  695              	.LVL124:
  696 015e 144B     		ldr	r3, .L55+4
  697 0160 83F84700 		strb	r0, [r3, #71]
- 311:.\ibuton.c    **** 					if((Buffer_LCD2.cuenta[0]!=0xFF)&&(Buffer_LCD2.cuenta[0]<=30)){
- 698              		.loc 1 311 0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 19
-
-
+ 253:.\ibuton.c    **** 					if((Buffer_LCD2.cuenta[0]!=0xFF)&&(Buffer_LCD2.cuenta[0]<=30)){
+ 698              		.loc 1 253 0
  699 0164 1E28     		cmp	r0, #30
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 18
+
+
  700 0166 0FD9     		bls	.L53
- 312:.\ibuton.c    **** 						check++;
- 313:.\ibuton.c    **** 					}
- 314:.\ibuton.c    **** 					else{
- 315:.\ibuton.c    **** 						return 0;
- 701              		.loc 1 315 0
+ 254:.\ibuton.c    **** 						check++;
+ 255:.\ibuton.c    **** 					}
+ 256:.\ibuton.c    **** 					else{
+ 257:.\ibuton.c    **** 						return 0;
+ 701              		.loc 1 257 0
  702 0168 0020     		movs	r0, #0
  703 016a 38BD     		pop	{r3, r4, r5, pc}
  704              	.LVL125:
  705              	.L45:
- 316:.\ibuton.c    **** 					}
- 317:.\ibuton.c    **** 					for(i=1;i<=Buffer_LCD2.cuenta[0];i++){
- 318:.\ibuton.c    **** 		                Buffer_LCD2.cuenta[i]=touch_read_byte(2);
- 706              		.loc 1 318 0
+ 258:.\ibuton.c    **** 					}
+ 259:.\ibuton.c    **** 					for(i=1;i<=Buffer_LCD2.cuenta[0];i++){
+ 260:.\ibuton.c    **** 		                Buffer_LCD2.cuenta[i]=touch_read_byte(2);
+ 706              		.loc 1 260 0
  707 016c 0220     		movs	r0, #2
  708 016e FFF7FEFF 		bl	touch_read_byte
  709              	.LVL126:
  710 0172 0F4B     		ldr	r3, .L55+4
  711 0174 2B44     		add	r3, r3, r5
  712 0176 83F84700 		strb	r0, [r3, #71]
- 319:.\ibuton.c    **** 						if(Buffer_LCD2.cuenta[i]!=0xFF){
- 713              		.loc 1 319 0
+ 261:.\ibuton.c    **** 						if(Buffer_LCD2.cuenta[i]!=0xFF){
+ 713              		.loc 1 261 0
  714 017a FF28     		cmp	r0, #255
  715 017c 01D0     		beq	.L44
- 320:.\ibuton.c    **** 							check++;
- 716              		.loc 1 320 0
+ 262:.\ibuton.c    **** 							check++;
+ 716              		.loc 1 262 0
  717 017e 601C     		adds	r0, r4, #1
  718 0180 C4B2     		uxtb	r4, r0
  719              	.LVL127:
  720              	.L44:
- 317:.\ibuton.c    **** 		                Buffer_LCD2.cuenta[i]=touch_read_byte(2);
- 721              		.loc 1 317 0 discriminator 2
+ 259:.\ibuton.c    **** 		                Buffer_LCD2.cuenta[i]=touch_read_byte(2);
+ 721              		.loc 1 259 0 discriminator 2
  722 0182 0135     		adds	r5, r5, #1
  723              	.LVL128:
  724 0184 EDB2     		uxtb	r5, r5
@@ -1125,52 +1064,52 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  730 018a 2546     		mov	r5, r4
  731              	.LVL131:
  732              	.L43:
- 317:.\ibuton.c    **** 		                Buffer_LCD2.cuenta[i]=touch_read_byte(2);
- 733              		.loc 1 317 0 is_stmt 0 discriminator 1
+ 259:.\ibuton.c    **** 		                Buffer_LCD2.cuenta[i]=touch_read_byte(2);
+ 733              		.loc 1 259 0 is_stmt 0 discriminator 1
  734 018c 084B     		ldr	r3, .L55+4
  735 018e 93F84730 		ldrb	r3, [r3, #71]	@ zero_extendqisi2
  736 0192 AB42     		cmp	r3, r5
  737 0194 EAD2     		bcs	.L45
- 321:.\ibuton.c    **** 						}
- 322:.\ibuton.c    **** 					}
- 323:.\ibuton.c    **** 					return check;				
- 738              		.loc 1 323 0 is_stmt 1
+ 263:.\ibuton.c    **** 						}
+ 264:.\ibuton.c    **** 					}
+ 265:.\ibuton.c    **** 					return check;				
+ 738              		.loc 1 265 0 is_stmt 1
  739 0196 2046     		mov	r0, r4
  740 0198 38BD     		pop	{r3, r4, r5, pc}
  741              	.LVL132:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 20
-
-
  742              	.L46:
- 281:.\ibuton.c    **** 		}
- 743              		.loc 1 281 0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 19
+
+
+ 223:.\ibuton.c    **** 		}
+ 743              		.loc 1 223 0
  744 019a 0020     		movs	r0, #0
  745 019c 38BD     		pop	{r3, r4, r5, pc}
  746              	.L47:
- 277:.\ibuton.c    **** 			}
- 747              		.loc 1 277 0
+ 219:.\ibuton.c    **** 			}
+ 747              		.loc 1 219 0
  748 019e 0020     		movs	r0, #0
  749 01a0 38BD     		pop	{r3, r4, r5, pc}
  750              	.L50:
- 324:.\ibuton.c    **** 				}
- 325:.\ibuton.c    **** 			}
- 326:.\ibuton.c    **** 			else{
- 327:.\ibuton.c    **** 				return check;
- 328:.\ibuton.c    **** 			}
- 329:.\ibuton.c    **** 		}
- 330:.\ibuton.c    **** 		else{
- 331:.\ibuton.c    **** 			return check;	
- 751              		.loc 1 331 0
+ 266:.\ibuton.c    **** 				}
+ 267:.\ibuton.c    **** 			}
+ 268:.\ibuton.c    **** 			else{
+ 269:.\ibuton.c    **** 				return check;
+ 270:.\ibuton.c    **** 			}
+ 271:.\ibuton.c    **** 		}
+ 272:.\ibuton.c    **** 		else{
+ 273:.\ibuton.c    **** 			return check;	
+ 751              		.loc 1 273 0
  752 01a2 0020     		movs	r0, #0
  753 01a4 38BD     		pop	{r3, r4, r5, pc}
  754              	.L51:
- 327:.\ibuton.c    **** 			}
- 755              		.loc 1 327 0
+ 269:.\ibuton.c    **** 			}
+ 755              		.loc 1 269 0
  756 01a6 0020     		movs	r0, #0
- 332:.\ibuton.c    **** 		}	
- 333:.\ibuton.c    **** 	}
- 334:.\ibuton.c    **** }
- 757              		.loc 1 334 0
+ 274:.\ibuton.c    **** 		}	
+ 275:.\ibuton.c    **** 	}
+ 276:.\ibuton.c    **** }
+ 757              		.loc 1 276 0
  758 01a8 38BD     		pop	{r3, r4, r5, pc}
  759              	.L56:
  760 01aa 00BF     		.align	2
@@ -1188,29 +1127,23 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  772              		.type	touch_write_memoria, %function
  773              	touch_write_memoria:
  774              	.LFB67:
- 335:.\ibuton.c    **** 
- 336:.\ibuton.c    **** /*
- 337:.\ibuton.c    **** ***************************************************************************************************
- 338:.\ibuton.c    **** *          uint8 touch_write_memoria(uint8 ibutton, uint8 cantidad, uint8 pos, uint8 *valor)
- 339:.\ibuton.c    **** *
- 340:.\ibuton.c    **** * Description : 
- 341:.\ibuton.c    **** *               
- 342:.\ibuton.c    **** *
- 343:.\ibuton.c    **** * Argument(s) : none
- 344:.\ibuton.c    **** *
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 21
+ 277:.\ibuton.c    **** 
+ 278:.\ibuton.c    **** /**
+ 279:.\ibuton.c    **** * touch_write_memoria
+ 280:.\ibuton.c    **** * @brief escribe posiciones de memoria del ibutton con más datos (placa)
+ 281:.\ibuton.c    **** * @param ibutton lado del lector
+ 282:.\ibuton.c    **** * @param cantidad número de datos a escribir
+ 283:.\ibuton.c    **** * @param pos lado del equipo, posición 1 ó 2
+ 284:.\ibuton.c    **** * @param *valor apuntador con los datos a escribir
+ 285:.\ibuton.c    **** * @return 0 no escribió , 1 escrito correctamente
+ 286:.\ibuton.c    **** *
+ 287:.\ibuton.c    **** */
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 20
 
 
- 345:.\ibuton.c    **** * Return(s)   : none
- 346:.\ibuton.c    **** *
- 347:.\ibuton.c    **** * Caller(s)   : 
- 348:.\ibuton.c    **** *
- 349:.\ibuton.c    **** * Note(s)     : none.
- 350:.\ibuton.c    **** ***************************************************************************************************
- 351:.\ibuton.c    **** */
- 352:.\ibuton.c    **** 
- 353:.\ibuton.c    **** uint8 touch_write_memoria(uint8 ibutton, uint8 cantidad, uint8 pos, uint8 *valor){
- 775              		.loc 1 353 0
+ 288:.\ibuton.c    **** 
+ 289:.\ibuton.c    **** uint8 touch_write_memoria(uint8 ibutton, uint8 cantidad, uint8 pos, uint8 *valor){
+ 775              		.loc 1 289 0
  776              		.cfi_startproc
  777              		@ args = 0, pretend = 0, frame = 0
  778              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1227,255 +1160,255 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  789 0006 1746     		mov	r7, r2
  790 0008 1E46     		mov	r6, r3
  791              	.LVL134:
- 354:.\ibuton.c    **** 	uint8 i,check=0;
- 355:.\ibuton.c    **** 	if(ibutton==1){
- 792              		.loc 1 355 0
+ 290:.\ibuton.c    **** 	uint8 i,check=0;
+ 291:.\ibuton.c    **** 	if(ibutton==1){
+ 792              		.loc 1 291 0
  793 000a 0128     		cmp	r0, #1
  794 000c 40F0B180 		bne	.L58
- 356:.\ibuton.c    **** 		if(touch_present(1)==1){
- 795              		.loc 1 356 0
+ 292:.\ibuton.c    **** 		if(touch_present(1)==1){
+ 795              		.loc 1 292 0
  796 0010 FFF7FEFF 		bl	touch_present
  797              	.LVL135:
  798 0014 0128     		cmp	r0, #1
  799 0016 40F05B81 		bne	.L74
- 357:.\ibuton.c    **** 			CyDelay(200);
- 800              		.loc 1 357 0
+ 293:.\ibuton.c    **** 			CyDelay(200);
+ 800              		.loc 1 293 0
  801 001a C820     		movs	r0, #200
  802 001c FFF7FEFF 		bl	CyDelay
  803              	.LVL136:
- 358:.\ibuton.c    **** 	        touch_write(1,0xCC);
- 804              		.loc 1 358 0
+ 294:.\ibuton.c    **** 	        touch_write(1,0xCC);
+ 804              		.loc 1 294 0
  805 0020 0120     		movs	r0, #1
  806 0022 CC21     		movs	r1, #204
  807 0024 FFF7FEFF 		bl	touch_write
  808              	.LVL137:
- 359:.\ibuton.c    **** 			touch_write(1,0x0F);
- 809              		.loc 1 359 0
+ 295:.\ibuton.c    **** 			touch_write(1,0x0F);
+ 809              		.loc 1 295 0
  810 0028 0120     		movs	r0, #1
  811 002a 0F21     		movs	r1, #15
  812 002c FFF7FEFF 		bl	touch_write
  813              	.LVL138:
- 360:.\ibuton.c    **** 			touch_write(1,pos);
- 814              		.loc 1 360 0
+ 296:.\ibuton.c    **** 			touch_write(1,pos);
+ 814              		.loc 1 296 0
  815 0030 0120     		movs	r0, #1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 22
-
-
  816 0032 3946     		mov	r1, r7
  817 0034 FFF7FEFF 		bl	touch_write
  818              	.LVL139:
- 361:.\ibuton.c    **** 			touch_write(1,0x00);
- 819              		.loc 1 361 0
+ 297:.\ibuton.c    **** 			touch_write(1,0x00);
+ 819              		.loc 1 297 0
  820 0038 0120     		movs	r0, #1
  821 003a 0021     		movs	r1, #0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 21
+
+
  822 003c FFF7FEFF 		bl	touch_write
  823              	.LVL140:
- 362:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
- 824              		.loc 1 362 0
+ 298:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
+ 824              		.loc 1 298 0
  825 0040 0024     		movs	r4, #0
  826 0042 05E0     		b	.L60
  827              	.LVL141:
  828              	.L61:
- 363:.\ibuton.c    **** 				touch_write(1,valor[i]);
- 829              		.loc 1 363 0 discriminator 3
+ 299:.\ibuton.c    **** 				touch_write(1,valor[i]);
+ 829              		.loc 1 299 0 discriminator 3
  830 0044 0120     		movs	r0, #1
  831 0046 315D     		ldrb	r1, [r6, r4]	@ zero_extendqisi2
  832 0048 FFF7FEFF 		bl	touch_write
  833              	.LVL142:
- 362:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
- 834              		.loc 1 362 0 discriminator 3
+ 298:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
+ 834              		.loc 1 298 0 discriminator 3
  835 004c 0134     		adds	r4, r4, #1
  836              	.LVL143:
  837 004e E4B2     		uxtb	r4, r4
  838              	.LVL144:
  839              	.L60:
- 362:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
- 840              		.loc 1 362 0 is_stmt 0 discriminator 1
+ 298:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
+ 840              		.loc 1 298 0 is_stmt 0 discriminator 1
  841 0050 AC42     		cmp	r4, r5
  842 0052 F7D9     		bls	.L61
- 364:.\ibuton.c    **** 			}
- 365:.\ibuton.c    **** 			CyDelay(750);
- 843              		.loc 1 365 0 is_stmt 1
+ 300:.\ibuton.c    **** 			}
+ 301:.\ibuton.c    **** 			CyDelay(750);
+ 843              		.loc 1 301 0 is_stmt 1
  844 0054 40F2EE20 		movw	r0, #750
  845 0058 FFF7FEFF 		bl	CyDelay
  846              	.LVL145:
- 366:.\ibuton.c    **** 			if(touch_present(1)==1){
- 847              		.loc 1 366 0
+ 302:.\ibuton.c    **** 			if(touch_present(1)==1){
+ 847              		.loc 1 302 0
  848 005c 0120     		movs	r0, #1
  849 005e FFF7FEFF 		bl	touch_present
  850              	.LVL146:
  851 0062 0128     		cmp	r0, #1
  852 0064 40F03681 		bne	.L75
- 367:.\ibuton.c    **** 				CyDelay(200);
- 853              		.loc 1 367 0
+ 303:.\ibuton.c    **** 				CyDelay(200);
+ 853              		.loc 1 303 0
  854 0068 C820     		movs	r0, #200
  855 006a FFF7FEFF 		bl	CyDelay
  856              	.LVL147:
- 368:.\ibuton.c    **** 				touch_write(1,0xCC);
- 857              		.loc 1 368 0
+ 304:.\ibuton.c    **** 				touch_write(1,0xCC);
+ 857              		.loc 1 304 0
  858 006e 0120     		movs	r0, #1
  859 0070 CC21     		movs	r1, #204
  860 0072 FFF7FEFF 		bl	touch_write
  861              	.LVL148:
- 369:.\ibuton.c    **** 				touch_write(1,0xAA);	
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 23
-
-
- 862              		.loc 1 369 0
+ 305:.\ibuton.c    **** 				touch_write(1,0xAA);	
+ 862              		.loc 1 305 0
  863 0076 0120     		movs	r0, #1
  864 0078 AA21     		movs	r1, #170
  865 007a FFF7FEFF 		bl	touch_write
  866              	.LVL149:
- 370:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
- 867              		.loc 1 370 0
+ 306:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
+ 867              		.loc 1 306 0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 22
+
+
  868 007e 0022     		movs	r2, #0
  869 0080 9E4B     		ldr	r3, .L85
  870 0082 1A60     		str	r2, [r3]
  871 0084 0AE0     		b	.L62
  872              	.LVL150:
  873              	.L63:
- 371:.\ibuton.c    **** 	                Buffer_LCD1.id[x]=touch_read_byte(1);
- 874              		.loc 1 371 0 discriminator 3
+ 307:.\ibuton.c    **** 	                Buffer_LCD1.id[x]=touch_read_byte(1);
+ 874              		.loc 1 307 0 discriminator 3
  875 0086 0120     		movs	r0, #1
  876 0088 FFF7FEFF 		bl	touch_read_byte
  877              	.LVL151:
  878 008c 9C4B     		ldr	r3, .L85+4
  879 008e 1C44     		add	r4, r4, r3
  880 0090 84F82900 		strb	r0, [r4, #41]
- 370:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
- 881              		.loc 1 370 0 discriminator 3
+ 306:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
+ 881              		.loc 1 306 0 discriminator 3
  882 0094 994A     		ldr	r2, .L85
  883 0096 1368     		ldr	r3, [r2]
  884 0098 0133     		adds	r3, r3, #1
  885 009a 1360     		str	r3, [r2]
  886              	.L62:
- 370:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
- 887              		.loc 1 370 0 is_stmt 0 discriminator 1
+ 306:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
+ 887              		.loc 1 306 0 is_stmt 0 discriminator 1
  888 009c 2E46     		mov	r6, r5
  889 009e AB1C     		adds	r3, r5, #2
  890 00a0 964A     		ldr	r2, .L85
  891 00a2 1468     		ldr	r4, [r2]
  892 00a4 A342     		cmp	r3, r4
  893 00a6 EED2     		bcs	.L63
- 372:.\ibuton.c    **** 				}
- 373:.\ibuton.c    **** 				CyDelay(750);
- 894              		.loc 1 373 0 is_stmt 1
+ 308:.\ibuton.c    **** 				}
+ 309:.\ibuton.c    **** 				CyDelay(750);
+ 894              		.loc 1 309 0 is_stmt 1
  895 00a8 40F2EE20 		movw	r0, #750
  896 00ac FFF7FEFF 		bl	CyDelay
  897              	.LVL152:
- 374:.\ibuton.c    **** 				if(touch_present(1)==1){
- 898              		.loc 1 374 0
+ 310:.\ibuton.c    **** 				if(touch_present(1)==1){
+ 898              		.loc 1 310 0
  899 00b0 0120     		movs	r0, #1
  900 00b2 FFF7FEFF 		bl	touch_present
  901              	.LVL153:
  902 00b6 0128     		cmp	r0, #1
  903 00b8 40F00E81 		bne	.L76
- 375:.\ibuton.c    **** 					CyDelay(200);
- 904              		.loc 1 375 0
+ 311:.\ibuton.c    **** 					CyDelay(200);
+ 904              		.loc 1 311 0
  905 00bc C820     		movs	r0, #200
  906 00be FFF7FEFF 		bl	CyDelay
  907              	.LVL154:
- 376:.\ibuton.c    **** 					touch_write(1,0xCC);
- 908              		.loc 1 376 0
+ 312:.\ibuton.c    **** 					touch_write(1,0xCC);
+ 908              		.loc 1 312 0
  909 00c2 0120     		movs	r0, #1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 24
-
-
  910 00c4 CC21     		movs	r1, #204
  911 00c6 FFF7FEFF 		bl	touch_write
  912              	.LVL155:
- 377:.\ibuton.c    **** 					touch_write(1,0x55);	
- 913              		.loc 1 377 0
+ 313:.\ibuton.c    **** 					touch_write(1,0x55);	
+ 913              		.loc 1 313 0
  914 00ca 0120     		movs	r0, #1
  915 00cc 5521     		movs	r1, #85
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 23
+
+
  916 00ce FFF7FEFF 		bl	touch_write
  917              	.LVL156:
- 378:.\ibuton.c    **** 					touch_write(1,pos);
- 918              		.loc 1 378 0
+ 314:.\ibuton.c    **** 					touch_write(1,pos);
+ 918              		.loc 1 314 0
  919 00d2 0120     		movs	r0, #1
  920 00d4 3946     		mov	r1, r7
  921 00d6 FFF7FEFF 		bl	touch_write
  922              	.LVL157:
- 379:.\ibuton.c    **** 					touch_write(1,0x00);
- 923              		.loc 1 379 0
+ 315:.\ibuton.c    **** 					touch_write(1,0x00);
+ 923              		.loc 1 315 0
  924 00da 0120     		movs	r0, #1
  925 00dc 0021     		movs	r1, #0
  926 00de FFF7FEFF 		bl	touch_write
  927              	.LVL158:
- 380:.\ibuton.c    **** 					touch_write(1,Buffer_LCD1.id[2]);					
- 928              		.loc 1 380 0
+ 316:.\ibuton.c    **** 					touch_write(1,Buffer_LCD1.id[2]);					
+ 928              		.loc 1 316 0
  929 00e2 0120     		movs	r0, #1
  930 00e4 864B     		ldr	r3, .L85+4
  931 00e6 93F82B10 		ldrb	r1, [r3, #43]	@ zero_extendqisi2
  932 00ea FFF7FEFF 		bl	touch_write
  933              	.LVL159:
- 381:.\ibuton.c    **** 					CyDelay(750);
- 934              		.loc 1 381 0
+ 317:.\ibuton.c    **** 					CyDelay(750);
+ 934              		.loc 1 317 0
  935 00ee 40F2EE20 		movw	r0, #750
  936 00f2 FFF7FEFF 		bl	CyDelay
  937              	.LVL160:
- 382:.\ibuton.c    **** 					if(touch_present(1)==1){
- 938              		.loc 1 382 0
+ 318:.\ibuton.c    **** 					if(touch_present(1)==1){
+ 938              		.loc 1 318 0
  939 00f6 0120     		movs	r0, #1
  940 00f8 FFF7FEFF 		bl	touch_present
  941              	.LVL161:
  942 00fc 0446     		mov	r4, r0
  943 00fe 0128     		cmp	r0, #1
  944 0100 40F0EC80 		bne	.L77
- 383:.\ibuton.c    **** 						CyDelay(200);
- 945              		.loc 1 383 0
+ 319:.\ibuton.c    **** 						CyDelay(200);
+ 945              		.loc 1 319 0
  946 0104 C820     		movs	r0, #200
  947 0106 FFF7FEFF 		bl	CyDelay
  948              	.LVL162:
- 384:.\ibuton.c    **** 						touch_write(1,0xCC);
- 949              		.loc 1 384 0
+ 320:.\ibuton.c    **** 						touch_write(1,0xCC);
+ 949              		.loc 1 320 0
  950 010a 0120     		movs	r0, #1
  951 010c CC21     		movs	r1, #204
  952 010e FFF7FEFF 		bl	touch_write
  953              	.LVL163:
- 385:.\ibuton.c    **** 						touch_write(1,0xF0);	
- 954              		.loc 1 385 0
+ 321:.\ibuton.c    **** 						touch_write(1,0xF0);	
+ 954              		.loc 1 321 0
  955 0112 0120     		movs	r0, #1
  956 0114 F021     		movs	r1, #240
  957 0116 FFF7FEFF 		bl	touch_write
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 25
-
-
  958              	.LVL164:
- 386:.\ibuton.c    **** 						touch_write(1,pos);
- 959              		.loc 1 386 0
+ 322:.\ibuton.c    **** 						touch_write(1,pos);
+ 959              		.loc 1 322 0
  960 011a 0120     		movs	r0, #1
  961 011c 3946     		mov	r1, r7
  962 011e FFF7FEFF 		bl	touch_write
  963              	.LVL165:
- 387:.\ibuton.c    **** 						touch_write(1,0x00);
- 964              		.loc 1 387 0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 24
+
+
+ 323:.\ibuton.c    **** 						touch_write(1,0x00);
+ 964              		.loc 1 323 0
  965 0122 0120     		movs	r0, #1
  966 0124 0021     		movs	r1, #0
  967 0126 FFF7FEFF 		bl	touch_write
  968              	.LVL166:
- 388:.\ibuton.c    **** 						for(z=0;z<=cantidad;z++){
- 969              		.loc 1 388 0
+ 324:.\ibuton.c    **** 						for(z=0;z<=cantidad;z++){
+ 969              		.loc 1 324 0
  970 012a 0023     		movs	r3, #0
  971 012c 754A     		ldr	r2, .L85+8
  972 012e 1360     		str	r3, [r2]
- 354:.\ibuton.c    **** 	if(ibutton==1){
- 973              		.loc 1 354 0
+ 290:.\ibuton.c    **** 	if(ibutton==1){
+ 973              		.loc 1 290 0
  974 0130 9846     		mov	r8, r3
- 975              		.loc 1 388 0
+ 975              		.loc 1 324 0
  976 0132 15E0     		b	.L64
  977              	.LVL167:
  978              	.L66:
- 389:.\ibuton.c    **** 			                Buffer_LCD1.id[z]=touch_read_byte(1);
- 979              		.loc 1 389 0
+ 325:.\ibuton.c    **** 			                Buffer_LCD1.id[z]=touch_read_byte(1);
+ 979              		.loc 1 325 0
  980 0134 0120     		movs	r0, #1
  981 0136 FFF7FEFF 		bl	touch_read_byte
  982              	.LVL168:
  983 013a 714B     		ldr	r3, .L85+4
  984 013c 1F44     		add	r7, r7, r3
  985 013e 87F82900 		strb	r0, [r7, #41]
- 390:.\ibuton.c    **** 							if(Buffer_LCD1.id[z]==Buffer_LCD1.valor[z]){
- 986              		.loc 1 390 0
+ 326:.\ibuton.c    **** 							if(Buffer_LCD1.id[z]==Buffer_LCD1.valor[z]){
+ 986              		.loc 1 326 0
  987 0142 704A     		ldr	r2, .L85+8
  988 0144 1268     		ldr	r2, [r2]
  989 0146 1344     		add	r3, r3, r2
@@ -1483,296 +1416,296 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  991 014c DB7A     		ldrb	r3, [r3, #11]	@ zero_extendqisi2
  992 014e 9942     		cmp	r1, r3
  993 0150 03D1     		bne	.L65
- 391:.\ibuton.c    **** 								check++;	
- 994              		.loc 1 391 0
+ 327:.\ibuton.c    **** 								check++;	
+ 994              		.loc 1 327 0
  995 0152 08F10108 		add	r8, r8, #1
  996              	.LVL169:
  997 0156 5FFA88F8 		uxtb	r8, r8
  998              	.LVL170:
  999              	.L65:
- 388:.\ibuton.c    **** 			                Buffer_LCD1.id[z]=touch_read_byte(1);
- 1000              		.loc 1 388 0 discriminator 2
+ 324:.\ibuton.c    **** 			                Buffer_LCD1.id[z]=touch_read_byte(1);
+ 1000              		.loc 1 324 0 discriminator 2
  1001 015a 0132     		adds	r2, r2, #1
  1002 015c 694B     		ldr	r3, .L85+8
  1003 015e 1A60     		str	r2, [r3]
  1004              	.LVL171:
  1005              	.L64:
- 388:.\ibuton.c    **** 			                Buffer_LCD1.id[z]=touch_read_byte(1);
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 26
-
-
- 1006              		.loc 1 388 0 is_stmt 0 discriminator 1
+ 324:.\ibuton.c    **** 			                Buffer_LCD1.id[z]=touch_read_byte(1);
+ 1006              		.loc 1 324 0 is_stmt 0 discriminator 1
  1007 0160 684B     		ldr	r3, .L85+8
  1008 0162 1F68     		ldr	r7, [r3]
  1009 0164 BD42     		cmp	r5, r7
  1010 0166 E5D2     		bcs	.L66
- 392:.\ibuton.c    **** 							}									
- 393:.\ibuton.c    **** 						}
- 394:.\ibuton.c    **** 						if(check==(cantidad+1)){
- 1011              		.loc 1 394 0 is_stmt 1
+ 328:.\ibuton.c    **** 							}									
+ 329:.\ibuton.c    **** 						}
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 25
+
+
+ 330:.\ibuton.c    **** 						if(check==(cantidad+1)){
+ 1011              		.loc 1 330 0 is_stmt 1
  1012 0168 0136     		adds	r6, r6, #1
  1013 016a B045     		cmp	r8, r6
  1014 016c 40F0B880 		bne	.L78
  1015 0170 C1E0     		b	.L59
  1016              	.LVL172:
  1017              	.L58:
- 395:.\ibuton.c    **** 							return 1;
- 396:.\ibuton.c    **** 						}
- 397:.\ibuton.c    **** 					}	
- 398:.\ibuton.c    **** 				}	
- 399:.\ibuton.c    **** 			}			
- 400:.\ibuton.c    **** 	    }	
- 401:.\ibuton.c    **** 		else{
- 402:.\ibuton.c    **** 			return 0;
- 403:.\ibuton.c    **** 		}
- 404:.\ibuton.c    **** 	}
- 405:.\ibuton.c    **** 	else{
- 406:.\ibuton.c    **** 		if(touch_present(2)==1){
- 1018              		.loc 1 406 0
+ 331:.\ibuton.c    **** 							return 1;
+ 332:.\ibuton.c    **** 						}
+ 333:.\ibuton.c    **** 					}	
+ 334:.\ibuton.c    **** 				}	
+ 335:.\ibuton.c    **** 			}			
+ 336:.\ibuton.c    **** 	    }	
+ 337:.\ibuton.c    **** 		else{
+ 338:.\ibuton.c    **** 			return 0;
+ 339:.\ibuton.c    **** 		}
+ 340:.\ibuton.c    **** 	}
+ 341:.\ibuton.c    **** 	else{
+ 342:.\ibuton.c    **** 		if(touch_present(2)==1){
+ 1018              		.loc 1 342 0
  1019 0172 0220     		movs	r0, #2
  1020              	.LVL173:
  1021 0174 FFF7FEFF 		bl	touch_present
  1022              	.LVL174:
  1023 0178 0128     		cmp	r0, #1
  1024 017a 40F0B380 		bne	.L79
- 407:.\ibuton.c    **** 			CyDelay(200);
- 1025              		.loc 1 407 0
+ 343:.\ibuton.c    **** 			CyDelay(200);
+ 1025              		.loc 1 343 0
  1026 017e C820     		movs	r0, #200
  1027 0180 FFF7FEFF 		bl	CyDelay
  1028              	.LVL175:
- 408:.\ibuton.c    **** 	        touch_write(2,0xCC);
- 1029              		.loc 1 408 0
+ 344:.\ibuton.c    **** 	        touch_write(2,0xCC);
+ 1029              		.loc 1 344 0
  1030 0184 0220     		movs	r0, #2
  1031 0186 CC21     		movs	r1, #204
  1032 0188 FFF7FEFF 		bl	touch_write
  1033              	.LVL176:
- 409:.\ibuton.c    **** 			touch_write(2,0x0F);
- 1034              		.loc 1 409 0
+ 345:.\ibuton.c    **** 			touch_write(2,0x0F);
+ 1034              		.loc 1 345 0
  1035 018c 0220     		movs	r0, #2
  1036 018e 0F21     		movs	r1, #15
  1037 0190 FFF7FEFF 		bl	touch_write
  1038              	.LVL177:
- 410:.\ibuton.c    **** 			touch_write(2,pos);
- 1039              		.loc 1 410 0
+ 346:.\ibuton.c    **** 			touch_write(2,pos);
+ 1039              		.loc 1 346 0
  1040 0194 0220     		movs	r0, #2
  1041 0196 3946     		mov	r1, r7
  1042 0198 FFF7FEFF 		bl	touch_write
  1043              	.LVL178:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 27
-
-
- 411:.\ibuton.c    **** 			touch_write(2,0x00);
- 1044              		.loc 1 411 0
+ 347:.\ibuton.c    **** 			touch_write(2,0x00);
+ 1044              		.loc 1 347 0
  1045 019c 0220     		movs	r0, #2
  1046 019e 0021     		movs	r1, #0
  1047 01a0 FFF7FEFF 		bl	touch_write
  1048              	.LVL179:
- 412:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
- 1049              		.loc 1 412 0
+ 348:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 26
+
+
+ 1049              		.loc 1 348 0
  1050 01a4 0024     		movs	r4, #0
  1051 01a6 05E0     		b	.L67
  1052              	.LVL180:
  1053              	.L68:
- 413:.\ibuton.c    **** 				touch_write(2,valor[i]);
- 1054              		.loc 1 413 0 discriminator 3
+ 349:.\ibuton.c    **** 				touch_write(2,valor[i]);
+ 1054              		.loc 1 349 0 discriminator 3
  1055 01a8 0220     		movs	r0, #2
  1056 01aa 315D     		ldrb	r1, [r6, r4]	@ zero_extendqisi2
  1057 01ac FFF7FEFF 		bl	touch_write
  1058              	.LVL181:
- 412:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
- 1059              		.loc 1 412 0 discriminator 3
+ 348:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
+ 1059              		.loc 1 348 0 discriminator 3
  1060 01b0 0134     		adds	r4, r4, #1
  1061              	.LVL182:
  1062 01b2 E4B2     		uxtb	r4, r4
  1063              	.LVL183:
  1064              	.L67:
- 412:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
- 1065              		.loc 1 412 0 is_stmt 0 discriminator 1
+ 348:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
+ 1065              		.loc 1 348 0 is_stmt 0 discriminator 1
  1066 01b4 AC42     		cmp	r4, r5
  1067 01b6 F7D9     		bls	.L68
- 414:.\ibuton.c    **** 			}
- 415:.\ibuton.c    **** 			CyDelay(750);
- 1068              		.loc 1 415 0 is_stmt 1
+ 350:.\ibuton.c    **** 			}
+ 351:.\ibuton.c    **** 			CyDelay(750);
+ 1068              		.loc 1 351 0 is_stmt 1
  1069 01b8 40F2EE20 		movw	r0, #750
  1070 01bc FFF7FEFF 		bl	CyDelay
  1071              	.LVL184:
- 416:.\ibuton.c    **** 			if(touch_present(2)==1){
- 1072              		.loc 1 416 0
+ 352:.\ibuton.c    **** 			if(touch_present(2)==1){
+ 1072              		.loc 1 352 0
  1073 01c0 0220     		movs	r0, #2
  1074 01c2 FFF7FEFF 		bl	touch_present
  1075              	.LVL185:
  1076 01c6 0128     		cmp	r0, #1
  1077 01c8 40F08E80 		bne	.L80
- 417:.\ibuton.c    **** 				CyDelay(200);
- 1078              		.loc 1 417 0
+ 353:.\ibuton.c    **** 				CyDelay(200);
+ 1078              		.loc 1 353 0
  1079 01cc C820     		movs	r0, #200
  1080 01ce FFF7FEFF 		bl	CyDelay
  1081              	.LVL186:
- 418:.\ibuton.c    **** 				touch_write(2,0xCC);
- 1082              		.loc 1 418 0
+ 354:.\ibuton.c    **** 				touch_write(2,0xCC);
+ 1082              		.loc 1 354 0
  1083 01d2 0220     		movs	r0, #2
  1084 01d4 CC21     		movs	r1, #204
  1085 01d6 FFF7FEFF 		bl	touch_write
  1086              	.LVL187:
- 419:.\ibuton.c    **** 				touch_write(2,0xAA);	
- 1087              		.loc 1 419 0
+ 355:.\ibuton.c    **** 				touch_write(2,0xAA);	
+ 1087              		.loc 1 355 0
  1088 01da 0220     		movs	r0, #2
  1089 01dc AA21     		movs	r1, #170
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 28
-
-
  1090 01de FFF7FEFF 		bl	touch_write
  1091              	.LVL188:
- 420:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
- 1092              		.loc 1 420 0
+ 356:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
+ 1092              		.loc 1 356 0
  1093 01e2 0022     		movs	r2, #0
  1094 01e4 454B     		ldr	r3, .L85
  1095 01e6 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 27
+
+
  1096 01e8 0AE0     		b	.L69
  1097              	.LVL189:
  1098              	.L70:
- 421:.\ibuton.c    **** 	                Buffer_LCD2.id[x]=touch_read_byte(2);
- 1099              		.loc 1 421 0 discriminator 3
+ 357:.\ibuton.c    **** 	                Buffer_LCD2.id[x]=touch_read_byte(2);
+ 1099              		.loc 1 357 0 discriminator 3
  1100 01ea 0220     		movs	r0, #2
  1101 01ec FFF7FEFF 		bl	touch_read_byte
  1102              	.LVL190:
  1103 01f0 454B     		ldr	r3, .L85+12
  1104 01f2 1C44     		add	r4, r4, r3
  1105 01f4 84F82900 		strb	r0, [r4, #41]
- 420:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
- 1106              		.loc 1 420 0 discriminator 3
+ 356:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
+ 1106              		.loc 1 356 0 discriminator 3
  1107 01f8 404A     		ldr	r2, .L85
  1108 01fa 1368     		ldr	r3, [r2]
  1109 01fc 0133     		adds	r3, r3, #1
  1110 01fe 1360     		str	r3, [r2]
  1111              	.L69:
- 420:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
- 1112              		.loc 1 420 0 is_stmt 0 discriminator 1
+ 356:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
+ 1112              		.loc 1 356 0 is_stmt 0 discriminator 1
  1113 0200 2E46     		mov	r6, r5
  1114 0202 AB1C     		adds	r3, r5, #2
  1115 0204 3D4A     		ldr	r2, .L85
  1116 0206 1468     		ldr	r4, [r2]
  1117 0208 A342     		cmp	r3, r4
  1118 020a EED2     		bcs	.L70
- 422:.\ibuton.c    **** 				}
- 423:.\ibuton.c    **** 				CyDelay(750);
- 1119              		.loc 1 423 0 is_stmt 1
+ 358:.\ibuton.c    **** 				}
+ 359:.\ibuton.c    **** 				CyDelay(750);
+ 1119              		.loc 1 359 0 is_stmt 1
  1120 020c 40F2EE20 		movw	r0, #750
  1121 0210 FFF7FEFF 		bl	CyDelay
  1122              	.LVL191:
- 424:.\ibuton.c    **** 				if(touch_present(2)==1){
- 1123              		.loc 1 424 0
+ 360:.\ibuton.c    **** 				if(touch_present(2)==1){
+ 1123              		.loc 1 360 0
  1124 0214 0220     		movs	r0, #2
  1125 0216 FFF7FEFF 		bl	touch_present
  1126              	.LVL192:
  1127 021a 0128     		cmp	r0, #1
  1128 021c 66D1     		bne	.L81
- 425:.\ibuton.c    **** 					CyDelay(200);
- 1129              		.loc 1 425 0
+ 361:.\ibuton.c    **** 					CyDelay(200);
+ 1129              		.loc 1 361 0
  1130 021e C820     		movs	r0, #200
  1131 0220 FFF7FEFF 		bl	CyDelay
  1132              	.LVL193:
- 426:.\ibuton.c    **** 					touch_write(2,0xCC);
- 1133              		.loc 1 426 0
+ 362:.\ibuton.c    **** 					touch_write(2,0xCC);
+ 1133              		.loc 1 362 0
  1134 0224 0220     		movs	r0, #2
  1135 0226 CC21     		movs	r1, #204
  1136 0228 FFF7FEFF 		bl	touch_write
  1137              	.LVL194:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 29
-
-
- 427:.\ibuton.c    **** 					touch_write(2,0x55);	
- 1138              		.loc 1 427 0
+ 363:.\ibuton.c    **** 					touch_write(2,0x55);	
+ 1138              		.loc 1 363 0
  1139 022c 0220     		movs	r0, #2
  1140 022e 5521     		movs	r1, #85
  1141 0230 FFF7FEFF 		bl	touch_write
  1142              	.LVL195:
- 428:.\ibuton.c    **** 					touch_write(2,pos);
- 1143              		.loc 1 428 0
+ 364:.\ibuton.c    **** 					touch_write(2,pos);
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 28
+
+
+ 1143              		.loc 1 364 0
  1144 0234 0220     		movs	r0, #2
  1145 0236 3946     		mov	r1, r7
  1146 0238 FFF7FEFF 		bl	touch_write
  1147              	.LVL196:
- 429:.\ibuton.c    **** 					touch_write(2,0x00);
- 1148              		.loc 1 429 0
+ 365:.\ibuton.c    **** 					touch_write(2,0x00);
+ 1148              		.loc 1 365 0
  1149 023c 0220     		movs	r0, #2
  1150 023e 0021     		movs	r1, #0
  1151 0240 FFF7FEFF 		bl	touch_write
  1152              	.LVL197:
- 430:.\ibuton.c    **** 					touch_write(2,Buffer_LCD2.id[2]);					
- 1153              		.loc 1 430 0
+ 366:.\ibuton.c    **** 					touch_write(2,Buffer_LCD2.id[2]);					
+ 1153              		.loc 1 366 0
  1154 0244 0220     		movs	r0, #2
  1155 0246 304B     		ldr	r3, .L85+12
  1156 0248 93F82B10 		ldrb	r1, [r3, #43]	@ zero_extendqisi2
  1157 024c FFF7FEFF 		bl	touch_write
  1158              	.LVL198:
- 431:.\ibuton.c    **** 					CyDelay(750);
- 1159              		.loc 1 431 0
+ 367:.\ibuton.c    **** 					CyDelay(750);
+ 1159              		.loc 1 367 0
  1160 0250 40F2EE20 		movw	r0, #750
  1161 0254 FFF7FEFF 		bl	CyDelay
  1162              	.LVL199:
- 432:.\ibuton.c    **** 					if(touch_present(2)==1){
- 1163              		.loc 1 432 0
+ 368:.\ibuton.c    **** 					if(touch_present(2)==1){
+ 1163              		.loc 1 368 0
  1164 0258 0220     		movs	r0, #2
  1165 025a FFF7FEFF 		bl	touch_present
  1166              	.LVL200:
  1167 025e 0446     		mov	r4, r0
  1168 0260 0128     		cmp	r0, #1
  1169 0262 45D1     		bne	.L82
- 433:.\ibuton.c    **** 						CyDelay(200);
- 1170              		.loc 1 433 0
+ 369:.\ibuton.c    **** 						CyDelay(200);
+ 1170              		.loc 1 369 0
  1171 0264 C820     		movs	r0, #200
  1172 0266 FFF7FEFF 		bl	CyDelay
  1173              	.LVL201:
- 434:.\ibuton.c    **** 						touch_write(2,0xCC);
- 1174              		.loc 1 434 0
+ 370:.\ibuton.c    **** 						touch_write(2,0xCC);
+ 1174              		.loc 1 370 0
  1175 026a 0220     		movs	r0, #2
  1176 026c CC21     		movs	r1, #204
  1177 026e FFF7FEFF 		bl	touch_write
  1178              	.LVL202:
- 435:.\ibuton.c    **** 						touch_write(2,0xF0);	
- 1179              		.loc 1 435 0
+ 371:.\ibuton.c    **** 						touch_write(2,0xF0);	
+ 1179              		.loc 1 371 0
  1180 0272 0220     		movs	r0, #2
  1181 0274 F021     		movs	r1, #240
  1182 0276 FFF7FEFF 		bl	touch_write
  1183              	.LVL203:
- 436:.\ibuton.c    **** 						touch_write(2,pos);
- 1184              		.loc 1 436 0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 30
-
-
+ 372:.\ibuton.c    **** 						touch_write(2,pos);
+ 1184              		.loc 1 372 0
  1185 027a 0220     		movs	r0, #2
  1186 027c 3946     		mov	r1, r7
  1187 027e FFF7FEFF 		bl	touch_write
  1188              	.LVL204:
- 437:.\ibuton.c    **** 						touch_write(2,0x00);
- 1189              		.loc 1 437 0
+ 373:.\ibuton.c    **** 						touch_write(2,0x00);
+ 1189              		.loc 1 373 0
  1190 0282 0220     		movs	r0, #2
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 29
+
+
  1191 0284 0021     		movs	r1, #0
  1192 0286 FFF7FEFF 		bl	touch_write
  1193              	.LVL205:
- 438:.\ibuton.c    **** 						for(z=0;z<=cantidad;z++){
- 1194              		.loc 1 438 0
+ 374:.\ibuton.c    **** 						for(z=0;z<=cantidad;z++){
+ 1194              		.loc 1 374 0
  1195 028a 0023     		movs	r3, #0
  1196 028c 1D4A     		ldr	r2, .L85+8
  1197 028e 1360     		str	r3, [r2]
- 354:.\ibuton.c    **** 	if(ibutton==1){
- 1198              		.loc 1 354 0
+ 290:.\ibuton.c    **** 	if(ibutton==1){
+ 1198              		.loc 1 290 0
  1199 0290 9846     		mov	r8, r3
- 1200              		.loc 1 438 0
+ 1200              		.loc 1 374 0
  1201 0292 15E0     		b	.L71
  1202              	.LVL206:
  1203              	.L73:
- 439:.\ibuton.c    **** 			                Buffer_LCD2.id[z]=touch_read_byte(2);
- 1204              		.loc 1 439 0
+ 375:.\ibuton.c    **** 			                Buffer_LCD2.id[z]=touch_read_byte(2);
+ 1204              		.loc 1 375 0
  1205 0294 0220     		movs	r0, #2
  1206 0296 FFF7FEFF 		bl	touch_read_byte
  1207              	.LVL207:
  1208 029a 1B4B     		ldr	r3, .L85+12
  1209 029c 1F44     		add	r7, r7, r3
  1210 029e 87F82900 		strb	r0, [r7, #41]
- 440:.\ibuton.c    **** 							if(Buffer_LCD2.id[z]==Buffer_LCD2.valor[z]){
- 1211              		.loc 1 440 0
+ 376:.\ibuton.c    **** 							if(Buffer_LCD2.id[z]==Buffer_LCD2.valor[z]){
+ 1211              		.loc 1 376 0
  1212 02a2 184A     		ldr	r2, .L85+8
  1213 02a4 1268     		ldr	r2, [r2]
  1214 02a6 1344     		add	r3, r3, r2
@@ -1780,57 +1713,57 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1216 02ac DB7A     		ldrb	r3, [r3, #11]	@ zero_extendqisi2
  1217 02ae 9942     		cmp	r1, r3
  1218 02b0 03D1     		bne	.L72
- 441:.\ibuton.c    **** 								check++;	
- 1219              		.loc 1 441 0
+ 377:.\ibuton.c    **** 								check++;	
+ 1219              		.loc 1 377 0
  1220 02b2 08F10108 		add	r8, r8, #1
  1221              	.LVL208:
  1222 02b6 5FFA88F8 		uxtb	r8, r8
  1223              	.LVL209:
  1224              	.L72:
- 438:.\ibuton.c    **** 			                Buffer_LCD2.id[z]=touch_read_byte(2);
- 1225              		.loc 1 438 0 discriminator 2
+ 374:.\ibuton.c    **** 			                Buffer_LCD2.id[z]=touch_read_byte(2);
+ 1225              		.loc 1 374 0 discriminator 2
  1226 02ba 0132     		adds	r2, r2, #1
  1227 02bc 114B     		ldr	r3, .L85+8
  1228 02be 1A60     		str	r2, [r3]
  1229              	.LVL210:
  1230              	.L71:
- 438:.\ibuton.c    **** 			                Buffer_LCD2.id[z]=touch_read_byte(2);
- 1231              		.loc 1 438 0 is_stmt 0 discriminator 1
+ 374:.\ibuton.c    **** 			                Buffer_LCD2.id[z]=touch_read_byte(2);
+ 1231              		.loc 1 374 0 is_stmt 0 discriminator 1
  1232 02c0 104B     		ldr	r3, .L85+8
  1233 02c2 1F68     		ldr	r7, [r3]
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 31
-
-
  1234 02c4 BD42     		cmp	r5, r7
  1235 02c6 E5D2     		bcs	.L73
- 442:.\ibuton.c    **** 							}									
- 443:.\ibuton.c    **** 						}
- 444:.\ibuton.c    **** 						if(check==(cantidad+1)){
- 1236              		.loc 1 444 0 is_stmt 1
+ 378:.\ibuton.c    **** 							}									
+ 379:.\ibuton.c    **** 						}
+ 380:.\ibuton.c    **** 						if(check==(cantidad+1)){
+ 1236              		.loc 1 380 0 is_stmt 1
  1237 02c8 0136     		adds	r6, r6, #1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 30
+
+
  1238 02ca B045     		cmp	r8, r6
  1239 02cc 12D1     		bne	.L83
  1240 02ce 12E0     		b	.L59
  1241              	.LVL211:
  1242              	.L74:
- 402:.\ibuton.c    **** 		}
- 1243              		.loc 1 402 0
+ 338:.\ibuton.c    **** 		}
+ 1243              		.loc 1 338 0
  1244 02d0 0024     		movs	r4, #0
  1245 02d2 10E0     		b	.L59
  1246              	.LVL212:
  1247              	.L75:
- 445:.\ibuton.c    **** 							return 1;
- 446:.\ibuton.c    **** 						}
- 447:.\ibuton.c    **** 					}	
- 448:.\ibuton.c    **** 				}	
- 449:.\ibuton.c    **** 			}			
- 450:.\ibuton.c    **** 	    }	
- 451:.\ibuton.c    **** 		else{
- 452:.\ibuton.c    **** 			return 0;
- 453:.\ibuton.c    **** 		}	
- 454:.\ibuton.c    **** 	}
- 455:.\ibuton.c    **** 	return 0;
- 1248              		.loc 1 455 0
+ 381:.\ibuton.c    **** 							return 1;
+ 382:.\ibuton.c    **** 						}
+ 383:.\ibuton.c    **** 					}	
+ 384:.\ibuton.c    **** 				}	
+ 385:.\ibuton.c    **** 			}			
+ 386:.\ibuton.c    **** 	    }	
+ 387:.\ibuton.c    **** 		else{
+ 388:.\ibuton.c    **** 			return 0;
+ 389:.\ibuton.c    **** 		}	
+ 390:.\ibuton.c    **** 	}
+ 391:.\ibuton.c    **** 	return 0;
+ 1248              		.loc 1 391 0
  1249 02d4 0024     		movs	r4, #0
  1250              	.LVL213:
  1251 02d6 0EE0     		b	.L59
@@ -1847,20 +1780,17 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1262 02e2 08E0     		b	.L59
  1263              	.LVL216:
  1264              	.L79:
- 452:.\ibuton.c    **** 		}	
- 1265              		.loc 1 452 0
+ 388:.\ibuton.c    **** 		}	
+ 1265              		.loc 1 388 0
  1266 02e4 0024     		movs	r4, #0
  1267 02e6 06E0     		b	.L59
  1268              	.LVL217:
  1269              	.L80:
- 1270              		.loc 1 455 0
+ 1270              		.loc 1 391 0
  1271 02e8 0024     		movs	r4, #0
  1272              	.LVL218:
  1273 02ea 04E0     		b	.L59
  1274              	.LVL219:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 32
-
-
  1275              	.L81:
  1276 02ec 0024     		movs	r4, #0
  1277 02ee 02E0     		b	.L59
@@ -1868,12 +1798,15 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1279 02f0 0024     		movs	r4, #0
  1280 02f2 00E0     		b	.L59
  1281              	.LVL220:
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 31
+
+
  1282              	.L83:
  1283 02f4 0024     		movs	r4, #0
  1284              	.LVL221:
  1285              	.L59:
- 456:.\ibuton.c    **** }
- 1286              		.loc 1 456 0
+ 392:.\ibuton.c    **** }
+ 1286              		.loc 1 392 0
  1287 02f6 2046     		mov	r0, r4
  1288 02f8 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
  1289              	.L86:
@@ -1894,81 +1827,74 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1304              		.type	crc_check, %function
  1305              	crc_check:
  1306              	.LFB68:
- 457:.\ibuton.c    **** 
- 458:.\ibuton.c    **** /*
- 459:.\ibuton.c    **** ***************************************************************************************************
- 460:.\ibuton.c    **** * 							uint8 crc_check(uint8_t crc, uint8_t data)
- 461:.\ibuton.c    **** *
- 462:.\ibuton.c    **** * Description : 
- 463:.\ibuton.c    **** *               
- 464:.\ibuton.c    **** *
- 465:.\ibuton.c    **** * Argument(s) : none
- 466:.\ibuton.c    **** *
- 467:.\ibuton.c    **** * Return(s)   : none
- 468:.\ibuton.c    **** *
- 469:.\ibuton.c    **** * Caller(s)   : 
- 470:.\ibuton.c    **** *
- 471:.\ibuton.c    **** * Note(s)     : none.
- 472:.\ibuton.c    **** ***************************************************************************************************
- 473:.\ibuton.c    **** */
- 474:.\ibuton.c    **** 
- 475:.\ibuton.c    **** uint8 crc_check(uint8 crc, uint8 dato){
- 1307              		.loc 1 475 0
+ 393:.\ibuton.c    **** 
+ 394:.\ibuton.c    **** 
+ 395:.\ibuton.c    **** /**
+ 396:.\ibuton.c    **** * crc_check
+ 397:.\ibuton.c    **** * @brief verifica los datos leídos del ibutton
+ 398:.\ibuton.c    **** * @param crc dato obtenido
+ 399:.\ibuton.c    **** * @param dato byte de ibutton
+ 400:.\ibuton.c    **** * @return crc calculado
+ 401:.\ibuton.c    **** *
+ 402:.\ibuton.c    **** */
+ 403:.\ibuton.c    **** 
+ 404:.\ibuton.c    **** uint8 crc_check(uint8 crc, uint8 dato){
+ 1307              		.loc 1 404 0
  1308              		.cfi_startproc
  1309              		@ args = 0, pretend = 0, frame = 0
  1310              		@ frame_needed = 0, uses_anonymous_args = 0
  1311              		@ link register save eliminated.
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 33
-
-
  1312              	.LVL222:
- 476:.\ibuton.c    ****     uint8 i;
- 477:.\ibuton.c    ****     crc = crc ^ dato;
- 1313              		.loc 1 477 0
+ 405:.\ibuton.c    ****     uint8 i;
+ 406:.\ibuton.c    ****     crc = crc ^ dato;
+ 1313              		.loc 1 406 0
  1314 0000 4840     		eors	r0, r0, r1
  1315              	.LVL223:
- 478:.\ibuton.c    ****     for (i = 0; i < 8; i++)
- 1316              		.loc 1 478 0
+ 407:.\ibuton.c    ****     for (i = 0; i < 8; i++)
+ 1316              		.loc 1 407 0
  1317 0002 0023     		movs	r3, #0
  1318 0004 09E0     		b	.L88
  1319              	.LVL224:
  1320              	.L91:
- 479:.\ibuton.c    ****     {
- 480:.\ibuton.c    ****         if (crc & 0x01){
- 1321              		.loc 1 480 0
+ 408:.\ibuton.c    ****     {
+ 409:.\ibuton.c    ****         if (crc & 0x01){
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 32
+
+
+ 1321              		.loc 1 409 0
  1322 0006 10F0010F 		tst	r0, #1
  1323 000a 03D0     		beq	.L89
- 481:.\ibuton.c    ****             crc = (crc >> 1) ^ 0x8C;
- 1324              		.loc 1 481 0
+ 410:.\ibuton.c    ****             crc = (crc >> 1) ^ 0x8C;
+ 1324              		.loc 1 410 0
  1325 000c 4008     		lsrs	r0, r0, #1
  1326              	.LVL225:
  1327 000e 80F08C00 		eor	r0, r0, #140
  1328              	.LVL226:
  1329 0012 00E0     		b	.L90
  1330              	.L89:
- 482:.\ibuton.c    **** 		}	
- 483:.\ibuton.c    ****         else{
- 484:.\ibuton.c    ****             crc >>= 1;
- 1331              		.loc 1 484 0
+ 411:.\ibuton.c    **** 		}	
+ 412:.\ibuton.c    ****         else{
+ 413:.\ibuton.c    ****             crc >>= 1;
+ 1331              		.loc 1 413 0
  1332 0014 4008     		lsrs	r0, r0, #1
  1333              	.LVL227:
  1334              	.L90:
- 478:.\ibuton.c    ****     {
- 1335              		.loc 1 478 0 discriminator 2
+ 407:.\ibuton.c    ****     {
+ 1335              		.loc 1 407 0 discriminator 2
  1336 0016 0133     		adds	r3, r3, #1
  1337              	.LVL228:
  1338 0018 DBB2     		uxtb	r3, r3
  1339              	.LVL229:
  1340              	.L88:
- 478:.\ibuton.c    ****     {
- 1341              		.loc 1 478 0 is_stmt 0 discriminator 1
+ 407:.\ibuton.c    ****     {
+ 1341              		.loc 1 407 0 is_stmt 0 discriminator 1
  1342 001a 072B     		cmp	r3, #7
  1343 001c F3D9     		bls	.L91
- 485:.\ibuton.c    **** 		}	
- 486:.\ibuton.c    ****     }
- 487:.\ibuton.c    ****     return crc;
- 488:.\ibuton.c    **** }
- 1344              		.loc 1 488 0 is_stmt 1
+ 414:.\ibuton.c    **** 		}	
+ 415:.\ibuton.c    ****     }
+ 416:.\ibuton.c    ****     return crc;
+ 417:.\ibuton.c    **** }
+ 1344              		.loc 1 417 0 is_stmt 1
  1345 001e 7047     		bx	lr
  1346              		.cfi_endproc
  1347              	.LFE68:
@@ -1978,9 +1904,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1351              		.comm	lado,8,4
  1352              		.comm	producto,1,1
  1353              		.comm	producto2,1,1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 34
-
-
  1354              		.comm	producto1,1,1
  1355              		.comm	modulo,400,4
  1356              		.comm	w,4,4
@@ -1995,6 +1918,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1365              		.comm	no_imprime,1,1
  1366              		.comm	n_copias,1,4
  1367              		.comm	a_copias,1,1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 33
+
+
  1368              		.comm	producto4n,11,4
  1369              		.comm	producto3n,11,4
  1370              		.comm	producto2n,11,4
@@ -2038,9 +1964,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1408              		.comm	count_protector2,1,1
  1409              		.comm	count_protector,1,1
  1410              		.comm	flujo_LCD2,1,1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 35
-
-
  1411              		.comm	flujo_LCD,1,1
  1412              		.text
  1413              	.Letext0:
@@ -2055,6 +1978,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1422              		.section	.debug_info,"",%progbits
  1423              	.Ldebug_info0:
  1424 0000 54140000 		.4byte	0x1454
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 34
+
+
  1425 0004 0400     		.2byte	0x4
  1426 0006 00000000 		.4byte	.Ldebug_abbrev0
  1427 000a 04       		.byte	0x4
@@ -2062,7 +1988,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1429 000c 37040000 		.4byte	.LASF123
  1430 0010 01       		.byte	0x1
  1431 0011 D9020000 		.4byte	.LASF124
- 1432 0015 94020000 		.4byte	.LASF125
+ 1432 0015 7E010000 		.4byte	.LASF125
  1433 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1434 001d 00000000 		.4byte	0
  1435 0021 00000000 		.4byte	.Ldebug_line0
@@ -2098,14 +2024,11 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1465 005a 02       		.uleb128 0x2
  1466 005b 08       		.byte	0x8
  1467 005c 05       		.byte	0x5
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 36
-
-
- 1468 005d 73020000 		.4byte	.LASF6
+ 1468 005d AF020000 		.4byte	.LASF6
  1469 0061 02       		.uleb128 0x2
  1470 0062 08       		.byte	0x8
  1471 0063 07       		.byte	0x7
- 1472 0064 67010000 		.4byte	.LASF7
+ 1472 0064 5D010000 		.4byte	.LASF7
  1473 0068 04       		.uleb128 0x4
  1474 0069 04       		.byte	0x4
  1475 006a 05       		.byte	0x5
@@ -2115,6 +2038,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1479 0071 07       		.byte	0x7
  1480 0072 51000000 		.4byte	.LASF8
  1481 0076 03       		.uleb128 0x3
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 35
+
+
  1482 0077 0A040000 		.4byte	.LASF10
  1483 007b 03       		.byte	0x3
  1484 007c 2C       		.byte	0x2c
@@ -2125,7 +2051,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1489 0087 B4       		.byte	0xb4
  1490 0088 2C000000 		.4byte	0x2c
  1491 008c 03       		.uleb128 0x3
- 1492 008d 24020000 		.4byte	.LASF12
+ 1492 008d 60020000 		.4byte	.LASF12
  1493 0091 04       		.byte	0x4
  1494 0092 B5       		.byte	0xb5
  1495 0093 3A000000 		.4byte	0x3a
@@ -2145,7 +2071,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1509 00b0 02       		.uleb128 0x2
  1510 00b1 01       		.byte	0x1
  1511 00b2 08       		.byte	0x8
- 1512 00b3 17020000 		.4byte	.LASF16
+ 1512 00b3 53020000 		.4byte	.LASF16
  1513 00b7 02       		.uleb128 0x2
  1514 00b8 04       		.byte	0x4
  1515 00b9 07       		.byte	0x7
@@ -2158,9 +2084,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1522 00c6 65010000 		.4byte	0x165
  1523 00ca 06       		.uleb128 0x6
  1524 00cb FA020000 		.4byte	.LASF18
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 37
-
-
  1525 00cf 05       		.byte	0x5
  1526 00d0 8B       		.byte	0x8b
  1527 00d1 81000000 		.4byte	0x81
@@ -2175,6 +2098,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1536 00e3 AE000000 		.4byte	.LASF19
  1537 00e7 05       		.byte	0x5
  1538 00e8 8D       		.byte	0x8d
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 36
+
+
  1539 00e9 81000000 		.4byte	0x81
  1540 00ed 02       		.byte	0x2
  1541 00ee 06       		.uleb128 0x6
@@ -2202,13 +2128,13 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1563 0117 75010000 		.4byte	0x175
  1564 011b 29       		.byte	0x29
  1565 011c 06       		.uleb128 0x6
- 1566 011d 86010000 		.4byte	.LASF22
+ 1566 011d C2010000 		.4byte	.LASF22
  1567 0121 05       		.byte	0x5
  1568 0122 92       		.byte	0x92
  1569 0123 75010000 		.4byte	0x175
  1570 0127 47       		.byte	0x47
  1571 0128 06       		.uleb128 0x6
- 1572 0129 98010000 		.4byte	.LASF23
+ 1572 0129 D4010000 		.4byte	.LASF23
  1573 012d 05       		.byte	0x5
  1574 012e 93       		.byte	0x93
  1575 012f 75010000 		.4byte	0x175
@@ -2218,9 +2144,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1579 0139 05       		.byte	0x5
  1580 013a 94       		.byte	0x94
  1581 013b 81000000 		.4byte	0x81
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 38
-
-
  1582 013f 83       		.byte	0x83
  1583 0140 06       		.uleb128 0x6
  1584 0141 E4020000 		.4byte	.LASF25
@@ -2235,7 +2158,10 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1593 0153 95010000 		.4byte	0x195
  1594 0157 8E       		.byte	0x8e
  1595 0158 06       		.uleb128 0x6
- 1596 0159 4D020000 		.4byte	.LASF27
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 37
+
+
+ 1596 0159 89020000 		.4byte	.LASF27
  1597 015d 05       		.byte	0x5
  1598 015e 97       		.byte	0x97
  1599 015f 81000000 		.4byte	0x81
@@ -2278,9 +2204,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1636 01b1 07       		.uleb128 0x7
  1637 01b2 64697200 		.ascii	"dir\000"
  1638 01b6 05       		.byte	0x5
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 39
-
-
  1639 01b7 A0       		.byte	0xa0
  1640 01b8 81000000 		.4byte	0x81
  1641 01bc 00       		.byte	0
@@ -2295,6 +2218,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1650 01ce 05       		.byte	0x5
  1651 01cf A2       		.byte	0xa2
  1652 01d0 81000000 		.4byte	0x81
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 38
+
+
  1653 01d4 02       		.byte	0x2
  1654 01d5 06       		.uleb128 0x6
  1655 01d6 14000000 		.4byte	.LASF31
@@ -2338,23 +2264,23 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1693 021c 6E697400 		.ascii	"nit\000"
  1694 0220 05       		.byte	0x5
  1695 0221 AE       		.byte	0xae
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 40
-
-
  1696 0222 E8020000 		.4byte	0x2e8
  1697 0226 1E       		.byte	0x1e
  1698 0227 06       		.uleb128 0x6
- 1699 0228 8A020000 		.4byte	.LASF35
+ 1699 0228 C6020000 		.4byte	.LASF35
  1700 022c 05       		.byte	0x5
  1701 022d AF       		.byte	0xaf
  1702 022e F8020000 		.4byte	0x2f8
  1703 0232 2D       		.byte	0x2d
  1704 0233 06       		.uleb128 0x6
- 1705 0234 C2010000 		.4byte	.LASF36
+ 1705 0234 FE010000 		.4byte	.LASF36
  1706 0238 05       		.byte	0x5
  1707 0239 B0       		.byte	0xb0
  1708 023a 08030000 		.4byte	0x308
  1709 023e 2F       		.byte	0x2f
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 39
+
+
  1710 023f 06       		.uleb128 0x6
  1711 0240 01010000 		.4byte	.LASF37
  1712 0244 05       		.byte	0x5
@@ -2392,15 +2318,12 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1744 0282 81000000 		.4byte	0x81
  1745 0286 A2       		.byte	0xa2
  1746 0287 06       		.uleb128 0x6
- 1747 0288 81020000 		.4byte	.LASF43
+ 1747 0288 BD020000 		.4byte	.LASF43
  1748 028c 05       		.byte	0x5
  1749 028d B7       		.byte	0xb7
  1750 028e 81000000 		.4byte	0x81
  1751 0292 A3       		.byte	0xa3
  1752 0293 07       		.uleb128 0x7
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 41
-
-
  1753 0294 70707500 		.ascii	"ppu\000"
  1754 0298 05       		.byte	0x5
  1755 0299 B8       		.byte	0xb8
@@ -2413,13 +2336,16 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1762 02a6 95010000 		.4byte	0x195
  1763 02aa AB       		.byte	0xab
  1764 02ab 06       		.uleb128 0x6
- 1765 02ac BA010000 		.4byte	.LASF45
+ 1765 02ac F6010000 		.4byte	.LASF45
  1766 02b0 05       		.byte	0x5
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 40
+
+
  1767 02b1 BA       		.byte	0xba
  1768 02b2 95010000 		.4byte	0x195
  1769 02b6 B4       		.byte	0xb4
  1770 02b7 06       		.uleb128 0x6
- 1771 02b8 E9010000 		.4byte	.LASF46
+ 1771 02b8 25020000 		.4byte	.LASF46
  1772 02bc 05       		.byte	0x5
  1773 02bd BB       		.byte	0xbb
  1774 02be 28030000 		.4byte	0x328
@@ -2458,9 +2384,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1807 0306 01       		.byte	0x1
  1808 0307 00       		.byte	0
  1809 0308 08       		.uleb128 0x8
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 42
-
-
  1810 0309 81000000 		.4byte	0x81
  1811 030d 18030000 		.4byte	0x318
  1812 0311 09       		.uleb128 0x9
@@ -2475,6 +2398,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1821 0326 02       		.byte	0x2
  1822 0327 00       		.byte	0
  1823 0328 08       		.uleb128 0x8
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 41
+
+
  1824 0329 81000000 		.4byte	0x81
  1825 032d 38030000 		.4byte	0x338
  1826 0331 09       		.uleb128 0x9
@@ -2484,7 +2410,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1830 0338 0B       		.uleb128 0xb
  1831 0339 15010000 		.4byte	.LASF48
  1832 033d 01       		.byte	0x1
- 1833 033e 38       		.byte	0x38
+ 1833 033e 19       		.byte	0x19
  1834 033f 81000000 		.4byte	0x81
  1835 0343 00000000 		.4byte	.LFB63
  1836 0347 84000000 		.4byte	.LFE63-.LFB63
@@ -2494,13 +2420,13 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1840 0351 0C       		.uleb128 0xc
  1841 0352 14050000 		.4byte	.LASF50
  1842 0356 01       		.byte	0x1
- 1843 0357 38       		.byte	0x38
+ 1843 0357 19       		.byte	0x19
  1844 0358 81000000 		.4byte	0x81
  1845 035c 00000000 		.4byte	.LLST0
  1846 0360 0D       		.uleb128 0xd
- 1847 0361 45020000 		.4byte	.LASF52
+ 1847 0361 81020000 		.4byte	.LASF52
  1848 0365 01       		.byte	0x1
- 1849 0366 39       		.byte	0x39
+ 1849 0366 1A       		.byte	0x1a
  1850 0367 81000000 		.4byte	0x81
  1851 036b 3A000000 		.4byte	.LLST1
  1852 036f 0E       		.uleb128 0xe
@@ -2518,9 +2444,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1864 0387 12140000 		.4byte	0x1412
  1865 038b 97030000 		.4byte	0x397
  1866 038f 0F       		.uleb128 0xf
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 43
-
-
  1867 0390 01       		.uleb128 0x1
  1868 0391 50       		.byte	0x50
  1869 0392 03       		.uleb128 0x3
@@ -2535,6 +2458,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1878 03a5 01       		.uleb128 0x1
  1879 03a6 50       		.byte	0x50
  1880 03a7 01       		.uleb128 0x1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 42
+
+
  1881 03a8 31       		.byte	0x31
  1882 03a9 00       		.byte	0
  1883 03aa 0E       		.uleb128 0xe
@@ -2578,9 +2504,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1921 03f7 0E       		.uleb128 0xe
  1922 03f8 46000000 		.4byte	.LVL13
  1923 03fc 2E140000 		.4byte	0x142e
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 44
-
-
  1924 0400 0A040000 		.4byte	0x40a
  1925 0404 0F       		.uleb128 0xf
  1926 0405 01       		.uleb128 0x1
@@ -2595,6 +2518,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1935 0417 0F       		.uleb128 0xf
  1936 0418 01       		.uleb128 0x1
  1937 0419 50       		.byte	0x50
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 43
+
+
  1938 041a 03       		.uleb128 0x3
  1939 041b 0A       		.byte	0xa
  1940 041c F401     		.2byte	0x1f4
@@ -2638,9 +2564,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1978 0467 3F140000 		.4byte	0x143f
  1979 046b 11       		.uleb128 0x11
  1980 046c 74000000 		.4byte	.LVL21
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 45
-
-
  1981 0470 12140000 		.4byte	0x1412
  1982 0474 0F       		.uleb128 0xf
  1983 0475 01       		.uleb128 0x1
@@ -2653,8 +2576,11 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  1990 047c 0B       		.uleb128 0xb
  1991 047d F5000000 		.4byte	.LASF49
  1992 0481 01       		.byte	0x1
- 1993 0482 77       		.byte	0x77
+ 1993 0482 4D       		.byte	0x4d
  1994 0483 81000000 		.4byte	0x81
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 44
+
+
  1995 0487 00000000 		.4byte	.LFB64
  1996 048b D4000000 		.4byte	.LFE64-.LFB64
  1997 048f 01       		.uleb128 0x1
@@ -2663,19 +2589,19 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2000 0495 0C       		.uleb128 0xc
  2001 0496 14050000 		.4byte	.LASF50
  2002 049a 01       		.byte	0x1
- 2003 049b 77       		.byte	0x77
+ 2003 049b 4D       		.byte	0x4d
  2004 049c 81000000 		.4byte	0x81
  2005 04a0 64000000 		.4byte	.LLST2
  2006 04a4 0C       		.uleb128 0xc
- 2007 04a5 40020000 		.4byte	.LASF51
+ 2007 04a5 7C020000 		.4byte	.LASF51
  2008 04a9 01       		.byte	0x1
- 2009 04aa 77       		.byte	0x77
+ 2009 04aa 4D       		.byte	0x4d
  2010 04ab 81000000 		.4byte	0x81
  2011 04af 9E000000 		.4byte	.LLST3
  2012 04b3 12       		.uleb128 0x12
  2013 04b4 6900     		.ascii	"i\000"
  2014 04b6 01       		.byte	0x1
- 2015 04b7 78       		.byte	0x78
+ 2015 04b7 4E       		.byte	0x4e
  2016 04b8 81000000 		.4byte	0x81
  2017 04bc D8000000 		.4byte	.LLST4
  2018 04c0 0E       		.uleb128 0xe
@@ -2698,9 +2624,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2035 04e3 01       		.uleb128 0x1
  2036 04e4 3A       		.byte	0x3a
  2037 04e5 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 46
-
-
  2038 04e6 0E       		.uleb128 0xe
  2039 04e7 28000000 		.4byte	.LVL27
  2040 04eb 01140000 		.4byte	0x1401
@@ -2715,6 +2638,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2049 04fa 2E000000 		.4byte	.LVL28
  2050 04fe 12140000 		.4byte	0x1412
  2051 0502 0C050000 		.4byte	0x50c
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 45
+
+
  2052 0506 0F       		.uleb128 0xf
  2053 0507 01       		.uleb128 0x1
  2054 0508 50       		.byte	0x50
@@ -2758,9 +2684,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2092 0555 08       		.byte	0x8
  2093 0556 32       		.byte	0x32
  2094 0557 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 47
-
-
  2095 0558 0E       		.uleb128 0xe
  2096 0559 58000000 		.4byte	.LVL34
  2097 055d 01140000 		.4byte	0x1401
@@ -2775,6 +2698,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2106 056c 5E000000 		.4byte	.LVL35
  2107 0570 12140000 		.4byte	0x1412
  2108 0574 7F050000 		.4byte	0x57f
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 46
+
+
  2109 0578 0F       		.uleb128 0xf
  2110 0579 01       		.uleb128 0x1
  2111 057a 50       		.byte	0x50
@@ -2818,9 +2744,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2149 05c1 CB050000 		.4byte	0x5cb
  2150 05c5 0F       		.uleb128 0xf
  2151 05c6 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 48
-
-
  2152 05c7 50       		.byte	0x50
  2153 05c8 01       		.uleb128 0x1
  2154 05c9 3A       		.byte	0x3a
@@ -2835,6 +2758,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2163 05e1 0F       		.uleb128 0xf
  2164 05e2 01       		.uleb128 0x1
  2165 05e3 50       		.byte	0x50
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 47
+
+
  2166 05e4 01       		.uleb128 0x1
  2167 05e5 30       		.byte	0x30
  2168 05e6 00       		.byte	0
@@ -2878,40 +2804,40 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2206 0633 0F       		.uleb128 0xf
  2207 0634 01       		.uleb128 0x1
  2208 0635 50       		.byte	0x50
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 49
-
-
  2209 0636 02       		.uleb128 0x2
  2210 0637 08       		.byte	0x8
  2211 0638 32       		.byte	0x32
  2212 0639 00       		.byte	0
  2213 063a 00       		.byte	0
  2214 063b 0B       		.uleb128 0xb
- 2215 063c FB010000 		.4byte	.LASF53
+ 2215 063c 37020000 		.4byte	.LASF53
  2216 0640 01       		.byte	0x1
- 2217 0641 BD       		.byte	0xbd
+ 2217 0641 8B       		.byte	0x8b
  2218 0642 81000000 		.4byte	0x81
  2219 0646 00000000 		.4byte	.LFB65
  2220 064a 78000000 		.4byte	.LFE65-.LFB65
  2221 064e 01       		.uleb128 0x1
  2222 064f 9C       		.byte	0x9c
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 48
+
+
  2223 0650 4E070000 		.4byte	0x74e
  2224 0654 0C       		.uleb128 0xc
  2225 0655 14050000 		.4byte	.LASF50
  2226 0659 01       		.byte	0x1
- 2227 065a BD       		.byte	0xbd
+ 2227 065a 8B       		.byte	0x8b
  2228 065b 81000000 		.4byte	0x81
  2229 065f 0C010000 		.4byte	.LLST5
  2230 0663 12       		.uleb128 0x12
  2231 0664 6900     		.ascii	"i\000"
  2232 0666 01       		.byte	0x1
- 2233 0667 BE       		.byte	0xbe
+ 2233 0667 8C       		.byte	0x8c
  2234 0668 81000000 		.4byte	0x81
  2235 066c 46010000 		.4byte	.LLST6
  2236 0670 0D       		.uleb128 0xd
- 2237 0671 40020000 		.4byte	.LASF51
+ 2237 0671 7C020000 		.4byte	.LASF51
  2238 0675 01       		.byte	0x1
- 2239 0676 BE       		.byte	0xbe
+ 2239 0676 8C       		.byte	0x8c
  2240 0677 81000000 		.4byte	0x81
  2241 067b 7A010000 		.4byte	.LLST7
  2242 067f 0E       		.uleb128 0xe
@@ -2938,9 +2864,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2263 06a6 1E000000 		.4byte	.LVL58
  2264 06aa 01140000 		.4byte	0x1401
  2265 06ae B8060000 		.4byte	0x6b8
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 50
-
-
  2266 06b2 0F       		.uleb128 0xf
  2267 06b3 01       		.uleb128 0x1
  2268 06b4 50       		.byte	0x50
@@ -2955,6 +2878,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2277 06c6 01       		.uleb128 0x1
  2278 06c7 50       		.byte	0x50
  2279 06c8 01       		.uleb128 0x1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 49
+
+
  2280 06c9 37       		.byte	0x37
  2281 06ca 00       		.byte	0
  2282 06cb 10       		.uleb128 0x10
@@ -2998,9 +2924,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2320 071b 0F       		.uleb128 0xf
  2321 071c 01       		.uleb128 0x1
  2322 071d 50       		.byte	0x50
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 51
-
-
  2323 071e 01       		.uleb128 0x1
  2324 071f 31       		.byte	0x31
  2325 0720 00       		.byte	0
@@ -3015,6 +2938,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2334 0732 37       		.byte	0x37
  2335 0733 00       		.byte	0
  2336 0734 10       		.uleb128 0x10
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 50
+
+
  2337 0735 60000000 		.4byte	.LVL72
  2338 0739 3F140000 		.4byte	0x143f
  2339 073d 11       		.uleb128 0x11
@@ -3031,7 +2957,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2350 074e 0B       		.uleb128 0xb
  2351 074f 40050000 		.4byte	.LASF54
  2352 0753 01       		.byte	0x1
- 2353 0754 E8       		.byte	0xe8
+ 2353 0754 AE       		.byte	0xae
  2354 0755 81000000 		.4byte	0x81
  2355 0759 00000000 		.4byte	.LFB66
  2356 075d B4010000 		.4byte	.LFE66-.LFB66
@@ -3041,28 +2967,25 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2360 0767 0C       		.uleb128 0xc
  2361 0768 14050000 		.4byte	.LASF50
  2362 076c 01       		.byte	0x1
- 2363 076d E8       		.byte	0xe8
+ 2363 076d AE       		.byte	0xae
  2364 076e 81000000 		.4byte	0x81
  2365 0772 C6010000 		.4byte	.LLST8
  2366 0776 13       		.uleb128 0x13
  2367 0777 706F7300 		.ascii	"pos\000"
  2368 077b 01       		.byte	0x1
- 2369 077c E8       		.byte	0xe8
+ 2369 077c AE       		.byte	0xae
  2370 077d 81000000 		.4byte	0x81
  2371 0781 00020000 		.4byte	.LLST9
  2372 0785 12       		.uleb128 0x12
  2373 0786 6900     		.ascii	"i\000"
  2374 0788 01       		.byte	0x1
- 2375 0789 E9       		.byte	0xe9
+ 2375 0789 AF       		.byte	0xaf
  2376 078a 81000000 		.4byte	0x81
  2377 078e 3A020000 		.4byte	.LLST10
  2378 0792 0D       		.uleb128 0xd
  2379 0793 8D000000 		.4byte	.LASF55
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 52
-
-
  2380 0797 01       		.byte	0x1
- 2381 0798 E9       		.byte	0xe9
+ 2381 0798 AF       		.byte	0xaf
  2382 0799 81000000 		.4byte	0x81
  2383 079d C6020000 		.4byte	.LLST11
  2384 07a1 10       		.uleb128 0x10
@@ -3075,6 +2998,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2391 07b7 0F       		.uleb128 0xf
  2392 07b8 01       		.uleb128 0x1
  2393 07b9 50       		.byte	0x50
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 51
+
+
  2394 07ba 02       		.uleb128 0x2
  2395 07bb 08       		.byte	0x8
  2396 07bc C8       		.byte	0xc8
@@ -3118,9 +3044,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2434 07fd 00       		.byte	0
  2435 07fe 0E       		.uleb128 0xe
  2436 07ff 3A000000 		.4byte	.LVL85
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 53
-
-
  2437 0803 7C040000 		.4byte	0x47c
  2438 0807 17080000 		.4byte	0x817
  2439 080b 0F       		.uleb128 0xf
@@ -3135,6 +3058,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2448 0814 01       		.uleb128 0x1
  2449 0815 31       		.byte	0x31
  2450 0816 00       		.byte	0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 52
+
+
  2451 0817 0E       		.uleb128 0xe
  2452 0818 42000000 		.4byte	.LVL86
  2453 081c 7C040000 		.4byte	0x47c
@@ -3178,9 +3104,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2491 085a 00       		.byte	0
  2492 085b 0E       		.uleb128 0xe
  2493 085c 68000000 		.4byte	.LVL90
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 54
-
-
  2494 0860 3B060000 		.4byte	0x63b
  2495 0864 6E080000 		.4byte	0x86e
  2496 0868 0F       		.uleb128 0xf
@@ -3195,6 +3118,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2505 0877 81080000 		.4byte	0x881
  2506 087b 0F       		.uleb128 0xf
  2507 087c 01       		.uleb128 0x1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 53
+
+
  2508 087d 50       		.byte	0x50
  2509 087e 01       		.uleb128 0x1
  2510 087f 31       		.byte	0x31
@@ -3238,9 +3164,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2548 08c9 01       		.uleb128 0x1
  2549 08ca 50       		.byte	0x50
  2550 08cb 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 55
-
-
  2551 08cc 32       		.byte	0x32
  2552 08cd 00       		.byte	0
  2553 08ce 0E       		.uleb128 0xe
@@ -3255,6 +3178,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2562 08e0 C8       		.byte	0xc8
  2563 08e1 00       		.byte	0
  2564 08e2 0E       		.uleb128 0xe
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 54
+
+
  2565 08e3 FA000000 		.4byte	.LVL111
  2566 08e7 7C040000 		.4byte	0x47c
  2567 08eb FB080000 		.4byte	0x8fb
@@ -3298,9 +3224,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2605 0926 00       		.sleb128 0
  2606 0927 0F       		.uleb128 0xf
  2607 0928 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 56
-
-
  2608 0929 50       		.byte	0x50
  2609 092a 01       		.uleb128 0x1
  2610 092b 32       		.byte	0x32
@@ -3315,6 +3238,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2619 093d 01       		.uleb128 0x1
  2620 093e 30       		.byte	0x30
  2621 093f 0F       		.uleb128 0xf
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 55
+
+
  2622 0940 01       		.uleb128 0x1
  2623 0941 50       		.byte	0x50
  2624 0942 01       		.uleb128 0x1
@@ -3358,15 +3284,12 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2662 0989 50       		.byte	0x50
  2663 098a 01       		.uleb128 0x1
  2664 098b 32       		.byte	0x32
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 57
-
-
  2665 098c 00       		.byte	0
  2666 098d 00       		.byte	0
  2667 098e 14       		.uleb128 0x14
- 2668 098f 53020000 		.4byte	.LASF56
+ 2668 098f 8F020000 		.4byte	.LASF56
  2669 0993 01       		.byte	0x1
- 2670 0994 6101     		.2byte	0x161
+ 2670 0994 2101     		.2byte	0x121
  2671 0996 81000000 		.4byte	0x81
  2672 099a 00000000 		.4byte	.LFB67
  2673 099e 0C030000 		.4byte	.LFE67-.LFB67
@@ -3375,38 +3298,41 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2676 09a4 FB0E0000 		.4byte	0xefb
  2677 09a8 15       		.uleb128 0x15
  2678 09a9 14050000 		.4byte	.LASF50
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 56
+
+
  2679 09ad 01       		.byte	0x1
- 2680 09ae 6101     		.2byte	0x161
+ 2680 09ae 2101     		.2byte	0x121
  2681 09b0 81000000 		.4byte	0x81
  2682 09b4 92030000 		.4byte	.LLST12
  2683 09b8 15       		.uleb128 0x15
- 2684 09b9 F2010000 		.4byte	.LASF57
+ 2684 09b9 2E020000 		.4byte	.LASF57
  2685 09bd 01       		.byte	0x1
- 2686 09be 6101     		.2byte	0x161
+ 2686 09be 2101     		.2byte	0x121
  2687 09c0 81000000 		.4byte	0x81
  2688 09c4 CC030000 		.4byte	.LLST13
  2689 09c8 16       		.uleb128 0x16
  2690 09c9 706F7300 		.ascii	"pos\000"
  2691 09cd 01       		.byte	0x1
- 2692 09ce 6101     		.2byte	0x161
+ 2692 09ce 2101     		.2byte	0x121
  2693 09d0 81000000 		.4byte	0x81
  2694 09d4 06040000 		.4byte	.LLST14
  2695 09d8 15       		.uleb128 0x15
  2696 09d9 EB040000 		.4byte	.LASF21
  2697 09dd 01       		.byte	0x1
- 2698 09de 6101     		.2byte	0x161
+ 2698 09de 2101     		.2byte	0x121
  2699 09e0 FB0E0000 		.4byte	0xefb
  2700 09e4 40040000 		.4byte	.LLST15
  2701 09e8 17       		.uleb128 0x17
  2702 09e9 6900     		.ascii	"i\000"
  2703 09eb 01       		.byte	0x1
- 2704 09ec 6201     		.2byte	0x162
+ 2704 09ec 2201     		.2byte	0x122
  2705 09ee 81000000 		.4byte	0x81
  2706 09f2 C2040000 		.4byte	.LLST16
  2707 09f6 18       		.uleb128 0x18
  2708 09f7 8D000000 		.4byte	.LASF55
  2709 09fb 01       		.byte	0x1
- 2710 09fc 6201     		.2byte	0x162
+ 2710 09fc 2201     		.2byte	0x122
  2711 09fe 81000000 		.4byte	0x81
  2712 0a02 24050000 		.4byte	.LLST17
  2713 0a06 10       		.uleb128 0x10
@@ -3418,9 +3344,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2719 0a18 230A0000 		.4byte	0xa23
  2720 0a1c 0F       		.uleb128 0xf
  2721 0a1d 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 58
-
-
  2722 0a1e 50       		.byte	0x50
  2723 0a1f 02       		.uleb128 0x2
  2724 0a20 08       		.byte	0x8
@@ -3435,6 +3358,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2733 0a32 51       		.byte	0x51
  2734 0a33 02       		.uleb128 0x2
  2735 0a34 09       		.byte	0x9
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 57
+
+
  2736 0a35 CC       		.byte	0xcc
  2737 0a36 0F       		.uleb128 0xf
  2738 0a37 01       		.uleb128 0x1
@@ -3478,9 +3404,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2776 0a72 7C040000 		.4byte	0x47c
  2777 0a76 850A0000 		.4byte	0xa85
  2778 0a7a 0F       		.uleb128 0xf
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 59
-
-
  2779 0a7b 01       		.uleb128 0x1
  2780 0a7c 51       		.byte	0x51
  2781 0a7d 01       		.uleb128 0x1
@@ -3495,6 +3418,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2790 0a86 4C000000 		.4byte	.LVL142
  2791 0a8a 7C040000 		.4byte	0x47c
  2792 0a8e 980A0000 		.4byte	0xa98
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 58
+
+
  2793 0a92 0F       		.uleb128 0xf
  2794 0a93 01       		.uleb128 0x1
  2795 0a94 50       		.byte	0x50
@@ -3538,9 +3464,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2833 0ad9 7C040000 		.4byte	0x47c
  2834 0add ED0A0000 		.4byte	0xaed
  2835 0ae1 0F       		.uleb128 0xf
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 60
-
-
  2836 0ae2 01       		.uleb128 0x1
  2837 0ae3 51       		.byte	0x51
  2838 0ae4 02       		.uleb128 0x2
@@ -3555,6 +3478,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2847 0aed 0E       		.uleb128 0xe
  2848 0aee 7E000000 		.4byte	.LVL149
  2849 0af2 7C040000 		.4byte	0x47c
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 59
+
+
  2850 0af6 060B0000 		.4byte	0xb06
  2851 0afa 0F       		.uleb128 0xf
  2852 0afb 01       		.uleb128 0x1
@@ -3598,9 +3524,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2890 0b3d 50       		.byte	0x50
  2891 0b3e 01       		.uleb128 0x1
  2892 0b3f 31       		.byte	0x31
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 61
-
-
  2893 0b40 00       		.byte	0
  2894 0b41 0E       		.uleb128 0xe
  2895 0b42 C2000000 		.4byte	.LVL154
@@ -3615,6 +3538,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2904 0b54 00       		.byte	0
  2905 0b55 0E       		.uleb128 0xe
  2906 0b56 CA000000 		.4byte	.LVL155
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 60
+
+
  2907 0b5a 7C040000 		.4byte	0x47c
  2908 0b5e 6E0B0000 		.4byte	0xb6e
  2909 0b62 0F       		.uleb128 0xf
@@ -3658,9 +3584,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2947 0b9a 0F       		.uleb128 0xf
  2948 0b9b 01       		.uleb128 0x1
  2949 0b9c 50       		.byte	0x50
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 62
-
-
  2950 0b9d 01       		.uleb128 0x1
  2951 0b9e 31       		.byte	0x31
  2952 0b9f 00       		.byte	0
@@ -3675,6 +3598,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  2961 0bb1 30       		.byte	0x30
  2962 0bb2 0F       		.uleb128 0xf
  2963 0bb3 01       		.uleb128 0x1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 61
+
+
  2964 0bb4 50       		.byte	0x50
  2965 0bb5 01       		.uleb128 0x1
  2966 0bb6 31       		.byte	0x31
@@ -3718,9 +3644,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3004 0c01 01       		.uleb128 0x1
  3005 0c02 50       		.byte	0x50
  3006 0c03 02       		.uleb128 0x2
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 63
-
-
  3007 0c04 08       		.byte	0x8
  3008 0c05 C8       		.byte	0xc8
  3009 0c06 00       		.byte	0
@@ -3735,6 +3658,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3018 0c18 09       		.byte	0x9
  3019 0c19 CC       		.byte	0xcc
  3020 0c1a 0F       		.uleb128 0xf
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 62
+
+
  3021 0c1b 01       		.uleb128 0x1
  3022 0c1c 50       		.byte	0x50
  3023 0c1d 01       		.uleb128 0x1
@@ -3778,9 +3704,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3061 0c5b 6A0C0000 		.4byte	0xc6a
  3062 0c5f 0F       		.uleb128 0xf
  3063 0c60 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 64
-
-
  3064 0c61 51       		.byte	0x51
  3065 0c62 01       		.uleb128 0x1
  3066 0c63 30       		.byte	0x30
@@ -3795,6 +3718,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3075 0c6f 3B060000 		.4byte	0x63b
  3076 0c73 7D0C0000 		.4byte	0xc7d
  3077 0c77 0F       		.uleb128 0xf
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 63
+
+
  3078 0c78 01       		.uleb128 0x1
  3079 0c79 50       		.byte	0x50
  3080 0c7a 01       		.uleb128 0x1
@@ -3838,9 +3764,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3118 0cbb 32       		.byte	0x32
  3119 0cbc 00       		.byte	0
  3120 0cbd 0E       		.uleb128 0xe
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 65
-
-
  3121 0cbe 94010000 		.4byte	.LVL177
  3122 0cc2 7C040000 		.4byte	0x47c
  3123 0cc6 D50C0000 		.4byte	0xcd5
@@ -3855,6 +3778,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3132 0cd2 01       		.uleb128 0x1
  3133 0cd3 32       		.byte	0x32
  3134 0cd4 00       		.byte	0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 64
+
+
  3135 0cd5 0E       		.uleb128 0xe
  3136 0cd6 9C010000 		.4byte	.LVL178
  3137 0cda 7C040000 		.4byte	0x47c
@@ -3898,9 +3824,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3175 0d18 00       		.byte	0
  3176 0d19 0E       		.uleb128 0xe
  3177 0d1a C0010000 		.4byte	.LVL184
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 66
-
-
  3178 0d1e 4A140000 		.4byte	0x144a
  3179 0d22 2E0D0000 		.4byte	0xd2e
  3180 0d26 0F       		.uleb128 0xf
@@ -3915,6 +3838,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3189 0d33 38030000 		.4byte	0x338
  3190 0d37 410D0000 		.4byte	0xd41
  3191 0d3b 0F       		.uleb128 0xf
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 65
+
+
  3192 0d3c 01       		.uleb128 0x1
  3193 0d3d 50       		.byte	0x50
  3194 0d3e 01       		.uleb128 0x1
@@ -3958,9 +3884,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3232 0d7f 09       		.byte	0x9
  3233 0d80 AA       		.byte	0xaa
  3234 0d81 0F       		.uleb128 0xf
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 67
-
-
  3235 0d82 01       		.uleb128 0x1
  3236 0d83 50       		.byte	0x50
  3237 0d84 01       		.uleb128 0x1
@@ -3975,6 +3898,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3246 0d96 50       		.byte	0x50
  3247 0d97 01       		.uleb128 0x1
  3248 0d98 32       		.byte	0x32
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 66
+
+
  3249 0d99 00       		.byte	0
  3250 0d9a 0E       		.uleb128 0xe
  3251 0d9b 14020000 		.4byte	.LVL191
@@ -4018,9 +3944,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3289 0de6 02       		.uleb128 0x2
  3290 0de7 09       		.byte	0x9
  3291 0de8 CC       		.byte	0xcc
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 68
-
-
  3292 0de9 0F       		.uleb128 0xf
  3293 0dea 01       		.uleb128 0x1
  3294 0deb 50       		.byte	0x50
@@ -4035,6 +3958,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3303 0dfd 01       		.uleb128 0x1
  3304 0dfe 51       		.byte	0x51
  3305 0dff 02       		.uleb128 0x2
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 67
+
+
  3306 0e00 08       		.byte	0x8
  3307 0e01 55       		.byte	0x55
  3308 0e02 0F       		.uleb128 0xf
@@ -4078,9 +4004,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3346 0e3a 50020000 		.4byte	.LVL198
  3347 0e3e 7C040000 		.4byte	0x47c
  3348 0e42 4C0E0000 		.4byte	0xe4c
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 69
-
-
  3349 0e46 0F       		.uleb128 0xf
  3350 0e47 01       		.uleb128 0x1
  3351 0e48 50       		.byte	0x50
@@ -4095,6 +4018,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3360 0e5a 01       		.uleb128 0x1
  3361 0e5b 50       		.byte	0x50
  3362 0e5c 03       		.uleb128 0x3
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 68
+
+
  3363 0e5d 0A       		.byte	0xa
  3364 0e5e EE02     		.2byte	0x2ee
  3365 0e60 00       		.byte	0
@@ -4138,9 +4064,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3403 0ea1 0E       		.uleb128 0xe
  3404 0ea2 7A020000 		.4byte	.LVL203
  3405 0ea6 7C040000 		.4byte	0x47c
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 70
-
-
  3406 0eaa BA0E0000 		.4byte	0xeba
  3407 0eae 0F       		.uleb128 0xf
  3408 0eaf 01       		.uleb128 0x1
@@ -4155,6 +4078,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3417 0eb8 32       		.byte	0x32
  3418 0eb9 00       		.byte	0
  3419 0eba 0E       		.uleb128 0xe
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 69
+
+
  3420 0ebb 82020000 		.4byte	.LVL204
  3421 0ebf 7C040000 		.4byte	0x47c
  3422 0ec3 D30E0000 		.4byte	0xed3
@@ -4198,13 +4124,10 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3460 0efb 19       		.uleb128 0x19
  3461 0efc 04       		.byte	0x4
  3462 0efd 81000000 		.4byte	0x81
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 71
-
-
  3463 0f01 14       		.uleb128 0x14
  3464 0f02 AB030000 		.4byte	.LASF58
  3465 0f06 01       		.byte	0x1
- 3466 0f07 DB01     		.2byte	0x1db
+ 3466 0f07 9401     		.2byte	0x194
  3467 0f09 81000000 		.4byte	0x81
  3468 0f0d 00000000 		.4byte	.LFB68
  3469 0f11 20000000 		.4byte	.LFE68-.LFB68
@@ -4214,20 +4137,23 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3473 0f1b 16       		.uleb128 0x16
  3474 0f1c 63726300 		.ascii	"crc\000"
  3475 0f20 01       		.byte	0x1
- 3476 0f21 DB01     		.2byte	0x1db
+ 3476 0f21 9401     		.2byte	0x194
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 70
+
+
  3477 0f23 81000000 		.4byte	0x81
  3478 0f27 9E050000 		.4byte	.LLST18
  3479 0f2b 1A       		.uleb128 0x1a
- 3480 0f2c 40020000 		.4byte	.LASF51
+ 3480 0f2c 7C020000 		.4byte	.LASF51
  3481 0f30 01       		.byte	0x1
- 3482 0f31 DB01     		.2byte	0x1db
+ 3482 0f31 9401     		.2byte	0x194
  3483 0f33 81000000 		.4byte	0x81
  3484 0f37 01       		.uleb128 0x1
  3485 0f38 51       		.byte	0x51
  3486 0f39 17       		.uleb128 0x17
  3487 0f3a 6900     		.ascii	"i\000"
  3488 0f3c 01       		.byte	0x1
- 3489 0f3d DC01     		.2byte	0x1dc
+ 3489 0f3d 9501     		.2byte	0x195
  3490 0f3f 81000000 		.4byte	0x81
  3491 0f43 C7050000 		.4byte	.LLST19
  3492 0f47 00       		.byte	0
@@ -4258,9 +4184,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3517 0f7c F1040000 		.4byte	.LASF62
  3518 0f80 05       		.byte	0x5
  3519 0f81 5D       		.byte	0x5d
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 72
-
-
  3520 0f82 81000000 		.4byte	0x81
  3521 0f86 05       		.uleb128 0x5
  3522 0f87 03       		.byte	0x3
@@ -4275,6 +4198,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3531 0f99 00000000 		.4byte	count_protector2
  3532 0f9d 1D       		.uleb128 0x1d
  3533 0f9e 32000000 		.4byte	.LASF64
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 71
+
+
  3534 0fa2 05       		.byte	0x5
  3535 0fa3 5E       		.byte	0x5e
  3536 0fa4 81000000 		.4byte	0x81
@@ -4318,9 +4244,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3574 0ff7 05       		.byte	0x5
  3575 0ff8 5F       		.byte	0x5f
  3576 0ff9 81000000 		.4byte	0x81
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 73
-
-
  3577 0ffd 05       		.uleb128 0x5
  3578 0ffe 03       		.byte	0x3
  3579 0fff 00000000 		.4byte	comas1
@@ -4335,6 +4258,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3588 1014 1D       		.uleb128 0x1d
  3589 1015 5E000000 		.4byte	.LASF71
  3590 1019 05       		.byte	0x5
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 72
+
+
  3591 101a 60       		.byte	0x60
  3592 101b 81000000 		.4byte	0x81
  3593 101f 05       		.uleb128 0x5
@@ -4365,7 +4291,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3618 1053 03       		.byte	0x3
  3619 1054 00000000 		.4byte	diesel
  3620 1058 1D       		.uleb128 0x1d
- 3621 1059 9E010000 		.4byte	.LASF75
+ 3621 1059 DA010000 		.4byte	.LASF75
  3622 105d 05       		.byte	0x5
  3623 105e 62       		.byte	0x62
  3624 105f 81000000 		.4byte	0x81
@@ -4378,13 +4304,10 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3631 106f 62       		.byte	0x62
  3632 1070 81000000 		.4byte	0x81
  3633 1074 05       		.uleb128 0x5
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 74
-
-
  3634 1075 03       		.byte	0x3
  3635 1076 00000000 		.4byte	kero
  3636 107a 1D       		.uleb128 0x1d
- 3637 107b CB010000 		.4byte	.LASF77
+ 3637 107b 07020000 		.4byte	.LASF77
  3638 107f 05       		.byte	0x5
  3639 1080 62       		.byte	0x62
  3640 1081 81000000 		.4byte	0x81
@@ -4395,6 +4318,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3645 108c 66000000 		.4byte	.LASF78
  3646 1090 05       		.byte	0x5
  3647 1091 62       		.byte	0x62
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 73
+
+
  3648 1092 81000000 		.4byte	0x81
  3649 1096 05       		.uleb128 0x5
  3650 1097 03       		.byte	0x3
@@ -4438,9 +4364,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3688 10ed 0D       		.byte	0xd
  3689 10ee 00       		.byte	0
  3690 10ef 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 75
-
-
  3691 10f0 C5040000 		.4byte	.LASF82
  3692 10f4 05       		.byte	0x5
  3693 10f5 64       		.byte	0x64
@@ -4449,12 +4372,15 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3696 10fb 03       		.byte	0x3
  3697 10fc 00000000 		.4byte	resultado
  3698 1100 1D       		.uleb128 0x1d
- 3699 1101 7E010000 		.4byte	.LASF83
+ 3699 1101 BA010000 		.4byte	.LASF83
  3700 1105 05       		.byte	0x5
  3701 1106 65       		.byte	0x65
  3702 1107 81000000 		.4byte	0x81
  3703 110b 05       		.uleb128 0x5
  3704 110c 03       		.byte	0x3
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 74
+
+
  3705 110d 00000000 		.4byte	teclado
  3706 1111 1D       		.uleb128 0x1d
  3707 1112 84000000 		.4byte	.LASF84
@@ -4498,9 +4424,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3745 1162 00000000 		.4byte	decimalV
  3746 1166 1D       		.uleb128 0x1d
  3747 1167 EC000000 		.4byte	.LASF89
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 76
-
-
  3748 116b 05       		.byte	0x5
  3749 116c 6A       		.byte	0x6a
  3750 116d 81000000 		.4byte	0x81
@@ -4515,7 +4438,10 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3759 1185 05       		.byte	0x5
  3760 1186 00       		.byte	0
  3761 1187 1D       		.uleb128 0x1d
- 3762 1188 0B020000 		.4byte	.LASF90
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 75
+
+
+ 3762 1188 47020000 		.4byte	.LASF90
  3763 118c 05       		.byte	0x5
  3764 118d 6B       		.byte	0x6b
  3765 118e 77110000 		.4byte	0x1177
@@ -4539,7 +4465,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3783 11b5 03       		.byte	0x3
  3784 11b6 00000000 		.4byte	crc_total
  3785 11ba 1D       		.uleb128 0x1d
- 3786 11bb 32020000 		.4byte	.LASF93
+ 3786 11bb 6E020000 		.4byte	.LASF93
  3787 11bf 05       		.byte	0x5
  3788 11c0 6E       		.byte	0x6e
  3789 11c1 F8020000 		.4byte	0x2f8
@@ -4547,7 +4473,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3791 11c6 03       		.byte	0x3
  3792 11c7 00000000 		.4byte	print1
  3793 11cb 1D       		.uleb128 0x1d
- 3794 11cc 39020000 		.4byte	.LASF94
+ 3794 11cc 75020000 		.4byte	.LASF94
  3795 11d0 05       		.byte	0x5
  3796 11d1 6E       		.byte	0x6e
  3797 11d2 F8020000 		.4byte	0x2f8
@@ -4558,15 +4484,12 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3802 11dd 7A030000 		.4byte	.LASF95
  3803 11e1 05       		.byte	0x5
  3804 11e2 6F       		.byte	0x6f
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 77
-
-
  3805 11e3 F8020000 		.4byte	0x2f8
  3806 11e7 05       		.uleb128 0x5
  3807 11e8 03       		.byte	0x3
  3808 11e9 00000000 		.4byte	copia_recibo
  3809 11ed 1D       		.uleb128 0x1d
- 3810 11ee D2010000 		.4byte	.LASF96
+ 3810 11ee 0E020000 		.4byte	.LASF96
  3811 11f2 05       		.byte	0x5
  3812 11f3 70       		.byte	0x70
  3813 11f4 F8020000 		.4byte	0x2f8
@@ -4575,6 +4498,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3816 11fa 00000000 		.4byte	copia_recibo2
  3817 11fe 1D       		.uleb128 0x1d
  3818 11ff 06030000 		.4byte	.LASF97
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 76
+
+
  3819 1203 05       		.byte	0x5
  3820 1204 71       		.byte	0x71
  3821 1205 8C000000 		.4byte	0x8c
@@ -4592,7 +4518,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3833 1223 05       		.byte	0x5
  3834 1224 00       		.byte	0
  3835 1225 1D       		.uleb128 0x1d
- 3836 1226 E0010000 		.4byte	.LASF98
+ 3836 1226 1C020000 		.4byte	.LASF98
  3837 122a 05       		.byte	0x5
  3838 122b 72       		.byte	0x72
  3839 122c 0F120000 		.4byte	0x120f
@@ -4618,9 +4544,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3859 1258 A3000000 		.4byte	.LASF100
  3860 125c 05       		.byte	0x5
  3861 125d 74       		.byte	0x74
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 78
-
-
  3862 125e 47120000 		.4byte	0x1247
  3863 1262 05       		.uleb128 0x5
  3864 1263 03       		.byte	0x3
@@ -4634,7 +4557,10 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3872 1274 03       		.byte	0x3
  3873 1275 00000000 		.4byte	producto2n
  3874 1279 1D       		.uleb128 0x1d
- 3875 127a 8D010000 		.4byte	.LASF102
+ 3875 127a C9010000 		.4byte	.LASF102
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 77
+
+
  3876 127e 05       		.byte	0x5
  3877 127f 76       		.byte	0x76
  3878 1280 47120000 		.4byte	0x1247
@@ -4665,7 +4591,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3903 12ba 00       		.byte	0
  3904 12bb 00       		.byte	0
  3905 12bc 1D       		.uleb128 0x1d
- 3906 12bd A8010000 		.4byte	.LASF105
+ 3906 12bd E4010000 		.4byte	.LASF105
  3907 12c1 05       		.byte	0x5
  3908 12c2 79       		.byte	0x79
  3909 12c3 AC120000 		.4byte	0x12ac
@@ -4678,9 +4604,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3916 12d3 7A       		.byte	0x7a
  3917 12d4 81000000 		.4byte	0x81
  3918 12d8 05       		.uleb128 0x5
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 79
-
-
  3919 12d9 03       		.byte	0x3
  3920 12da 00000000 		.4byte	no_imprime
  3921 12de 1D       		.uleb128 0x1d
@@ -4692,9 +4615,12 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3927 12ea 03       		.byte	0x3
  3928 12eb 00000000 		.4byte	no_imprime2
  3929 12ef 1D       		.uleb128 0x1d
- 3930 12f0 B1010000 		.4byte	.LASF108
+ 3930 12f0 ED010000 		.4byte	.LASF108
  3931 12f4 05       		.byte	0x5
  3932 12f5 7D       		.byte	0x7d
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 78
+
+
  3933 12f6 00130000 		.4byte	0x1300
  3934 12fa 05       		.uleb128 0x5
  3935 12fb 03       		.byte	0x3
@@ -4710,7 +4636,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3945 1311 03       		.byte	0x3
  3946 1312 00000000 		.4byte	Buffer_LCD1
  3947 1316 1D       		.uleb128 0x1d
- 3948 1317 67020000 		.4byte	.LASF110
+ 3948 1317 A3020000 		.4byte	.LASF110
  3949 131b 05       		.byte	0x5
  3950 131c 9A       		.byte	0x9a
  3951 131d BE000000 		.4byte	0xbe
@@ -4738,9 +4664,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3973 134a 05       		.byte	0x5
  3974 134b C0       		.byte	0xc0
  3975 134c 97000000 		.4byte	0x97
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 80
-
-
  3976 1350 05       		.uleb128 0x5
  3977 1351 03       		.byte	0x3
  3978 1352 00000000 		.4byte	y
@@ -4755,6 +4678,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  3987 1365 1E       		.uleb128 0x1e
  3988 1366 7700     		.ascii	"w\000"
  3989 1368 05       		.byte	0x5
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 79
+
+
  3990 1369 C0       		.byte	0xc0
  3991 136a 97000000 		.4byte	0x97
  3992 136e 05       		.uleb128 0x5
@@ -4771,7 +4697,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4003 1388 C7       		.byte	0xc7
  4004 1389 00       		.byte	0
  4005 138a 1D       		.uleb128 0x1d
- 4006 138b 2B020000 		.4byte	.LASF112
+ 4006 138b 67020000 		.4byte	.LASF112
  4007 138f 05       		.byte	0x5
  4008 1390 C1       		.byte	0xc1
  4009 1391 74130000 		.4byte	0x1374
@@ -4795,12 +4721,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4027 13b8 03       		.byte	0x3
  4028 13b9 00000000 		.4byte	producto2
  4029 13bd 1D       		.uleb128 0x1d
- 4030 13be 81020000 		.4byte	.LASF43
+ 4030 13be BD020000 		.4byte	.LASF43
  4031 13c2 05       		.byte	0x5
  4032 13c3 C2       		.byte	0xc2
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 81
-
-
  4033 13c4 81000000 		.4byte	0x81
  4034 13c8 05       		.uleb128 0x5
  4035 13c9 03       		.byte	0x3
@@ -4815,6 +4738,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4044 13db 00000000 		.4byte	lado
  4045 13df 1D       		.uleb128 0x1d
  4046 13e0 53050000 		.4byte	.LASF116
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 80
+
+
  4047 13e4 05       		.byte	0x5
  4048 13e5 C4       		.byte	0xc4
  4049 13e6 03020000 		.4byte	0x203
@@ -4838,7 +4764,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4067 140d 81000000 		.4byte	0x81
  4068 1411 00       		.byte	0
  4069 1412 1F       		.uleb128 0x1f
- 4070 1413 5D010000 		.4byte	.LASF119
+ 4070 1413 74010000 		.4byte	.LASF119
  4071 1417 08       		.byte	0x8
  4072 1418 78       		.byte	0x78
  4073 1419 23140000 		.4byte	0x1423
@@ -4858,16 +4784,13 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4087 1439 20       		.uleb128 0x20
  4088 143a 81000000 		.4byte	0x81
  4089 143e 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 82
-
-
  4090 143f 21       		.uleb128 0x21
  4091 1440 DE030000 		.4byte	.LASF122
  4092 1444 09       		.byte	0x9
  4093 1445 2B       		.byte	0x2b
  4094 1446 81000000 		.4byte	0x81
  4095 144a 22       		.uleb128 0x22
- 4096 144b 1C020000 		.4byte	.LASF126
+ 4096 144b 58020000 		.4byte	.LASF126
  4097 144f 08       		.byte	0x8
  4098 1450 77       		.byte	0x77
  4099 1451 20       		.uleb128 0x20
@@ -4875,6 +4798,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4101 1456 00       		.byte	0
  4102 1457 00       		.byte	0
  4103              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 81
+
+
  4104              	.Ldebug_abbrev0:
  4105 0000 01       		.uleb128 0x1
  4106 0001 11       		.uleb128 0x11
@@ -4918,9 +4844,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4144 0027 49       		.uleb128 0x49
  4145 0028 13       		.uleb128 0x13
  4146 0029 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 83
-
-
  4147 002a 00       		.byte	0
  4148 002b 04       		.uleb128 0x4
  4149 002c 24       		.uleb128 0x24
@@ -4935,6 +4858,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4158 0035 00       		.byte	0
  4159 0036 05       		.uleb128 0x5
  4160 0037 13       		.uleb128 0x13
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 82
+
+
  4161 0038 01       		.byte	0x1
  4162 0039 03       		.uleb128 0x3
  4163 003a 0E       		.uleb128 0xe
@@ -4978,9 +4904,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4201 0060 0B       		.uleb128 0xb
  4202 0061 00       		.byte	0
  4203 0062 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 84
-
-
  4204 0063 08       		.uleb128 0x8
  4205 0064 01       		.uleb128 0x1
  4206 0065 01       		.byte	0x1
@@ -4995,6 +4918,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4215 006e 00       		.byte	0
  4216 006f 49       		.uleb128 0x49
  4217 0070 13       		.uleb128 0x13
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 83
+
+
  4218 0071 2F       		.uleb128 0x2f
  4219 0072 0B       		.uleb128 0xb
  4220 0073 00       		.byte	0
@@ -5038,9 +4964,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4258 0099 9742     		.uleb128 0x2117
  4259 009b 19       		.uleb128 0x19
  4260 009c 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 85
-
-
  4261 009d 13       		.uleb128 0x13
  4262 009e 00       		.byte	0
  4263 009f 00       		.byte	0
@@ -5055,6 +4978,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4272 00a8 0B       		.uleb128 0xb
  4273 00a9 49       		.uleb128 0x49
  4274 00aa 13       		.uleb128 0x13
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 84
+
+
  4275 00ab 02       		.uleb128 0x2
  4276 00ac 17       		.uleb128 0x17
  4277 00ad 00       		.byte	0
@@ -5098,9 +5024,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4315 00d8 898201   		.uleb128 0x4109
  4316 00db 00       		.byte	0
  4317 00dc 11       		.uleb128 0x11
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 86
-
-
  4318 00dd 01       		.uleb128 0x1
  4319 00de 31       		.uleb128 0x31
  4320 00df 13       		.uleb128 0x13
@@ -5115,6 +5038,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4329 00ea 13       		.uleb128 0x13
  4330 00eb 00       		.byte	0
  4331 00ec 00       		.byte	0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 85
+
+
  4332 00ed 12       		.uleb128 0x12
  4333 00ee 34       		.uleb128 0x34
  4334 00ef 00       		.byte	0
@@ -5158,9 +5084,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4372 0115 05       		.uleb128 0x5
  4373 0116 27       		.uleb128 0x27
  4374 0117 19       		.uleb128 0x19
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 87
-
-
  4375 0118 49       		.uleb128 0x49
  4376 0119 13       		.uleb128 0x13
  4377 011a 11       		.uleb128 0x11
@@ -5175,6 +5098,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4386 0124 13       		.uleb128 0x13
  4387 0125 00       		.byte	0
  4388 0126 00       		.byte	0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 86
+
+
  4389 0127 15       		.uleb128 0x15
  4390 0128 05       		.uleb128 0x5
  4391 0129 00       		.byte	0
@@ -5218,9 +5144,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4429 014f 13       		.uleb128 0x13
  4430 0150 02       		.uleb128 0x2
  4431 0151 17       		.uleb128 0x17
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 88
-
-
  4432 0152 00       		.byte	0
  4433 0153 00       		.byte	0
  4434 0154 18       		.uleb128 0x18
@@ -5235,6 +5158,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4443 015d 49       		.uleb128 0x49
  4444 015e 13       		.uleb128 0x13
  4445 015f 02       		.uleb128 0x2
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 87
+
+
  4446 0160 17       		.uleb128 0x17
  4447 0161 00       		.byte	0
  4448 0162 00       		.byte	0
@@ -5278,9 +5204,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4486 0188 3C       		.uleb128 0x3c
  4487 0189 19       		.uleb128 0x19
  4488 018a 00       		.byte	0
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 89
-
-
  4489 018b 00       		.byte	0
  4490 018c 1C       		.uleb128 0x1c
  4491 018d 35       		.uleb128 0x35
@@ -5295,6 +5218,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4500 0196 03       		.uleb128 0x3
  4501 0197 0E       		.uleb128 0xe
  4502 0198 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 88
+
+
  4503 0199 0B       		.uleb128 0xb
  4504 019a 3B       		.uleb128 0x3b
  4505 019b 0B       		.uleb128 0xb
@@ -5338,9 +5264,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4543 01c1 19       		.uleb128 0x19
  4544 01c2 3C       		.uleb128 0x3c
  4545 01c3 19       		.uleb128 0x19
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 90
-
-
  4546 01c4 01       		.uleb128 0x1
  4547 01c5 13       		.uleb128 0x13
  4548 01c6 00       		.byte	0
@@ -5355,6 +5278,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4557 01cf 21       		.uleb128 0x21
  4558 01d0 2E       		.uleb128 0x2e
  4559 01d1 00       		.byte	0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 89
+
+
  4560 01d2 3F       		.uleb128 0x3f
  4561 01d3 19       		.uleb128 0x19
  4562 01d4 03       		.uleb128 0x3
@@ -5398,9 +5324,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4600 000a 50       		.byte	0x50
  4601 000b 08000000 		.4byte	.LVL1
  4602 000f 40000000 		.4byte	.LVL11
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 91
-
-
  4603 0013 0400     		.2byte	0x4
  4604 0015 F3       		.byte	0xf3
  4605 0016 01       		.uleb128 0x1
@@ -5415,6 +5338,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4614 002c 0400     		.2byte	0x4
  4615 002e F3       		.byte	0xf3
  4616 002f 01       		.uleb128 0x1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 90
+
+
  4617 0030 50       		.byte	0x50
  4618 0031 9F       		.byte	0x9f
  4619 0032 00000000 		.4byte	0
@@ -5458,9 +5384,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4657 0081 66000000 		.4byte	.LVL39
  4658 0085 0100     		.2byte	0x1
  4659 0087 50       		.byte	0x50
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 92
-
-
  4660 0088 66000000 		.4byte	.LVL39
  4661 008c D4000000 		.4byte	.LFE64
  4662 0090 0400     		.2byte	0x4
@@ -5475,6 +5398,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4671 00a2 0C000000 		.4byte	.LVL24
  4672 00a6 0100     		.2byte	0x1
  4673 00a8 51       		.byte	0x51
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 91
+
+
  4674 00a9 0C000000 		.4byte	.LVL24
  4675 00ad 64000000 		.4byte	.LVL38
  4676 00b1 0400     		.2byte	0x4
@@ -5518,9 +5444,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4714 010c 00000000 		.4byte	.LVL53
  4715 0110 0C000000 		.4byte	.LVL55
  4716 0114 0100     		.2byte	0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 93
-
-
  4717 0116 50       		.byte	0x50
  4718 0117 0C000000 		.4byte	.LVL55
  4719 011b 3A000000 		.4byte	.LVL66
@@ -5535,6 +5458,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4728 012f 50       		.byte	0x50
  4729 0130 3E000000 		.4byte	.LVL67
  4730 0134 78000000 		.4byte	.LFE65
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 92
+
+
  4731 0138 0400     		.2byte	0x4
  4732 013a F3       		.byte	0xf3
  4733 013b 01       		.uleb128 0x1
@@ -5578,9 +5504,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4771 019c 3A000000 		.4byte	.LVL66
  4772 01a0 3E000000 		.4byte	.LVL67
  4773 01a4 0200     		.2byte	0x2
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 94
-
-
  4774 01a6 30       		.byte	0x30
  4775 01a7 9F       		.byte	0x9f
  4776 01a8 3E000000 		.4byte	.LVL67
@@ -5595,6 +5518,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4785 01c2 00000000 		.4byte	0
  4786              	.LLST8:
  4787 01c6 00000000 		.4byte	.LVL78
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 93
+
+
  4788 01ca 0B000000 		.4byte	.LVL80-1
  4789 01ce 0100     		.2byte	0x1
  4790 01d0 50       		.byte	0x50
@@ -5638,9 +5564,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4828 0228 B4010000 		.4byte	.LFE66
  4829 022c 0400     		.2byte	0x4
  4830 022e F3       		.byte	0xf3
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 95
-
-
  4831 022f 01       		.uleb128 0x1
  4832 0230 51       		.byte	0x51
  4833 0231 9F       		.byte	0x9f
@@ -5655,6 +5578,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4842 0249 7E000000 		.4byte	.LVL94
  4843 024d 0100     		.2byte	0x1
  4844 024f 55       		.byte	0x55
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 94
+
+
  4845 0250 82000000 		.4byte	.LVL95
  4846 0254 90000000 		.4byte	.LVL96
  4847 0258 0100     		.2byte	0x1
@@ -5698,9 +5624,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4885 02be 00000000 		.4byte	0
  4886 02c2 00000000 		.4byte	0
  4887              	.LLST11:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 96
-
-
  4888 02c6 04000000 		.4byte	.LVL79
  4889 02ca 62000000 		.4byte	.LVL89
  4890 02ce 0200     		.2byte	0x2
@@ -5715,6 +5638,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4899 02e5 0200     		.2byte	0x2
  4900 02e7 30       		.byte	0x30
  4901 02e8 9F       		.byte	0x9f
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 95
+
+
  4902 02e9 82000000 		.4byte	.LVL95
  4903 02ed 90000000 		.4byte	.LVL96
  4904 02f1 0100     		.2byte	0x1
@@ -5758,9 +5684,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4942 0350 58010000 		.4byte	.LVL123
  4943 0354 6C010000 		.4byte	.LVL125
  4944 0358 0200     		.2byte	0x2
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 97
-
-
  4945 035a 30       		.byte	0x30
  4946 035b 9F       		.byte	0x9f
  4947 035c 6C010000 		.4byte	.LVL125
@@ -5775,6 +5698,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4956 0373 8C010000 		.4byte	.LVL131
  4957 0377 9A010000 		.4byte	.LVL132
  4958 037b 0100     		.2byte	0x1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 96
+
+
  4959 037d 54       		.byte	0x54
  4960 037e 9A010000 		.4byte	.LVL132
  4961 0382 B4010000 		.4byte	.LFE66
@@ -5818,9 +5744,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  4999 03df 0400     		.2byte	0x4
  5000 03e1 F3       		.byte	0xf3
  5001 03e2 01       		.uleb128 0x1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 98
-
-
  5002 03e3 51       		.byte	0x51
  5003 03e4 9F       		.byte	0x9f
  5004 03e5 72010000 		.4byte	.LVL172
@@ -5835,6 +5758,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5013 03fc 51       		.byte	0x51
  5014 03fd 9F       		.byte	0x9f
  5015 03fe 00000000 		.4byte	0
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 97
+
+
  5016 0402 00000000 		.4byte	0
  5017              	.LLST14:
  5018 0406 00000000 		.4byte	.LVL133
@@ -5878,9 +5804,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5056 0462 53       		.byte	0x53
  5057 0463 9F       		.byte	0x9f
  5058 0464 72010000 		.4byte	.LVL172
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 99
-
-
  5059 0468 77010000 		.4byte	.LVL174-1
  5060 046c 0100     		.2byte	0x1
  5061 046e 53       		.byte	0x53
@@ -5895,6 +5818,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5070 0485 01       		.uleb128 0x1
  5071 0486 53       		.byte	0x53
  5072 0487 9F       		.byte	0x9f
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 98
+
+
  5073 0488 D0020000 		.4byte	.LVL211
  5074 048c D8020000 		.4byte	.LVL214
  5075 0490 0100     		.2byte	0x1
@@ -5938,9 +5864,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5113 04ec 0200     		.2byte	0x2
  5114 04ee 30       		.byte	0x30
  5115 04ef 9F       		.byte	0x9f
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 100
-
-
  5116 04f0 A8010000 		.4byte	.LVL180
  5117 04f4 B2010000 		.4byte	.LVL182
  5118 04f8 0100     		.2byte	0x1
@@ -5955,6 +5878,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5127 0510 54       		.byte	0x54
  5128 0511 E8020000 		.4byte	.LVL217
  5129 0515 EA020000 		.4byte	.LVL218
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 99
+
+
  5130 0519 0100     		.2byte	0x1
  5131 051b 54       		.byte	0x54
  5132 051c 00000000 		.4byte	0
@@ -5998,9 +5924,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5170 057f E4020000 		.4byte	.LVL216
  5171 0583 F4020000 		.4byte	.LVL220
  5172 0587 0200     		.2byte	0x2
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 101
-
-
  5173 0589 30       		.byte	0x30
  5174 058a 9F       		.byte	0x9f
  5175 058b F4020000 		.4byte	.LVL220
@@ -6015,6 +5938,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5184 05a6 0100     		.2byte	0x1
  5185 05a8 50       		.byte	0x50
  5186 05a9 02000000 		.4byte	.LVL223
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 100
+
+
  5187 05ad 0E000000 		.4byte	.LVL225
  5188 05b1 0100     		.2byte	0x1
  5189 05b3 50       		.byte	0x50
@@ -6058,9 +5984,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5227 002c B4010000 		.4byte	.LFE66-.LFB66
  5228 0030 00000000 		.4byte	.LFB67
  5229 0034 0C030000 		.4byte	.LFE67-.LFB67
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 102
-
-
  5230 0038 00000000 		.4byte	.LFB68
  5231 003c 20000000 		.4byte	.LFE68-.LFB68
  5232 0040 00000000 		.4byte	0
@@ -6075,6 +5998,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5241 0014 78000000 		.4byte	.LFE65
  5242 0018 00000000 		.4byte	.LFB66
  5243 001c B4010000 		.4byte	.LFE66
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 101
+
+
  5244 0020 00000000 		.4byte	.LFB67
  5245 0024 0C030000 		.4byte	.LFE67
  5246 0028 00000000 		.4byte	.LFB68
@@ -6118,9 +6044,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5268 0042 76657273 		.ascii	"versurt\000"
  5268      75727400 
  5269              	.LASF28:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 103
-
-
  5270 004a 62756666 		.ascii	"buffer\000"
  5270      657200
  5271              	.LASF8:
@@ -6135,6 +6058,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5276 0066 636F7272 		.ascii	"corriente2\000"
  5276      69656E74 
  5276      653200
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 102
+
+
  5277              	.LASF9:
  5278 0071 5F5F696E 		.ascii	"__int32_t\000"
  5278      7433325F 
@@ -6178,9 +6104,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5300      61733200 
  5301              	.LASF47:
  5302 00d3 7464696E 		.ascii	"tdinero\000"
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 104
-
-
  5302      65726F00 
  5303              	.LASF42:
  5304 00db 706F7369 		.ascii	"posicion\000"
@@ -6195,6 +6118,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5308      00
  5309              	.LASF49:
  5310 00f5 746F7563 		.ascii	"touch_write\000"
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 103
+
+
  5310      685F7772 
  5310      69746500 
  5311              	.LASF37:
@@ -6234,147 +6160,147 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5329              	.LASF39:
  5330 0157 6C656D61 		.ascii	"lema2\000"
  5330      3200
- 5331              	.LASF119:
- 5332 015d 43794465 		.ascii	"CyDelayUs\000"
- 5332      6C617955 
- 5332      7300
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 105
+ 5331              	.LASF7:
+ 5332 015d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 5332      206C6F6E 
+ 5332      6720756E 
+ 5332      7369676E 
+ 5332      65642069 
+ 5333              	.LASF119:
+ 5334 0174 43794465 		.ascii	"CyDelayUs\000"
+ 5334      6C617955 
+ 5334      7300
+ 5335              	.LASF125:
+ 5336 017e 433A5C55 		.ascii	"C:\\Users\\IN-002143\\Documents\\GitHub\\GRP700U\\U"
+ 5336      73657273 
+ 5336      5C494E2D 
+ 5336      30303231 
+ 5336      34335C44 
+ 5337 01ab 6E696669 		.ascii	"nificada.cydsn\000"
+ 5337      63616461 
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 104
 
 
- 5333              	.LASF7:
- 5334 0167 6C6F6E67 		.ascii	"long long unsigned int\000"
- 5334      206C6F6E 
- 5334      6720756E 
- 5334      7369676E 
- 5334      65642069 
- 5335              	.LASF83:
- 5336 017e 7465636C 		.ascii	"teclado\000"
- 5336      61646F00 
- 5337              	.LASF22:
- 5338 0186 6375656E 		.ascii	"cuenta\000"
- 5338      746100
- 5339              	.LASF102:
- 5340 018d 70726F64 		.ascii	"producto3n\000"
- 5340      7563746F 
- 5340      336E00
- 5341              	.LASF23:
- 5342 0198 706C6163 		.ascii	"placa\000"
- 5342      6100
- 5343              	.LASF75:
- 5344 019e 636F7272 		.ascii	"corriente\000"
- 5344      69656E74 
- 5344      6500
- 5345              	.LASF105:
- 5346 01a8 6E5F636F 		.ascii	"n_copias\000"
- 5346      70696173 
- 5346      00
- 5347              	.LASF108:
- 5348 01b1 6E6F5F76 		.ascii	"no_venta\000"
- 5348      656E7461 
- 5348      00
- 5349              	.LASF45:
- 5350 01ba 766F6C75 		.ascii	"volumen\000"
- 5350      6D656E00 
- 5351              	.LASF36:
- 5352 01c2 74656C65 		.ascii	"telefono\000"
- 5352      666F6E6F 
- 5352      00
- 5353              	.LASF77:
- 5354 01cb 65787472 		.ascii	"extra2\000"
- 5354      613200
- 5355              	.LASF96:
- 5356 01d2 636F7069 		.ascii	"copia_recibo2\000"
- 5356      615F7265 
- 5356      6369626F 
- 5356      3200
- 5357              	.LASF98:
- 5358 01e0 69645F76 		.ascii	"id_venta\000"
- 5358      656E7461 
- 5358      00
- 5359              	.LASF46:
- 5360 01e9 74766F6C 		.ascii	"tvolumen\000"
- 5360      756D656E 
- 5360      00
- 5361              	.LASF57:
- 5362 01f2 63616E74 		.ascii	"cantidad\000"
- 5362      69646164 
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 106
+ 5337      2E637964 
+ 5337      736E00
+ 5338              	.LASF83:
+ 5339 01ba 7465636C 		.ascii	"teclado\000"
+ 5339      61646F00 
+ 5340              	.LASF22:
+ 5341 01c2 6375656E 		.ascii	"cuenta\000"
+ 5341      746100
+ 5342              	.LASF102:
+ 5343 01c9 70726F64 		.ascii	"producto3n\000"
+ 5343      7563746F 
+ 5343      336E00
+ 5344              	.LASF23:
+ 5345 01d4 706C6163 		.ascii	"placa\000"
+ 5345      6100
+ 5346              	.LASF75:
+ 5347 01da 636F7272 		.ascii	"corriente\000"
+ 5347      69656E74 
+ 5347      6500
+ 5348              	.LASF105:
+ 5349 01e4 6E5F636F 		.ascii	"n_copias\000"
+ 5349      70696173 
+ 5349      00
+ 5350              	.LASF108:
+ 5351 01ed 6E6F5F76 		.ascii	"no_venta\000"
+ 5351      656E7461 
+ 5351      00
+ 5352              	.LASF45:
+ 5353 01f6 766F6C75 		.ascii	"volumen\000"
+ 5353      6D656E00 
+ 5354              	.LASF36:
+ 5355 01fe 74656C65 		.ascii	"telefono\000"
+ 5355      666F6E6F 
+ 5355      00
+ 5356              	.LASF77:
+ 5357 0207 65787472 		.ascii	"extra2\000"
+ 5357      613200
+ 5358              	.LASF96:
+ 5359 020e 636F7069 		.ascii	"copia_recibo2\000"
+ 5359      615F7265 
+ 5359      6369626F 
+ 5359      3200
+ 5360              	.LASF98:
+ 5361 021c 69645F76 		.ascii	"id_venta\000"
+ 5361      656E7461 
+ 5361      00
+ 5362              	.LASF46:
+ 5363 0225 74766F6C 		.ascii	"tvolumen\000"
+ 5363      756D656E 
+ 5363      00
+ 5364              	.LASF57:
+ 5365 022e 63616E74 		.ascii	"cantidad\000"
+ 5365      69646164 
+ 5365      00
+ 5366              	.LASF53:
+ 5367 0237 746F7563 		.ascii	"touch_read_byte\000"
+ 5367      685F7265 
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 105
 
 
- 5362      00
- 5363              	.LASF53:
- 5364 01fb 746F7563 		.ascii	"touch_read_byte\000"
- 5364      685F7265 
- 5364      61645F62 
- 5364      79746500 
- 5365              	.LASF90:
- 5366 020b 66656368 		.ascii	"fecha_corte\000"
- 5366      615F636F 
- 5366      72746500 
- 5367              	.LASF16:
- 5368 0217 63686172 		.ascii	"char\000"
- 5368      00
- 5369              	.LASF126:
- 5370 021c 43794465 		.ascii	"CyDelay\000"
- 5370      6C617900 
- 5371              	.LASF12:
- 5372 0224 75696E74 		.ascii	"uint16\000"
- 5372      313600
- 5373              	.LASF112:
- 5374 022b 6D6F6475 		.ascii	"modulo\000"
- 5374      6C6F00
- 5375              	.LASF93:
- 5376 0232 7072696E 		.ascii	"print1\000"
- 5376      743100
- 5377              	.LASF94:
- 5378 0239 7072696E 		.ascii	"print2\000"
- 5378      743200
- 5379              	.LASF51:
- 5380 0240 6461746F 		.ascii	"dato\000"
- 5380      00
- 5381              	.LASF52:
- 5382 0245 70726573 		.ascii	"present\000"
- 5382      656E7400 
- 5383              	.LASF27:
- 5384 024d 7475726E 		.ascii	"turno\000"
- 5384      6F00
- 5385              	.LASF56:
- 5386 0253 746F7563 		.ascii	"touch_write_memoria\000"
- 5386      685F7772 
- 5386      6974655F 
- 5386      6D656D6F 
- 5386      72696100 
- 5387              	.LASF110:
- 5388 0267 42756666 		.ascii	"Buffer_LCD2\000"
- 5388      65725F4C 
- 5388      43443200 
- 5389              	.LASF6:
- 5390 0273 6C6F6E67 		.ascii	"long long int\000"
- 5390      206C6F6E 
- 5390      6720696E 
- 5390      7400
- 5391              	.LASF43:
- 5392 0281 70726F64 		.ascii	"producto\000"
- 5392      7563746F 
- 5392      00
- 5393              	.LASF35:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 107
-
-
- 5394 028a 636F6E66 		.ascii	"configppu\000"
- 5394      69677070 
- 5394      7500
- 5395              	.LASF125:
- 5396 0294 433A5C55 		.ascii	"C:\\Users\\Recepcion\\Documents\\NMUX\\Unificada\\U"
- 5396      73657273 
- 5396      5C526563 
- 5396      65706369 
- 5396      6F6E5C44 
- 5397 02c1 6E696669 		.ascii	"nificada.cydsn\000"
- 5397      63616461 
- 5397      2E637964 
- 5397      736E00
+ 5367      61645F62 
+ 5367      79746500 
+ 5368              	.LASF90:
+ 5369 0247 66656368 		.ascii	"fecha_corte\000"
+ 5369      615F636F 
+ 5369      72746500 
+ 5370              	.LASF16:
+ 5371 0253 63686172 		.ascii	"char\000"
+ 5371      00
+ 5372              	.LASF126:
+ 5373 0258 43794465 		.ascii	"CyDelay\000"
+ 5373      6C617900 
+ 5374              	.LASF12:
+ 5375 0260 75696E74 		.ascii	"uint16\000"
+ 5375      313600
+ 5376              	.LASF112:
+ 5377 0267 6D6F6475 		.ascii	"modulo\000"
+ 5377      6C6F00
+ 5378              	.LASF93:
+ 5379 026e 7072696E 		.ascii	"print1\000"
+ 5379      743100
+ 5380              	.LASF94:
+ 5381 0275 7072696E 		.ascii	"print2\000"
+ 5381      743200
+ 5382              	.LASF51:
+ 5383 027c 6461746F 		.ascii	"dato\000"
+ 5383      00
+ 5384              	.LASF52:
+ 5385 0281 70726573 		.ascii	"present\000"
+ 5385      656E7400 
+ 5386              	.LASF27:
+ 5387 0289 7475726E 		.ascii	"turno\000"
+ 5387      6F00
+ 5388              	.LASF56:
+ 5389 028f 746F7563 		.ascii	"touch_write_memoria\000"
+ 5389      685F7772 
+ 5389      6974655F 
+ 5389      6D656D6F 
+ 5389      72696100 
+ 5390              	.LASF110:
+ 5391 02a3 42756666 		.ascii	"Buffer_LCD2\000"
+ 5391      65725F4C 
+ 5391      43443200 
+ 5392              	.LASF6:
+ 5393 02af 6C6F6E67 		.ascii	"long long int\000"
+ 5393      206C6F6E 
+ 5393      6720696E 
+ 5393      7400
+ 5394              	.LASF43:
+ 5395 02bd 70726F64 		.ascii	"producto\000"
+ 5395      7563746F 
+ 5395      00
+ 5396              	.LASF35:
+ 5397 02c6 636F6E66 		.ascii	"configppu\000"
+ 5397      69677070 
+ 5397      7500
  5398              	.LASF88:
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 106
+
+
  5399 02d0 64656369 		.ascii	"decimalV\000"
  5399      6D616C56 
  5399      00
@@ -6418,9 +6344,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5421      313000
  5422              	.LASF34:
  5423 0337 6E6F6D62 		.ascii	"nombre\000"
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 108
-
-
  5423      726500
  5424              	.LASF92:
  5425 033e 6372635F 		.ascii	"crc_total\000"
@@ -6435,6 +6358,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5429      70696173 
  5429      00
  5430              	.LASF91:
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 107
+
+
  5431 035b 706F735F 		.ascii	"pos_ibutton\000"
  5431      69627574 
  5431      746F6E00 
@@ -6478,9 +6404,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5451 03bf 70726F64 		.ascii	"producto2\000"
  5451      7563746F 
  5451      3200
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 109
-
-
  5452              	.LASF111:
  5453 03c9 65737461 		.ascii	"estado_0\000"
  5453      646F5F30 
@@ -6495,6 +6418,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5459 03de 4942325F 		.ascii	"IB2_Read\000"
  5459      52656164 
  5459      00
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 108
+
+
  5460              	.LASF17:
  5461 03e7 73697A65 		.ascii	"sizetype\000"
  5461      74797065 
@@ -6538,9 +6464,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5477 049d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  5477      66756E63 
  5477      74696F6E 
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 110
-
-
  5477      2D736563 
  5477      74696F6E 
  5478              	.LASF82:
@@ -6555,6 +6478,9 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5483 04d9 66656368 		.ascii	"fecha\000"
  5483      6100
  5484              	.LASF0:
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 109
+
+
  5485 04df 7369676E 		.ascii	"signed char\000"
  5485      65642063 
  5485      68617200 
@@ -6598,9 +6524,6 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 1
  5505      61645F6D 
  5505      656D6F72 
  5505      696100
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\ccBEbqCt.s 			page 111
-
-
  5506              	.LASF116:
  5507 0553 7276656E 		.ascii	"rventa\000"
  5507      746100

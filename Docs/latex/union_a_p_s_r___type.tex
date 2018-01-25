@@ -1,0 +1,87 @@
+\hypertarget{union_a_p_s_r___type}{}\section{Referencia de la Unión A\+P\+S\+R\+\_\+\+Type}
+\label{union_a_p_s_r___type}\index{A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}}
+
+
+Union type to access the Application Program Status Register (A\+P\+SR).  
+
+
+
+
+{\ttfamily \#include $<$core\+\_\+cm3.\+h$>$}
+
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint32\_t \mbox{\hyperlink{union_a_p_s_r___type_ac8a6a13838a897c8d0b8bc991bbaf7c1}{\_reserved0}}:27\\
+\>uint32\_t \mbox{\hyperlink{union_a_p_s_r___type_a65f27ddc4f7e09c14ce7c5211b2e000a}{Q}}:1\\
+\>uint32\_t \mbox{\hyperlink{union_a_p_s_r___type_acd4a2b64faee91e4a9eef300667fa222}{V}}:1\\
+\>uint32\_t \mbox{\hyperlink{union_a_p_s_r___type_a7a1caf92f32fe9ebd8d1fe89b06c7776}{C}}:1\\
+\>uint32\_t \mbox{\hyperlink{union_a_p_s_r___type_a5ae954cbd9986cd64625d7fa00943c8e}{Z}}:1\\
+\>uint32\_t \mbox{\hyperlink{union_a_p_s_r___type_abae0610bc2a97bbf7f689e953e0b451f}{N}}:1\\
+\} \mbox{\hyperlink{union_a_p_s_r___type_a2e5b85cff450c7f92c7388dd09f10065}{b}}\\
+
+\end{tabbing}\item 
+uint32\+\_\+t \mbox{\hyperlink{union_a_p_s_r___type_ad0fb62e7a08e70fc5e0a76b67809f84b}{w}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Union type to access the Application Program Status Register (A\+P\+SR). 
+
+\subsection{Documentación de los campos}
+\mbox{\Hypertarget{union_a_p_s_r___type_ac8a6a13838a897c8d0b8bc991bbaf7c1}\label{union_a_p_s_r___type_ac8a6a13838a897c8d0b8bc991bbaf7c1}} 
+\index{A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}!\+\_\+reserved0@{\+\_\+reserved0}}
+\index{\+\_\+reserved0@{\+\_\+reserved0}!A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{\+\_\+reserved0}{\_reserved0}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+reserved0}
+
+bit\+: 0..26 Reserved \mbox{\Hypertarget{union_a_p_s_r___type_a2e5b85cff450c7f92c7388dd09f10065}\label{union_a_p_s_r___type_a2e5b85cff450c7f92c7388dd09f10065}} 
+\index{A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}!b@{b}}
+\index{b@{b}!A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily struct \{ ... \}   b}
+
+Structure used for bit access \mbox{\Hypertarget{union_a_p_s_r___type_a7a1caf92f32fe9ebd8d1fe89b06c7776}\label{union_a_p_s_r___type_a7a1caf92f32fe9ebd8d1fe89b06c7776}} 
+\index{A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}!C@{C}}
+\index{C@{C}!A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily uint32\+\_\+t C}
+
+bit\+: 29 Carry condition code flag \mbox{\Hypertarget{union_a_p_s_r___type_abae0610bc2a97bbf7f689e953e0b451f}\label{union_a_p_s_r___type_abae0610bc2a97bbf7f689e953e0b451f}} 
+\index{A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}!N@{N}}
+\index{N@{N}!A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily uint32\+\_\+t N}
+
+bit\+: 31 Negative condition code flag \mbox{\Hypertarget{union_a_p_s_r___type_a65f27ddc4f7e09c14ce7c5211b2e000a}\label{union_a_p_s_r___type_a65f27ddc4f7e09c14ce7c5211b2e000a}} 
+\index{A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}!Q@{Q}}
+\index{Q@{Q}!A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily uint32\+\_\+t Q}
+
+bit\+: 27 Saturation condition flag \mbox{\Hypertarget{union_a_p_s_r___type_acd4a2b64faee91e4a9eef300667fa222}\label{union_a_p_s_r___type_acd4a2b64faee91e4a9eef300667fa222}} 
+\index{A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}!V@{V}}
+\index{V@{V}!A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{V}{V}}
+{\footnotesize\ttfamily uint32\+\_\+t V}
+
+bit\+: 28 Overflow condition code flag \mbox{\Hypertarget{union_a_p_s_r___type_ad0fb62e7a08e70fc5e0a76b67809f84b}\label{union_a_p_s_r___type_ad0fb62e7a08e70fc5e0a76b67809f84b}} 
+\index{A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}!w@{w}}
+\index{w@{w}!A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily uint32\+\_\+t w}
+
+Type used for word access \mbox{\Hypertarget{union_a_p_s_r___type_a5ae954cbd9986cd64625d7fa00943c8e}\label{union_a_p_s_r___type_a5ae954cbd9986cd64625d7fa00943c8e}} 
+\index{A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}!Z@{Z}}
+\index{Z@{Z}!A\+P\+S\+R\+\_\+\+Type@{A\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{Z}{Z}}
+{\footnotesize\ttfamily uint32\+\_\+t Z}
+
+bit\+: 30 Zero condition code flag 
+
+La documentación para esta unión fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Unificada.\+cydsn/codegentemp/\mbox{\hyperlink{core__cm3_8h}{core\+\_\+cm3.\+h}}\end{DoxyCompactItemize}

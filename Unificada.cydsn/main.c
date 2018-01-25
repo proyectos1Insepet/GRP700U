@@ -1,32 +1,9 @@
-/*
-*********************************************************************************************************
-*                                           GRP550/700 CODE
-*
-*                             (c) Copyright 2013; Sistemas Insepet LTDA
-*
-*               All rights reserved.  Protected by international copyright laws.
-*               Knowledge of the source code may NOT be used to develop a similar product.
-*               Please help us continue to provide the Embedded community with the finest
-*               software available.  Your honesty is greatly appreciated.
-*********************************************************************************************************
+/**
+* @file main.c
+* @Author Insepet LTDA
+* @date 28/2/2016
+* @brief Archivo principal, maneja librerías y ejecuta el polling de pantallas y dispensador
 */
-
-/*
-*********************************************************************************************************
-*
-*                                               GRP550/700 CODE
-*
-*                                             CYPRESS PSoC5LP
-*                                                with the
-*                                            CY8C5969AXI-LP035
-*
-* Filename      : main.c
-* Version       : V1.00
-* Programmer(s) : 
-                  
-*********************************************************************************************************
-*/
-
 /*
 *********************************************************************************************************
 *                                             INCLUDE FILES
@@ -54,21 +31,13 @@ uint8 serial[17]="0FFFFF8FEEBEB2DC0";
 uint8 pasword_corte[5]={4,'1','2','3','4'};
 CY_ISR(animacion2);
 CY_ISR(animacion);
-/*
-*********************************************************************************************************
-*                                         init( void )
-*
-* Description : Verifica el serial, inicia los perosfericos, la version y los datos de la estación.
-*               
-*
-* Argument(s) : none
-*
-* Return(s)   : none
-*
-* Caller(s)   : main()
-*
-* Note(s)     : none.
-*********************************************************************************************************
+
+
+/**
+* @fn init
+* @brief Inicialización de periféricos, lectura de variables de eeprom externa
+* inicialización de interrupciones
+*  
 */
 void init(void){
 	/****Inicio de perifericos****/
@@ -191,7 +160,7 @@ void init(void){
 	}	
 	leer_eeprom(455,2);
     if(buffer_i2c[0]==1){
-        bandera[0]=buffer_i2c[0];    /// carga bandera seleccionada
+        bandera[0]=buffer_i2c[0];    // carga bandera seleccionada
 	    bandera[1]=(buffer_i2c[1]&0x0f);
     }  
 	leer_eeprom(444,2);
@@ -257,21 +226,12 @@ void init(void){
 	    	
 }
 
-/*
-*********************************************************************************************************
-*                                         init_surt( void )
-*
-* Description : Busca las posiciones del surtidor y las graba en lado.a.dir y lado.b.dir
-*               
-*
-* Argument(s) : none
-*
-* Return(s)   : none
-*
-* Caller(s)   : main()
-*
-* Note(s)     : Falta generar codigo para los casos 1 y 2
-*********************************************************************************************************
+/**
+* @fn init_surt
+* @brief Inicia comunicación con el surtidor
+* Retorna el númeo de posiciones que contesten la consulta, diseñado para máximo 2 posiciones
+* equipos legacy, advantage, encore y prime de 2 posiciones
+*  
 */
 void init_surt(void){
 	uint8 seguir=0;
@@ -315,21 +275,10 @@ void init_surt(void){
 		
 }
 
-/*
-************************************************************************************************************
-*                                         void error_op()
-*
-* Description : Muestra en la pantalla el mensaje de operación incorrecta y regresa al inicio del Flujo LCD
-*               
-*
-* Argument(s) : uint8 lcd, para elegir cual pantalla entra en esta función
-*
-* Return(s)   : none
-*
-* Caller(s)   : Desde cualquier momento de la operacion donde ocurra un error por parte del usuario
-*
-* Note(s)     : none.
-************************************************************************************************************
+/**
+* error_op
+* @brief reinicia el dispay indicado en (lcd)
+* @param lcd display que se debe reiniciar (1 ó 2)
 */
 void error_op(uint8 lcd){
 	if(lcd==1){
@@ -349,24 +298,16 @@ void error_op(uint8 lcd){
 }
 
 
-/*
-***********************************************************************************************************
-*                                         void polling_LCD1(void)
+/**
+* polling_LCD1
+* @brief consulta el estado de la variable flujo_LCD la cual cambia su valor según el proceso actual
+* con cada touch se dispara un proceso, la variable lleva el registro del proceso que se está ejecutando
+* así que cada vez que se realice lectura de pantalla realiza la tarea correspondiente al caso
 *
-* Description : Ejecuta las diferentes funciones que se pueden realizar desde la pantalla 1
-*               
-*
-* Argument(s) : none
-*
-* Return(s)   : none
-*
-* Caller(s)   : Se ejecuta dentro del ciclo infinito del main()
-*
-* Note(s)     : none.
-***********************************************************************************************************
 */
 
-void polling_LCD1(void){  
+void polling_LCD1(void){ 
+    /// flujo_LCD variable principal del polling, se encarga de llevar memoria del estado actual para ingresar al case correspondiente
     switch(flujo_LCD){
         case 100:  
          if(count_protector>=2){					//Espera a que pasen 1.6 seg aprox e inicia la pantalla
@@ -3156,24 +3097,16 @@ void polling_LCD1(void){
  
         
 
-/*
-*********************************************************************************************************
-*                                         void polling_LCD2(void)
+/**
+* polling_LCD2
+* @brief consulta el estado de la variable flujo_LCD2 la cual cambia su valor según el proceso actual
+* con cada touch se dispara un proceso, la variable lleva el registro del proceso que se está ejecutando
+* así que cada vez que se realice lectura de pantalla realiza la tarea correspondiente al caso
 *
-* Description : Ejecuta las diferentes funciones que se pueden realizar desde la pantalla 2
-*               
-*
-* Argument(s) : none
-*
-* Return(s)   : none
-*
-* Caller(s)   : 
-*
-* Note(s)     : none.
-*********************************************************************************************************
 */
 
-void polling_LCD2(void){  
+void polling_LCD2(void){ 
+    ///flujo_LCD2 variable principal del polling, se encarga de llevar memoria del estado actual para ingresar al case correspondiente
     switch(flujo_LCD2){
          case 100:  
          if(count_protector2>=2){
@@ -5817,21 +5750,14 @@ void polling_LCD2(void){
 }
 
 
-/*
-*********************************************************************************************************
-*                                         CY_ISR(animacion)
-*
-* Description : Interrupcion que temporiza las imagenes informativas que aparecen en la pantalla 1
-*               
-*
-* Argument(s) : none
-*
-* Return(s)   : none
-*
-* Caller(s)   : 
-*
-* Note(s)     : none.
-*********************************************************************************************************
+/**
+* CY_ISR 
+* @brief función de interrupción
+* muestra la animación de inicio
+* de la variable flujo_LDC1 = 1 o flujo_LCD2=1
+* @param animacion
+* @param animacion2
+* 
 */
 CY_ISR(animacion){
     Timer_Animacion_ReadStatusRegister();
@@ -5850,22 +5776,7 @@ CY_ISR(animacion){
     }
 }
 
-/*
-*********************************************************************************************************
-*                                         CY_ISR(animacion2)
-*
-* Description : Interrupcion que temporiza las imagenes informativas que aparecen en la pantalla 2
-*               
-*
-* Argument(s) : none
-*
-* Return(s)   : none
-*
-* Caller(s)   : 
-*
-* Note(s)     : none.
-*********************************************************************************************************
-*/
+
 CY_ISR(animacion2){
     Timer_Animacion2_ReadStatusRegister();
     if(flujo_LCD2==1){
@@ -5883,21 +5794,12 @@ CY_ISR(animacion2){
     }
 }
 
-/*
-*********************************************************************************************************
-*                                         main( void )
-*
-* Description : Ejecuta las funciones de inicio y verifica el estado de las pantallas
-*               
-*
-* Argument(s) : none
-*
-* Return(s)   : none
-*
-* Caller(s)   : 
-*
-* Note(s)     : none.
-*********************************************************************************************************
+/**
+* main 
+* @brief función principal
+* los procesos del microcontrolador inician su ejecución en esta función
+* se hace la inicialización de periféricos
+* en el ciclo infinito se consultan pantallas
 */
 int main()
 {	

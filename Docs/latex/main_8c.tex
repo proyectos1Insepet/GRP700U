@@ -1,0 +1,129 @@
+\hypertarget{main_8c}{}\section{Referencia del Archivo Unificada.\+cydsn/main.c}
+\label{main_8c}\index{Unificada.\+cydsn/main.\+c@{Unificada.\+cydsn/main.\+c}}
+
+
+Archivo principal, maneja librerías y ejecuta el polling de pantallas y dispensador.  
+
+
+{\ttfamily \#include $<$device.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Protocolo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Variables\+G.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Print.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sonido.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}L\+C\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ibutton.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}I2\+C.\+h\char`\"{}}\newline
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a14d57181a05d3d4103749cf32cfeaf6e}\label{main_8c_a14d57181a05d3d4103749cf32cfeaf6e}} 
+{\bfseries C\+Y\+\_\+\+I\+SR} (animacion2)
+\item 
+\mbox{\hyperlink{main_8c_a9b006b791768d80551c339f04d1b01a0}{C\+Y\+\_\+\+I\+SR}} (animacion)
+\begin{DoxyCompactList}\small\item\em función de interrupción muestra la animación de inicio de la variable flujo\+\_\+\+L\+D\+C1 = 1 o flujo\+\_\+\+L\+C\+D2=1 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a5edd556b6c4c55502c0ba0c1c4e53da5}\label{main_8c_a5edd556b6c4c55502c0ba0c1c4e53da5}} 
+void \mbox{\hyperlink{main_8c_a5edd556b6c4c55502c0ba0c1c4e53da5}{init}} (void)
+\begin{DoxyCompactList}\small\item\em Inicialización de periféricos, lectura de variables de eeprom externa inicialización de interrupciones. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a50766d410b462783a563f363f5444944}\label{main_8c_a50766d410b462783a563f363f5444944}} 
+void \mbox{\hyperlink{main_8c_a50766d410b462783a563f363f5444944}{init\+\_\+surt}} (void)
+\begin{DoxyCompactList}\small\item\em Inicia comunicación con el surtidor Retorna el númeo de posiciones que contesten la consulta, diseñado para máximo 2 posiciones equipos legacy, advantage, encore y prime de 2 posiciones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ab12e9ad4c0ee23725cbc15c73baefba6}{error\+\_\+op}} (uint8 lcd)
+\begin{DoxyCompactList}\small\item\em reinicia el dispay indicado en (lcd) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ab54da5d1341bf1e1e74efcfc8e20d722}{polling\+\_\+\+L\+C\+D1}} (void)
+\begin{DoxyCompactList}\small\item\em consulta el estado de la variable flujo\+\_\+\+L\+CD la cual cambia su valor según el proceso actual con cada touch se dispara un proceso, la variable lleva el registro del proceso que se está ejecutando así que cada vez que se realice lectura de pantalla realiza la tarea correspondiente al caso \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a09f70c8ad6e111e81caebede81aa1b09}{polling\+\_\+\+L\+C\+D2}} (void)
+\begin{DoxyCompactList}\small\item\em consulta el estado de la variable flujo\+\_\+\+L\+C\+D2 la cual cambia su valor según el proceso actual con cada touch se dispara un proceso, la variable lleva el registro del proceso que se está ejecutando así que cada vez que se realice lectura de pantalla realiza la tarea correspondiente al caso \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em función principal los procesos del microcontrolador inician su ejecución en esta función se hace la inicialización de periféricos en el ciclo infinito se consultan pantallas \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_ac37a7048207eafa341f3def92404e9c4}\label{main_8c_ac37a7048207eafa341f3def92404e9c4}} 
+uint8 {\bfseries letras} \mbox{[}26\mbox{]} =\{0x25,0x42,0x31,0x27,0x1\+D,0x28,0x29,0x2\+A,0x22,0x2\+B,0x2\+C,0x2\+D,0x35,0x34,0x23,0x24,0x1\+B,0x1\+E,0x26,0x1\+F,0x21,0x32,0x1\+C,0x30,0x20,0x2\+F\}
+\item 
+\mbox{\Hypertarget{main_8c_ae2f801cb6646938a169eaca3535caa28}\label{main_8c_ae2f801cb6646938a169eaca3535caa28}} 
+uint8 {\bfseries test} \mbox{[}18\mbox{]} =\char`\"{}Test de Impresora\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8c_a02aa97d44fde394545b7170595683439}\label{main_8c_a02aa97d44fde394545b7170595683439}} 
+uint8 {\bfseries puk} \mbox{[}8\mbox{]} =\char`\"{}18928005\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8c_af1be262136666311b24143e58586ff3f}\label{main_8c_af1be262136666311b24143e58586ff3f}} 
+uint8 {\bfseries serial} \mbox{[}17\mbox{]} =\char`\"{}0\+F\+F\+F\+F\+F8\+F\+E\+E\+B\+E\+B2\+D\+C0\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8c_aaed35a5990fe40d271ed6d1dbb9da87c}\label{main_8c_aaed35a5990fe40d271ed6d1dbb9da87c}} 
+uint8 {\bfseries pasword\+\_\+corte} \mbox{[}5\mbox{]} =\{4,\textquotesingle{}1\textquotesingle{},\textquotesingle{}2\textquotesingle{},\textquotesingle{}3\textquotesingle{},\textquotesingle{}4\textquotesingle{}\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Archivo principal, maneja librerías y ejecuta el polling de pantallas y dispensador. 
+
+Insepet L\+T\+DA \begin{DoxyDate}{Fecha}
+28/2/2016 
+\end{DoxyDate}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{main_8c_a9b006b791768d80551c339f04d1b01a0}\label{main_8c_a9b006b791768d80551c339f04d1b01a0}} 
+\index{main.\+c@{main.\+c}!C\+Y\+\_\+\+I\+SR@{C\+Y\+\_\+\+I\+SR}}
+\index{C\+Y\+\_\+\+I\+SR@{C\+Y\+\_\+\+I\+SR}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{C\+Y\+\_\+\+I\+S\+R()}{CY\_ISR()}}
+{\footnotesize\ttfamily C\+Y\+\_\+\+I\+SR (\begin{DoxyParamCaption}\item[{animacion}]{ }\end{DoxyParamCaption})}
+
+
+
+función de interrupción muestra la animación de inicio de la variable flujo\+\_\+\+L\+D\+C1 = 1 o flujo\+\_\+\+L\+C\+D2=1 
+
+C\+Y\+\_\+\+I\+SR 
+\begin{DoxyParams}{Parámetros}
+{\em animacion} & \\
+\hline
+{\em animacion2} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_ab12e9ad4c0ee23725cbc15c73baefba6}\label{main_8c_ab12e9ad4c0ee23725cbc15c73baefba6}} 
+\index{main.\+c@{main.\+c}!error\+\_\+op@{error\+\_\+op}}
+\index{error\+\_\+op@{error\+\_\+op}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{error\+\_\+op()}{error\_op()}}
+{\footnotesize\ttfamily void error\+\_\+op (\begin{DoxyParamCaption}\item[{uint8}]{lcd }\end{DoxyParamCaption})}
+
+
+
+reinicia el dispay indicado en (lcd) 
+
+error\+\_\+op 
+\begin{DoxyParams}{Parámetros}
+{\em lcd} & display que se debe reiniciar (1 ó 2) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+función principal los procesos del microcontrolador inician su ejecución en esta función se hace la inicialización de periféricos en el ciclo infinito se consultan pantallas 
+
+main \mbox{\Hypertarget{main_8c_ab54da5d1341bf1e1e74efcfc8e20d722}\label{main_8c_ab54da5d1341bf1e1e74efcfc8e20d722}} 
+\index{main.\+c@{main.\+c}!polling\+\_\+\+L\+C\+D1@{polling\+\_\+\+L\+C\+D1}}
+\index{polling\+\_\+\+L\+C\+D1@{polling\+\_\+\+L\+C\+D1}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{polling\+\_\+\+L\+C\+D1()}{polling\_LCD1()}}
+{\footnotesize\ttfamily void polling\+\_\+\+L\+C\+D1 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+consulta el estado de la variable flujo\+\_\+\+L\+CD la cual cambia su valor según el proceso actual con cada touch se dispara un proceso, la variable lleva el registro del proceso que se está ejecutando así que cada vez que se realice lectura de pantalla realiza la tarea correspondiente al caso 
+
+polling\+\_\+\+L\+C\+D1 flujo\+\_\+\+L\+CD variable principal del polling, se encarga de llevar memoria del estado actual para ingresar al case correspondiente \mbox{\Hypertarget{main_8c_a09f70c8ad6e111e81caebede81aa1b09}\label{main_8c_a09f70c8ad6e111e81caebede81aa1b09}} 
+\index{main.\+c@{main.\+c}!polling\+\_\+\+L\+C\+D2@{polling\+\_\+\+L\+C\+D2}}
+\index{polling\+\_\+\+L\+C\+D2@{polling\+\_\+\+L\+C\+D2}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{polling\+\_\+\+L\+C\+D2()}{polling\_LCD2()}}
+{\footnotesize\ttfamily void polling\+\_\+\+L\+C\+D2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+consulta el estado de la variable flujo\+\_\+\+L\+C\+D2 la cual cambia su valor según el proceso actual con cada touch se dispara un proceso, la variable lleva el registro del proceso que se está ejecutando así que cada vez que se realice lectura de pantalla realiza la tarea correspondiente al caso 
+
+polling\+\_\+\+L\+C\+D2 flujo\+\_\+\+L\+C\+D2 variable principal del polling, se encarga de llevar memoria del estado actual para ingresar al case correspondiente 

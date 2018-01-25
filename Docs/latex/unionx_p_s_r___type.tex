@@ -1,0 +1,108 @@
+\hypertarget{unionx_p_s_r___type}{}\section{Referencia de la Unión x\+P\+S\+R\+\_\+\+Type}
+\label{unionx_p_s_r___type}\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+
+
+Union type to access the Special-\/\+Purpose Program Status Registers (x\+P\+SR).  
+
+
+
+
+{\ttfamily \#include $<$core\+\_\+cm3.\+h$>$}
+
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint32\_t \mbox{\hyperlink{unionx_p_s_r___type_ad502ba7dbb2aab5f87c782b28f02622d}{ISR}}:9\\
+\>uint32\_t \mbox{\hyperlink{unionx_p_s_r___type_ac8a6a13838a897c8d0b8bc991bbaf7c1}{\_reserved0}}:15\\
+\>uint32\_t \mbox{\hyperlink{unionx_p_s_r___type_a6e1cf12e53a20224f6f62c001d9be972}{T}}:1\\
+\>uint32\_t \mbox{\hyperlink{unionx_p_s_r___type_a76485660fe8ad98cdc71ddd7cb0ed777}{IT}}:2\\
+\>uint32\_t \mbox{\hyperlink{unionx_p_s_r___type_a65f27ddc4f7e09c14ce7c5211b2e000a}{Q}}:1\\
+\>uint32\_t \mbox{\hyperlink{unionx_p_s_r___type_acd4a2b64faee91e4a9eef300667fa222}{V}}:1\\
+\>uint32\_t \mbox{\hyperlink{unionx_p_s_r___type_a7a1caf92f32fe9ebd8d1fe89b06c7776}{C}}:1\\
+\>uint32\_t \mbox{\hyperlink{unionx_p_s_r___type_a5ae954cbd9986cd64625d7fa00943c8e}{Z}}:1\\
+\>uint32\_t \mbox{\hyperlink{unionx_p_s_r___type_abae0610bc2a97bbf7f689e953e0b451f}{N}}:1\\
+\} \mbox{\hyperlink{unionx_p_s_r___type_a8d8c45d946ef8df11f4cac72c667e98b}{b}}\\
+
+\end{tabbing}\item 
+uint32\+\_\+t \mbox{\hyperlink{unionx_p_s_r___type_ad0fb62e7a08e70fc5e0a76b67809f84b}{w}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Union type to access the Special-\/\+Purpose Program Status Registers (x\+P\+SR). 
+
+\subsection{Documentación de los campos}
+\mbox{\Hypertarget{unionx_p_s_r___type_ac8a6a13838a897c8d0b8bc991bbaf7c1}\label{unionx_p_s_r___type_ac8a6a13838a897c8d0b8bc991bbaf7c1}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!\+\_\+reserved0@{\+\_\+reserved0}}
+\index{\+\_\+reserved0@{\+\_\+reserved0}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{\+\_\+reserved0}{\_reserved0}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+reserved0}
+
+bit\+: 9..23 Reserved \mbox{\Hypertarget{unionx_p_s_r___type_a8d8c45d946ef8df11f4cac72c667e98b}\label{unionx_p_s_r___type_a8d8c45d946ef8df11f4cac72c667e98b}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!b@{b}}
+\index{b@{b}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily struct \{ ... \}   b}
+
+Structure used for bit access \mbox{\Hypertarget{unionx_p_s_r___type_a7a1caf92f32fe9ebd8d1fe89b06c7776}\label{unionx_p_s_r___type_a7a1caf92f32fe9ebd8d1fe89b06c7776}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!C@{C}}
+\index{C@{C}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily uint32\+\_\+t C}
+
+bit\+: 29 Carry condition code flag \mbox{\Hypertarget{unionx_p_s_r___type_ad502ba7dbb2aab5f87c782b28f02622d}\label{unionx_p_s_r___type_ad502ba7dbb2aab5f87c782b28f02622d}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!I\+SR@{I\+SR}}
+\index{I\+SR@{I\+SR}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{I\+SR}{ISR}}
+{\footnotesize\ttfamily uint32\+\_\+t I\+SR}
+
+bit\+: 0.. 8 Exception number \mbox{\Hypertarget{unionx_p_s_r___type_a76485660fe8ad98cdc71ddd7cb0ed777}\label{unionx_p_s_r___type_a76485660fe8ad98cdc71ddd7cb0ed777}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!IT@{IT}}
+\index{IT@{IT}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{IT}{IT}}
+{\footnotesize\ttfamily uint32\+\_\+t IT}
+
+bit\+: 25..26 saved IT state (read 0) \mbox{\Hypertarget{unionx_p_s_r___type_abae0610bc2a97bbf7f689e953e0b451f}\label{unionx_p_s_r___type_abae0610bc2a97bbf7f689e953e0b451f}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!N@{N}}
+\index{N@{N}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily uint32\+\_\+t N}
+
+bit\+: 31 Negative condition code flag \mbox{\Hypertarget{unionx_p_s_r___type_a65f27ddc4f7e09c14ce7c5211b2e000a}\label{unionx_p_s_r___type_a65f27ddc4f7e09c14ce7c5211b2e000a}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!Q@{Q}}
+\index{Q@{Q}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily uint32\+\_\+t Q}
+
+bit\+: 27 Saturation condition flag \mbox{\Hypertarget{unionx_p_s_r___type_a6e1cf12e53a20224f6f62c001d9be972}\label{unionx_p_s_r___type_a6e1cf12e53a20224f6f62c001d9be972}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!T@{T}}
+\index{T@{T}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{T}{T}}
+{\footnotesize\ttfamily uint32\+\_\+t T}
+
+bit\+: 24 Thumb bit (read 0) \mbox{\Hypertarget{unionx_p_s_r___type_acd4a2b64faee91e4a9eef300667fa222}\label{unionx_p_s_r___type_acd4a2b64faee91e4a9eef300667fa222}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!V@{V}}
+\index{V@{V}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{V}{V}}
+{\footnotesize\ttfamily uint32\+\_\+t V}
+
+bit\+: 28 Overflow condition code flag \mbox{\Hypertarget{unionx_p_s_r___type_ad0fb62e7a08e70fc5e0a76b67809f84b}\label{unionx_p_s_r___type_ad0fb62e7a08e70fc5e0a76b67809f84b}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!w@{w}}
+\index{w@{w}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily uint32\+\_\+t w}
+
+Type used for word access \mbox{\Hypertarget{unionx_p_s_r___type_a5ae954cbd9986cd64625d7fa00943c8e}\label{unionx_p_s_r___type_a5ae954cbd9986cd64625d7fa00943c8e}} 
+\index{x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}!Z@{Z}}
+\index{Z@{Z}!x\+P\+S\+R\+\_\+\+Type@{x\+P\+S\+R\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{Z}{Z}}
+{\footnotesize\ttfamily uint32\+\_\+t Z}
+
+bit\+: 30 Zero condition code flag 
+
+La documentación para esta unión fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Unificada.\+cydsn/codegentemp/\mbox{\hyperlink{core__cm3_8h}{core\+\_\+cm3.\+h}}\end{DoxyCompactItemize}

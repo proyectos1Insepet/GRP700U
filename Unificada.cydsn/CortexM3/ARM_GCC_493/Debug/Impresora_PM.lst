@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
   29:.\Generated_Source\PSoC5/Impresora_PM.c **** 
   30:.\Generated_Source\PSoC5/Impresora_PM.c **** 
   31:.\Generated_Source\PSoC5/Impresora_PM.c **** 
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 2
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/Impresora_PM.c **** /*******************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
   69:.\Generated_Source\PSoC5/Impresora_PM.c ****         #if(Impresora_TX_ENABLED)
   70:.\Generated_Source\PSoC5/Impresora_PM.c ****             #if(Impresora_TXCLKGEN_DP)
   71:.\Generated_Source\PSoC5/Impresora_PM.c ****                 Impresora_backup.tx_clk_ctr = Impresora_TXBITCLKGEN_CTR_REG;
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 3
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 3
 
 
   72:.\Generated_Source\PSoC5/Impresora_PM.c ****                 Impresora_backup.tx_clk_compl = Impresora_TXBITCLKTX_COMPLETE_REG;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
   58              		.type	Impresora_Sleep, %function
   59              	Impresora_Sleep:
   60              	.LFB2:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 4
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 4
 
 
  112:.\Generated_Source\PSoC5/Impresora_PM.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  166:.\Generated_Source\PSoC5/Impresora_PM.c **** * Reentrant:
  167:.\Generated_Source\PSoC5/Impresora_PM.c **** *  No.
  168:.\Generated_Source\PSoC5/Impresora_PM.c **** *
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 5
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 5
 
 
  169:.\Generated_Source\PSoC5/Impresora_PM.c **** *******************************************************************************/
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
   90              	.L8:
   91              		.align	2
   92              	.L7:
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 6
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 6
 
 
   93 0020 99640040 		.word	1073767577
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  224:.\Generated_Source\PSoC5/Impresora_PM.c ****     #endif /* End (Impresora_RX_ENABLED) || (Impresora_HD_ENABLED) */
  225:.\Generated_Source\PSoC5/Impresora_PM.c ****     #if(Impresora_TX_ENABLED || Impresora_HD_ENABLED)
  226:.\Generated_Source\PSoC5/Impresora_PM.c ****         Impresora_ClearTxBuffer();
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 7
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 7
 
 
  117              		.loc 1 226 0
@@ -405,8 +405,8 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  153 000b 01       		.uleb128 0x1
  154 000c 5E010000 		.4byte	.LASF27
  155 0010 01       		.byte	0x1
- 156 0011 4C000000 		.4byte	.LASF28
- 157 0015 89000000 		.4byte	.LASF29
+ 156 0011 88000000 		.4byte	.LASF28
+ 157 0015 21000000 		.4byte	.LASF29
  158 0019 00000000 		.4byte	.Ldebug_ranges0+0
  159 001d 00000000 		.4byte	0
  160 0021 00000000 		.4byte	.Ldebug_line0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  166 002d 01       		.byte	0x1
  167 002e 08       		.byte	0x8
  168 002f C5000000 		.4byte	.LASF1
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 8
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 8
 
 
  169 0033 02       		.uleb128 0x2
@@ -428,7 +428,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  173 003a 02       		.uleb128 0x2
  174 003b 02       		.byte	0x2
  175 003c 07       		.byte	0x7
- 176 003d 39000000 		.4byte	.LASF3
+ 176 003d 75000000 		.4byte	.LASF3
  177 0041 02       		.uleb128 0x2
  178 0042 04       		.byte	0x4
  179 0043 05       		.byte	0x5
@@ -461,7 +461,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  206 0076 02       		.uleb128 0x2
  207 0077 04       		.byte	0x4
  208 0078 04       		.byte	0x4
- 209 0079 83000000 		.4byte	.LASF9
+ 209 0079 BF000000 		.4byte	.LASF9
  210 007d 02       		.uleb128 0x2
  211 007e 08       		.byte	0x8
  212 007f 04       		.byte	0x4
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  223 0097 06       		.uleb128 0x6
  224 0098 6B000000 		.4byte	0x6b
  225 009c 02       		.uleb128 0x2
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 9
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 9
 
 
  226 009d 04       		.byte	0x4
@@ -523,7 +523,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  265 00ee 01       		.uleb128 0x1
  266 00ef 9C       		.byte	0x9c
  267 00f0 09       		.uleb128 0x9
- 268 00f1 21000000 		.4byte	.LASF20
+ 268 00f1 5D000000 		.4byte	.LASF20
  269 00f5 01       		.byte	0x1
  270 00f6 6E       		.byte	0x6e
  271 00f7 00000000 		.4byte	.LFB1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  280 010c 28000000 		.4byte	.LFE2-.LFB2
  281 0110 01       		.uleb128 0x1
  282 0111 9C       		.byte	0x9c
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 10
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 10
 
 
  283 0112 20010000 		.4byte	0x120
@@ -574,7 +574,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  313 015d 03       		.byte	0x3
  314 015e 00000000 		.4byte	Impresora_backup
  315 0162 0D       		.uleb128 0xd
- 316 0163 74000000 		.4byte	.LASF23
+ 316 0163 B0000000 		.4byte	.LASF23
  317 0167 03       		.byte	0x3
  318 0168 6C       		.byte	0x6c
  319 0169 0D       		.uleb128 0xd
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  337 0003 25       		.uleb128 0x25
  338 0004 0E       		.uleb128 0xe
  339 0005 13       		.uleb128 0x13
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 11
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 11
 
 
  340 0006 0B       		.uleb128 0xb
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  394 003c 0B       		.uleb128 0xb
  395 003d 3B       		.uleb128 0x3b
  396 003e 05       		.uleb128 0x5
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 12
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 12
 
 
  397 003f 49       		.uleb128 0x49
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  451 0075 11       		.uleb128 0x11
  452 0076 01       		.uleb128 0x1
  453 0077 12       		.uleb128 0x12
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 13
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 13
 
 
  454 0078 06       		.uleb128 0x6
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  508 00b2 00       		.byte	0
  509 00b3 00       		.byte	0
  510 00b4 0D       		.uleb128 0xd
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 14
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 14
 
 
  511 00b5 2E       		.uleb128 0x2e
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  561              	.LASF21:
  562 0000 496D7072 		.ascii	"Impresora_Sleep\000"
  562      65736F72 
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 15
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 15
 
 
  562      615F536C 
@@ -849,42 +849,42 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  564      615F456E 
  564      61626C65 
  564      00
- 565              	.LASF20:
- 566 0021 496D7072 		.ascii	"Impresora_RestoreConfig\000"
- 566      65736F72 
- 566      615F5265 
- 566      73746F72 
- 566      65436F6E 
- 567              	.LASF3:
- 568 0039 73686F72 		.ascii	"short unsigned int\000"
- 568      7420756E 
- 568      7369676E 
- 568      65642069 
- 568      6E7400
- 569              	.LASF28:
- 570 004c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Impresora_PM.c\000"
- 570      6E657261 
- 570      7465645F 
- 570      536F7572 
- 570      63655C50 
- 571              	.LASF23:
- 572 0074 496D7072 		.ascii	"Impresora_Stop\000"
- 572      65736F72 
- 572      615F5374 
- 572      6F7000
- 573              	.LASF9:
- 574 0083 666C6F61 		.ascii	"float\000"
- 574      7400
- 575              	.LASF29:
- 576 0089 433A5C55 		.ascii	"C:\\Users\\Recepcion\\Documents\\NMUX\\Unificada\\U"
- 576      73657273 
- 576      5C526563 
- 576      65706369 
- 576      6F6E5C44 
- 577 00b6 6E696669 		.ascii	"nificada.cydsn\000"
- 577      63616461 
- 577      2E637964 
- 577      736E00
+ 565              	.LASF29:
+ 566 0021 433A5C55 		.ascii	"C:\\Users\\IN-002143\\Documents\\GitHub\\GRP700U\\U"
+ 566      73657273 
+ 566      5C494E2D 
+ 566      30303231 
+ 566      34335C44 
+ 567 004e 6E696669 		.ascii	"nificada.cydsn\000"
+ 567      63616461 
+ 567      2E637964 
+ 567      736E00
+ 568              	.LASF20:
+ 569 005d 496D7072 		.ascii	"Impresora_RestoreConfig\000"
+ 569      65736F72 
+ 569      615F5265 
+ 569      73746F72 
+ 569      65436F6E 
+ 570              	.LASF3:
+ 571 0075 73686F72 		.ascii	"short unsigned int\000"
+ 571      7420756E 
+ 571      7369676E 
+ 571      65642069 
+ 571      6E7400
+ 572              	.LASF28:
+ 573 0088 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Impresora_PM.c\000"
+ 573      6E657261 
+ 573      7465645F 
+ 573      536F7572 
+ 573      63655C50 
+ 574              	.LASF23:
+ 575 00b0 496D7072 		.ascii	"Impresora_Stop\000"
+ 575      65736F72 
+ 575      615F5374 
+ 575      6F7000
+ 576              	.LASF9:
+ 577 00bf 666C6F61 		.ascii	"float\000"
+ 577      7400
  578              	.LASF1:
  579 00c5 756E7369 		.ascii	"unsigned char\000"
  579      676E6564 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  583      65736F72 
  583      615F6261 
  583      636B7570 
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 16
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 16
 
 
  583      53747275 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 1
  603      69676E65 
  603      6420696E 
  603      7400
-ARM GAS  C:\Users\RECEPC~1\AppData\Local\Temp\cc0DTqcB.s 			page 17
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccXt8gFN.s 			page 17
 
 
  604              	.LASF8:

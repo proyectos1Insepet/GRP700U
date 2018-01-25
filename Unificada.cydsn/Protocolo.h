@@ -31,7 +31,6 @@
 #include <device.h>
 uint8 ver_pos (void);
 uint8 get_estado(uint8 dir);
-void ver_error(uint8 val);
 uint8 estado_ex(uint8 val);
 void detener(uint8 val);
 uint8 venta(uint8 val);

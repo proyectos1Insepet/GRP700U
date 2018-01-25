@@ -1,0 +1,73 @@
+\hypertarget{union_c_o_n_t_r_o_l___type}{}\section{Referencia de la Unión C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}
+\label{union_c_o_n_t_r_o_l___type}\index{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}}
+
+
+Union type to access the Control Registers (C\+O\+N\+T\+R\+OL).  
+
+
+
+
+{\ttfamily \#include $<$core\+\_\+cm3.\+h$>$}
+
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint32\_t \mbox{\hyperlink{union_c_o_n_t_r_o_l___type_a2a6e513e8a6bf4e58db169e312172332}{nPRIV}}:1\\
+\>uint32\_t \mbox{\hyperlink{union_c_o_n_t_r_o_l___type_ae185aac93686ffc78e998a9daf41415b}{SPSEL}}:1\\
+\>uint32\_t \mbox{\hyperlink{union_c_o_n_t_r_o_l___type_a2518558c090f60161ba4e718a54ee468}{FPCA}}:1\\
+\>uint32\_t \mbox{\hyperlink{union_c_o_n_t_r_o_l___type_ac8a6a13838a897c8d0b8bc991bbaf7c1}{\_reserved0}}:29\\
+\} \mbox{\hyperlink{union_c_o_n_t_r_o_l___type_ab2a41711c248a319c2e7d0ab73c3a8b9}{b}}\\
+
+\end{tabbing}\item 
+uint32\+\_\+t \mbox{\hyperlink{union_c_o_n_t_r_o_l___type_ad0fb62e7a08e70fc5e0a76b67809f84b}{w}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Union type to access the Control Registers (C\+O\+N\+T\+R\+OL). 
+
+\subsection{Documentación de los campos}
+\mbox{\Hypertarget{union_c_o_n_t_r_o_l___type_ac8a6a13838a897c8d0b8bc991bbaf7c1}\label{union_c_o_n_t_r_o_l___type_ac8a6a13838a897c8d0b8bc991bbaf7c1}} 
+\index{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}!\+\_\+reserved0@{\+\_\+reserved0}}
+\index{\+\_\+reserved0@{\+\_\+reserved0}!C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{\+\_\+reserved0}{\_reserved0}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+reserved0}
+
+bit\+: 3..31 Reserved \mbox{\Hypertarget{union_c_o_n_t_r_o_l___type_ab2a41711c248a319c2e7d0ab73c3a8b9}\label{union_c_o_n_t_r_o_l___type_ab2a41711c248a319c2e7d0ab73c3a8b9}} 
+\index{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}!b@{b}}
+\index{b@{b}!C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily struct \{ ... \}   b}
+
+Structure used for bit access \mbox{\Hypertarget{union_c_o_n_t_r_o_l___type_a2518558c090f60161ba4e718a54ee468}\label{union_c_o_n_t_r_o_l___type_a2518558c090f60161ba4e718a54ee468}} 
+\index{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}!F\+P\+CA@{F\+P\+CA}}
+\index{F\+P\+CA@{F\+P\+CA}!C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{F\+P\+CA}{FPCA}}
+{\footnotesize\ttfamily uint32\+\_\+t F\+P\+CA}
+
+bit\+: 2 FP extension active flag \mbox{\Hypertarget{union_c_o_n_t_r_o_l___type_a2a6e513e8a6bf4e58db169e312172332}\label{union_c_o_n_t_r_o_l___type_a2a6e513e8a6bf4e58db169e312172332}} 
+\index{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}!n\+P\+R\+IV@{n\+P\+R\+IV}}
+\index{n\+P\+R\+IV@{n\+P\+R\+IV}!C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{n\+P\+R\+IV}{nPRIV}}
+{\footnotesize\ttfamily uint32\+\_\+t n\+P\+R\+IV}
+
+bit\+: 0 Execution privilege in Thread mode \mbox{\Hypertarget{union_c_o_n_t_r_o_l___type_ae185aac93686ffc78e998a9daf41415b}\label{union_c_o_n_t_r_o_l___type_ae185aac93686ffc78e998a9daf41415b}} 
+\index{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}!S\+P\+S\+EL@{S\+P\+S\+EL}}
+\index{S\+P\+S\+EL@{S\+P\+S\+EL}!C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{S\+P\+S\+EL}{SPSEL}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+P\+S\+EL}
+
+bit\+: 1 Stack to be used \mbox{\Hypertarget{union_c_o_n_t_r_o_l___type_ad0fb62e7a08e70fc5e0a76b67809f84b}\label{union_c_o_n_t_r_o_l___type_ad0fb62e7a08e70fc5e0a76b67809f84b}} 
+\index{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}!w@{w}}
+\index{w@{w}!C\+O\+N\+T\+R\+O\+L\+\_\+\+Type@{C\+O\+N\+T\+R\+O\+L\+\_\+\+Type}}
+\subsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily uint32\+\_\+t w}
+
+Type used for word access 
+
+La documentación para esta unión fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Unificada.\+cydsn/codegentemp/\mbox{\hyperlink{core__cm3_8h}{core\+\_\+cm3.\+h}}\end{DoxyCompactItemize}

@@ -1,6 +1,6 @@
 -- Project:   Unificada
--- Generated: 01/19/2017 12:41:59
--- PSoC Creator  3.3 SP1
+-- Generated: 01/24/2018 16:24:55
+-- PSoC Creator  3.3 SP2
 
 ENTITY Unificada IS
     PORT(
@@ -444,6 +444,7 @@ ARCHITECTURE __DEFAULT__ OF Unificada IS
     ATTRIBUTE lib_model OF \LCD_2:BUART:rx_status_5\ : LABEL IS "macrocell45";
     ATTRIBUTE lib_model OF \Timer_1:TimerUDB:status_tc\ : LABEL IS "macrocell46";
     ATTRIBUTE lib_model OF \Timer_2:TimerUDB:status_tc\ : LABEL IS "macrocell47";
+    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell48";
     ATTRIBUTE lib_model OF \Surtidor:BUART:sTX:TxShifter:u0\ : LABEL IS "datapathcell1";
     ATTRIBUTE lib_model OF \Surtidor:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "datapathcell2";
     ATTRIBUTE lib_model OF \Surtidor:BUART:sTX:TxSts\ : LABEL IS "statusicell1";
@@ -469,7 +470,6 @@ ARCHITECTURE __DEFAULT__ OF Unificada IS
     ATTRIBUTE lib_model OF \LCD_2:BUART:sTX:TxSts\ : LABEL IS "statusicell9";
     ATTRIBUTE lib_model OF \LCD_2:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell15";
     ATTRIBUTE lib_model OF \LCD_2:BUART:sRX:RxSts\ : LABEL IS "statusicell10";
-    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell48";
     ATTRIBUTE lib_model OF \Timer_1:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \Timer_1:TimerUDB:rstSts:stsreg\ : LABEL IS "statusicell11";
     ATTRIBUTE lib_model OF \Timer_1:TimerUDB:sT8:timerdp:u0\ : LABEL IS "datapathcell16";
@@ -3332,6 +3332,13 @@ BEGIN
             interrupt => Net_8,
             clock => ClockBlock_BUS_CLK);
 
+    __ONE__:macrocell
+        GENERIC MAP(
+            eqn_main => "1'b0",
+            clken_mode => 1)
+        PORT MAP(
+            q => __ONE__);
+
     \Surtidor:BUART:sTX:TxShifter:u0\:datapathcell
         GENERIC MAP(
             a0_init => "00000000",
@@ -4251,13 +4258,6 @@ BEGIN
             tc => \Timer_Animacion:Net_51\,
             cmp => \Timer_Animacion:Net_261\,
             irq => Net_76);
-
-    __ONE__:macrocell
-        GENERIC MAP(
-            eqn_main => "1'b0",
-            clken_mode => 1)
-        PORT MAP(
-            q => __ONE__);
 
     isr_3:interrupt
         GENERIC MAP(
