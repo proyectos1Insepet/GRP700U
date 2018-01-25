@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
   30              		@ frame_needed = 0, uses_anonymous_args = 0
   31              	.LVL0:
   32 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 2
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 2
 
 
   33              		.cfi_def_cfa_offset 8
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
   73              	.LVL10:
   40:.\ibuton.c    **** 	    if(present){
   74              		.loc 1 40 0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 3
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 3
 
 
   75 003a F4B9     		cbnz	r4, .L4
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  111              	.LVL20:
   59:.\ibuton.c    **** 	    CyDelayUs(240);
  112              		.loc 1 59 0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 4
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 4
 
 
  113 006e F020     		movs	r0, #240
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  148              	.LVL23:
  149 0000 38B5     		push	{r3, r4, r5, lr}
  150              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 5
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 5
 
 
  151              		.cfi_offset 3, -16
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  191 0038 0020     		movs	r0, #0
  192 003a FFF7FEFF 		bl	IB1_Write
  193              	.LVL30:
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 6
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 6
 
 
   92:.\ibuton.c    **** 	            CyDelayUs(10);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  104:.\ibuton.c    **** 	    for(i=0;i<=7;i++){
  105:.\ibuton.c    **** 	        IB2_Write(0); 
  234              		.loc 1 105 0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 7
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 7
 
 
  235 006e 0020     		movs	r0, #0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  121:.\ibuton.c    **** 	        CyDelayUs(50);
  274              		.loc 1 121 0 discriminator 2
  275 00ac 3220     		movs	r0, #50
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 8
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 8
 
 
  276 00ae FFF7FEFF 		bl	CyDelayUs
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  128:.\ibuton.c    **** 
  129:.\ibuton.c    **** /**
  130:.\ibuton.c    **** * touch_read_byte
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 9
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 9
 
 
  131:.\ibuton.c    **** * @brief Lee un byte del ibutton, se usa para leer los bytes del serial
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  357 0024 FFF7FEFF 		bl	IB1_Read
  358              	.LVL60:
  359 0028 A040     		lsls	r0, r0, r4
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 10
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 10
 
 
  360 002a 0543     		orrs	r5, r5, r0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  401              		.loc 1 158 0 discriminator 3
  402 005c FFF7FEFF 		bl	IB2_Read
  403              	.LVL72:
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 11
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 11
 
 
  404 0060 A040     		lsls	r0, r0, r4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  440              		@ frame_needed = 0, uses_anonymous_args = 0
  441              	.LVL78:
  442 0000 38B5     		push	{r3, r4, r5, lr}
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 12
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 12
 
 
  443              		.cfi_def_cfa_offset 16
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  487              		.loc 1 184 0
  488 0042 0120     		movs	r0, #1
  489 0044 0021     		movs	r1, #0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 13
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 13
 
 
  490 0046 FFF7FEFF 		bl	touch_write
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  531              	.L48:
  532 007e 0124     		movs	r4, #1
  533 0080 2546     		mov	r5, r4
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 14
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 14
 
 
  534              	.LVL95:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  571 00b6 601C     		adds	r0, r4, #1
  572 00b8 C4B2     		uxtb	r4, r0
  573              	.LVL100:
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 15
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 15
 
 
  574              	.L37:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  609 00e2 0220     		movs	r0, #2
  610 00e4 FFF7FEFF 		bl	touch_present
  611              	.LVL109:
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 16
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 16
 
 
  612 00e8 0128     		cmp	r0, #1
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  654              	.L42:
  242:.\ibuton.c    **** 					}
  243:.\ibuton.c    **** 					for(i=1;i<=Buffer_LCD2.placa[0];i++){
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 17
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 17
 
 
  244:.\ibuton.c    **** 		                Buffer_LCD2.placa[i]=touch_read_byte(2);
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  253:.\ibuton.c    **** 					if((Buffer_LCD2.cuenta[0]!=0xFF)&&(Buffer_LCD2.cuenta[0]<=30)){
  698              		.loc 1 253 0
  699 0164 1E28     		cmp	r0, #30
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 18
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 18
 
 
  700 0166 0FD9     		bls	.L53
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  740 0198 38BD     		pop	{r3, r4, r5, pc}
  741              	.LVL132:
  742              	.L46:
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 19
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 19
 
 
  223:.\ibuton.c    **** 		}
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  285:.\ibuton.c    **** * @return 0 no escribió , 1 escrito correctamente
  286:.\ibuton.c    **** *
  287:.\ibuton.c    **** */
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 20
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 20
 
 
  288:.\ibuton.c    **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  819              		.loc 1 297 0
  820 0038 0120     		movs	r0, #1
  821 003a 0021     		movs	r1, #0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 21
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 21
 
 
  822 003c FFF7FEFF 		bl	touch_write
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  866              	.LVL149:
  306:.\ibuton.c    **** 				for(x=0;x<=cantidad+2;x++){
  867              		.loc 1 306 0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 22
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 22
 
 
  868 007e 0022     		movs	r2, #0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  913              		.loc 1 313 0
  914 00ca 0120     		movs	r0, #1
  915 00cc 5521     		movs	r1, #85
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 23
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 23
 
 
  916 00ce FFF7FEFF 		bl	touch_write
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  961 011c 3946     		mov	r1, r7
  962 011e FFF7FEFF 		bl	touch_write
  963              	.LVL165:
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 24
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 24
 
 
  323:.\ibuton.c    **** 						touch_write(1,0x00);
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1010 0166 E5D2     		bcs	.L66
  328:.\ibuton.c    **** 							}									
  329:.\ibuton.c    **** 						}
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 25
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 25
 
 
  330:.\ibuton.c    **** 						if(check==(cantidad+1)){
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1047 01a0 FFF7FEFF 		bl	touch_write
  1048              	.LVL179:
  348:.\ibuton.c    **** 			for(i=0;i<=cantidad;i++){
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 26
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 26
 
 
  1049              		.loc 1 348 0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1093 01e2 0022     		movs	r2, #0
  1094 01e4 454B     		ldr	r3, .L85
  1095 01e6 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 27
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 27
 
 
  1096 01e8 0AE0     		b	.L69
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1141 0230 FFF7FEFF 		bl	touch_write
  1142              	.LVL195:
  364:.\ibuton.c    **** 					touch_write(2,pos);
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 28
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 28
 
 
  1143              		.loc 1 364 0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  373:.\ibuton.c    **** 						touch_write(2,0x00);
  1189              		.loc 1 373 0
  1190 0282 0220     		movs	r0, #2
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 29
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 29
 
 
  1191 0284 0021     		movs	r1, #0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  380:.\ibuton.c    **** 						if(check==(cantidad+1)){
  1236              		.loc 1 380 0 is_stmt 1
  1237 02c8 0136     		adds	r6, r6, #1
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 30
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 30
 
 
  1238 02ca B045     		cmp	r8, r6
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1279 02f0 0024     		movs	r4, #0
  1280 02f2 00E0     		b	.L59
  1281              	.LVL220:
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 31
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 31
 
 
  1282              	.L83:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1320              	.L91:
  408:.\ibuton.c    ****     {
  409:.\ibuton.c    ****         if (crc & 0x01){
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 32
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 32
 
 
  1321              		.loc 1 409 0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1365              		.comm	no_imprime,1,1
  1366              		.comm	n_copias,1,4
  1367              		.comm	a_copias,1,1
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 33
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 33
 
 
  1368              		.comm	producto4n,11,4
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1422              		.section	.debug_info,"",%progbits
  1423              	.Ldebug_info0:
  1424 0000 54140000 		.4byte	0x1454
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 34
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 34
 
 
  1425 0004 0400     		.2byte	0x4
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1479 0071 07       		.byte	0x7
  1480 0072 51000000 		.4byte	.LASF8
  1481 0076 03       		.uleb128 0x3
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 35
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 35
 
 
  1482 0077 0A040000 		.4byte	.LASF10
@@ -2080,25 +2080,25 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1518 00bf 4A000000 		.4byte	.LASF28
  1519 00c3 98       		.byte	0x98
  1520 00c4 05       		.byte	0x5
- 1521 00c5 8A       		.byte	0x8a
+ 1521 00c5 95       		.byte	0x95
  1522 00c6 65010000 		.4byte	0x165
  1523 00ca 06       		.uleb128 0x6
  1524 00cb FA020000 		.4byte	.LASF18
  1525 00cf 05       		.byte	0x5
- 1526 00d0 8B       		.byte	0x8b
+ 1526 00d0 96       		.byte	0x96
  1527 00d1 81000000 		.4byte	0x81
  1528 00d5 00       		.byte	0
  1529 00d6 07       		.uleb128 0x7
  1530 00d7 706F7300 		.ascii	"pos\000"
  1531 00db 05       		.byte	0x5
- 1532 00dc 8C       		.byte	0x8c
+ 1532 00dc 97       		.byte	0x97
  1533 00dd 81000000 		.4byte	0x81
  1534 00e1 01       		.byte	0x1
  1535 00e2 06       		.uleb128 0x6
  1536 00e3 AE000000 		.4byte	.LASF19
  1537 00e7 05       		.byte	0x5
- 1538 00e8 8D       		.byte	0x8d
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 36
+ 1538 00e8 98       		.byte	0x98
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 36
 
 
  1539 00e9 81000000 		.4byte	0x81
@@ -2106,64 +2106,64 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1541 00ee 06       		.uleb128 0x6
  1542 00ef 23010000 		.4byte	.LASF20
  1543 00f3 05       		.byte	0x5
- 1544 00f4 8E       		.byte	0x8e
+ 1544 00f4 99       		.byte	0x99
  1545 00f5 81000000 		.4byte	0x81
  1546 00f9 03       		.byte	0x3
  1547 00fa 07       		.uleb128 0x7
  1548 00fb 6B6D00   		.ascii	"km\000"
  1549 00fe 05       		.byte	0x5
- 1550 00ff 8F       		.byte	0x8f
+ 1550 00ff 9A       		.byte	0x9a
  1551 0100 65010000 		.4byte	0x165
  1552 0104 04       		.byte	0x4
  1553 0105 06       		.uleb128 0x6
  1554 0106 EB040000 		.4byte	.LASF21
  1555 010a 05       		.byte	0x5
- 1556 010b 90       		.byte	0x90
+ 1556 010b 9B       		.byte	0x9b
  1557 010c 75010000 		.4byte	0x175
  1558 0110 0B       		.byte	0xb
  1559 0111 07       		.uleb128 0x7
  1560 0112 696400   		.ascii	"id\000"
  1561 0115 05       		.byte	0x5
- 1562 0116 91       		.byte	0x91
+ 1562 0116 9C       		.byte	0x9c
  1563 0117 75010000 		.4byte	0x175
  1564 011b 29       		.byte	0x29
  1565 011c 06       		.uleb128 0x6
  1566 011d C2010000 		.4byte	.LASF22
  1567 0121 05       		.byte	0x5
- 1568 0122 92       		.byte	0x92
+ 1568 0122 9D       		.byte	0x9d
  1569 0123 75010000 		.4byte	0x175
  1570 0127 47       		.byte	0x47
  1571 0128 06       		.uleb128 0x6
  1572 0129 D4010000 		.4byte	.LASF23
  1573 012d 05       		.byte	0x5
- 1574 012e 93       		.byte	0x93
+ 1574 012e 9E       		.byte	0x9e
  1575 012f 75010000 		.4byte	0x175
  1576 0133 65       		.byte	0x65
  1577 0134 06       		.uleb128 0x6
  1578 0135 7B000000 		.4byte	.LASF24
  1579 0139 05       		.byte	0x5
- 1580 013a 94       		.byte	0x94
+ 1580 013a 9F       		.byte	0x9f
  1581 013b 81000000 		.4byte	0x81
  1582 013f 83       		.byte	0x83
  1583 0140 06       		.uleb128 0x6
  1584 0141 E4020000 		.4byte	.LASF25
  1585 0145 05       		.byte	0x5
- 1586 0146 95       		.byte	0x95
+ 1586 0146 A0       		.byte	0xa0
  1587 0147 85010000 		.4byte	0x185
  1588 014b 84       		.byte	0x84
  1589 014c 06       		.uleb128 0x6
  1590 014d 00000000 		.4byte	.LASF26
  1591 0151 05       		.byte	0x5
- 1592 0152 96       		.byte	0x96
+ 1592 0152 A1       		.byte	0xa1
  1593 0153 95010000 		.4byte	0x195
  1594 0157 8E       		.byte	0x8e
  1595 0158 06       		.uleb128 0x6
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 37
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 37
 
 
  1596 0159 89020000 		.4byte	.LASF27
  1597 015d 05       		.byte	0x5
- 1598 015e 97       		.byte	0x97
+ 1598 015e A2       		.byte	0xa2
  1599 015f 81000000 		.4byte	0x81
  1600 0163 97       		.byte	0x97
  1601 0164 00       		.byte	0
@@ -2199,33 +2199,33 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1631 01a6 706F7300 		.ascii	"pos\000"
  1632 01aa 04       		.byte	0x4
  1633 01ab 05       		.byte	0x5
- 1634 01ac 9F       		.byte	0x9f
+ 1634 01ac AE       		.byte	0xae
  1635 01ad E2010000 		.4byte	0x1e2
  1636 01b1 07       		.uleb128 0x7
  1637 01b2 64697200 		.ascii	"dir\000"
  1638 01b6 05       		.byte	0x5
- 1639 01b7 A0       		.byte	0xa0
+ 1639 01b7 AF       		.byte	0xaf
  1640 01b8 81000000 		.4byte	0x81
  1641 01bc 00       		.byte	0
  1642 01bd 06       		.uleb128 0x6
  1643 01be 29030000 		.4byte	.LASF29
  1644 01c2 05       		.byte	0x5
- 1645 01c3 A1       		.byte	0xa1
+ 1645 01c3 B0       		.byte	0xb0
  1646 01c4 81000000 		.4byte	0x81
  1647 01c8 01       		.byte	0x1
  1648 01c9 06       		.uleb128 0x6
  1649 01ca 37050000 		.4byte	.LASF30
  1650 01ce 05       		.byte	0x5
- 1651 01cf A2       		.byte	0xa2
+ 1651 01cf B1       		.byte	0xb1
  1652 01d0 81000000 		.4byte	0x81
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 38
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 38
 
 
  1653 01d4 02       		.byte	0x2
  1654 01d5 06       		.uleb128 0x6
  1655 01d6 14000000 		.4byte	.LASF31
  1656 01da 05       		.byte	0x5
- 1657 01db A3       		.byte	0xa3
+ 1657 01db B2       		.byte	0xb2
  1658 01dc 81000000 		.4byte	0x81
  1659 01e0 03       		.byte	0x3
  1660 01e1 00       		.byte	0
@@ -2233,18 +2233,18 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1662 01e3 94030000 		.4byte	.LASF32
  1663 01e7 08       		.byte	0x8
  1664 01e8 05       		.byte	0x5
- 1665 01e9 A7       		.byte	0xa7
+ 1665 01e9 B9       		.byte	0xb9
  1666 01ea 03020000 		.4byte	0x203
  1667 01ee 07       		.uleb128 0x7
  1668 01ef 6100     		.ascii	"a\000"
  1669 01f1 05       		.byte	0x5
- 1670 01f2 A8       		.byte	0xa8
+ 1670 01f2 BA       		.byte	0xba
  1671 01f3 A5010000 		.4byte	0x1a5
  1672 01f7 00       		.byte	0
  1673 01f8 07       		.uleb128 0x7
  1674 01f9 6200     		.ascii	"b\000"
  1675 01fb 05       		.byte	0x5
- 1676 01fc A9       		.byte	0xa9
+ 1676 01fc BB       		.byte	0xbb
  1677 01fd A5010000 		.4byte	0x1a5
  1678 0201 04       		.byte	0x4
  1679 0202 00       		.byte	0
@@ -2252,120 +2252,120 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1681 0204 0F030000 		.4byte	.LASF33
  1682 0208 E1       		.byte	0xe1
  1683 0209 05       		.byte	0x5
- 1684 020a AC       		.byte	0xac
+ 1684 020a C2       		.byte	0xc2
  1685 020b E8020000 		.4byte	0x2e8
  1686 020f 06       		.uleb128 0x6
  1687 0210 37030000 		.4byte	.LASF34
  1688 0214 05       		.byte	0x5
- 1689 0215 AD       		.byte	0xad
+ 1689 0215 C3       		.byte	0xc3
  1690 0216 75010000 		.4byte	0x175
  1691 021a 00       		.byte	0
  1692 021b 07       		.uleb128 0x7
  1693 021c 6E697400 		.ascii	"nit\000"
  1694 0220 05       		.byte	0x5
- 1695 0221 AE       		.byte	0xae
+ 1695 0221 C4       		.byte	0xc4
  1696 0222 E8020000 		.4byte	0x2e8
  1697 0226 1E       		.byte	0x1e
  1698 0227 06       		.uleb128 0x6
  1699 0228 C6020000 		.4byte	.LASF35
  1700 022c 05       		.byte	0x5
- 1701 022d AF       		.byte	0xaf
+ 1701 022d C5       		.byte	0xc5
  1702 022e F8020000 		.4byte	0x2f8
  1703 0232 2D       		.byte	0x2d
  1704 0233 06       		.uleb128 0x6
  1705 0234 FE010000 		.4byte	.LASF36
  1706 0238 05       		.byte	0x5
- 1707 0239 B0       		.byte	0xb0
+ 1707 0239 C6       		.byte	0xc6
  1708 023a 08030000 		.4byte	0x308
  1709 023e 2F       		.byte	0x2f
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 39
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 39
 
 
  1710 023f 06       		.uleb128 0x6
  1711 0240 01010000 		.4byte	.LASF37
  1712 0244 05       		.byte	0x5
- 1713 0245 B1       		.byte	0xb1
+ 1713 0245 C7       		.byte	0xc7
  1714 0246 75010000 		.4byte	0x175
  1715 024a 43       		.byte	0x43
  1716 024b 06       		.uleb128 0x6
  1717 024c 51010000 		.4byte	.LASF38
  1718 0250 05       		.byte	0x5
- 1719 0251 B2       		.byte	0xb2
+ 1719 0251 C8       		.byte	0xc8
  1720 0252 75010000 		.4byte	0x175
  1721 0256 61       		.byte	0x61
  1722 0257 06       		.uleb128 0x6
  1723 0258 57010000 		.4byte	.LASF39
  1724 025c 05       		.byte	0x5
- 1725 025d B3       		.byte	0xb3
+ 1725 025d C9       		.byte	0xc9
  1726 025e 75010000 		.4byte	0x175
  1727 0262 7F       		.byte	0x7f
  1728 0263 06       		.uleb128 0x6
  1729 0264 D9040000 		.4byte	.LASF40
  1730 0268 05       		.byte	0x5
- 1731 0269 B4       		.byte	0xb4
+ 1731 0269 CA       		.byte	0xca
  1732 026a 18030000 		.4byte	0x318
  1733 026e 9D       		.byte	0x9d
  1734 026f 06       		.uleb128 0x6
  1735 0270 BE000000 		.4byte	.LASF41
  1736 0274 05       		.byte	0x5
- 1737 0275 B5       		.byte	0xb5
+ 1737 0275 CB       		.byte	0xcb
  1738 0276 F8020000 		.4byte	0x2f8
  1739 027a A0       		.byte	0xa0
  1740 027b 06       		.uleb128 0x6
  1741 027c DB000000 		.4byte	.LASF42
  1742 0280 05       		.byte	0x5
- 1743 0281 B6       		.byte	0xb6
+ 1743 0281 CC       		.byte	0xcc
  1744 0282 81000000 		.4byte	0x81
  1745 0286 A2       		.byte	0xa2
  1746 0287 06       		.uleb128 0x6
  1747 0288 BD020000 		.4byte	.LASF43
  1748 028c 05       		.byte	0x5
- 1749 028d B7       		.byte	0xb7
+ 1749 028d CD       		.byte	0xcd
  1750 028e 81000000 		.4byte	0x81
  1751 0292 A3       		.byte	0xa3
  1752 0293 07       		.uleb128 0x7
  1753 0294 70707500 		.ascii	"ppu\000"
  1754 0298 05       		.byte	0x5
- 1755 0299 B8       		.byte	0xb8
+ 1755 0299 CE       		.byte	0xce
  1756 029a 65010000 		.4byte	0x165
  1757 029e A4       		.byte	0xa4
  1758 029f 06       		.uleb128 0x6
  1759 02a0 16030000 		.4byte	.LASF44
  1760 02a4 05       		.byte	0x5
- 1761 02a5 B9       		.byte	0xb9
+ 1761 02a5 CF       		.byte	0xcf
  1762 02a6 95010000 		.4byte	0x195
  1763 02aa AB       		.byte	0xab
  1764 02ab 06       		.uleb128 0x6
  1765 02ac F6010000 		.4byte	.LASF45
  1766 02b0 05       		.byte	0x5
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 40
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 40
 
 
- 1767 02b1 BA       		.byte	0xba
+ 1767 02b1 D0       		.byte	0xd0
  1768 02b2 95010000 		.4byte	0x195
  1769 02b6 B4       		.byte	0xb4
  1770 02b7 06       		.uleb128 0x6
  1771 02b8 25020000 		.4byte	.LASF46
  1772 02bc 05       		.byte	0x5
- 1773 02bd BB       		.byte	0xbb
+ 1773 02bd D1       		.byte	0xd1
  1774 02be 28030000 		.4byte	0x328
  1775 02c2 BD       		.byte	0xbd
  1776 02c3 06       		.uleb128 0x6
  1777 02c4 D3000000 		.4byte	.LASF47
  1778 02c8 05       		.byte	0x5
- 1779 02c9 BC       		.byte	0xbc
+ 1779 02c9 D2       		.byte	0xd2
  1780 02ca 28030000 		.4byte	0x328
  1781 02ce CA       		.byte	0xca
  1782 02cf 06       		.uleb128 0x6
  1783 02d0 00000000 		.4byte	.LASF26
  1784 02d4 05       		.byte	0x5
- 1785 02d5 BD       		.byte	0xbd
+ 1785 02d5 D3       		.byte	0xd3
  1786 02d6 95010000 		.4byte	0x195
  1787 02da D7       		.byte	0xd7
  1788 02db 06       		.uleb128 0x6
  1789 02dc 37050000 		.4byte	.LASF30
  1790 02e0 05       		.byte	0x5
- 1791 02e1 BE       		.byte	0xbe
+ 1791 02e1 D4       		.byte	0xd4
  1792 02e2 81000000 		.4byte	0x81
  1793 02e6 E0       		.byte	0xe0
  1794 02e7 00       		.byte	0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1821 0326 02       		.byte	0x2
  1822 0327 00       		.byte	0
  1823 0328 08       		.uleb128 0x8
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 41
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 41
 
 
  1824 0329 81000000 		.4byte	0x81
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1878 03a5 01       		.uleb128 0x1
  1879 03a6 50       		.byte	0x50
  1880 03a7 01       		.uleb128 0x1
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 42
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 42
 
 
  1881 03a8 31       		.byte	0x31
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1935 0417 0F       		.uleb128 0xf
  1936 0418 01       		.uleb128 0x1
  1937 0419 50       		.byte	0x50
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 43
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 43
 
 
  1938 041a 03       		.uleb128 0x3
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  1992 0481 01       		.byte	0x1
  1993 0482 4D       		.byte	0x4d
  1994 0483 81000000 		.4byte	0x81
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 44
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 44
 
 
  1995 0487 00000000 		.4byte	.LFB64
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2049 04fa 2E000000 		.4byte	.LVL28
  2050 04fe 12140000 		.4byte	0x1412
  2051 0502 0C050000 		.4byte	0x50c
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 45
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 45
 
 
  2052 0506 0F       		.uleb128 0xf
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2106 056c 5E000000 		.4byte	.LVL35
  2107 0570 12140000 		.4byte	0x1412
  2108 0574 7F050000 		.4byte	0x57f
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 46
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 46
 
 
  2109 0578 0F       		.uleb128 0xf
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2163 05e1 0F       		.uleb128 0xf
  2164 05e2 01       		.uleb128 0x1
  2165 05e3 50       		.byte	0x50
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 47
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 47
 
 
  2166 05e4 01       		.uleb128 0x1
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2220 064a 78000000 		.4byte	.LFE65-.LFB65
  2221 064e 01       		.uleb128 0x1
  2222 064f 9C       		.byte	0x9c
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 48
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 48
 
 
  2223 0650 4E070000 		.4byte	0x74e
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2277 06c6 01       		.uleb128 0x1
  2278 06c7 50       		.byte	0x50
  2279 06c8 01       		.uleb128 0x1
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 49
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 49
 
 
  2280 06c9 37       		.byte	0x37
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2334 0732 37       		.byte	0x37
  2335 0733 00       		.byte	0
  2336 0734 10       		.uleb128 0x10
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 50
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 50
 
 
  2337 0735 60000000 		.4byte	.LVL72
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2391 07b7 0F       		.uleb128 0xf
  2392 07b8 01       		.uleb128 0x1
  2393 07b9 50       		.byte	0x50
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 51
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 51
 
 
  2394 07ba 02       		.uleb128 0x2
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2448 0814 01       		.uleb128 0x1
  2449 0815 31       		.byte	0x31
  2450 0816 00       		.byte	0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 52
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 52
 
 
  2451 0817 0E       		.uleb128 0xe
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2505 0877 81080000 		.4byte	0x881
  2506 087b 0F       		.uleb128 0xf
  2507 087c 01       		.uleb128 0x1
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 53
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 53
 
 
  2508 087d 50       		.byte	0x50
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2562 08e0 C8       		.byte	0xc8
  2563 08e1 00       		.byte	0
  2564 08e2 0E       		.uleb128 0xe
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 54
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 54
 
 
  2565 08e3 FA000000 		.4byte	.LVL111
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2619 093d 01       		.uleb128 0x1
  2620 093e 30       		.byte	0x30
  2621 093f 0F       		.uleb128 0xf
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 55
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 55
 
 
  2622 0940 01       		.uleb128 0x1
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2676 09a4 FB0E0000 		.4byte	0xefb
  2677 09a8 15       		.uleb128 0x15
  2678 09a9 14050000 		.4byte	.LASF50
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 56
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 56
 
 
  2679 09ad 01       		.byte	0x1
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2733 0a32 51       		.byte	0x51
  2734 0a33 02       		.uleb128 0x2
  2735 0a34 09       		.byte	0x9
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 57
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 57
 
 
  2736 0a35 CC       		.byte	0xcc
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2790 0a86 4C000000 		.4byte	.LVL142
  2791 0a8a 7C040000 		.4byte	0x47c
  2792 0a8e 980A0000 		.4byte	0xa98
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 58
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 58
 
 
  2793 0a92 0F       		.uleb128 0xf
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2847 0aed 0E       		.uleb128 0xe
  2848 0aee 7E000000 		.4byte	.LVL149
  2849 0af2 7C040000 		.4byte	0x47c
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 59
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 59
 
 
  2850 0af6 060B0000 		.4byte	0xb06
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2904 0b54 00       		.byte	0
  2905 0b55 0E       		.uleb128 0xe
  2906 0b56 CA000000 		.4byte	.LVL155
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 60
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 60
 
 
  2907 0b5a 7C040000 		.4byte	0x47c
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  2961 0bb1 30       		.byte	0x30
  2962 0bb2 0F       		.uleb128 0xf
  2963 0bb3 01       		.uleb128 0x1
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 61
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 61
 
 
  2964 0bb4 50       		.byte	0x50
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3018 0c18 09       		.byte	0x9
  3019 0c19 CC       		.byte	0xcc
  3020 0c1a 0F       		.uleb128 0xf
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 62
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 62
 
 
  3021 0c1b 01       		.uleb128 0x1
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3075 0c6f 3B060000 		.4byte	0x63b
  3076 0c73 7D0C0000 		.4byte	0xc7d
  3077 0c77 0F       		.uleb128 0xf
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 63
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 63
 
 
  3078 0c78 01       		.uleb128 0x1
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3132 0cd2 01       		.uleb128 0x1
  3133 0cd3 32       		.byte	0x32
  3134 0cd4 00       		.byte	0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 64
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 64
 
 
  3135 0cd5 0E       		.uleb128 0xe
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3189 0d33 38030000 		.4byte	0x338
  3190 0d37 410D0000 		.4byte	0xd41
  3191 0d3b 0F       		.uleb128 0xf
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 65
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 65
 
 
  3192 0d3c 01       		.uleb128 0x1
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3246 0d96 50       		.byte	0x50
  3247 0d97 01       		.uleb128 0x1
  3248 0d98 32       		.byte	0x32
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 66
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 66
 
 
  3249 0d99 00       		.byte	0
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3303 0dfd 01       		.uleb128 0x1
  3304 0dfe 51       		.byte	0x51
  3305 0dff 02       		.uleb128 0x2
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 67
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 67
 
 
  3306 0e00 08       		.byte	0x8
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3360 0e5a 01       		.uleb128 0x1
  3361 0e5b 50       		.byte	0x50
  3362 0e5c 03       		.uleb128 0x3
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 68
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 68
 
 
  3363 0e5d 0A       		.byte	0xa
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3417 0eb8 32       		.byte	0x32
  3418 0eb9 00       		.byte	0
  3419 0eba 0E       		.uleb128 0xe
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 69
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 69
 
 
  3420 0ebb 82020000 		.4byte	.LVL204
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3474 0f1c 63726300 		.ascii	"crc\000"
  3475 0f20 01       		.byte	0x1
  3476 0f21 9401     		.2byte	0x194
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 70
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 70
 
 
  3477 0f23 81000000 		.4byte	0x81
@@ -4167,7 +4167,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3500 0f59 1D       		.uleb128 0x1d
  3501 0f5a 48030000 		.4byte	.LASF60
  3502 0f5e 05       		.byte	0x5
- 3503 0f5f 2F       		.byte	0x2f
+ 3503 0f5f 46       		.byte	0x46
  3504 0f60 81000000 		.4byte	0x81
  3505 0f64 05       		.uleb128 0x5
  3506 0f65 03       		.byte	0x3
@@ -4175,7 +4175,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3508 0f6a 1D       		.uleb128 0x1d
  3509 0f6b 09000000 		.4byte	.LASF61
  3510 0f6f 05       		.byte	0x5
- 3511 0f70 2F       		.byte	0x2f
+ 3511 0f70 46       		.byte	0x46
  3512 0f71 81000000 		.4byte	0x81
  3513 0f75 05       		.uleb128 0x5
  3514 0f76 03       		.byte	0x3
@@ -4183,7 +4183,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3516 0f7b 1D       		.uleb128 0x1d
  3517 0f7c F1040000 		.4byte	.LASF62
  3518 0f80 05       		.byte	0x5
- 3519 0f81 5D       		.byte	0x5d
+ 3519 0f81 48       		.byte	0x48
  3520 0f82 81000000 		.4byte	0x81
  3521 0f86 05       		.uleb128 0x5
  3522 0f87 03       		.byte	0x3
@@ -4191,18 +4191,18 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3524 0f8c 1D       		.uleb128 0x1d
  3525 0f8d 1C000000 		.4byte	.LASF63
  3526 0f91 05       		.byte	0x5
- 3527 0f92 5D       		.byte	0x5d
+ 3527 0f92 48       		.byte	0x48
  3528 0f93 81000000 		.4byte	0x81
  3529 0f97 05       		.uleb128 0x5
  3530 0f98 03       		.byte	0x3
  3531 0f99 00000000 		.4byte	count_protector2
  3532 0f9d 1D       		.uleb128 0x1d
  3533 0f9e 32000000 		.4byte	.LASF64
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 71
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 71
 
 
  3534 0fa2 05       		.byte	0x5
- 3535 0fa3 5E       		.byte	0x5e
+ 3535 0fa3 49       		.byte	0x49
  3536 0fa4 81000000 		.4byte	0x81
  3537 0fa8 05       		.uleb128 0x5
  3538 0fa9 03       		.byte	0x3
@@ -4210,7 +4210,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3540 0fae 1D       		.uleb128 0x1d
  3541 0faf 3A000000 		.4byte	.LASF65
  3542 0fb3 05       		.byte	0x5
- 3543 0fb4 5E       		.byte	0x5e
+ 3543 0fb4 49       		.byte	0x49
  3544 0fb5 81000000 		.4byte	0x81
  3545 0fb9 05       		.uleb128 0x5
  3546 0fba 03       		.byte	0x3
@@ -4218,7 +4218,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3548 0fbf 1D       		.uleb128 0x1d
  3549 0fc0 D8030000 		.4byte	.LASF66
  3550 0fc4 05       		.byte	0x5
- 3551 0fc5 5F       		.byte	0x5f
+ 3551 0fc5 4B       		.byte	0x4b
  3552 0fc6 81000000 		.4byte	0x81
  3553 0fca 05       		.uleb128 0x5
  3554 0fcb 03       		.byte	0x3
@@ -4226,7 +4226,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3556 0fd0 1D       		.uleb128 0x1d
  3557 0fd1 C3000000 		.4byte	.LASF67
  3558 0fd5 05       		.byte	0x5
- 3559 0fd6 5F       		.byte	0x5f
+ 3559 0fd6 4B       		.byte	0x4b
  3560 0fd7 81000000 		.4byte	0x81
  3561 0fdb 05       		.uleb128 0x5
  3562 0fdc 03       		.byte	0x3
@@ -4234,7 +4234,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3564 0fe1 1D       		.uleb128 0x1d
  3565 0fe2 CB000000 		.4byte	.LASF68
  3566 0fe6 05       		.byte	0x5
- 3567 0fe7 5F       		.byte	0x5f
+ 3567 0fe7 4B       		.byte	0x4b
  3568 0fe8 81000000 		.4byte	0x81
  3569 0fec 05       		.uleb128 0x5
  3570 0fed 03       		.byte	0x3
@@ -4242,7 +4242,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3572 0ff2 1D       		.uleb128 0x1d
  3573 0ff3 9D030000 		.4byte	.LASF69
  3574 0ff7 05       		.byte	0x5
- 3575 0ff8 5F       		.byte	0x5f
+ 3575 0ff8 4B       		.byte	0x4b
  3576 0ff9 81000000 		.4byte	0x81
  3577 0ffd 05       		.uleb128 0x5
  3578 0ffe 03       		.byte	0x3
@@ -4250,7 +4250,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3580 1003 1D       		.uleb128 0x1d
  3581 1004 A4030000 		.4byte	.LASF70
  3582 1008 05       		.byte	0x5
- 3583 1009 5F       		.byte	0x5f
+ 3583 1009 4B       		.byte	0x4b
  3584 100a 81000000 		.4byte	0x81
  3585 100e 05       		.uleb128 0x5
  3586 100f 03       		.byte	0x3
@@ -4258,10 +4258,10 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3588 1014 1D       		.uleb128 0x1d
  3589 1015 5E000000 		.4byte	.LASF71
  3590 1019 05       		.byte	0x5
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 72
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 72
 
 
- 3591 101a 60       		.byte	0x60
+ 3591 101a 4D       		.byte	0x4d
  3592 101b 81000000 		.4byte	0x81
  3593 101f 05       		.uleb128 0x5
  3594 1020 03       		.byte	0x3
@@ -4269,7 +4269,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3596 1025 1D       		.uleb128 0x1d
  3597 1026 42000000 		.4byte	.LASF72
  3598 102a 05       		.byte	0x5
- 3599 102b 61       		.byte	0x61
+ 3599 102b 4F       		.byte	0x4f
  3600 102c 81000000 		.4byte	0x81
  3601 1030 05       		.uleb128 0x5
  3602 1031 03       		.byte	0x3
@@ -4277,7 +4277,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3604 1036 1D       		.uleb128 0x1d
  3605 1037 D2030000 		.4byte	.LASF73
  3606 103b 05       		.byte	0x5
- 3607 103c 62       		.byte	0x62
+ 3607 103c 51       		.byte	0x51
  3608 103d 81000000 		.4byte	0x81
  3609 1041 05       		.uleb128 0x5
  3610 1042 03       		.byte	0x3
@@ -4285,7 +4285,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3612 1047 1D       		.uleb128 0x1d
  3613 1048 93000000 		.4byte	.LASF74
  3614 104c 05       		.byte	0x5
- 3615 104d 62       		.byte	0x62
+ 3615 104d 51       		.byte	0x51
  3616 104e 81000000 		.4byte	0x81
  3617 1052 05       		.uleb128 0x5
  3618 1053 03       		.byte	0x3
@@ -4293,7 +4293,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3620 1058 1D       		.uleb128 0x1d
  3621 1059 DA010000 		.4byte	.LASF75
  3622 105d 05       		.byte	0x5
- 3623 105e 62       		.byte	0x62
+ 3623 105e 51       		.byte	0x51
  3624 105f 81000000 		.4byte	0x81
  3625 1063 05       		.uleb128 0x5
  3626 1064 03       		.byte	0x3
@@ -4301,7 +4301,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3628 1069 1D       		.uleb128 0x1d
  3629 106a 29050000 		.4byte	.LASF76
  3630 106e 05       		.byte	0x5
- 3631 106f 62       		.byte	0x62
+ 3631 106f 51       		.byte	0x51
  3632 1070 81000000 		.4byte	0x81
  3633 1074 05       		.uleb128 0x5
  3634 1075 03       		.byte	0x3
@@ -4309,7 +4309,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3636 107a 1D       		.uleb128 0x1d
  3637 107b 07020000 		.4byte	.LASF77
  3638 107f 05       		.byte	0x5
- 3639 1080 62       		.byte	0x62
+ 3639 1080 51       		.byte	0x51
  3640 1081 81000000 		.4byte	0x81
  3641 1085 05       		.uleb128 0x5
  3642 1086 03       		.byte	0x3
@@ -4317,8 +4317,8 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3644 108b 1D       		.uleb128 0x1d
  3645 108c 66000000 		.4byte	.LASF78
  3646 1090 05       		.byte	0x5
- 3647 1091 62       		.byte	0x62
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 73
+ 3647 1091 51       		.byte	0x51
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 73
 
 
  3648 1092 81000000 		.4byte	0x81
@@ -4328,7 +4328,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3652 109c 1D       		.uleb128 0x1d
  3653 109d B6000000 		.4byte	.LASF79
  3654 10a1 05       		.byte	0x5
- 3655 10a2 62       		.byte	0x62
+ 3655 10a2 51       		.byte	0x51
  3656 10a3 81000000 		.4byte	0x81
  3657 10a7 05       		.uleb128 0x5
  3658 10a8 03       		.byte	0x3
@@ -4336,7 +4336,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3660 10ad 1D       		.uleb128 0x1d
  3661 10ae 5A050000 		.4byte	.LASF80
  3662 10b2 05       		.byte	0x5
- 3663 10b3 62       		.byte	0x62
+ 3663 10b3 51       		.byte	0x51
  3664 10b4 81000000 		.4byte	0x81
  3665 10b8 05       		.uleb128 0x5
  3666 10b9 03       		.byte	0x3
@@ -4351,7 +4351,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3675 10ce 1D       		.uleb128 0x1d
  3676 10cf 46010000 		.4byte	.LASF81
  3677 10d3 05       		.byte	0x5
- 3678 10d4 63       		.byte	0x63
+ 3678 10d4 53       		.byte	0x53
  3679 10d5 BE100000 		.4byte	0x10be
  3680 10d9 05       		.uleb128 0x5
  3681 10da 03       		.byte	0x3
@@ -4366,7 +4366,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3690 10ef 1D       		.uleb128 0x1d
  3691 10f0 C5040000 		.4byte	.LASF82
  3692 10f4 05       		.byte	0x5
- 3693 10f5 64       		.byte	0x64
+ 3693 10f5 55       		.byte	0x55
  3694 10f6 DF100000 		.4byte	0x10df
  3695 10fa 05       		.uleb128 0x5
  3696 10fb 03       		.byte	0x3
@@ -4374,18 +4374,18 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3698 1100 1D       		.uleb128 0x1d
  3699 1101 BA010000 		.4byte	.LASF83
  3700 1105 05       		.byte	0x5
- 3701 1106 65       		.byte	0x65
+ 3701 1106 57       		.byte	0x57
  3702 1107 81000000 		.4byte	0x81
  3703 110b 05       		.uleb128 0x5
  3704 110c 03       		.byte	0x3
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 74
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 74
 
 
  3705 110d 00000000 		.4byte	teclado
  3706 1111 1D       		.uleb128 0x1d
  3707 1112 84000000 		.4byte	.LASF84
  3708 1116 05       		.byte	0x5
- 3709 1117 65       		.byte	0x65
+ 3709 1117 57       		.byte	0x57
  3710 1118 81000000 		.4byte	0x81
  3711 111c 05       		.uleb128 0x5
  3712 111d 03       		.byte	0x3
@@ -4393,7 +4393,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3714 1122 1D       		.uleb128 0x1d
  3715 1123 30030000 		.4byte	.LASF85
  3716 1127 05       		.byte	0x5
- 3717 1128 66       		.byte	0x66
+ 3717 1128 59       		.byte	0x59
  3718 1129 81000000 		.4byte	0x81
  3719 112d 05       		.uleb128 0x5
  3720 112e 03       		.byte	0x3
@@ -4401,7 +4401,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3722 1133 1D       		.uleb128 0x1d
  3723 1134 02040000 		.4byte	.LASF86
  3724 1138 05       		.byte	0x5
- 3725 1139 67       		.byte	0x67
+ 3725 1139 5B       		.byte	0x5b
  3726 113a F8020000 		.4byte	0x2f8
  3727 113e 05       		.uleb128 0x5
  3728 113f 03       		.byte	0x3
@@ -4409,7 +4409,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3730 1144 1D       		.uleb128 0x1d
  3731 1145 2E050000 		.4byte	.LASF87
  3732 1149 05       		.byte	0x5
- 3733 114a 68       		.byte	0x68
+ 3733 114a 5D       		.byte	0x5d
  3734 114b F8020000 		.4byte	0x2f8
  3735 114f 05       		.uleb128 0x5
  3736 1150 03       		.byte	0x3
@@ -4417,7 +4417,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3738 1155 1D       		.uleb128 0x1d
  3739 1156 D0020000 		.4byte	.LASF88
  3740 115a 05       		.byte	0x5
- 3741 115b 69       		.byte	0x69
+ 3741 115b 5F       		.byte	0x5f
  3742 115c 81000000 		.4byte	0x81
  3743 1160 05       		.uleb128 0x5
  3744 1161 03       		.byte	0x3
@@ -4425,7 +4425,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3746 1166 1D       		.uleb128 0x1d
  3747 1167 EC000000 		.4byte	.LASF89
  3748 116b 05       		.byte	0x5
- 3749 116c 6A       		.byte	0x6a
+ 3749 116c 61       		.byte	0x61
  3750 116d 81000000 		.4byte	0x81
  3751 1171 05       		.uleb128 0x5
  3752 1172 03       		.byte	0x3
@@ -4438,12 +4438,12 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3759 1185 05       		.byte	0x5
  3760 1186 00       		.byte	0
  3761 1187 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 75
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 75
 
 
  3762 1188 47020000 		.4byte	.LASF90
  3763 118c 05       		.byte	0x5
- 3764 118d 6B       		.byte	0x6b
+ 3764 118d 63       		.byte	0x63
  3765 118e 77110000 		.4byte	0x1177
  3766 1192 05       		.uleb128 0x5
  3767 1193 03       		.byte	0x3
@@ -4451,7 +4451,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3769 1198 1D       		.uleb128 0x1d
  3770 1199 5B030000 		.4byte	.LASF91
  3771 119d 05       		.byte	0x5
- 3772 119e 6C       		.byte	0x6c
+ 3772 119e 65       		.byte	0x65
  3773 119f 81000000 		.4byte	0x81
  3774 11a3 05       		.uleb128 0x5
  3775 11a4 03       		.byte	0x3
@@ -4459,7 +4459,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3777 11a9 1D       		.uleb128 0x1d
  3778 11aa 3E030000 		.4byte	.LASF92
  3779 11ae 05       		.byte	0x5
- 3780 11af 6D       		.byte	0x6d
+ 3780 11af 67       		.byte	0x67
  3781 11b0 81000000 		.4byte	0x81
  3782 11b4 05       		.uleb128 0x5
  3783 11b5 03       		.byte	0x3
@@ -4467,7 +4467,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3785 11ba 1D       		.uleb128 0x1d
  3786 11bb 6E020000 		.4byte	.LASF93
  3787 11bf 05       		.byte	0x5
- 3788 11c0 6E       		.byte	0x6e
+ 3788 11c0 69       		.byte	0x69
  3789 11c1 F8020000 		.4byte	0x2f8
  3790 11c5 05       		.uleb128 0x5
  3791 11c6 03       		.byte	0x3
@@ -4475,7 +4475,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3793 11cb 1D       		.uleb128 0x1d
  3794 11cc 75020000 		.4byte	.LASF94
  3795 11d0 05       		.byte	0x5
- 3796 11d1 6E       		.byte	0x6e
+ 3796 11d1 69       		.byte	0x69
  3797 11d2 F8020000 		.4byte	0x2f8
  3798 11d6 05       		.uleb128 0x5
  3799 11d7 03       		.byte	0x3
@@ -4483,7 +4483,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3801 11dc 1D       		.uleb128 0x1d
  3802 11dd 7A030000 		.4byte	.LASF95
  3803 11e1 05       		.byte	0x5
- 3804 11e2 6F       		.byte	0x6f
+ 3804 11e2 6B       		.byte	0x6b
  3805 11e3 F8020000 		.4byte	0x2f8
  3806 11e7 05       		.uleb128 0x5
  3807 11e8 03       		.byte	0x3
@@ -4491,18 +4491,18 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3809 11ed 1D       		.uleb128 0x1d
  3810 11ee 0E020000 		.4byte	.LASF96
  3811 11f2 05       		.byte	0x5
- 3812 11f3 70       		.byte	0x70
+ 3812 11f3 6D       		.byte	0x6d
  3813 11f4 F8020000 		.4byte	0x2f8
  3814 11f8 05       		.uleb128 0x5
  3815 11f9 03       		.byte	0x3
  3816 11fa 00000000 		.4byte	copia_recibo2
  3817 11fe 1D       		.uleb128 0x1d
  3818 11ff 06030000 		.4byte	.LASF97
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 76
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 76
 
 
  3819 1203 05       		.byte	0x5
- 3820 1204 71       		.byte	0x71
+ 3820 1204 6F       		.byte	0x6f
  3821 1205 8C000000 		.4byte	0x8c
  3822 1209 05       		.uleb128 0x5
  3823 120a 03       		.byte	0x3
@@ -4520,7 +4520,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3835 1225 1D       		.uleb128 0x1d
  3836 1226 1C020000 		.4byte	.LASF98
  3837 122a 05       		.byte	0x5
- 3838 122b 72       		.byte	0x72
+ 3838 122b 71       		.byte	0x71
  3839 122c 0F120000 		.4byte	0x120f
  3840 1230 05       		.uleb128 0x5
  3841 1231 03       		.byte	0x3
@@ -4543,7 +4543,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3858 1257 1D       		.uleb128 0x1d
  3859 1258 A3000000 		.4byte	.LASF100
  3860 125c 05       		.byte	0x5
- 3861 125d 74       		.byte	0x74
+ 3861 125d 75       		.byte	0x75
  3862 125e 47120000 		.4byte	0x1247
  3863 1262 05       		.uleb128 0x5
  3864 1263 03       		.byte	0x3
@@ -4551,18 +4551,18 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3866 1268 1D       		.uleb128 0x1d
  3867 1269 2A010000 		.4byte	.LASF101
  3868 126d 05       		.byte	0x5
- 3869 126e 75       		.byte	0x75
+ 3869 126e 77       		.byte	0x77
  3870 126f 47120000 		.4byte	0x1247
  3871 1273 05       		.uleb128 0x5
  3872 1274 03       		.byte	0x3
  3873 1275 00000000 		.4byte	producto2n
  3874 1279 1D       		.uleb128 0x1d
  3875 127a C9010000 		.4byte	.LASF102
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 77
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 77
 
 
  3876 127e 05       		.byte	0x5
- 3877 127f 76       		.byte	0x76
+ 3877 127f 79       		.byte	0x79
  3878 1280 47120000 		.4byte	0x1247
  3879 1284 05       		.uleb128 0x5
  3880 1285 03       		.byte	0x3
@@ -4570,7 +4570,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3882 128a 1D       		.uleb128 0x1d
  3883 128b 35010000 		.4byte	.LASF103
  3884 128f 05       		.byte	0x5
- 3885 1290 77       		.byte	0x77
+ 3885 1290 7B       		.byte	0x7b
  3886 1291 47120000 		.4byte	0x1247
  3887 1295 05       		.uleb128 0x5
  3888 1296 03       		.byte	0x3
@@ -4578,7 +4578,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3890 129b 1D       		.uleb128 0x1d
  3891 129c 52030000 		.4byte	.LASF104
  3892 12a0 05       		.byte	0x5
- 3893 12a1 78       		.byte	0x78
+ 3893 12a1 7D       		.byte	0x7d
  3894 12a2 81000000 		.4byte	0x81
  3895 12a6 05       		.uleb128 0x5
  3896 12a7 03       		.byte	0x3
@@ -4593,7 +4593,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3905 12bc 1D       		.uleb128 0x1d
  3906 12bd E4010000 		.4byte	.LASF105
  3907 12c1 05       		.byte	0x5
- 3908 12c2 79       		.byte	0x79
+ 3908 12c2 7F       		.byte	0x7f
  3909 12c3 AC120000 		.4byte	0x12ac
  3910 12c7 05       		.uleb128 0x5
  3911 12c8 03       		.byte	0x3
@@ -4601,7 +4601,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3913 12cd 1D       		.uleb128 0x1d
  3914 12ce 1E040000 		.4byte	.LASF106
  3915 12d2 05       		.byte	0x5
- 3916 12d3 7A       		.byte	0x7a
+ 3916 12d3 81       		.byte	0x81
  3917 12d4 81000000 		.4byte	0x81
  3918 12d8 05       		.uleb128 0x5
  3919 12d9 03       		.byte	0x3
@@ -4609,7 +4609,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3921 12de 1D       		.uleb128 0x1d
  3922 12df 12040000 		.4byte	.LASF107
  3923 12e3 05       		.byte	0x5
- 3924 12e4 7B       		.byte	0x7b
+ 3924 12e4 83       		.byte	0x83
  3925 12e5 81000000 		.4byte	0x81
  3926 12e9 05       		.uleb128 0x5
  3927 12ea 03       		.byte	0x3
@@ -4617,8 +4617,8 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3929 12ef 1D       		.uleb128 0x1d
  3930 12f0 ED010000 		.4byte	.LASF108
  3931 12f4 05       		.byte	0x5
- 3932 12f5 7D       		.byte	0x7d
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 78
+ 3932 12f5 85       		.byte	0x85
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 78
 
 
  3933 12f6 00130000 		.4byte	0x1300
@@ -4630,7 +4630,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3939 1305 1D       		.uleb128 0x1d
  3940 1306 1D030000 		.4byte	.LASF109
  3941 130a 05       		.byte	0x5
- 3942 130b 99       		.byte	0x99
+ 3942 130b A4       		.byte	0xa4
  3943 130c BE000000 		.4byte	0xbe
  3944 1310 05       		.uleb128 0x5
  3945 1311 03       		.byte	0x3
@@ -4638,7 +4638,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3947 1316 1D       		.uleb128 0x1d
  3948 1317 A3020000 		.4byte	.LASF110
  3949 131b 05       		.byte	0x5
- 3950 131c 9A       		.byte	0x9a
+ 3950 131c A5       		.byte	0xa5
  3951 131d BE000000 		.4byte	0xbe
  3952 1321 05       		.uleb128 0x5
  3953 1322 03       		.byte	0x3
@@ -4646,7 +4646,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3955 1327 1D       		.uleb128 0x1d
  3956 1328 C9030000 		.4byte	.LASF111
  3957 132c 05       		.byte	0x5
- 3958 132d 9D       		.byte	0x9d
+ 3958 132d A8       		.byte	0xa8
  3959 132e 81000000 		.4byte	0x81
  3960 1332 05       		.uleb128 0x5
  3961 1333 03       		.byte	0x3
@@ -4654,7 +4654,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3963 1338 1E       		.uleb128 0x1e
  3964 1339 7800     		.ascii	"x\000"
  3965 133b 05       		.byte	0x5
- 3966 133c C0       		.byte	0xc0
+ 3966 133c D6       		.byte	0xd6
  3967 133d 97000000 		.4byte	0x97
  3968 1341 05       		.uleb128 0x5
  3969 1342 03       		.byte	0x3
@@ -4662,7 +4662,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3971 1347 1E       		.uleb128 0x1e
  3972 1348 7900     		.ascii	"y\000"
  3973 134a 05       		.byte	0x5
- 3974 134b C0       		.byte	0xc0
+ 3974 134b D6       		.byte	0xd6
  3975 134c 97000000 		.4byte	0x97
  3976 1350 05       		.uleb128 0x5
  3977 1351 03       		.byte	0x3
@@ -4670,7 +4670,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3979 1356 1E       		.uleb128 0x1e
  3980 1357 7A00     		.ascii	"z\000"
  3981 1359 05       		.byte	0x5
- 3982 135a C0       		.byte	0xc0
+ 3982 135a D6       		.byte	0xd6
  3983 135b 97000000 		.4byte	0x97
  3984 135f 05       		.uleb128 0x5
  3985 1360 03       		.byte	0x3
@@ -4678,10 +4678,10 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  3987 1365 1E       		.uleb128 0x1e
  3988 1366 7700     		.ascii	"w\000"
  3989 1368 05       		.byte	0x5
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 79
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 79
 
 
- 3990 1369 C0       		.byte	0xc0
+ 3990 1369 D6       		.byte	0xd6
  3991 136a 97000000 		.4byte	0x97
  3992 136e 05       		.uleb128 0x5
  3993 136f 03       		.byte	0x3
@@ -4699,7 +4699,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4005 138a 1D       		.uleb128 0x1d
  4006 138b 67020000 		.4byte	.LASF112
  4007 138f 05       		.byte	0x5
- 4008 1390 C1       		.byte	0xc1
+ 4008 1390 D7       		.byte	0xd7
  4009 1391 74130000 		.4byte	0x1374
  4010 1395 05       		.uleb128 0x5
  4011 1396 03       		.byte	0x3
@@ -4707,7 +4707,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4013 139b 1D       		.uleb128 0x1d
  4014 139c B5030000 		.4byte	.LASF113
  4015 13a0 05       		.byte	0x5
- 4016 13a1 C2       		.byte	0xc2
+ 4016 13a1 D8       		.byte	0xd8
  4017 13a2 81000000 		.4byte	0x81
  4018 13a6 05       		.uleb128 0x5
  4019 13a7 03       		.byte	0x3
@@ -4715,7 +4715,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4021 13ac 1D       		.uleb128 0x1d
  4022 13ad BF030000 		.4byte	.LASF114
  4023 13b1 05       		.byte	0x5
- 4024 13b2 C2       		.byte	0xc2
+ 4024 13b2 D8       		.byte	0xd8
  4025 13b3 81000000 		.4byte	0x81
  4026 13b7 05       		.uleb128 0x5
  4027 13b8 03       		.byte	0x3
@@ -4723,7 +4723,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4029 13bd 1D       		.uleb128 0x1d
  4030 13be BD020000 		.4byte	.LASF43
  4031 13c2 05       		.byte	0x5
- 4032 13c3 C2       		.byte	0xc2
+ 4032 13c3 D8       		.byte	0xd8
  4033 13c4 81000000 		.4byte	0x81
  4034 13c8 05       		.uleb128 0x5
  4035 13c9 03       		.byte	0x3
@@ -4731,18 +4731,18 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4037 13ce 1D       		.uleb128 0x1d
  4038 13cf 2D000000 		.4byte	.LASF115
  4039 13d3 05       		.byte	0x5
- 4040 13d4 C3       		.byte	0xc3
+ 4040 13d4 D9       		.byte	0xd9
  4041 13d5 E2010000 		.4byte	0x1e2
  4042 13d9 05       		.uleb128 0x5
  4043 13da 03       		.byte	0x3
  4044 13db 00000000 		.4byte	lado
  4045 13df 1D       		.uleb128 0x1d
  4046 13e0 53050000 		.4byte	.LASF116
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 80
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 80
 
 
  4047 13e4 05       		.byte	0x5
- 4048 13e5 C4       		.byte	0xc4
+ 4048 13e5 DA       		.byte	0xda
  4049 13e6 03020000 		.4byte	0x203
  4050 13ea 05       		.uleb128 0x5
  4051 13eb 03       		.byte	0x3
@@ -4750,7 +4750,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4053 13f0 1D       		.uleb128 0x1d
  4054 13f1 E4000000 		.4byte	.LASF117
  4055 13f5 05       		.byte	0x5
- 4056 13f6 C5       		.byte	0xc5
+ 4056 13f6 DB       		.byte	0xdb
  4057 13f7 03020000 		.4byte	0x203
  4058 13fb 05       		.uleb128 0x5
  4059 13fc 03       		.byte	0x3
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4101 1456 00       		.byte	0
  4102 1457 00       		.byte	0
  4103              		.section	.debug_abbrev,"",%progbits
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 81
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 81
 
 
  4104              	.Ldebug_abbrev0:
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4158 0035 00       		.byte	0
  4159 0036 05       		.uleb128 0x5
  4160 0037 13       		.uleb128 0x13
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 82
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 82
 
 
  4161 0038 01       		.byte	0x1
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4215 006e 00       		.byte	0
  4216 006f 49       		.uleb128 0x49
  4217 0070 13       		.uleb128 0x13
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 83
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 83
 
 
  4218 0071 2F       		.uleb128 0x2f
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4272 00a8 0B       		.uleb128 0xb
  4273 00a9 49       		.uleb128 0x49
  4274 00aa 13       		.uleb128 0x13
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 84
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 84
 
 
  4275 00ab 02       		.uleb128 0x2
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4329 00ea 13       		.uleb128 0x13
  4330 00eb 00       		.byte	0
  4331 00ec 00       		.byte	0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 85
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 85
 
 
  4332 00ed 12       		.uleb128 0x12
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4386 0124 13       		.uleb128 0x13
  4387 0125 00       		.byte	0
  4388 0126 00       		.byte	0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 86
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 86
 
 
  4389 0127 15       		.uleb128 0x15
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4443 015d 49       		.uleb128 0x49
  4444 015e 13       		.uleb128 0x13
  4445 015f 02       		.uleb128 0x2
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 87
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 87
 
 
  4446 0160 17       		.uleb128 0x17
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4500 0196 03       		.uleb128 0x3
  4501 0197 0E       		.uleb128 0xe
  4502 0198 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 88
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 88
 
 
  4503 0199 0B       		.uleb128 0xb
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4557 01cf 21       		.uleb128 0x21
  4558 01d0 2E       		.uleb128 0x2e
  4559 01d1 00       		.byte	0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 89
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 89
 
 
  4560 01d2 3F       		.uleb128 0x3f
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4614 002c 0400     		.2byte	0x4
  4615 002e F3       		.byte	0xf3
  4616 002f 01       		.uleb128 0x1
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 90
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 90
 
 
  4617 0030 50       		.byte	0x50
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4671 00a2 0C000000 		.4byte	.LVL24
  4672 00a6 0100     		.2byte	0x1
  4673 00a8 51       		.byte	0x51
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 91
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 91
 
 
  4674 00a9 0C000000 		.4byte	.LVL24
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4728 012f 50       		.byte	0x50
  4729 0130 3E000000 		.4byte	.LVL67
  4730 0134 78000000 		.4byte	.LFE65
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 92
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 92
 
 
  4731 0138 0400     		.2byte	0x4
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4785 01c2 00000000 		.4byte	0
  4786              	.LLST8:
  4787 01c6 00000000 		.4byte	.LVL78
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 93
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 93
 
 
  4788 01ca 0B000000 		.4byte	.LVL80-1
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4842 0249 7E000000 		.4byte	.LVL94
  4843 024d 0100     		.2byte	0x1
  4844 024f 55       		.byte	0x55
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 94
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 94
 
 
  4845 0250 82000000 		.4byte	.LVL95
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4899 02e5 0200     		.2byte	0x2
  4900 02e7 30       		.byte	0x30
  4901 02e8 9F       		.byte	0x9f
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 95
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 95
 
 
  4902 02e9 82000000 		.4byte	.LVL95
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  4956 0373 8C010000 		.4byte	.LVL131
  4957 0377 9A010000 		.4byte	.LVL132
  4958 037b 0100     		.2byte	0x1
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 96
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 96
 
 
  4959 037d 54       		.byte	0x54
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5013 03fc 51       		.byte	0x51
  5014 03fd 9F       		.byte	0x9f
  5015 03fe 00000000 		.4byte	0
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 97
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 97
 
 
  5016 0402 00000000 		.4byte	0
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5070 0485 01       		.uleb128 0x1
  5071 0486 53       		.byte	0x53
  5072 0487 9F       		.byte	0x9f
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 98
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 98
 
 
  5073 0488 D0020000 		.4byte	.LVL211
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5127 0510 54       		.byte	0x54
  5128 0511 E8020000 		.4byte	.LVL217
  5129 0515 EA020000 		.4byte	.LVL218
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 99
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 99
 
 
  5130 0519 0100     		.2byte	0x1
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5184 05a6 0100     		.2byte	0x1
  5185 05a8 50       		.byte	0x50
  5186 05a9 02000000 		.4byte	.LVL223
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 100
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 100
 
 
  5187 05ad 0E000000 		.4byte	.LVL225
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5241 0014 78000000 		.4byte	.LFE65
  5242 0018 00000000 		.4byte	.LFB66
  5243 001c B4010000 		.4byte	.LFE66
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 101
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 101
 
 
  5244 0020 00000000 		.4byte	.LFB67
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5276 0066 636F7272 		.ascii	"corriente2\000"
  5276      69656E74 
  5276      653200
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 102
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 102
 
 
  5277              	.LASF9:
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5308      00
  5309              	.LASF49:
  5310 00f5 746F7563 		.ascii	"touch_write\000"
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 103
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 103
 
 
  5310      685F7772 
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5336      34335C44 
  5337 01ab 6E696669 		.ascii	"nificada.cydsn\000"
  5337      63616461 
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 104
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 104
 
 
  5337      2E637964 
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5366              	.LASF53:
  5367 0237 746F7563 		.ascii	"touch_read_byte\000"
  5367      685F7265 
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 105
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 105
 
 
  5367      61645F62 
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5397      69677070 
  5397      7500
  5398              	.LASF88:
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 106
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 106
 
 
  5399 02d0 64656369 		.ascii	"decimalV\000"
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5429      70696173 
  5429      00
  5430              	.LASF91:
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 107
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 107
 
 
  5431 035b 706F735F 		.ascii	"pos_ibutton\000"
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5459 03de 4942325F 		.ascii	"IB2_Read\000"
  5459      52656164 
  5459      00
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 108
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 108
 
 
  5460              	.LASF17:
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 1
  5483 04d9 66656368 		.ascii	"fecha\000"
  5483      6100
  5484              	.LASF0:
-ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccwYKbnN.s 			page 109
+ARM GAS  C:\Users\IN-002~1\AppData\Local\Temp\ccq2dE9N.s 			page 109
 
 
  5485 04df 7369676E 		.ascii	"signed char\000"

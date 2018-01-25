@@ -5,6 +5,7 @@ var searchData=
   ['polling_5flcd2',['polling_LCD2',['../main_8c.html#a09f70c8ad6e111e81caebede81aa1b09',1,'main.c']]],
   ['pos',['pos',['../structpos.html',1,'']]],
   ['pos_5fibutton',['pos_ibutton',['../_variables_g_8h.html#a9a68cdceba8914fb0445b541aa8a3cca',1,'VariablesG.h']]],
+  ['ppux10',['ppux10',['../_variables_g_8h.html#ae17c3b2773c08d6bc5cdcee758bce654',1,'VariablesG.h']]],
   ['precio_5flcd',['Precio_LCD',['../_l_c_d_8c.html#a6c26b552703771a975543d2eadc4cfe9',1,'LCD.c']]],
   ['print_2ec',['Print.c',['../_print_8c.html',1,'']]],
   ['print1',['print1',['../_variables_g_8h.html#a058c773bd77a936612b0b3256e18d53e',1,'VariablesG.h']]],

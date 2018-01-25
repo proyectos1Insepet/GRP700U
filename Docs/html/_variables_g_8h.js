@@ -55,6 +55,7 @@ var _variables_g_8h =
     [ "ok_LCD1", "_variables_g_8h.html#a35331d854ae9d2e73d2cf96f9672d36d", null ],
     [ "ok_LCD2", "_variables_g_8h.html#aec1bb8f2cb45199214ef010a699d9236", null ],
     [ "pos_ibutton", "_variables_g_8h.html#a9a68cdceba8914fb0445b541aa8a3cca", null ],
+    [ "ppux10", "_variables_g_8h.html#ae17c3b2773c08d6bc5cdcee758bce654", null ],
     [ "print1", "_variables_g_8h.html#a058c773bd77a936612b0b3256e18d53e", null ],
     [ "print2", "_variables_g_8h.html#ad135b978cf35df7f0ef85523afe6db8d", null ],
     [ "producto", "_variables_g_8h.html#a0e25b4b82ec95f2b7c0c98ea0c13e834", null ],

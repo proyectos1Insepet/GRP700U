@@ -84,7 +84,9 @@ uint8 buffer_i2c[64];
 ///Buffer que almacena el resultado de una operacion	
 uint8 resultado[14];																
 ///Auxiliar que indica los datos del teclado en que variable guardarla
-uint8 teclado,teclado2;													
+uint8 teclado,teclado2;
+///Indica si el PPU esta x10
+uint8 ppux10;
 ///Bandera de la estacion		
 uint8 bandera[2];
 ///tipo de impresora (panel o kiosko)
